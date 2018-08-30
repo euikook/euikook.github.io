@@ -11,14 +11,14 @@ display_footer: inital  #change this to 'none' if you want to hide the footer co
 parallax_image_one: assets/images/startup3.jpg # These are the images used for the parallax background
 parallax_image_two: assets/images/startup3.jpg
 
-project_one: "First Project"
-project_one_description: Describe your project!
-project_one_url: https://github.com/jameshamann/jekyll-material-theme
+project_one: "python-backupman"
+project_one_description: Incremental Backup using RSYNC, SSH, CRON 
+project_one_url: https://github.com/grepos/python-backupman
 project_one_icon: location_on
 
-project_two: Second Project
-project_two_description: Describe your project!
-project_two_url: https://github.com/jameshamann/jekyll-material-theme
+project_two: backupman
+project_two_description: Incremental Backup using RSYNC, SSH, CRON
+project_two_url:  https://github.com/grepos/backupman
 project_two_icon: photo_camera
 
 
