@@ -14,7 +14,7 @@ layout: post
 
 #### RPi(Raspberry Pi) Username 변경하기
 
-# How to change default account username for RPi(Raspberry Pi)
+## How to change default account username for RPi(Raspberry Pi)
 
 Raspberry Pi 공식 이미지의 username 과 password는 다음과 같다. 
 
