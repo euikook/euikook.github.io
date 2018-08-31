@@ -5,8 +5,6 @@ date:   2018-03-14 21:15:05 +0000
 image: /assets/images/twoscreen.jpg
 ---
 
-# How to change default account username for RPi(Raspberry Pi)
-
 Raspberry Pi 공식 이미지의 username 과 password는 다음과 같다.
 
 _username: pi_
