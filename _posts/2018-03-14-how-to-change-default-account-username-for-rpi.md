@@ -70,3 +70,4 @@ password를 Lock 하여 root 계정을 비활성화 한다.
     
     
     sudo passwd -l root
+    

@@ -17,9 +17,9 @@ layout: post
 Linux tr 명령 사용 
     
     
-```tr [:lower:] [:upper:]```
+    tr [:lower:] [:upper:]
 
 Examples: 
     
     
-```echo test | tr [:lower:] [:upper:]```
+    echo test | tr [:lower:] [:upper:]
