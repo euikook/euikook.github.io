@@ -1,0 +1,37 @@
+<!DOCTYPE html> <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="stylesheet" type="text/css" href="/assets/css/materialize.css"> <link rel="stylesheet" type="text/css" href="/assets/main.css"> <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"> <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|PT+Sans|Roboto|Roboto+Slab" rel="stylesheet"> <title>MISCELLANEOUS NOTES</title> </head> <body> <div class="container"> <div class="col s10"> <div class="row" style="padding:10px;"> <a id="home" class="waves-effect waves-light btn white-text darken-2 grey z-depth-4" href="/#blog"><i class="material-icons">arrow_back</i></a> </div> <h3 class="post-title" itemprop="name headline" style="text-align:center">개발자와 시스템 관리자의 친구 tmux, GNU screen Alternative - 01</h3> <p class="post-meta"> <time datetime="2018-03-07T00:00:00+09:00" itemprop="datePublished"> Mar 7, 2018 </time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">euikook</span></span> </p> <div class="post-content" itemprop="articleBody"> <h4 id="usages-of-tmux-gnu-screen-alternative">Usages of tmux, GNU screen Alternative</h4> <p>개발자와 시스템 관리자의 친구 tmux, GNU screen Alternative - 01</p> <p>개발자와 시스템 관리자의 친구, tmux 에 대하여 알아보자</p> <p>tmux는 GNU screen을 대체 할 수 있는 가장 매력적인 대안이다. Terminal Multiplex 로 매뉴얼은 다음에서 볼 수 있다.</p> <p><a href="http://man.openbsd.org/OpenBSD-current/man1/tmux.1">http://man.openbsd.org/OpenBSD-current/man1/tmux.1</a></p> <p>tmux의 주요 기능에 대하여 알아본다. 먼저 세션 유지 기능과 화면 공유 기능에 대하여 알아보자.</p> <h2 id="세션-유지-기능">세션 유지 기능</h2> <p>PuTTY등으로 SSH 세션을 연결 한 후 프로그램을 실행하여 작업 도중 네트워크 문제 등으로 세션이 끊겼기면 Logout이 되면서 해당 쉘에서 작업 중이던 모든 작업이 Hangup Signal (SIGHUP)을 받아 Termination  된다. 자칫 작업한 내용을 잃어 버릴 수도 있다.</p> <p>예를 들어 아래와 같은 상황들이 있을 수 있다.</p> <ul> <li>장시간 미사용으로 인항 세션 해제</li> <li>Windows 자동 업데이트로 인한 시스템 재시작으로 인한 세션 해제</li> <li>네트워크 불안으로 인한 세션 해제</li> <li>정전등 전원 불안으로 인한 세션 해제</li> </ul> <p>TMUX 세션을 생성 한다.</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tmux
+
+
+
+tmux new-session -s test
+</code></pre></div></div> <p>또는 간단히</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tmux new -s test
+</code></pre></div></div> <p>tmux 세션 내에서 vi 명령을 사용하여 테스트 해본다.</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi test.txt
+</code></pre></div></div> <p>필요한 작업을 진행한다.</p> <p>터미널을 닫거나 네트워크를 끊어 SSH 세션을 종료시킨다.</p> <p>다시 SSH 세션을 연결 후 <em>tmux list-sessions</em> 명령으로 현제 열려 있는 세션을 확인한다.</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tmux list-session
+test: 1 windows (created Tue Mar 6 15:20:04 2018) \[159x92\] (attached)
+</code></pre></div></div> <p>이전에 생성한 <em>test</em> 세션이 보인다. <em>test</em> 세션에 attach 한다.</p> <p>세션이 하나이거나 마지막 생성된 세션으로 attach 하기 위해서 는 간단히 다음을 입력한다.</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tmux attach-session
+</code></pre></div></div> <p>세션 이름으로 attach,  <em>test</em> 세션에 attach</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tmux attach-session -t test
+</code></pre></div></div> <p><em><strong>attach-session</strong></em> command는 <em><strong>attach</strong></em> 나 <em><strong>a</strong></em> 로 대체 가능하다.</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tmux attach -t test
+
+
+
+tmux a -t test
+</code></pre></div></div> <h2 id="화면-공유-기능">화면 공유 기능</h2> <p>화면을 다른 사람과 공유 할 수 있다.</p> <h3 id="동일-유저와-화면-공유">동일 유저와 화면 공유</h3> <p>  같은 계정로 시스템에 로그인 한 경우</p> <h4 id="terminal-1">Terminal 1</h4> <p>SSH Client를 이용하여 시스템에 로그인 한 후 tmux 세션을 생성한다.</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tmux new -s test-01
+</code></pre></div></div> <h4 id="terminal-2">Terminal 2</h4> <p>다른 SSH Client를 이용하여 시스템에 로그인 한 후 <em>tmux list-sessions</em> 명령으로 현재 열려 있는 세션 리스트를 확인한다.</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tmux list-sessions
+test-01: 1 windows (created Tue Mar  6 15:52:45 2018) [159x92] (attached)
+</code></pre></div></div> <p><em><strong>tmux attach-session</strong></em> 명령으로 <em>test-01</em> 세션에 Attach 한다.</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tmux attach -t test-01
+</code></pre></div></div> <p>터미널 1과 터미널 2에 같은 화면이 보이며 한쪽에서 키보드를 입력 하면 다른쪽 터미널에서도 입력된다.</p> <h3 id="다른-유저와-화면-공유">다른 유저와 화면 공유</h3> <p><em>tmux_가 실행되면</em> /tmp/tmux-${UID}_ 디렉터리에 <em>default</em> 라는 이름의 UNIX 소켓이 생성되는데 이 UNIX 소켓을 통해 화면 공유 기능이 수행된다. -S 옵션을 통해 명시적으로 UNIX Domain Socket 파일을 지정 할 수 있이며 해당 UNIX Domain Socket 의 경로를  다른 유저에게 알려 줌으로써 다른 유저가 내가 만든 <em>tmux</em> 세션에 접속 할 수 있다.</p> <p>먼저 공유하고자 하는 User 와 같이 속하는 Group을 생성한다.</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo addgroup --gid 888 tmux
+sudo usermod -aG tmux myaccount
+sudo usermod -aG tmux otheraccount
+</code></pre></div></div> <h4 id="terminal-1-1">Terminal 1</h4> <p>Unix Domain Socket을 지정 하여 세션을 만든다.</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tmux -S /tmp/tmux-shared new -s test-01
+</code></pre></div></div> <h4 id="terminal-2-1">Terminal 2</h4> <p>다른 유저로 로그인 하여 attach 해본다.</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tmux -S /tmp/tmux-shared a -t test-01
+error connecting to /tmp/tmux-shared (Permission denied)
+</code></pre></div></div> <p><em>/tmp/tmux-shared</em> 파일에 권한이 없어 Unix Domain Socket에 접속할 수 없다.</p> <p>해당 파일의 권한을 확인해보자</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -l /tmp/tmux-shared 
+srwxrwx--- 1 myaccount myaccount 0 Mar  6 16:25 /tmp/tmux-shared
+</code></pre></div></div> <p>other경우 해당 파일에 대하여 R/W Permission이 없으므로 Unix Domain Socket을 Open 할 수 없다.</p> <h4 id="terminal-1-2">Terminal 1</h4> <p>세션을 생성한 유저로 로그인 하여 해당 파일의 Owner Group을 앞서 생성한 tmux로 변경한다.</p> <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -l /tmp/tmux-shared 
+srwxrwx--- 1 myaccount myaccount 0 Mar  6 16:25 /tmp/tmux-shared
+chgrp tmux tmux-shared
+
+
+
+ls -l /tmp/tmux-shared 
+srwxrwx--- 1 myaccount tmux 0 Mar  6 16:25 /tmp/tmux-shared
+</code></pre></div></div> <h4 id="terminal-2-2">Terminal 2</h4> <p>Permission을 변경 하였으면 이제 세션에 Attach 해보자.</p> </div> </div> </div> <script type="text/javascript" src="/assets/js/jquery-3.2.1.min.js"></script> <script type="text/javascript" src="/assets/js/materialize.min.js"></script> <script src="/assets/js/init.js"></script> </body> <footer class="page-footer"> <div class="footer-copyright" style="padding-left: 30px;"> <i class="material-icons" style="padding-right:5px; display:inital;">copyright</i><p style="display:inital;">2018 Copyright euikook | All rights reserved</p> </div> </footer> </html>
