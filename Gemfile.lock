@@ -172,6 +172,7 @@ DEPENDENCIES
   jekyll-feed (~> 0.6)
   jekyll-material-theme!
   jekyll-minifier
+  jekyll-seo-tag
   materialize-sass
   minima (~> 2.0)
   pry

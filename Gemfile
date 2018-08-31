@@ -11,7 +11,7 @@ gem "selenium-webdriver"
 gem "rack-jekyll"
 gem "pry"
 gem "puma"
-
+gem 'jekyll-seo-tag'
 
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
