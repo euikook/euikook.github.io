@@ -1,42 +1,38 @@
 title: MISCELLANEOUS NOTES
-name: E.K. KIM
+name: euikook
 email: euikook@gmail.com
-description: Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+description: Miscellaneous notes by E.K. KIM
 
-baseurl: "/blog"
-url: ""
+# baseurl: "/blog"
+# url: ""
 
 display_footer: inital  #change this to 'none' if you want to hide the footer copyright text
 
-parallax_image_one: assets/images/startup3.jpg # These are the images used for the parallax background
-parallax_image_two: assets/images/startup3.jpg
-
-project_one: "python-backupman"
-project_one_description: Incremental Backup using RSYNC, SSH, CRON 
-project_one_url: https://github.com/grepos/python-backupman
-project_one_icon: location_on
-
-project_two: backupman
-project_two_description: Incremental Backup using RSYNC, SSH, CRON
-project_two_url:  https://github.com/grepos/backupman
-project_two_icon: photo_camera
+parallax_image_one: assets/images/laptop.png # These are the images used for the parallax background
+parallax_image_two: assets/images/laptop.png
 
 
-#project_three: Third Project
-#project_three_description: Describe your project!
-#project_three_url: https://github.com/jameshamann/jekyll-material-theme
-#project_three_icon: hotel
+projects_heading: Projects
+projects_type: cards
+
+projects:
+  - name: "python-backupman"
+    image: "databackup.jpg"
+    description: Incremental Backup using RSYNC, SSH, CRON
+    url: https://github.com/grepos/python-backupman
+    icon: location_on
+    button: github
+  - name: "backupman"
+    image: "databackup.jpg"
+    description: Incremental Backup using RSYNC, SSH, CRON
+    url:  https://github.com/grepos/backupman
+    icon: photo_camera
+    button: github
 
 
-#project_four: Fourth Project
-#project_four_description: Describe your project!
-#project_four_url: https://github.com/jameshamann/jekyll-material-theme
-#project_four_icon: restaurant
 
-portfolio_heading: Portfolio
-portfolio_type: cards
 
-syntax_highlighting: true
+# syntax_highlighting: true
 # Skill icons from https://konpa.github.io/devicon/
 
 skills:
