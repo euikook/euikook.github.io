@@ -4,8 +4,7 @@ link: https://blog.grepos.com/synergy-software-kvm/
 author: euikook
 description: 
 post_id: 130
-created: 2018/03/08 15:58:37
-created_gmt: 2018/03/08 06:58:37
+date: 2018-03-08 15:58:37 0900
 comment_status: open
 permalink: synergy-software-kvm
 status: publish

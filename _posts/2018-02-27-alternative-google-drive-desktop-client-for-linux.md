@@ -4,8 +4,7 @@ link: https://blog.grepos.com/alternative-google-drive-desktop-client-for-linux/
 author: euikook
 description: 
 post_id: 118
-created: 2018/02/27 22:57:56
-created_gmt: 2018/02/27 13:57:56
+date: 2018-02-27 22:57:56 0900
 comment_status: open
 permalink: alternative-google-drive-desktop-client-for-linux
 status: publish
@@ -25,20 +24,24 @@ Insync - Linux에서 Google Drive Desktop Client 사용하기
 
 ### Add APT Repository
     
-    
-    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ACCAF35C
+```bash
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ACCAF35C
+```
 
 _/etc/apt/sources.list.d/insync.list_ 을 생성 한다. 내용은 다음과 같다. 
     
-    
-    deb http://apt.insynchq.com/[DISTRIBUTION] [CODENAME] non-free contrib
+```     
+deb http://apt.insynchq.com/[DISTRIBUTION] [CODENAME] non-free contrib
+```
 
 Ubuntu 16.04 경의 _[DISTRIBUTION]_ 은 _ubuntu_ _[CODENAME]_ 은 _xenial_을 입력한다. 
     
-    
-    echo deb http://apt.insynchq.com/ubuntu xenial non-free contrib | sudo tee /etc/apt/sources.list.d/insync.list
+```bash    
+echo deb http://apt.insynchq.com/ubuntu xenial non-free contrib | sudo tee /etc/apt/sources.list.d/insync.list
+```
 
 ## Installation
     
-    
-    sudo apt-get update && sudo apt-get install insync
+```bash
+sudo apt-get update && sudo apt-get install insync
+```

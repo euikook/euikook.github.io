@@ -4,8 +4,7 @@ link: https://blog.grepos.com/more-than-4-nics-in-virtualbox/
 author: euikook
 description: 
 post_id: 31
-created: 2018/01/26 04:16:00
-created_gmt: 2018/01/25 19:16:00
+date: 2018-01-26 04:16:00 0900
 comment_status: open
 permalink: more-than-4-nics-in-virtualbox
 status: publish
@@ -19,33 +18,36 @@ VirtualBox에서서 네트워크를 구성하여 테스트환경을 만들다 �
 
 ## Bridge Mode
     
-    
-    VBoxManage modifyvm test-vm --nic5 bridged
-    VBoxManage modifyvm test-vm --bridgeadapter5 eno1
-    
+```bash    
+VBoxManage modifyvm test-vm --nic5 bridged
+VBoxManage modifyvm test-vm --bridgeadapter5 eno1
+```    
 
 ## Host Only Mode
     
-    
-    VBoxManage modifyvm test-vm --nic5 hostonly
-    VBoxManage modifyvm test-vm --hostonlyadapter5 vboxnet0
-    
+```bash    
+VBoxManage modifyvm test-vm --nic5 hostonly
+VBoxManage modifyvm test-vm --hostonlyadapter5 vboxnet0
+```    
 
 ## Internal Mode
     
-    
-    VBoxManage modifyvm test-vm --nic5 intnet
-    VBoxManage modifyvm test-vm --intnet5 'intnet0'
+```bash    
+VBoxManage modifyvm test-vm --nic5 intnet
+VBoxManage modifyvm test-vm --intnet5 'intnet0'
+```
     
 
 ## NAT Mode
     
-    
-    VBoxManage modifyvm test-vm --nic5 nat
+```bash    
+VBoxManage modifyvm test-vm --nic5 nat
+```
     
 
 ## NAT Network Mode
     
-    
-    VBoxManage modifyvm test-vm --nic5 natnetwork
-    VBoxManage modifyvm test-vm --nat-network5 test-nat
+```bash    
+VBoxManage modifyvm test-vm --nic5 natnetwork
+VBoxManage modifyvm test-vm --nat-network5 test-nat
+```
