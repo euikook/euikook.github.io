@@ -15,6 +15,7 @@
     "gulp-cssnano": "^2.1.1",
     "gulp-notify": "^2.2.0",
     "gulp-postcss": "^6.2.0",
+    "lodash": "^4.17.10",
     "postcss-apply": "^0.4.0",
     "postcss-color-function": "^4.0.1",
     "postcss-custom-media": "^5.0.1",
@@ -29,5 +30,6 @@
     "url": "git://github.com/nabaroa/basic-jekyll-postcss"
   },
   "homepage": "",
-  "description": ""
+  "description": "",
+  "dependencies": {}
 }
