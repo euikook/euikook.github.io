@@ -170,3 +170,4 @@ plugins:
   - jekyll-assets
   - jekyll-minifier
   - jekyll-seo-tag
+  - jekyll-sitemap
