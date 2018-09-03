@@ -3,6 +3,7 @@
 var fs = require('fs');
 var yamlfront = require('yaml-front-matter');
 var glob = require('glob');
+var slugify = require('slugify')
 
 
 var postdir = './_posts';
@@ -33,11 +34,17 @@ files = fs.readdirSync(tagdir);
 for (let file of files) {
     if (file === 'index.html') continue;
     fs.unlinkSync(tagdir + '/' + file);
-};
+}
+;
 
 /* Create Tag page */
 for (let tag of tags) {
-    let location = 'tags/' + tag.replace(' ', '+') + '.md';
+    const opts = {
+        replacement: '-',    // replace spaces with replacement
+        remove: null,        // regex to remove characters
+        lower: true          // result in lower case
+    }
+    let location = 'tags/' + slugify(tag, opts) + '.md';
     let content = [
         '---',
         'layout: tagpage',
