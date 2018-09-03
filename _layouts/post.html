@@ -17,15 +17,17 @@ layout: default
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
       {% endif %}</p>
 
-      {% if page.tags != '' %}
+      {% if page.tags %}
         <span class="post-tags">
-
-          [
           {% for tag in page.tags %}
           {% capture tag_name %}{{ tag }}{% endcapture %}
-            <a class="no-underline" href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code></a>
+            <a class="no-underline" href="/tags/{{ tag_name  | replace: ' ', '+' }}">
+              <span class="chip waves-effect waves-teal">
+                <code class="highligher-rouge"><nobr>{{ tag_name}}</nobr></code>
+              </span>
+            </a>
+            <!--<a class="no-underline" href="/tags/{{ tag_name  | replace: ' ', '+' }}"><code class="highligher-rouge"><nobr>{{ tag_name}}</nobr></code></a>{% unless forloop.last %},{% endunless %}-->
           {% endfor %}
-          ]
         </span>
       {% endif %}
 

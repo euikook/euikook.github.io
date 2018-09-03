@@ -1,0 +1,32 @@
+---
+layout: default
+---
+  <div class="container post">
+    <div class="col s10">
+    <div class="row" style="padding:10px;">
+      <a id="home" class="waves-effect waves-light btn white-text darken-2 grey z-depth-4" href="{{site.baseurl}}/#blog"><i class="material-icons">arrow_back</i></a>
+    </div>
+
+
+      <div class="post-content" itemprop="articleBody">
+          {% for tagposts in site.tags %}
+            {% assign tagname = tagposts[0] %}
+
+          <a class="no-underline" href="/tags/{{ tagname  | replace: ' ', '+' }}">
+          <span class="chip waves-effect waves-teal">
+                <code class="highligher-rouge"><nobr>{{ tagname}}</nobr></code>
+          </span>
+          </a>
+
+            <ul>
+            {% for post in site.tags[tagname] %}
+                <li>
+                    &nbsp;&nbsp;<a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date_to_string }}<br>
+                    {{ post.description }}
+                </li>
+            {% endfor %}
+            </ul>
+          {% endfor %}
+      </div>
+</div>
+</div>

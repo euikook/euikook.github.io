@@ -31,12 +31,13 @@ for (let file of files) {
 /* Remove all files in tags */
 files = fs.readdirSync(tagdir);
 for (let file of files) {
+    if (file !== 'index.html') continue;
     fs.unlinkSync(tagdir + '/' + file);
 };
 
 /* Create Tag page */
 for (let tag of tags) {
-    let location = 'tags/' + tag.replace(' ', '+');
+    let location = 'tags/' + tag.replace(' ', '+') + '.md';
     let content = [
         '---',
         'layout: tagpage',
