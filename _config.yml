@@ -171,3 +171,5 @@ plugins:
   - jekyll-minifier
   - jekyll-seo-tag
   - jekyll-sitemap
+
+include: ['_pages']
