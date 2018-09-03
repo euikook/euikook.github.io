@@ -9,6 +9,7 @@ comment_status: open
 permalink: more-than-4-nics-in-virtualbox
 status: publish
 layout: post
+tags: [Linux, VirtualBox, NIC, Bridge, HostOnly, Internal, NAT]
 ---
 
 #### More than 4 NICs in VirtualBox

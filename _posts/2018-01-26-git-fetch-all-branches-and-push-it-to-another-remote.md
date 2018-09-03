@@ -9,6 +9,7 @@ comment_status: open
 permalink: git-fetch-all-branches-and-push-it-to-another-remote
 status: publish
 layout: post
+tags: [Linux, git]
 ---
 
 #### git fetch all branches and push it to another remote

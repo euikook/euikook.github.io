@@ -9,6 +9,7 @@ comment_status: open
 permalink: remove-specific-entries-from-history-file
 status: publish
 layout: post
+tags: [Linux, bash, history, shell]
 ---
 
 

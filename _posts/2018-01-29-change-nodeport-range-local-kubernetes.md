@@ -9,6 +9,7 @@ comment_status: open
 permalink: change-nodeport-range-local-kubernetes
 status: publish
 layout: post
+tags: [Linux, Docker, Kubernetes, k8s, nodeport]
 ---
 
 #### Change NodePort range local kubernetes

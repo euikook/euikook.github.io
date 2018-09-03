@@ -9,6 +9,7 @@ comment_status: open
 permalink: incremental-backup-using-rsyncssh
 status: publish
 layout: post
+tags: [Linux, Backup, Incremental Backup, RSYNC, SSH, cron]
 ---
 
 #### Incremental Backup Using RSYNC+SSH and cron

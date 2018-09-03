@@ -9,6 +9,7 @@ comment_status: open
 permalink: alternative-google-drive-desktop-client-for-linux
 status: publish
 layout: post
+tags: [Linux, Insync, Google, Google Drive, G Suite]
 ---
 
 #### An Alternative Google Drive Desktop Client for Linux

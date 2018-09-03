@@ -9,6 +9,7 @@ comment_status: open
 permalink: why-hard-link-not-allowed-for-directory
 status: publish
 layout: post
+tags: [Linux, Shell]
 ---
 
 #### Why Hard Link Not Allowed for Directory

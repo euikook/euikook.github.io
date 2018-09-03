@@ -9,6 +9,8 @@ comment_status: open
 permalink: update-ubuntu-mirror-site-in-sources-list
 status: publish
 layout: post
+tags: [Linux, Ubuntu, Mirror]
+
 ---
 
 #### Update Ubuntu Mirror  Site in sources.list
