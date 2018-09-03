@@ -7,10 +7,20 @@ layout: default
       <a id="home" class="waves-effect waves-light btn white-text darken-2 grey z-depth-4" href="javascript:history.back();"><i class="material-icons">arrow_back</i></a>
     </div>
 
+    
+		<ul class="tag-cloud">
+			{% for tag in site.tags %}
+			<span style="font-size: {{ tag | last | size | times: 100 | divided_by: site.tags.size | plus: 70  }}%">
+				<a href="#{{ tag | first | slugize }}">
+					{{ tag | first }}
+				</a> &nbsp;&nbsp;
+			</span>
+			{% endfor %}
+		</ul>
 
       <div class="post-content" itemprop="articleBody">
           {% for tagposts in site.tags %}
-            {% assign tagname = tagposts[0] %}
+						{% capture tagname %}{{ tag | first }}{% endcapture %}
 
           <a class="no-underline" href="/tags/{{ tagname  | replace: ' ', '+' }}">
           <span class="chip waves-effect waves-teal">
