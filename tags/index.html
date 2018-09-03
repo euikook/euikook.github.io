@@ -19,7 +19,7 @@ layout: default
 		</ul>
 
       <div class="post-content" itemprop="articleBody">
-          {% for tagposts in site.tags %}
+          {% for tag in site.tags %}
 						{% capture tagname %}{{ tag | first }}{% endcapture %}
 
           <a class="no-underline" href="/tags/{{ tagname  | replace: ' ', '+' }}">
