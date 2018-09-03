@@ -17,6 +17,18 @@ layout: default
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
       {% endif %}</p>
 
+      {% if page.tags != '' %}
+        <span class="post-tags">
+
+          [
+          {% for tag in page.tags %}
+          {% capture tag_name %}{{ tag }}{% endcapture %}
+            <a class="no-underline" href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code></a>
+          {% endfor %}
+          ]
+        </span>
+      {% endif %}
+
   <div class="post-content" itemprop="articleBody">
     {{ content }}
   </div>
