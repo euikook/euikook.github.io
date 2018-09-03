@@ -12,11 +12,12 @@ permalink: /tags/
 
         <ul class="tag-cloud">
             {% for tag in site.tags %}
-            <span style="font-size: {{ tag | last | size | times: 8 | plus: 100  }}%">
-				<a href="{{ tag | first | slugify }}">
-					{{ tag | first }}
-				</a> &nbsp;&nbsp;
-			</span>
+            <a href="{{ tag | first | slugify }}">
+                <span class="chip waves-effect waves-teal" style="font-size: {{ tag | last | size | times: 8 | plus: 100  }}%">
+					<code class="highligher-rouge"><nobr>{{ tag | first }}</nobr></code>
+			    </span>
+            </a>
+
             {% endfor %}
         </ul>
 
