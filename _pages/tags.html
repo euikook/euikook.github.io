@@ -24,7 +24,7 @@ permalink: /tags/
             {% for tag in site.tags %}
             {% capture tagname %}{{ tag | first }}{% endcapture %}
 
-            <a class="no-underline" href="/tags/{{ tagname  | replace: ' ', '+' }}">
+            <a class="no-underline" href="/tags/{{ tagname  | slugify }}">
           <span class="chip waves-effect waves-teal">
                 <code class="highligher-rouge"><nobr>{{ tagname}}</nobr></code>
           </span>
