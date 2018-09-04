@@ -9,7 +9,7 @@ comment_status: open
 permalink: usages-of-tmux-gnu-screen-alternative-01
 status: publish
 layout: post
-tags: [Linux, screen, tmux]
+tags: [Linux, Shell, Shell Command, screen, tmux]
 ---
 
 #### Usages of tmux, GNU screen Alternative
