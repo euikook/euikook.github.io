@@ -9,7 +9,7 @@ comment_status: open
 permalink: synergy-software-kvm
 status: publish
 layout: post
-tags: [Linux, Windows, Mac, Synerge, KVM, Software KVM, symless] 
+tags: [Linux, Windows, Mac, Synergy, KVM, Software KVM, symless] 
 ---
 
 #### Synergy - Software KVM
