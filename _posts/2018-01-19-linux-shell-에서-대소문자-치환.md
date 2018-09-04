@@ -9,7 +9,7 @@ comment_status: open
 permalink: linux-shell-에서-대소문자-치환
 status: publish
 layout: post
-tags: [Linux, Bash, Shell, Shell Command]
+tags: [Linux, Bash, Shell, Shell Command, tr]
 ---
 
 #### Linux Shell 에서 대소문자 치환
