@@ -9,7 +9,7 @@ comment_status: open
 permalink: why-hard-link-not-allowed-for-directory
 status: publish
 layout: post
-tags: [Linux, Shell]
+tags: [Linux, Shell, Shell Command, ln, Hard Link, Symblic Link]
 ---
 
 #### Why Hard Link Not Allowed for Directory
