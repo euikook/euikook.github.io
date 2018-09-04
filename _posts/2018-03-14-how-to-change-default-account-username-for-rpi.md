@@ -9,7 +9,7 @@ comment_status: open
 permalink: how-to-change-default-account-username-for-rpi
 status: publish
 layout: post
-tags: [Linux, RPi, Raspberry Pi, HowTo] 
+tags: [Linux, RPi, Raspberry Pi, HowTo, Username, Password] 
 ---
 
 #### RPi(Raspberry Pi) Username 변경하기
