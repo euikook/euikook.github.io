@@ -173,3 +173,5 @@ plugins:
   - jekyll-sitemap
 
 include: ['_pages']
+
+# exclude: ['README.md']
