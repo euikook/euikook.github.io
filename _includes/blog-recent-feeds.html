@@ -9,7 +9,7 @@
         <a id="{{post.url}}" class="btn-floating halfway-fab waves-effect waves-light red" href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
       </div>
       <div class="card-content post">
-        <p>{{ post.content |truncatehtml | truncatewords: 60 }}</p>
+        <p>{{ post.content | truncatehtml | truncatewords: 60 }}</p>
       </div>
     </div>
   </div>
