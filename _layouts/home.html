@@ -6,7 +6,7 @@
       <div class="container">
         <br><br>
         <h1 class="header center teal-text text-lighten-2">{{ site.title }}</h1>
-        <div class="row center">
+        <div class="row center  sub-title">
           <h5 class="header col s12 light">{{ site.description }}</h5>
         </div>
         <br><br>
@@ -22,44 +22,23 @@
   {% include cookies.html %}
 </div>
 
-<div class="container" style="padding:20px;">
-  <div id="projects" class="section scrollspy">
-
-  <h3 style="text-align:center;">{{site.projects_heading}}</h3>
-
-{% include projects_{{site.projects_type}}.html %}
-
 </div>
-</div>
-
-<!--<div class="container" style="padding:20px;">-->
-  <!--<div id="skills" class="section scrollspy">-->
-   <!--<h3 style="text-align:center;">Tools and Experience</h3>-->
-   <!--{% include skills.html %}-->
- <!--</div>-->
-<!--</div>-->
-
-
-
-
-  <!--<div class="parallax-container valign-wrapper">-->
-    <!--<div class="section no-pad-bot">-->
-      <!--<div class="container">-->
-        <!--<div class="row center">-->
-
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div class="parallax"><img src="{{site.parallax_image_two}}" alt="Unsplashed background img 3"></div>-->
-  <!--</div>-->
-
 
 <div class="container" style="padding:20px;">
   <div id="blog" class="section scrollspy">
   <h3 style="text-align:center;">Recent Posts</h3>
-  {% include blog-feed.html %}
+  {% include blog-recent-feeds.html %}
 </div>
 </div>
+
+<div class="container" style="padding:20px;">
+  <div id="projects" class="section scrollspy">
+
+    <h3 style="text-align:center;">{{site.projects_heading}}</h3>
+
+    {% include projects_{{site.projects_type}}.html %}
+
+  </div>
 
 <div class="container" style="padding:20px;">
   <div id="contact" class="section scrollspy">
@@ -67,8 +46,6 @@
   {% include contact.html %}
 </div>
 </div>
-
-
 
 
 <!--{% include nav-burger.html %}-->

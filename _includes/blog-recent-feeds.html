@@ -1,5 +1,5 @@
 <div class="row">
-  {% for post in site.posts %}
+  {% for post in site.posts limit: 5 %}
 
   <div class="col s12 m12">
     <div class="card">
@@ -9,7 +9,7 @@
         <a id="{{post.url}}" class="btn-floating halfway-fab waves-effect waves-light red" href="{{ post.url | relative_url }}"><i class="material-icons">more_horiz</i></a>
       </div>
       <div class="card-content post">
-        <p>{{post.excerpt}}</p>
+        <p>{{ post.content |truncatehtml | truncatewords: 60 }}</p>
       </div>
     </div>
   </div>

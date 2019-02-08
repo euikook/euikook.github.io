@@ -3414,6 +3414,10 @@ nav ul a span.badge {
   margin-bottom: 20px;
 }
 
+.sub-title {
+  margin-top: -20px;
+}
+
 .row:after {
   content: "";
   display: table;
