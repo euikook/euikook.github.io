@@ -38,9 +38,9 @@ gulp.task('css', function() {
 // Watch
 gulp.task('watch', function() {
     // Watch .css files
-    gulp.watch('_css/**/*.css', ['css']);
+    gulp.watch('_css/**/*.css', gulp.parallel(['css']));
 
 });
 
 // Default
-gulp.task('default', ['css', 'watch',]);
+gulp.task('default', gulp.series(['css', 'watch',]));
