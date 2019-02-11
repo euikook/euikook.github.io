@@ -1,45 +1,35 @@
-<!DOCTYPE html>
-<html>
-    <head>
-      {% if jekyll.environment == 'production' %}
-        {% if site.tagmanager_id %}
-          {% include tagmanager.html %}
-        {% elsif site.analytics_id %}
-          {% include analytics.html %}
-        {% endif %}
-      {% endif %}
+{% if jekyll.environment == 'production' %}
+    {% if site.tag_manager_id %}
+        {% include tag-manager.html %}
+    {% elsif site.analytics_id %}
+        {% include analytics.html %}
+    {% endif %}
+{% endif %}
 
-      {% seo %}
+{% seo %}
 
-      <!-- Google Adsense -->
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <script>
-          (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-1494649960951277",
-              enable_page_level_ads: true
-          });
-      </script>
-      <!-- End Google Adsense -->
+<!-- Google Adsense -->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-1494649960951277",
+        enable_page_level_ads: true
+    });
+</script>
+<!-- End Google Adsense -->
 
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/built/materialize.css">
-      <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/built/posting.css">
-      <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/built/better-gist-styles.css">
-      <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/built/syntax.css">
-      <!--{% if site.syntax_highlighting %}-->
-        <!--<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/main.css">-->
-      <!--{% endif %}-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-      <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|PT+Sans|Roboto|Roboto+Slab" rel="stylesheet">
-      <title> {{ site.title }} </title>
-    </head>
-    <body>
-      {% if site.tagmanager and jekyll.environment == 'production' %}
-        <!-- Google Tag Manager (noscript) -->
-          <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{site.tag_manager_id}}"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
-      {% endif %}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/built/materialize.css">
+<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/built/posting.css">
+<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/built/better-gist-styles.css">
+<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/built/syntax.css">
+<!--{% if site.syntax_highlighting %}-->
+<!--<link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/main.css">-->
+<!--{% endif %}-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet"
+      href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|PT+Sans|Roboto|Roboto+Slab" rel="stylesheet">
+<title> {{ site.title }} </title>
 

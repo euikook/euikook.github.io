@@ -1,32 +1,42 @@
-{% include head.html %}
+<!DOCTYPE html>
+<html>
+<head>
+    {% include head.html %}
+</head>
+<body>
+{% include inline-content.html %}
 
-  <div id="home" class="section no-pad-top scrollspy">
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center teal-text text-lighten-2">{{ site.title }}</h1>
-        <div class="row center">
-          <h5 class="header col s12 light">{{ site.description }}</h5>
+<div id="home" class="section no-pad-top scrollspy">
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br><br>
+                <h1 class="header center teal-text text-lighten-2">{{ site.title }}</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">{{ site.description }}</h5>
+                </div>
+                <br><br>
+            </div>
         </div>
-        <br><br>
-
-      </div>
+        <div class="parallax"><img src="/{{site.parallax_image_one}}" alt="Unsplashed background img 1"></div>
     </div>
-    <div class="parallax"><img src="/{{site.parallax_image_one}}" alt="Unsplashed background img 1"></div>
-  </div>
 </div>
 
 <div id="cookies" style="display:{{site.cookies_banner}}">
-  <p style="text-align:left; padding-left:8px"><a value="hide/show" id="check" class="waves-effect waves-light green lighten-1 btn btn-floating pulse" onclick="Materialize.toast('{{site.cookie_accept_message}}', 2000)" ><i class="material-icons">check</i></a></p>
-  {% include cookies.html %}
+    <p style="text-align:left; padding-left:8px"><a value="hide/show" id="check"
+                                                    class="waves-effect waves-light green lighten-1 btn btn-floating pulse"
+                                                    onclick="Materialize.toast('{{site.cookie_accept_message}}', 2000)"><i
+            class="material-icons">check</i></a></p>
+    {% include cookies.html %}
 </div>
 
 <div class="container" style="padding:20px;">
-  <div id="blog" class="section scrollspy">
-  <h4 style="text-align:center;">All Posts</h4>
-  {% include blog-feeds.html %}
-</div>
+    <div id="blog" class="section scrollspy">
+        <h4 style="text-align:center;">All Posts</h4>
+        {% include blog-feeds.html %}
+    </div>
 </div>
 
+</body>
 {% include footer.html %}
+</html>

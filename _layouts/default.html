@@ -1,5 +1,11 @@
-{% include head.html %}
-
-  {{content}}
-
+<!DOCTYPE html>
+<html>
+<head>
+    {% include head.html %}
+</head>
+<body>
+{% include inline-content.html %}
+{{content}}
+</body>
 {% include footer.html %}
+</html>
