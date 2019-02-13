@@ -23,7 +23,7 @@ layout: default
         <span class="post-tags">
           {% for tag in page.tags %}
           {% capture tag_name %}{{ tag }}{% endcapture %}
-            <a class="no-underline" href="/tags/{{ tag_name  | replace: ' ', '+' }}">
+            <a class="no-underline" href="/tags/{{ tag_name  | replace: ' ', '-' | downcase }}">
               <span class="chip waves-effect waves-teal">
                 <code class="highligher-rouge"><nobr>{{ tag_name}}</nobr></code>
               </span>
