@@ -68,3 +68,12 @@ plugins:
 include: ['_pages']
 
 # exclude: ['README.md']
+atom:
+  buildCommand:
+    - jekyll
+    - build
+  buildEnv:
+    JEKYLL_ENV: development
+  postDirs:
+    - _newsletters
+  defaultPostDir: _drafts
