@@ -5,7 +5,33 @@
 </head>
 <body>
 {% include inline-content.html %}
+
+<div id="home" class="section no-pad-top scrollspy">
+    <div id="index-banner" class="parallax-container" style="height:325px">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br><br>
+                <h1 class="header center teal-text text-lighten-2">{{ site.title }}</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">{{ site.description }}</h5>
+                </div>
+                <br><br>
+            </div>
+        </div>
+        <div class="parallax"><img src="/{{site.parallax_image_one}}" alt="Unsplashed background img 1"></div>
+    </div>
+</div>
+
+<div id="cookies" style="display:{{site.cookies_banner}}">
+    <p style="text-align:left; padding-left:8px"><a value="hide/show" id="check"
+                                                    class="waves-effect waves-light green lighten-1 btn btn-floating pulse"
+                                                    onclick="Materialize.toast('{{site.cookie_accept_message}}', 2000)"><i
+            class="material-icons">check</i></a></p>
+    {% include cookies.html %}
+</div>
+
 {{content}}
+
 </body>
 {% include footer.html %}
 </html>
