@@ -1,6 +1,6 @@
 ---
 title: RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화
-link: https://blog.grepos.com/incremental-backup-using-rsyncssh/
+link: https://blog.harues.com/incremental-backup-using-rsyncssh/
 author: euikook
 description: 
 post_id: 90
@@ -102,7 +102,7 @@ sudo apt-get install -y rsync uuid
 ### Backup 스크립트 설치
     
 ```bash    
-sudo -H pip install git+https://github.com/grepos/python-backupman.git@master
+sudo -H pip install git+https://github.com/harues/python-backupman.git@master
 backupman --version
 ```
 
@@ -229,4 +229,4 @@ sudo -u backupman -H crontab -e
 ```
     
 
-Backup 스크립트는 아래 Repository에서 확인 할 수 있다. <https://github.com/grepos/python-backupman>
+Backup 스크립트는 아래 Repository에서 확인 할 수 있다. <https://github.com/harues/python-backupman>

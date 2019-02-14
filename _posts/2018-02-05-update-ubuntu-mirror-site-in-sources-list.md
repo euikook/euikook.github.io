@@ -1,6 +1,6 @@
 ---
 title: Update Ubuntu Mirror  Site in sources.list
-link: https://blog.grepos.com/update-ubuntu-mirror-site-in-sources-list/
+link: https://blog.harues.com/update-ubuntu-mirror-site-in-sources-list/
 author: euikook
 description: 
 post_id: 72

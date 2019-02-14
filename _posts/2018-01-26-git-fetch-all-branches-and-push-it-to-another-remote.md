@@ -1,6 +1,6 @@
 ---
 title: git fetch all branches and push it to another remote
-link: https://blog.grepos.com/git-fetch-all-branches-and-push-it-to-another-remote/
+link: https://blog.harues.com/git-fetch-all-branches-and-push-it-to-another-remote/
 author: euikook
 description: 
 post_id: 32

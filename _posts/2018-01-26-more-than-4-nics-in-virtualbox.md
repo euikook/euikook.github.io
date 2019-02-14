@@ -1,6 +1,6 @@
 ---
 title: VirtualBox에서 4개 이상의 네트워크 인터페이스(NIC) 설정하기
-link: https://blog.grepos.com/more-than-4-nics-in-virtualbox/
+link: https://blog.harues.com/more-than-4-nics-in-virtualbox/
 author: euikook
 description: 
 post_id: 31

@@ -1,6 +1,6 @@
 ---
 title: Insync - Linux에서 Google Drive Desktop Client 사용하기
-link: https://blog.grepos.com/alternative-google-drive-desktop-client-for-linux/
+link: https://blog.harues.com/alternative-google-drive-desktop-client-for-linux/
 author: euikook
 description: 
 post_id: 118

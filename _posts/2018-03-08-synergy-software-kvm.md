@@ -1,6 +1,6 @@
 ---
 title: Synergy - Software KVM
-link: https://blog.grepos.com/synergy-software-kvm/
+link: https://blog.harues.com/synergy-software-kvm/
 author: euikook
 description: 
 post_id: 130

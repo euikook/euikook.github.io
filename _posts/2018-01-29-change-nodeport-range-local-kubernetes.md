@@ -1,6 +1,6 @@
 ---
 title: Change NodePort range local kubernetes
-link: https://blog.grepos.com/change-nodeport-range-local-kubernetes/
+link: https://blog.harues.com/change-nodeport-range-local-kubernetes/
 author: euikook
 description: 
 post_id: 30

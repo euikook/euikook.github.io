@@ -1,6 +1,6 @@
 ---
 title: 개발자와 시스템 관리자의 친구 tmux, GNU screen Alternative  - 01
-link: https://blog.grepos.com/usages-of-tmux-gnu-screen-alternative-01/
+link: https://blog.harues.com/usages-of-tmux-gnu-screen-alternative-01/
 author: euikook
 description: 
 post_id: 154

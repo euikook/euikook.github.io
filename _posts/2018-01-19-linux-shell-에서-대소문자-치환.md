@@ -1,6 +1,6 @@
 ---
 title: Linux Shell 에서 대소문자 치환
-link: https://blog.grepos.com/linux-shell-%ec%97%90%ec%84%9c-%eb%8c%80%ec%86%8c%eb%ac%b8%ec%9e%90-%ec%b9%98%ed%99%98/
+link: https://blog.harues.com/linux-shell-%ec%97%90%ec%84%9c-%eb%8c%80%ec%86%8c%eb%ac%b8%ec%9e%90-%ec%b9%98%ed%99%98/
 author: euikook
 description: 
 post_id: 33

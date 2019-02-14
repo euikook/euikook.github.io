@@ -1,6 +1,6 @@
 ---
 title: History 파일에서 특정 엔트리 삭제하기
-link: https://blog.grepos.com/remove-specific-entries-from-history-file/
+link: https://blog.harues.com/remove-specific-entries-from-history-file/
 author: euikook
 description: 
 post_id: 173
