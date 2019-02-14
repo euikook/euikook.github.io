@@ -65,6 +65,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-avatar
 
 include: ['_pages', '.htaccess']
 

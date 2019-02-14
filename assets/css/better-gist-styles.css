@@ -101,8 +101,8 @@ body .gist .pl-e, body .gist .pl-k, body .gist .pl-mdh, body .gist .pl-mdr, body
     max-width: 100%;
     border: color(var(--darkgrey) l(-10%)) 1px solid;
     color: var(--whitegrey);
-    font-size: 0.9rem;
-    line-height: 1.2em;
+    font-size: 1.0rem;
+    line-height: 1.5rem;
     background: color(var(--darkgrey) l(-3%));
     border-radius: 5px;
 }

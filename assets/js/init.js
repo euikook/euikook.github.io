@@ -1,13 +1,24 @@
  (function($){
    $(function(){
 
-     $('.button-collapse').sideNav();
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.parallax');
+      var instances = M.Parallax.init(elems, options);
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.fixed-action-btn');
+      var instances = M.FloatingActionButton.init(elems, options);
+    });  
+
+     // $('.button-collapse').sideNav();
+     $('.fixed-action-btn').floatingActionButton({direction: 'left', hoverEnabled: false});
      $('.parallax').parallax();
      $('.collapsible').collapsible();
      $('.carousel.carousel-slider').carousel({fullWidth: true});
      $('.materialboxed').materialbox();
      $('.scrollspy').scrollSpy();
-     $('.tap-target').tapTarget('open');
+     // $('.tap-target').tapTarget('open');
 
      if (localStorage.getItem('cookieconsent') === 'true') {
        $('#cookies').hide()
