@@ -6,7 +6,8 @@ description:
 post_id: 32
 date: 2018-01-26 04:14:00 0900
 comment_status: open
-permalink: git-fetch-all-branches-and-push-it-to-another-remote
+permalink: posts/git-fetch-all-branches-and-push-it-to-another-remote
+redirect_from: git-fetch-all-branches-and-push-it-to-another-remote
 status: publish
 layout: post
 tags: [Linux, git]

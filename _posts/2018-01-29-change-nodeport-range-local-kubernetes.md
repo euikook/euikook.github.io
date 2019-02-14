@@ -6,7 +6,8 @@ description:
 post_id: 30
 date: 2018-01-29 01:10:00 0900
 comment_status: open
-permalink: change-nodeport-range-local-kubernetes
+permalink: posts/change-nodeport-range-local-kubernetes
+redirect_from: change-nodeport-range-local-kubernetes
 status: publish
 layout: post
 tags: [Linux, Docker, Kubernetes, k8s, nodeport]

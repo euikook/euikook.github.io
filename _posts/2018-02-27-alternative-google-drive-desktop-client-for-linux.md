@@ -6,7 +6,8 @@ description:
 post_id: 118
 date: 2018-02-27 22:57:56 0900
 comment_status: open
-permalink: alternative-google-drive-desktop-client-for-linux
+permalink: posts/alternative-google-drive-desktop-client-for-linux
+redirect_from: alternative-google-drive-desktop-client-for-linux
 status: publish
 layout: post
 tags: [Linux, Insync, Google, Google Drive, G Suite]

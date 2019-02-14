@@ -1,0 +1,9 @@
+# TEST TEST
+Options +FollowSymlinks
+
+RewriteEngine On
+
+RewriteBase /
+
+RewriteCond %{REQUEST_URI} !^/(assets|tags|posts)(/|$)
+RewriteRule ^(.*)$ posts/$1 [R=301,L]

@@ -6,7 +6,8 @@ description:
 post_id: 145
 date: 2018-03-07 22:53:06 0900
 comment_status: open
-permalink: why-hard-link-not-allowed-for-directory
+permalink: posts/why-hard-link-not-allowed-for-directory
+redirect_from: why-hard-link-not-allowed-for-directory
 status: publish
 layout: post
 tags: [Linux, Shell, Shell Command, ln, Hard Link, Symblic Link]

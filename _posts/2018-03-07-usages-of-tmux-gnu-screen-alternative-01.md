@@ -6,7 +6,8 @@ description:
 post_id: 154
 date: 2018-03-07 08:39:20 0900
 comment_status: open
-permalink: usages-of-tmux-gnu-screen-alternative-01
+permalink: posts/usages-of-tmux-gnu-screen-alternative-01
+redirect_from: usages-of-tmux-gnu-screen-alternative-01
 status: publish
 layout: post
 tags: [Linux, Shell, Shell Command, screen, tmux]

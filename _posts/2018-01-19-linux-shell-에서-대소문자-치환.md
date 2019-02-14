@@ -6,7 +6,8 @@ description:
 post_id: 33
 date: 2018-01-19 03:58:00 0900
 comment_status: open
-permalink: linux-shell-에서-대소문자-치환
+permalink: posts/linux-shell-에서-대소문자-치환
+redirect_from: linux-shell-에서-대소문자-치환
 status: publish
 layout: post
 tags: [Linux, Bash, Shell, Shell Command, tr]

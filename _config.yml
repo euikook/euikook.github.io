@@ -39,7 +39,7 @@ github: https://github.com/euikook
 medium: https://blog.gitkat.com
 
 baseurl: # if your site is located at /blog or /home, enter it here, otherwise leave it empty
-url: https://grepos.com #the url of your site
+url: https://harues.com #the url of your site
 
 # Google tracking, if both are filled, tag manager will prevail. Set up GA through GTM in that case
 tag_manager_id: # GTM-MPRJ93G # This looks something like GTM-XXXXXXX
@@ -64,8 +64,9 @@ plugins:
   - jekyll-minifier
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-redirect-from
 
-include: ['_pages']
+include: ['_pages', '.htaccess']
 
 # exclude: ['README.md']
 atom:

@@ -6,7 +6,8 @@ description:
 post_id: 187
 date: 2018-03-14 09:25:38 0900
 comment_status: open
-permalink: how-to-change-default-account-username-for-rpi
+permalink: posts/how-to-change-default-account-username-for-rpi
+redirect_from: how-to-change-default-account-username-for-rpi
 status: publish
 layout: post
 tags: [Linux, RPi, Raspberry Pi, HowTo, Username, Password, Raspian] 

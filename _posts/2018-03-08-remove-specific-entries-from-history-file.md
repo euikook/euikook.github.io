@@ -6,7 +6,8 @@ description:
 post_id: 173
 date: 2018-03-08 14:13:58 0900
 comment_status: open
-permalink: remove-specific-entries-from-history-file
+permalink: posts/remove-specific-entries-from-history-file
+redirect_from: remove-specific-entries-from-history-file
 status: publish
 layout: post
 tags: [Linux, bash, history, shell]

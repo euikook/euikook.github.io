@@ -6,7 +6,8 @@ description:
 post_id: 130
 date: 2018-03-08 15:58:37 0900
 comment_status: open
-permalink: synergy-software-kvm
+permalink: posts/synergy-software-kvm
+redirect_from: synergy-software-kvm
 status: publish
 layout: post
 tags: [Linux, Windows, Mac, Synergy, KVM, Software KVM, symless] 

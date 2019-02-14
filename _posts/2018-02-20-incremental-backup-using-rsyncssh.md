@@ -6,7 +6,8 @@ description:
 post_id: 90
 date: 2018-02-20 14:29:05 0900
 comment_status: open
-permalink: incremental-backup-using-rsyncssh
+permalink: posts/incremental-backup-using-rsyncssh
+redirect_from: incremental-backup-using-rsyncssh
 status: publish
 layout: post
 tags: [Linux, Backup, Incremental Backup, RSYNC, SSH, cron]
