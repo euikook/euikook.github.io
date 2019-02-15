@@ -39,6 +39,8 @@ _ssh-keygen_ 명령으로 SSH KEY를 생성한다.
 ssh-keygen -t rsa -b 4096 -f backupman -C BackupMan
 ```
 
+<!--more-->
+
 ### SSH KEY 배포
 
 private 키를  앞서 생성한 backupman 계정 으로 복사한다. 
@@ -48,7 +50,7 @@ sudo mv backupman ~backupman/.ssh/backupman
 sudo chown backupman:backupman ~backupman/.ssh/backupman
 ```
 
-각 서버로 ssh public  key를 배포한다.
+each 서버로 ssh public  key를 배포한다.
     
 ```bash    
 scp ~/backupman.pub 172.18.18.100:authorized_keys

@@ -32,6 +32,8 @@ VBoxManage modifyvm test-vm --nic5 hostonly
 VBoxManage modifyvm test-vm --hostonlyadapter5 vboxnet0
 ```    
 
+<!--more-->
+
 ## Internal Mode
     
 ```bash    

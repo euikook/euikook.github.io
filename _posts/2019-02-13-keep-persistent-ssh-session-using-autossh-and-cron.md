@@ -16,8 +16,8 @@ tags: [Linux, SSH, autossh, cron, persistent, LocalForward, RemoteForward, Tunne
 
 ### SSH Tunneling
 
-* Local Port Forwarding: used to forward a port from the client machine to the server machine.
-* Remote Port Forwarding:
+ * Local Port Forwarding: used to forward a port from the client machine to the server machine.
+ * Remote Port Forwarding:
 
 #### Local Port Forwarding
 
@@ -44,6 +44,8 @@ ssh -R [bind_addr:]port:target_addr:target_port user@server
 
 
 Please see [http://dirk-loss.de/ssh-port-forwarding.pdf](http://dirk-loss.de/ssh-port-forwarding.pdf)
+
+<!--more-->
 
 ## Prerequisites
 

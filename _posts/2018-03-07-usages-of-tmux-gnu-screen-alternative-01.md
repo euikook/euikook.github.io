@@ -37,6 +37,8 @@ PuTTY등으로 SSH 세션을 연결 한 후 프로그램을 실행하여 작업 
   * 네트워크 불안으로 인한 세션 해제
   * 정전등 전원 불안으로 인한 세션 해제
 
+<!--more-->
+
 TMUX 세션을 생성 한다.
     
 ```bash
@@ -53,7 +55,6 @@ tmux new-session -s test
 ```bash    
 tmux new -s test
 ```
-    
 
 tmux 세션 내에서 vi 명령을 사용하여 테스트 해본다. 
     

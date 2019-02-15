@@ -23,7 +23,7 @@
       </div>
       {% endif %}
       <div class="card-content post">
-        <p>{{ post.content |truncatehtml | truncatewords: 60 }}</p>
+        <div>{{ post.excerpt }}</div>
       </div>
     </div>
   </div>

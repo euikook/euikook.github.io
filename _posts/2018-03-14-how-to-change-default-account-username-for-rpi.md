@@ -29,7 +29,8 @@ Raspberry Pi 공식 이미지의 username 과 password는 다음과 같다.
 ```bash
 sudo passwd root
 ```
-    
+
+<!--more-->     
 
 pi 계정 에서 로그아웃 후 root 계정으로 로그인 한다. 
     
@@ -43,7 +44,6 @@ pi 계정을 harues로 변경한다.
 ```bash    
 usermod -l harues pi
 ```
-    
 
 이제 /home/pi 디렉터리를 /home/harues로 변경하자. 
     

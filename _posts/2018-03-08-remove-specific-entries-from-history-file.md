@@ -30,9 +30,10 @@ mysql -u root -ppassword -h localhost
 ```bash   
 mysql -u root -ppassword -h localhost
 ``` 
-    
 
 아차 하는 순간에 민감한 정보가 History에 남아 있는 경우 
+
+<!--more-->
     
 ```bash    
 history
