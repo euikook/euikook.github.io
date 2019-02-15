@@ -35,25 +35,23 @@
 
 <div class="container" style="padding:20px;">
     <div id="posts" class="section scrollspy">
-        <h3 style="text-align:center;">Recent Posts</h3>
-        {% include blog-recent-feeds.html %}
+        <h4 style="text-align:center;">Recent Posts</h4>
+        {% include recent-feeds.html %}
     </div>
 </div>
 
 <div class="container" style="padding:20px;">
     <div id="projects" class="section scrollspy">
 
-        <h3 style="text-align:center;">{{site.projects_heading}}</h3>
+        <h4 style="text-align:center;">{{site.projects_heading}}</h4>
 
         {% include projects_{{site.projects_type}}.html %}
 
     </div>
 
-    <div class="container">
-        <div id="contact" class="section scrollspy">
-            <h3 style="text-align:center;">Links</h3>
-            {% include contact.html %}
-        </div>
+    <div id="contact" class="section scrollspy">
+        <h4 style="text-align:center;">Links</h4>
+        {% include contact.html %}
     </div>
 </div>
 
