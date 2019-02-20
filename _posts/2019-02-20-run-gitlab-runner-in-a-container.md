@@ -40,6 +40,6 @@ docker-compose up -d
 ```
 
 # References
-* https://docs.gitlab.com/ee/ci/runners/
-* https://docs.gitlab.com/runner/install/docker.html
-* https://dev.to/imichael/this-one-trick-gives-you-unlimited-ci-minutes-on-gitlab-e92
+* [https://docs.gitlab.com/ee/ci/runners/](https://docs.gitlab.com/ee/ci/runners/)
+* [https://docs.gitlab.com/runner/install/docker.html](https://docs.gitlab.com/runner/install/docker.html)
+* [https://dev.to/imichael/this-one-trick-gives-you-unlimited-ci-minutes-on-gitlab-e92](https://dev.to/imichael/this-one-trick-gives-you-unlimited-ci-minutes-on-gitlab-e92)
