@@ -6,7 +6,7 @@ description:
 permalink: posts/run-gitlab-runner-in-a-container
 status: publish
 layout: post
-tags: [Linux, Gitlab, CI, CD, CI/CD SSH, Docker, Container, Compose, docker-compose]
+tags: [Linux, Gitlab, CI, CD, CI/CD, Docker, Container, Compose, docker-compose]
 ---
 # Run Gitlab Runner in a container
 
