@@ -22,7 +22,7 @@ tags: [Linux, Gitlab, CI, CD, CI/CD, Docker, Container, Compose, docker-compose]
 git clone https://gitlab.com/euikook/gitlab-runner-compose.git
 ```
 
-###  Configurationa
+###  Configuration
 * Replace *CI_SERVER_URL* value with your Gitlab server e.g. https://gitlab.com
 * [Obtain a token](https://docs.gitlab.com/ee/ci/runners/) for a shared or specific Runner via GitLab’s interface and replace *REGISTRATION_TOKEN* value
 
