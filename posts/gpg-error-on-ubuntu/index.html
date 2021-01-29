@@ -1,0 +1,33 @@
+<!doctype html><html lang=en-us><head><title>git fetch all branches and push it to another remote - Miscellaneous Notes</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="The HTML5 Herald"><meta name=author content="euikook"><meta property="og:title" content="git fetch all branches and push it to another remote"><meta property="og:description" content="Fix GPG Error on Ubuntu $ sudo apt update ... W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://packages.gitlab.com/gitlab/gitlab-ee/ubuntu bionic InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 3F01618A51312F3F W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used."><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/posts/gpg-error-on-ubuntu/"><meta name=twitter:card content="summary"><meta name=twitter:title content="git fetch all branches and push it to another remote"><meta name=twitter:description content="Fix GPG Error on Ubuntu $ sudo apt update ... W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://packages.gitlab.com/gitlab/gitlab-ee/ubuntu bionic InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 3F01618A51312F3F W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used."><meta name=generator content="Hugo 0.80.0"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin=anonymous><link rel=stylesheet href=http://example.org/fontawesome/css/all.min.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda"><link rel=stylesheet type=text/css href=/css/styles.css></head><body><div id=container><header><h1><a href=/>Miscellaneous Notes</a></h1><ul id=social-media></ul></header><nav><ul></ul></nav><main><article><h1>git fetch all branches and push it to another remote</h1><aside><ul><li><time class=post-date datetime=0001-01-01T00:00:00Z>Jan 1, 0001</time></li><li><em><a href=/tags/linux>#Linux</a>
+,
+<a href=/tags/ubuntu>#Ubuntu</a>
+,
+<a href=/tags/gpg>#GPG</a>
+,
+<a href=/tags/error>#ERROR</a></em></li><li>2 minutes read</li></ul></aside><h1 id=fix-gpg-error-on-ubuntu>Fix GPG Error on Ubuntu</h1><pre><code>$ sudo apt update
+...
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://packages.gitlab.com/gitlab/gitlab-ee/ubuntu bionic InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 3F01618A51312F3F
+W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://packages.gitlab.com/runner/gitlab-runner/ubuntu bionic InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 3F01618A51312F3F
+W: Failed to fetch https://packages.gitlab.com/gitlab/gitlab-ee/ubuntu/dists/bionic/InRelease  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 3F01618A51312F3F
+W: Failed to fetch https://packages.gitlab.com/runner/gitlab-runner/ubuntu/dists/bionic/InRelease  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 3F01618A51312F3F
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+euikook@argentum:/etc/apt/sources.list.d$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3F01618A51312F3F
+Executing: /tmp/apt-key-gpghome.SpBMyBEzT0/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys 3F01618A51312F3F
+
+</code></pre><h2 id=import-gpg-key-from-key-server>Import GPG key from key server</h2><pre><code>$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3F01618A51312F3F
+Executing: /tmp/apt-key-gpghome.SpBMyBEzT0/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys 3F01618A51312F3F
+gpg: key 3F01618A51312F3F: public key &quot;GitLab B.V. (package repository signing key) &lt;packages@gitlab.com&gt;&quot; imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+</code></pre><pre><code>$ sudo apt update
+Hit:3 https://download.docker.com/linux/ubuntu bionic InRelease                                                                                                                                                                   
+Hit:5 http://ppa.launchpad.net/certbot/certbot/ubuntu bionic InRelease                                                                            
+Hit:6 http://archive.ubuntu.com/ubuntu bionic InRelease                                                                                
+Hit:1 http://mirror.kakao.com/ubuntu bionic InRelease                                                                                  
+Get:2 http://mirror.kakao.com/ubuntu bionic-security InRelease [88.7 kB]        
+Get:4 http://mirror.kakao.com/ubuntu bionic-updates InRelease [88.7 kB]                                                                                             
+Get:7 https://packages.gitlab.com/gitlab/gitlab-ee/ubuntu bionic InRelease [23.3 kB]                                                               
+Get:8 https://packages.gitlab.com/runner/gitlab-runner/ubuntu bionic InRelease [23.4 kB]
+</code></pre><blockquote></blockquote></article><section class=post-nav><ul><li><a href=http://example.org/posts/remove-specific-entries-from-history-file/><i class="fa fa-chevron-circle-left"></i>History 파일에서 특정 엔트리 삭제하기</a></li><li><a href=http://example.org/posts/git-fetch-all-branches-and-push-it-to-another-remote/>git fetch all branches and push it to another remote <i class="fa fa-chevron-circle-right"></i></a></li></ul></section></main><footer><h6>|
+Rendered by <a href=https://gohugo.io title=Hugo>Hugo</a> |
+<a href=http://example.org/index.xml>Subscribe</a></h6></footer></div><script src=/js/scripts.js></script></body></html>

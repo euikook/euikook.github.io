@@ -1,0 +1,38 @@
+<!doctype html><html lang=en-us><head><title>Let use zsh - Miscellaneous Notes</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="The HTML5 Herald"><meta name=author content><meta property="og:title" content="Let use zsh"><meta property="og:description" content="Let use zsh .zshrc ZSH=/usr/share/oh-my-zsh/ ZSH_THEME=&#34;agnoster&#34; DISABLE_AUTO_UPDATE=&#34;true&#34; plugins=(git virtualenv) ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh if [[ ! -d $ZSH_CACHE_DIR ]]; then mkdir $ZSH_CACHE_DIR fi source $ZSH/oh-my-zsh.sh source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh source /usr/share/nvm/init-nvm.sh prompt_context() { if [[ &#34;$USER&#34; != &#34;$DEFAULT_USER&#34; || -n &#34;$SSH_CLIENT&#34; ]]; then CONTEXT=&#34;%(!.%{%F{yellow}%}.)%n&#34; if [[ -n &#34;$SSH_CLIENT&#34; ]]; then CONTEXT=&#34;${CONTEXT}@%m&#34; #prompt_segment black default &#34;%(!.%{%F{yellow}%}.)%n@%m&#34; fi prompt_segment black default ${CONTEXT} fi } [[ -s &#34;$HOME/.rvm/scripts/rvm&#34; ]] && source &#34;$HOME/.rvm/scripts/rvm&#34; # Load RVM into a shell session *as a function* # Add RVM to PATH for scripting."><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/posts/let-use-zsh/"><meta name=twitter:card content="summary"><meta name=twitter:title content="Let use zsh"><meta name=twitter:description content="Let use zsh .zshrc ZSH=/usr/share/oh-my-zsh/ ZSH_THEME=&#34;agnoster&#34; DISABLE_AUTO_UPDATE=&#34;true&#34; plugins=(git virtualenv) ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh if [[ ! -d $ZSH_CACHE_DIR ]]; then mkdir $ZSH_CACHE_DIR fi source $ZSH/oh-my-zsh.sh source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh source /usr/share/nvm/init-nvm.sh prompt_context() { if [[ &#34;$USER&#34; != &#34;$DEFAULT_USER&#34; || -n &#34;$SSH_CLIENT&#34; ]]; then CONTEXT=&#34;%(!.%{%F{yellow}%}.)%n&#34; if [[ -n &#34;$SSH_CLIENT&#34; ]]; then CONTEXT=&#34;${CONTEXT}@%m&#34; #prompt_segment black default &#34;%(!.%{%F{yellow}%}.)%n@%m&#34; fi prompt_segment black default ${CONTEXT} fi } [[ -s &#34;$HOME/.rvm/scripts/rvm&#34; ]] && source &#34;$HOME/.rvm/scripts/rvm&#34; # Load RVM into a shell session *as a function* # Add RVM to PATH for scripting."><meta name=generator content="Hugo 0.80.0"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin=anonymous><link rel=stylesheet href=http://example.org/fontawesome/css/all.min.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda"><link rel=stylesheet type=text/css href=/css/styles.css></head><body><div id=container><header><h1><a href=/>Miscellaneous Notes</a></h1><ul id=social-media></ul></header><nav><ul></ul></nav><main><article><h1>Let use zsh</h1><aside><ul><li><time class=post-date datetime=0001-01-01T00:00:00Z>Jan 1, 0001</time></li><li><em><a href=/tags/linux>#Linux</a>
+,
+<a href=/tags/zsh>#zsh</a>
+,
+<a href=/tags/shell>#Shell</a></em></li><li>One minute read</li></ul></aside><h1 id=let-use-zsh>Let use zsh</h1><h2 id=zshrc>.zshrc</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh>ZSH<span style=color:#f92672>=</span>/usr/share/oh-my-zsh/
+ZSH_THEME<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;agnoster&#34;</span>
+DISABLE_AUTO_UPDATE<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;true&#34;</span>
+plugins<span style=color:#f92672>=(</span>git virtualenv<span style=color:#f92672>)</span>
+
+
+ZSH_CACHE_DIR<span style=color:#f92672>=</span>$HOME/.cache/oh-my-zsh
+<span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> ! -d $ZSH_CACHE_DIR <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
+  mkdir $ZSH_CACHE_DIR
+<span style=color:#66d9ef>fi</span>
+
+source $ZSH/oh-my-zsh.sh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/nvm/init-nvm.sh
+
+prompt_context<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+  <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> <span style=color:#e6db74>&#34;</span>$USER<span style=color:#e6db74>&#34;</span> !<span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;</span>$DEFAULT_USER<span style=color:#e6db74>&#34;</span> <span style=color:#f92672>||</span> -n <span style=color:#e6db74>&#34;</span>$SSH_CLIENT<span style=color:#e6db74>&#34;</span> <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
+    CONTEXT<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;%(!.%{%F{yellow}%}.)%n&#34;</span>
+    <span style=color:#66d9ef>if</span> <span style=color:#f92672>[[</span> -n <span style=color:#e6db74>&#34;</span>$SSH_CLIENT<span style=color:#e6db74>&#34;</span> <span style=color:#f92672>]]</span>; <span style=color:#66d9ef>then</span>
+      CONTEXT<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>${</span>CONTEXT<span style=color:#e6db74>}</span><span style=color:#e6db74>@%m&#34;</span>
+      <span style=color:#75715e>#prompt_segment black default &#34;%(!.%{%F{yellow}%}.)%n@%m&#34;</span>
+    <span style=color:#66d9ef>fi</span>
+    prompt_segment black default <span style=color:#e6db74>${</span>CONTEXT<span style=color:#e6db74>}</span>
+  <span style=color:#66d9ef>fi</span>
+<span style=color:#f92672>}</span>
+
+
+<span style=color:#f92672>[[</span> -s <span style=color:#e6db74>&#34;</span>$HOME<span style=color:#e6db74>/.rvm/scripts/rvm&#34;</span> <span style=color:#f92672>]]</span> <span style=color:#f92672>&amp;&amp;</span> source <span style=color:#e6db74>&#34;</span>$HOME<span style=color:#e6db74>/.rvm/scripts/rvm&#34;</span> <span style=color:#75715e># Load RVM into a shell session *as a function*</span>
+
+<span style=color:#75715e># Add RVM to PATH for scripting. Make sure this is the last PATH variable change.</span>
+export PATH<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;</span>$PATH<span style=color:#e6db74>:</span>$HOME<span style=color:#e6db74>/.rvm/bin&#34;</span>
+</code></pre></div></article><section class=post-nav><ul><li><a href=http://example.org/posts/license/><i class="fa fa-chevron-circle-left"></i>LICENSE</a></li><li><a href=http://example.org/posts/drafts/let-use-gollum-wiki/>Let use gollum wiki <i class="fa fa-chevron-circle-right"></i></a></li></ul></section></main><footer><h6>|
+Rendered by <a href=https://gohugo.io title=Hugo>Hugo</a> |
+<a href=http://example.org/index.xml>Subscribe</a></h6></footer></div><script src=/js/scripts.js></script></body></html>

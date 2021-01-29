@@ -1,0 +1,33 @@
+<!doctype html><html lang=en-us><head><title>Miscellaneous Notes</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="The HTML5 Herald"><meta name=author content><meta property="og:title" content><meta property="og:description" content="Errors petalinux-config -c rootfs [INFO] generating Kconfig for project ERROR: Failed to generate /home/euikook/working/oran/xilinx/102/build/misc/config/Kconfig.syshw ERROR: Failed to Kconfig project ERROR: Failed to config rootfs. petalinux-config with the -v option
+petalinux-config -c rootfs -v [INFO] generating Kconfig for project package require hsi FAILED: invalid command name &#34;hsi::create_dt_node&#34; while executing &#34;hsi::create_dt_node -help&#34; (in namespace eval &#34;::hsi::help&#34; script line 6) invoked from within &#34;namespace eval ::hsi::help { variable version 0.1 ::xsdb::setcmdmeta {hsi create_dt_node} categories {hsi} ::xsdb::setcmdmeta {hsi create."><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/posts/petalinux-error/"><meta name=twitter:card content="summary"><meta name=twitter:title content><meta name=twitter:description content="Errors petalinux-config -c rootfs [INFO] generating Kconfig for project ERROR: Failed to generate /home/euikook/working/oran/xilinx/102/build/misc/config/Kconfig.syshw ERROR: Failed to Kconfig project ERROR: Failed to config rootfs. petalinux-config with the -v option
+petalinux-config -c rootfs -v [INFO] generating Kconfig for project package require hsi FAILED: invalid command name &#34;hsi::create_dt_node&#34; while executing &#34;hsi::create_dt_node -help&#34; (in namespace eval &#34;::hsi::help&#34; script line 6) invoked from within &#34;namespace eval ::hsi::help { variable version 0.1 ::xsdb::setcmdmeta {hsi create_dt_node} categories {hsi} ::xsdb::setcmdmeta {hsi create."><meta name=generator content="Hugo 0.80.0"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin=anonymous><link rel=stylesheet href=http://example.org/fontawesome/css/all.min.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda"><link rel=stylesheet type=text/css href=/css/styles.css></head><body><div id=container><header><h1><a href=/>Miscellaneous Notes</a></h1><ul id=social-media></ul></header><nav><ul></ul></nav><main><article><h1></h1><aside><ul><li><time class=post-date datetime=0001-01-01T00:00:00Z>Jan 1, 0001</time></li><li>One minute read</li></ul></aside><h2 id=errors>Errors</h2><pre><code>petalinux-config -c rootfs
+</code></pre><pre><code>[INFO] generating Kconfig for project
+ERROR: Failed to generate /home/euikook/working/oran/xilinx/102/build/misc/config/Kconfig.syshw
+ERROR: Failed to Kconfig project
+ERROR: Failed to config rootfs.
+</code></pre><p><code>petalinux-config</code> with the <code>-v</code> option</p><pre><code>petalinux-config -c rootfs -v
+</code></pre><pre><code>[INFO] generating Kconfig for project
+package require hsi FAILED:
+invalid command name &quot;hsi::create_dt_node&quot;
+    while executing
+&quot;hsi::create_dt_node -help&quot;
+    (in namespace eval &quot;::hsi::help&quot; script line 6)
+    invoked from within
+&quot;namespace eval ::hsi::help {
+    variable version 0.1
+
+    ::xsdb::setcmdmeta {hsi create_dt_node} categories {hsi}
+    ::xsdb::setcmdmeta {hsi create...&quot;
+    (file &quot;/home/euikook/Tools/Xilinx/PetaLinux/2019.2/tools/xsct/scripts/xsct/hsi/hsihelp.tcl&quot; line 25)
+    invoked from within
+&quot;source /home/euikook/Tools/Xilinx/PetaLinux/2019.2/tools/xsct/scripts/xsct/hsi/hsihelp.tcl&quot;
+    (&quot;package ifneeded hsi::help 0.1&quot; script)
+ERROR: Failed to generate /home/euikook/working/oran/xilinx/102/build/misc/config/Kconfig.syshw
+ERROR: Failed to Kconfig project
+ERROR: Failed to config rootfs.
+</code></pre><h2 id=arch-linux>Arch linux</h2><pre><code>yay -Syu ncurses5-compat-libs
+</code></pre><h2 id=others>Others</h2><h3 id=create-synblic-link>Create synblic link</h3><pre><code>sudo ln -s libtinfo.so.6 /usr/lib/libtinfo.so.5
+sudo ln -s  libncursesw.so.6.2 /usr/lib/libncursesw.so.5
+</code></pre><h3 id=remove-linx>Remove Linx</h3><p>sudo rm -rf /usr/lib/libtinfo.so.5 /usr/lib/libncursesw.so.5</p></article><section class=post-nav><ul><li><a href=http://example.org/posts/about/><i class="fa fa-chevron-circle-left"></i>About</a></li><li><a href=http://example.org/posts/gnome-application-switching-on-current-workspace-only/><i class="fa fa-chevron-circle-right"></i></a></li></ul></section></main><footer><h6>|
+Rendered by <a href=https://gohugo.io title=Hugo>Hugo</a> |
+<a href=http://example.org/index.xml>Subscribe</a></h6></footer></div><script src=/js/scripts.js></script></body></html>

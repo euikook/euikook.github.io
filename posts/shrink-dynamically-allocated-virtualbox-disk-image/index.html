@@ -1,0 +1,48 @@
+<!doctype html><html lang=en-us><head><title>Shrink dynamically extended VirtualBox image for export appliance - Miscellaneous Notes</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="The HTML5 Herald"><meta name=author content><meta property="og:title" content="Shrink dynamically extended VirtualBox image for export appliance"><meta property="og:description" content="Shrink dynamically allocated VirtualBox Disk Image(VDI) Motivation 업무에 VirtualBox을 자주 활용한다.
+개발 환경등을 시스템에 설치 하기 힘들때 VirtualBox를 사용하여 개발환경을 구축 하거나 결과물을 설치 하여 테스트용으로 배포한다.
+여러대의 머신이 필요하지만 AWS나 GCP를 사용하기 힘들때 유용한 대안이 바로 VirtualBox이다.
+Virtualbox 가상머신의 디스크를 동적 할당 디스크로 생성 하였을 경우 경우 환경 설치 후 불필요한 파일을 삭제 하더라도 디스크의 크기가 줄어들지 않기 때문에 내보내기 한 이미지도 같이 커진다.
+혼자만 사용할 때는 디스크 용량만 차지할 뿐 아무 문제가 없지만 가상머신을 배포 해야 하는 경우가 되면 이미지의 사이즈가 너무 커서 배포하기 부담스러워 진다."><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/posts/shrink-dynamically-allocated-virtualbox-disk-image/"><meta name=twitter:card content="summary"><meta name=twitter:title content="Shrink dynamically extended VirtualBox image for export appliance"><meta name=twitter:description content="Shrink dynamically allocated VirtualBox Disk Image(VDI) Motivation 업무에 VirtualBox을 자주 활용한다.
+개발 환경등을 시스템에 설치 하기 힘들때 VirtualBox를 사용하여 개발환경을 구축 하거나 결과물을 설치 하여 테스트용으로 배포한다.
+여러대의 머신이 필요하지만 AWS나 GCP를 사용하기 힘들때 유용한 대안이 바로 VirtualBox이다.
+Virtualbox 가상머신의 디스크를 동적 할당 디스크로 생성 하였을 경우 경우 환경 설치 후 불필요한 파일을 삭제 하더라도 디스크의 크기가 줄어들지 않기 때문에 내보내기 한 이미지도 같이 커진다.
+혼자만 사용할 때는 디스크 용량만 차지할 뿐 아무 문제가 없지만 가상머신을 배포 해야 하는 경우가 되면 이미지의 사이즈가 너무 커서 배포하기 부담스러워 진다."><meta name=generator content="Hugo 0.80.0"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin=anonymous><link rel=stylesheet href=http://example.org/fontawesome/css/all.min.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda"><link rel=stylesheet type=text/css href=/css/styles.css></head><body><div id=container><header><h1><a href=/>Miscellaneous Notes</a></h1><ul id=social-media></ul></header><nav><ul></ul></nav><main><article><h1>Shrink dynamically extended VirtualBox image for export appliance</h1><aside><ul><li><time class=post-date datetime=0001-01-01T00:00:00Z>Jan 1, 0001</time></li><li><em><a href=/tags/linux>#Linux</a>
+,
+<a href=/tags/virtualbox>#VirtualBox</a>
+,
+<a href=/tags/vdi>#VDI</a>
+,
+<a href=/tags/shrink>#Shrink</a>
+,
+<a href=/tags/export>#Export</a></em></li><li>3 minutes read</li></ul></aside><h1 id=shrink-dynamically-allocated--virtualbox-disk-imagevdi>Shrink dynamically allocated VirtualBox Disk Image(VDI)</h1><h2 id=motivation>Motivation</h2><p>업무에 <a href=https://www.virtualbox.org/>VirtualBox</a>을 자주 활용한다.</p><p>개발 환경등을 시스템에 설치 하기 힘들때 VirtualBox를 사용하여 개발환경을 구축 하거나 결과물을 설치 하여 테스트용으로 배포한다.</p><p>여러대의 머신이 필요하지만 AWS나 GCP를 사용하기 힘들때 유용한 대안이 바로 VirtualBox이다.</p><p>Virtualbox 가상머신의 디스크를 <strong>동적 할당 디스크</strong>로 생성 하였을 경우 경우 환경 설치 후 불필요한 파일을 삭제 하더라도 디스크의 크기가 줄어들지 않기 때문에 내보내기 한 이미지도 같이 커진다.</p><p>혼자만 사용할 때는 디스크 용량만 차지할 뿐 아무 문제가 없지만 가상머신을 배포 해야 하는 경우가 되면 이미지의 사이즈가 너무 커서 배포하기 부담스러워 진다.</p><p>위와 같은 경우에 효율적인 배포를 위한 동적 할당 디스크의 이미지 사이즈를 줄이는 방법을 소개 한다.</p><p><code>vboxmanage modifymedium --compact</code> 명령을 이용하여 VDI 이미지 사이즈를 줄일 수 있다. <code>--compact</code> 옵션에 대한 설명은 다으과 같다.</p><blockquote><p>The <code>--compact</code> option can be used to compact disk images. Compacting removes blocks that only contains zeroes. Using this option will shrink a dynamically allocated image. It will reduce the <em>physical</em> size of the image without affecting the logical size of the virtual disk. Compaction works both for base images and for differencing images created as part of a snapshot.</p></blockquote><p>자세한 내용은 <a href=https://docs.oracle.com/cd/E97728_01/E97727/html/vboxmanage-modifyvdi.html>여기</a>를 참고.</p><p>하지만 위의 설명과 같이 <code>--compact</code> 옵션은 VDI 파일에서 빈 블럭(only contains zero)만을 찾아 제거해주는 옵션이다.</p><p>리눅스 시스템에서 <code>rm</code> 명령으로 파일을 삭제하더라도 해당 블럭이 실제로 zeroing 되는 것이 아니기 때문에 명령을 실행전 설치된 운영체제나 파일시스템에 맞는 방법으로 비어 있는 블럭을 zeroing 해주어야 한다. (파일 시스템이 extN인 경우 <a href=http://manpages.ubuntu.com/manpages/xenial/man8/zerofree.8.html><code>zerofree</code></a> 명령을 사용하여 zeroing을 한다.</p><h2 id=cleanup-your-system-system-optional>Cleanup your system System (Optional)</h2><p>불필요한 파일을 삭제 하자. (필요한 경우에만 수행한다.)</p><h3 id=cleanup-apt-cache>Cleanup APT cache</h3><pre><code>sudo apt-get clean
+sudo rm -rf /var/lib/apt/lists/*
+</code></pre><h3 id=cleanup-docker-cache>Cleanup docker cache</h3><p>도커를 사용 하는 경우 테스트를 위해 여러 이미지를 당겨받아 테스트 하다 보면 꽤많은 용량을 사용하게 된다.</p><p>모두 삭제하고</p><pre><code>docker system prune -a -f
+</code></pre><p><strong>필요한 이미지만</strong> 다시 당겨받자.</p><pre><code>docker pull mongo:4
+</code></pre><h3 id=uninstall-snap-package>Uninstall snap package.</h3><p>사용하지 않을 경우 삭제 하자.</p><pre><code>sudo apt-get autoremove --purge snapd
+</code></pre><h3 id=cleanup-varlog>Cleanup <em>/var/log</em></h3><p>시스템을 오래 사용하였을 경우 꽤 많은 로그가 쌓여 있다. 삭제할경우 동작중인 프로그램에 문제가 생길수도 있으니 빈 파일로 만든다.</p><pre><code>for f in $(find /var/log -type f); do
+	sudo cat /dev/null &gt; $f;
+	echo &quot; Log $f has been cleared&quot;;
+done
+</code></pre><p>정리를 마쳤으면 시스템을 끈다.</p><pre><code>sudo shutdown -h now
+</code></pre><h2 id=zeroing-free-blocks>Zeroing Free Blocks</h2><p><code>zerofree</code> 명령으로 빈 블럭을 zeroing 하기 위해서는 Root Filesystem을 Readonly Mode로 마운팅 해야 하지만 부팅 상태에서는 잘 되지 않는다.</p><pre><code>$ sudo mount -o remount,ro /
+mount: /: mount point is busy.
+</code></pre><p>여러 방법이 있지만 가장 간단한 Ubuntu 설치 이미지로 부팅한 한 후 <code>zerofree</code> 명령으로 Free Block을 Zeroing 하자.</p><p><a href=http://releases.ubuntu.com/18.04.2/ubuntu-18.04.2-live-server-amd64.iso>Ubuntu 18.04.2 Server Live</a> 이미지를 이용하였다. (이미지에 <code>zerofree</code> 명령이 포함되어 있다.)</p><p>부팅이 완료된후 다음 과 같은 화면이 나오면</p><p>뜨면 <code>ALT</code>+<code>F2</code> 키를 눌러 터미널을 실행 시킨다.</p><p><code>zerofree</code> 명령을 사용하여 빈 블럭을 제로잉 한다.</p><pre><code>sudo zerofree /dev/sda2
+</code></pre><p>완료되면 시스템 종료한다.</p><pre><code>sudo shutdown -h now
+</code></pre><h2 id=compact-the-vdi-file>Compact the VDI file.</h2><p><code>vboxmanage modifymedium --compact</code> 명령을 이용하여 VDI 이미지 사이즈를 줄인다.</p><p>디스크 파일의 위치를 확인하자</p><pre><code>vboxmanage showvminfo ubuntu-bionic-server |grep vdi
+</code></pre><p>아래와 같은 결과를 얻을 수 있다.</p><pre><code>SATA (0, 0): /home/harues/VMs/ubuntu-bionic-server.vdi (UUID: ********-****-****-****-************)
+</code></pre><p><code>--compact</code> 옵션으로 VDI 파일의 사이즈를 줄인다.</p><pre><code>vboxmanage modifymedium &quot;/home/harues/VMs/ubuntu-bionic-server.vdi&quot; --compact
+</code></pre><h2 id=export-virtual-machine>Export Virtual Machine</h2><h3 id=using-export-wizard>Using export wizard.</h3><h3 id=using-command-line-interface>Using Command Line Interface</h3><p><em>vboxmanage list vms</em> 명령으로 내보낼 가상머신의 이미지를 확인한다.</p><pre><code>vboxmanage list vms
+</code></pre><p><em>vboxmanage export</em> 명령으로 VM 을 내 보낸다.</p><pre><code>vboxmanage export $VM_NAME -o $IMG_NAME
+</code></pre><ul><li><p><em>$VM_NAME</em> 은 내보내고자 하는 가상머신의 이름으로 대체 한다. (예: ubuntu-bionic-server)</p></li><li><p><em>$IMG_NAME</em> 은 생성될 이미지의 이름으로 대체한다. (예: ubuntu-bionic-server.ova)</p></li></ul><p><code>vboxmanage export</code> 의 자세한 사용법은 아래 명령을 참고하자</p><pre><code>vboxmanage export --help
+</code></pre><p>다음과 같이 생성될 이미지 파일에 메타데이터를 추가 할수도 있다.</p><pre><code>vboxmanage export ubuntu-bionic-server \
+                  --output ubuntu-bionic-server.ova \
+                  --vsys 0 \
+                  --product &quot;Ubuntu Clean Image&quot; \
+                  --producturl &quot;https://harues.com/posts/&quot; \
+                  --vendor &quot;Harues.com&quot; \
+                  --vendorurl &quot;https://harues.com&quot; \
+                  --version &quot;1.0.0&quot; \
+                  --description &quot;Ubuntu Bionic Server Clean Installation&quot;
+</code></pre></article><section class=post-nav><ul><li><a href=http://example.org/posts/ssh-config-with-include/><i class="fa fa-chevron-circle-left"></i>SSH config with Include</a></li><li><a href=http://example.org/posts/shrink-dynamically-allocated-virtualbox-disk-image-en/>Shrink dynamically extended VirtualBox image for export appliance <i class="fa fa-chevron-circle-right"></i></a></li></ul></section></main><footer><h6>|
+Rendered by <a href=https://gohugo.io title=Hugo>Hugo</a> |
+<a href=http://example.org/index.xml>Subscribe</a></h6></footer></div><script src=/js/scripts.js></script></body></html>

@@ -1,0 +1,126 @@
+<!doctype html><html lang=en-us><head><title>Keep persistent SSH session using autossh and cron - Miscellaneous Notes</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="The HTML5 Herald"><meta name=author content><meta property="og:title" content="Keep persistent SSH session using autossh and cron"><meta property="og:description" content="Keep persistent SSH session using autossh and cron
+Background Knowledge
+SSH Tunneling
+
+Local Port Forwarding: used to forward a port from the client machine to the server machine.
+Remote Port Forwarding:
+
+Local Port Forwarding
+ssh -L [bind_addr:]port:target_addr:target_port user@server
+
+bind_addr
+port
+target_addr
+target_port
+user
+server
+
+Remote Port Forwarding
+ssh -R [bind_addr:]port:target_addr:target_port user@server
+
+bind_addr
+port
+target_addr
+target_port
+user
+server
+
+Please see http://dirk-loss.de/ssh-port-forwarding.pdf"><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/posts/keep-persistent-ssh-session-using-autossh-and-cron/"><meta name=twitter:card content="summary"><meta name=twitter:title content="Keep persistent SSH session using autossh and cron"><meta name=twitter:description content="Keep persistent SSH session using autossh and cron
+Background Knowledge
+SSH Tunneling
+
+Local Port Forwarding: used to forward a port from the client machine to the server machine.
+Remote Port Forwarding:
+
+Local Port Forwarding
+ssh -L [bind_addr:]port:target_addr:target_port user@server
+
+bind_addr
+port
+target_addr
+target_port
+user
+server
+
+Remote Port Forwarding
+ssh -R [bind_addr:]port:target_addr:target_port user@server
+
+bind_addr
+port
+target_addr
+target_port
+user
+server
+
+Please see http://dirk-loss.de/ssh-port-forwarding.pdf"><meta name=generator content="Hugo 0.80.0"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin=anonymous><link rel=stylesheet href=http://example.org/fontawesome/css/all.min.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda"><link rel=stylesheet type=text/css href=/css/styles.css></head><body><div id=container><header><h1><a href=/>Miscellaneous Notes</a></h1><ul id=social-media></ul></header><nav><ul></ul></nav><main><article><h1>Keep persistent SSH session using autossh and cron</h1><aside><ul><li><time class=post-date datetime=0001-01-01T00:00:00Z>Jan 1, 0001</time></li><li><em><a href=/tags/linux>#Linux</a>
+,
+<a href=/tags/ssh>#SSH</a>
+,
+<a href=/tags/autossh>#autossh</a>
+,
+<a href=/tags/cron>#cron</a>
+,
+<a href=/tags/persistent>#persistent</a>
+,
+<a href=/tags/localforward>#LocalForward</a>
+,
+<a href=/tags/remoteforward>#RemoteForward</a>
+,
+<a href=/tags/tunneling>#Tunneling</a></em></li><li>2 minutes read</li></ul></aside><h1 id=keep-persistent-ssh-session-using-autossh-and-cron>Keep persistent SSH session using autossh and cron</h1><h2 id=background-knowledge>Background Knowledge</h2><h3 id=ssh-tunneling>SSH Tunneling</h3><ul><li>Local Port Forwarding: used to forward a port from the client machine to the server machine.</li><li>Remote Port Forwarding:</li></ul><h4 id=local-port-forwarding>Local Port Forwarding</h4><pre><code>ssh -L [bind_addr:]port:target_addr:target_port user@server
+</code></pre><ul><li>bind_addr</li><li>port</li><li>target_addr</li><li>target_port</li><li>user</li><li>server</li></ul><h4 id=remote-port-forwarding>Remote Port Forwarding</h4><pre><code>ssh -R [bind_addr:]port:target_addr:target_port user@server
+</code></pre><ul><li>bind_addr</li><li>port</li><li>target_addr</li><li>target_port</li><li>user</li><li>server</li></ul><p>Please see <a href=http://dirk-loss.de/ssh-port-forwarding.pdf>http://dirk-loss.de/ssh-port-forwarding.pdf</a></p><h2 id=prerequisites>Prerequisites</h2><ul><li>autossh</li></ul><pre><code>sudo apt-get install autossh
+</code></pre><h2 id=server-side>Server Side</h2><h3 id=add-user-for-ssh-tunneling>Add User for SSH tunneling</h3><pre><code>sudo adduser --system --shell /bin/false --gecos &quot;Auto SSH&quot; --disabled-password --home=/home/autossh autossh
+</code></pre><h3 id=generate-ssh-key>Generate SSH key</h3><pre><code>sudo -u autossh ssh-keygen -t rsa -b 4096 -f ~/.ssh/autossh
+</code></pre><h3 id=copy-public-key-to-sshauthorized_keys>Copy public key to ~/.ssh/authorized_keys</h3><pre><code>sudo -u autossh cp ~/.ssh/autossh.pub ~/.ssh/authorized_keys
+</code></pre><h3 id=append-follwing-configuration-to-etcsshsshd_config>Append Follwing Configuration to /etc/ssh/sshd_config</h3><pre><code>Match User autossh
+   #AllowTcpForwarding yes
+   #X11Forwarding no
+   #PermitTunnel no
+   #GatewayPorts no
+   AllowAgentForwarding no
+   PermitOpen localhost:2222
+   ForceCommand echo 'This account can only be used for [reason]'
+</code></pre><p>if did you want <em>Local Port Forwarding</em> please set <em>GatewayPorts</em> to <em>yes</em>.</p><pre><code>Match User autossh
+   ...
+   GatewayPorts no
+   ...
+</code></pre><h3 id=restart-ssh-daemon>Restart SSH daemon</h3><pre><code>sudo systemctl restart ssh
+</code></pre><h2 id=client-side>Client Side</h2><h3 id=copy-ssh-private-key-to-client-host>Copy SSH private key to client host</h3><pre><code>scp 1.2.3.4/.ssh/autossh ~/.ssh/autossh
+</code></pre><h3 id=install-autossh>Install autossh</h3><pre><code>sudo apt install autossh
+</code></pre><h3 id=add-ssh-client-configurations>Add SSH Client Configurations</h3><p>Append following config to ~/.ssh/config</p><p>Replace 1.2.3.4 to real IP or hostname</p><h4 id=for-local-forwarding>for Local Forwarding</h4><p><em>only allowed if <strong>GatewayPort=yes</strong> (default: no) in server configuration.</em></p><pre><code>Host 1.2.3.4 autossh
+    Hostname 1.2.3.4
+    User autossh
+    SendEnv LANG LC_*
+    IdentityFile ~/.ssh/autossh
+    ConnectTimeout 0
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no
+    LocalForward 2222 localhost:22
+    ServerAliveInterval 30
+    ServerAliveCountMax 3
+</code></pre><pre><code>LocalForward 2222 localhost:22
+</code></pre><h4 id=for-remote-forwarding>for Remote Forwarding</h4><pre><code>Host 1.2.3.4 autossh
+    Hostname 1.2.3.4
+    User autossh
+    SendEnv LANG LC_*
+    IdentityFile ~/.ssh/autossh
+    ConnectTimeout 0
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no
+    RemoteForward 2222 localhost:22
+    ServerAliveInterval 30
+    ServerAliveCountMax 3
+</code></pre><pre><code>RemoteForward** 2222 localhost:22
+</code></pre><h3 id=test-ssh-connection>Test SSH connection</h3><pre><code>autossh -M 0 -f -N autossh
+</code></pre><h3 id=verify-ssh-connection>Verify SSH Connection</h3><p>Check listen port in your system.</p><h4 id=for-local-port-forward-in-server>for Local Port Forward (in Server)</h4><pre><code>netstat -lnt
+</code></pre><h4 id=for-remote-port-forward-in-client>for Remote Port Forward (in Client)</h4><pre><code>netstat -lnt
+</code></pre><pre><code>ps aux |grep autossh
+</code></pre><h3 id=copy-autossh-bot-to-bin>Copy autossh-bot to ~/bin</h3><pre><code>mkdir -p ~/bin
+cp ./bin/auto-ssh-bot ~/bin
+</code></pre><h3 id=register-cron-job>Register cron job</h3><pre><code>crontab -e
+</code></pre><p>Schedule cron job to every 5 minutes</p><pre><code>0/5 * * * * ~/bin/auto-ssh-bot
+</code></pre></article><section class=post-nav><ul><li><a href=http://example.org/posts/drafts/let-use-gollum-wiki/><i class="fa fa-chevron-circle-left"></i>Let use gollum wiki</a></li><li><a href=http://example.org/posts/insync-3.x-auto-start-with-xvfb-and-systemctl/>Insync 3.x auto start with xvfb and systemctl <i class="fa fa-chevron-circle-right"></i></a></li></ul></section></main><footer><h6>|
+Rendered by <a href=https://gohugo.io title=Hugo>Hugo</a> |
+<a href=http://example.org/index.xml>Subscribe</a></h6></footer></div><script src=/js/scripts.js></script></body></html>

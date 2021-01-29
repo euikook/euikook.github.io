@@ -1,0 +1,25 @@
+<!doctype html><html lang=en-us><head><title>Disable RALT as ISO_Level3_Shift - Miscellaneous Notes</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="The HTML5 Herald"><meta name=author content><meta property="og:title" content="Disable RALT  as ISO_Level3_Shift"><meta property="og:description" content="Disable RALTas ISO_Level3_Shift 그놈을 최신 버전으로 업그레이드 하면서 Right ALT키가 ISO_Level3_Shift로 인식 되는 경우 가 있다.
+xev 아래와 같이 Keycode 108 번이 ISO_Level3_Shift로 인식된다.
+KeyRelease event, serial 37, synthetic NO, window 0x1400001, root 0x529, subw 0x0, time 107702472, (862,0), root:(2932,214), state 0x90, keycode 108 (keysym 0xfe03, ISO_Level3_Shift), same_screen YES, XKeysymToKeycode returns keycode: 92 XLookupString gives 0 bytes: XFilterEvent returns: False 이 경우 Tweak > Keyboard @ Mouse > Additional Layout Options > Key to choose the 3rd level > Right Alt 선택을 해제하면 된다."><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/posts/disable-ralt-as-iso-level3-shift/"><meta name=twitter:card content="summary"><meta name=twitter:title content="Disable RALT  as ISO_Level3_Shift"><meta name=twitter:description content="Disable RALTas ISO_Level3_Shift 그놈을 최신 버전으로 업그레이드 하면서 Right ALT키가 ISO_Level3_Shift로 인식 되는 경우 가 있다.
+xev 아래와 같이 Keycode 108 번이 ISO_Level3_Shift로 인식된다.
+KeyRelease event, serial 37, synthetic NO, window 0x1400001, root 0x529, subw 0x0, time 107702472, (862,0), root:(2932,214), state 0x90, keycode 108 (keysym 0xfe03, ISO_Level3_Shift), same_screen YES, XKeysymToKeycode returns keycode: 92 XLookupString gives 0 bytes: XFilterEvent returns: False 이 경우 Tweak > Keyboard @ Mouse > Additional Layout Options > Key to choose the 3rd level > Right Alt 선택을 해제하면 된다."><meta name=generator content="Hugo 0.80.0"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin=anonymous><link rel=stylesheet href=http://example.org/fontawesome/css/all.min.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda"><link rel=stylesheet type=text/css href=/css/styles.css></head><body><div id=container><header><h1><a href=/>Miscellaneous Notes</a></h1><ul id=social-media></ul></header><nav><ul></ul></nav><main><article><h1>Disable RALT as ISO_Level3_Shift</h1><aside><ul><li><time class=post-date datetime=0001-01-01T00:00:00Z>Jan 1, 0001</time></li><li><em><a href=/tags/linux>#Linux</a>
+,
+<a href=/tags/gnome>#Gnome</a>
+,
+<a href=/tags/kbd>#kbd</a>
+,
+<a href=/tags/iso_level3_shift>#ISO_Level3_Shift</a>
+,
+<a href=/tags/ralt>#RALT</a>
+,
+<a href=/tags/right-alt>#Right Alt</a></em></li><li>One minute read</li></ul></aside><h1 id=disable-kbdraltkbd--as-kbdiso_level3_shiftkbd>Disable RALT as ISO_Level3_Shift</h1><p>그놈을 최신 버전으로 업그레이드 하면서 Right ALT 키가 ISO_Level3_Shift 로 인식 되는 경우 가 있다.</p><pre><code>xev
+</code></pre><p>아래와 같이 Keycode 108 번이 ISO_Level3_Shift로 인식된다.</p><pre><code>KeyRelease event, serial 37, synthetic NO, window 0x1400001,
+    root 0x529, subw 0x0, time 107702472, (862,0), root:(2932,214),
+    state 0x90, keycode 108 (keysym 0xfe03, ISO_Level3_Shift), same_screen YES,
+    XKeysymToKeycode returns keycode: 92
+    XLookupString gives 0 bytes: 
+    XFilterEvent returns: False
+
+</code></pre><p>이 경우 <code>Tweak</code> > <code>Keyboard @ Mouse</code> > <code>Additional Layout Options</code> > <code>Key to choose the 3rd level</code> > <code>Right Alt</code> 선택을 해제하면 된다.</p><blockquote></blockquote></article><section class=post-nav><ul><li><a href=http://example.org/posts/git-fetch-all-branches-and-push-it-to-another-remote/><i class="fa fa-chevron-circle-left"></i>git fetch all branches and push it to another remote</a></li><li><a href=http://example.org/posts/development-environment-per-project/>Development Environment per Project <i class="fa fa-chevron-circle-right"></i></a></li></ul></section></main><footer><h6>|
+Rendered by <a href=https://gohugo.io title=Hugo>Hugo</a> |
+<a href=http://example.org/index.xml>Subscribe</a></h6></footer></div><script src=/js/scripts.js></script></body></html>

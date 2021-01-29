@@ -1,0 +1,41 @@
+<!doctype html><html lang=en-us><head><title>System Level Linux DNS over TLS on Arch Linux - Miscellaneous Notes</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="The HTML5 Herald"><meta name=author content><meta property="og:title" content="System Level Linux DNS over TLS on Arch Linux"><meta property="og:description" content="System Level Linux DNS over TLS on Arch Linux Prerequisite  stubby dnsmasq  Installation stubby sudo pacmas -S stubby Start and endable stubby sudo systemctl enable stubby sudo systemctl start stubby Configuration Open and edit /etc/stubby/stubby.yml
+listen_addresses: - 127.0.0.1@53000 - 0::1@53000 upstream_recursive_servers: - address_data: 9.9.9.9 tls_auth_name: &#34;dns.quad9.net&#34; - address_data: 9.9.9.10 tls_auth_name: &#34;dns.quad9.net&#34; - address_data: 1.1.1.1 tls_auth_name: &#34;cloudflare-dns.com&#34; - address_data: 1.0.0.1 tls_auth_name: &#34;cloudflare-dns.com&#34; dnsmasq Arch Linux based distribution sudo pacmas -S dnsmasq Start and endable stubby sudo systemctl enable dnsmasq sudo systemctl start dnsmasq Configurations Open and edit /etc/dnsmasq."><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/posts/system-level-linux-dns-over-tls-on-arch-linux/"><meta name=twitter:card content="summary"><meta name=twitter:title content="System Level Linux DNS over TLS on Arch Linux"><meta name=twitter:description content="System Level Linux DNS over TLS on Arch Linux Prerequisite  stubby dnsmasq  Installation stubby sudo pacmas -S stubby Start and endable stubby sudo systemctl enable stubby sudo systemctl start stubby Configuration Open and edit /etc/stubby/stubby.yml
+listen_addresses: - 127.0.0.1@53000 - 0::1@53000 upstream_recursive_servers: - address_data: 9.9.9.9 tls_auth_name: &#34;dns.quad9.net&#34; - address_data: 9.9.9.10 tls_auth_name: &#34;dns.quad9.net&#34; - address_data: 1.1.1.1 tls_auth_name: &#34;cloudflare-dns.com&#34; - address_data: 1.0.0.1 tls_auth_name: &#34;cloudflare-dns.com&#34; dnsmasq Arch Linux based distribution sudo pacmas -S dnsmasq Start and endable stubby sudo systemctl enable dnsmasq sudo systemctl start dnsmasq Configurations Open and edit /etc/dnsmasq."><meta name=generator content="Hugo 0.80.0"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin=anonymous><link rel=stylesheet href=http://example.org/fontawesome/css/all.min.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda"><link rel=stylesheet type=text/css href=/css/styles.css></head><body><div id=container><header><h1><a href=/>Miscellaneous Notes</a></h1><ul id=social-media></ul></header><nav><ul></ul></nav><main><article><h1>System Level Linux DNS over TLS on Arch Linux</h1><aside><ul><li><time class=post-date datetime=0001-01-01T00:00:00Z>Jan 1, 0001</time></li><li><em><a href=/tags/linux>#Linux</a>
+,
+<a href=/tags/arch>#Arch</a>
+,
+<a href=/tags/dnssec>#DNSSEC</a>
+,
+<a href=/tags/dns>#DNS</a>
+,
+<a href=/tags/tls>#TLS</a>
+,
+<a href=/tags/dns-over-tls>#DNS-over-TLS</a></em></li><li>One minute read</li></ul></aside><h1 id=system-level-linux-dns-over-tls-on-arch-linux>System Level Linux DNS over TLS on Arch Linux</h1><h2 id=prerequisite>Prerequisite</h2><ul><li>stubby</li><li>dnsmasq</li></ul><h2 id=installation>Installation</h2><h3 id=stubby>stubby</h3><pre><code>sudo pacmas -S stubby
+</code></pre><h4 id=start-and-endable-stubby>Start and endable stubby</h4><pre><code>sudo systemctl enable stubby
+sudo systemctl start stubby
+</code></pre><h4 id=configuration>Configuration</h4><p>Open and edit <code>/etc/stubby/stubby.yml</code></p><pre><code>listen_addresses:
+  - 127.0.0.1@53000
+  - 0::1@53000
+</code></pre><pre><code>upstream_recursive_servers:
+  - address_data: 9.9.9.9
+    tls_auth_name: &quot;dns.quad9.net&quot;
+  - address_data: 9.9.9.10
+    tls_auth_name: &quot;dns.quad9.net&quot;
+  - address_data: 1.1.1.1
+    tls_auth_name: &quot;cloudflare-dns.com&quot;
+  - address_data: 1.0.0.1
+    tls_auth_name: &quot;cloudflare-dns.com&quot;
+</code></pre><h3 id=dnsmasq>dnsmasq</h3><h4 id=arch-linux-based-distribution>Arch Linux based distribution</h4><pre><code>sudo pacmas -S dnsmasq
+</code></pre><h4 id=start-and-endable-stubby-1>Start and endable stubby</h4><pre><code>sudo systemctl enable dnsmasq
+sudo systemctl start dnsmasq
+</code></pre><h4 id=configurations>Configurations</h4><p>Open and edit <code>/etc/dnsmasq.conf</code></p><pre><code>no-resolv
+proxy-dnssec
+server=::1#53000
+server=127.0.0.1#53000
+listen-address=::1,127.0.0.1
+</code></pre><h2 id=use-dnsmasq-as-default-dns>Use dnsmasq as default DNS</h2><h3 id=common-usages>Common Usages</h3><p>Open and edit <code>/etc/resolv./conf</code></p><pre><code>nameserver 127.0.0.1
+</code></pre><h3 id=with-networkmanager>With <code>NetworkManager</code></h3><pre><code>[main]
+dns=dnsmasq
+</code></pre><blockquote></blockquote></article><section class=post-nav><ul><li><a href=http://example.org/posts/system-level-linux-dns-over-tls-on-utuntu-20.04/><i class="fa fa-chevron-circle-left"></i>System Level Linux DNS over TLS on Ubuntu 20.04</a></li><li><a href=http://example.org/posts/synergy-software-kvm/>Synergy - Software KVM <i class="fa fa-chevron-circle-right"></i></a></li></ul></section></main><footer><h6>|
+Rendered by <a href=https://gohugo.io title=Hugo>Hugo</a> |
+<a href=http://example.org/index.xml>Subscribe</a></h6></footer></div><script src=/js/scripts.js></script></body></html>

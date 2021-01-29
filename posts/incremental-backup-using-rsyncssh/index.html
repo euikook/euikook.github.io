@@ -1,0 +1,95 @@
+<!doctype html><html lang=en-us><head><title>RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화 - Miscellaneous Notes</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="The HTML5 Herald"><meta name=author content><meta property="og:title" content="RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화"><meta property="og:description" content="Incremental Backup Using RSYNC+SSH and cron
+RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화
+관리 하는 서버가 많아지고 서버에 저장되는 데이터의 양이 늘어 날 수록 백업을 어떻게 하여야 하는지 고민이 생긴다. 이 포스트에서는 RSYNC와 SSH를 이용하여 여러 서버의 데이터를 백업하고 이를 자동화 하는 방법에 대하여 기술 한다. 테스트를 위한 서버 구성은 다음과 같다.      아래 예제 에서는 S-01, S-02, _S-03_의 /home 디렉터리를 BackupBot으로 백업 하고자 한다.
+공통 준비 사항
+Backup User 생성
+백업을 위한 사용자 계정을 생성한다.
+sudo adduser --disabled-password --gecos 'BackupMan' backupman
+SSH 키 생성 및 배포
+SSH KEY 생성 (BackupBot)
+ssh-keygen 명령으로 SSH KEY를 생성한다.
+ssh-keygen -t rsa -b 4096 -f backupman -C BackupMan"><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/posts/incremental-backup-using-rsyncssh/"><meta name=twitter:card content="summary"><meta name=twitter:title content="RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화"><meta name=twitter:description content="Incremental Backup Using RSYNC+SSH and cron
+RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화
+관리 하는 서버가 많아지고 서버에 저장되는 데이터의 양이 늘어 날 수록 백업을 어떻게 하여야 하는지 고민이 생긴다. 이 포스트에서는 RSYNC와 SSH를 이용하여 여러 서버의 데이터를 백업하고 이를 자동화 하는 방법에 대하여 기술 한다. 테스트를 위한 서버 구성은 다음과 같다.      아래 예제 에서는 S-01, S-02, _S-03_의 /home 디렉터리를 BackupBot으로 백업 하고자 한다.
+공통 준비 사항
+Backup User 생성
+백업을 위한 사용자 계정을 생성한다.
+sudo adduser --disabled-password --gecos 'BackupMan' backupman
+SSH 키 생성 및 배포
+SSH KEY 생성 (BackupBot)
+ssh-keygen 명령으로 SSH KEY를 생성한다.
+ssh-keygen -t rsa -b 4096 -f backupman -C BackupMan"><meta name=generator content="Hugo 0.80.0"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin=anonymous><link rel=stylesheet href=http://example.org/fontawesome/css/all.min.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda"><link rel=stylesheet type=text/css href=/css/styles.css></head><body><div id=container><header><h1><a href=/>Miscellaneous Notes</a></h1><ul id=social-media></ul></header><nav><ul></ul></nav><main><article><h1>RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화</h1><aside><ul><li><time class=post-date datetime=0001-01-01T00:00:00Z>Jan 1, 0001</time></li><li><em><a href=/tags/linux>#Linux</a>
+,
+<a href=/tags/backup>#Backup</a>
+,
+<a href=/tags/incremental-backup>#Incremental Backup</a>
+,
+<a href=/tags/rsync>#RSYNC</a>
+,
+<a href=/tags/ssh>#SSH</a>
+,
+<a href=/tags/cron>#cron</a></em></li><li>3 minutes read</li></ul></aside><h4 id=incremental-backup-using-rsyncssh-and-cron>Incremental Backup Using RSYNC+SSH and cron</h4><p>RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화</p><p>관리 하는 서버가 많아지고 서버에 저장되는 데이터의 양이 늘어 날 수록 백업을 어떻게 하여야 하는지 고민이 생긴다. 이 포스트에서는 RSYNC와 SSH를 이용하여 여러 서버의 데이터를 백업하고 이를 자동화 하는 방법에 대하여 기술 한다. 테스트를 위한 서버 구성은 다음과 같다.   <img src=/wp-content/uploads/2018/03/Incremental-Backup-using-RSYNCSSH.png alt>   아래 예제 에서는 <em>S-01</em>, <em>S-02</em>, _S-03_의 /home 디렉터리를 BackupBot으로 백업 하고자 한다.</p><h2 id=공통-준비-사항>공통 준비 사항</h2><h3 id=backup-user-생성>Backup User 생성</h3><p>백업을 위한 사용자 계정을 생성한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo adduser --disabled-password --gecos <span style=color:#e6db74>&#39;BackupMan&#39;</span> backupman
+</code></pre></div><h2 id=ssh-키-생성-및-배포>SSH 키 생성 및 배포</h2><h3 id=ssh-key-생성-backupbot>SSH KEY 생성 (BackupBot)</h3><p><em>ssh-keygen</em> 명령으로 SSH KEY를 생성한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ssh-keygen -t rsa -b <span style=color:#ae81ff>4096</span> -f backupman -C BackupMan
+</code></pre></div><h3 id=ssh-key-배포>SSH KEY 배포</h3><p>private 키를  앞서 생성한 backupman 계정 으로 복사한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo mv backupman ~backupman/.ssh/backupman
+sudo chown backupman:backupman ~backupman/.ssh/backupman
+</code></pre></div><p>each 서버로 ssh public  key를 배포한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>scp ~/backupman.pub 172.18.18.100:authorized_keys
+scp ~/backupman.pub 172.18.18.101:authorized_keys
+scp ~/backupman.pub 172.18.18.102:authorized_keys
+</code></pre></div><h3 id=ssh-public-key-설치>SSH public key 설치</h3><p>각 서버에 접속 하여  앞서 복사한 SSH public KEY를 backupman 계정에 복사한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo mv authorized_keys ~backupman/.ssh/authorized_keys
+sudo chown backupman:backupman ~backupman/.ssh/authorized_keys
+sudo chmod <span style=color:#ae81ff>600</span> ~backupman/.ssh/authorized_keys
+</code></pre></div><h2 id=서버-설정>서버 설정</h2><p>백업 하고자 하는 서버에 접속 하여 다음과 같이 설정 한다.</p><h3 id=필요-패키지-설치>필요 패키지 설치</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo apt-get install -y rsync
+</code></pre></div><h3 id=권한-설정>권한 설정</h3><p><em>/etc/sudoers</em> 파일을 열어 권한을 설정 한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo visudo
+</code></pre></div><p>아래 내용을 추가</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>backupman ALL<span style=color:#f92672>=(</span>ALL<span style=color:#f92672>)</span> NOPASSWD: /usr/bin/rsync --server --sender -vlogDtprze.iLsfx --numeric-ids . /*
+</code></pre></div><h2 id=backupbot-설정>BackupBot 설정</h2><h3 id=필요-패키지-설치-1>필요 패키지 설치</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo apt-get install -y rsync uuid
+</code></pre></div><h3 id=backup-스크립트-설치>Backup 스크립트 설치</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo -H pip install git+https://github.com/harues/python-backupman.git@master
+backupman --version
+</code></pre></div><h3 id=권한-설정-1>권한 설정</h3><p><em>/etc/sudoers</em> 파일을 열어 권한을 설정 한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo visudo
+</code></pre></div><p>아래 내용을 추가한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>backupman ALL<span style=color:#f92672>=(</span>ALL<span style=color:#f92672>)</span> NOPASSWD: /usr/local/bin/backupman
+</code></pre></div><h3 id=ssh-client-설정>SSH Client 설정</h3><p>~/.ssh/config 파일을 열어</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo -u backupman -H vi ~backupman/.ssh/config
+</code></pre></div><p>다음과 같이 설정한다. (해당 파일이 없을 경우 생성한다.)</p><pre><code>Host S-01-BACKUP
+Hostname 172.18.18.100
+User backupman
+Port 22
+SendEnv LANG LC_*
+IdentityFile ~/.ssh/backupman
+ConnectTimeout 0
+HashKnownHosts yes
+GSSAPIAuthentication yes
+GSSAPIDelegateCredentials no
+
+Host S-02-BACKUP
+Hostname 172.18.18.101
+User backupman
+Port 22
+SendEnv LANG LC_*
+IdentityFile ~/.ssh/backupman
+ConnectTimeout 0
+HashKnownHosts yes
+GSSAPIAuthentication yes
+GSSAPIDelegateCredentials no
+
+Host S-03-BACKUP
+Hostname 172.18.18.102
+User backupman
+Port 22
+SendEnv LANG LC_*
+IdentityFile ~/.ssh/backupman
+ConnectTimeout 0
+HashKnownHosts yes
+GSSAPIAuthentication yes
+GSSAPIDelegateCredentials no
+</code></pre><h3 id=ssh-client-접속-확인>SSH Client 접속 확인</h3><p>다음 명령으로 배포된 KEY로 SSH접속이 정상적으로 되는지 확인한다.(Password를 물어 보지 않으면 성공.)</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo -u backupman -H ssh S-01-BACKUP
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo -u backupman -H ssh S-02-BACKUP
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo -u backupman -H ssh S-03-BACKUP
+</code></pre></div><h2 id=백업-테스트>백업 테스트</h2><p>백업테스트를 위해 <em>backupman</em> 계정으로 로그인 한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo -u backupman -i
+</code></pre></div><p>다음 명령을 통해 백업 스크립트가 정상적으로 동작 하는지 확인한다.</p><h3 id=s-01>S-01</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo backupman -i -r ssh://S-01-BACKUP/home /home/backupman/S-01
+</code></pre></div><h3 id=s-02>S-02</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo backupman -i -r ssh://S-02-BACKUP/home /home/backupman/S-02
+</code></pre></div><h3 id=s-03>S-03</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo backupman -i -r ssh://S-03-BACKUP/home /home/backupman/S-03
+</code></pre></div><h3 id=cron에-task-등록>Cron에 Task 등록</h3><p>위 명령이 정상적으로 수행되어 백업이 완료 되었으면 cron에 등록 하여 주기적으로 백업이 이루어 지도록 한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo -u backupman -H crontab -e
+</code></pre></div><p>다음 명령을 03, 04, 05시에 각각 <em>S-01</em>, <em>S-02</em>, _S-03_에대한 백업을 수행 하도록 job을 등록한 예제 이다.</p><pre><code class=language-cron data-lang=cron>0  3 * * * sudo /usr/local/bin/backupman -i -r ssh://S-01-BACKUP/home /home/backupman/S-01
+0  4 * * * sudo /usr/local/bin/backupman -i -r ssh://S-02-BACKUP/home /home/backupman/S-02
+0  5 * * * sudo /usr/local/bin/backupman -i -r ssh://S-03-BACKUP/home /home /home/backupman/S-03
+</code></pre><p>Backup 스크립트는 아래 Repository에서 확인 할 수 있다. <a href=https://github.com/harues/python-backupman>https://github.com/harues/python-backupman</a></p></article><section class=post-nav><ul><li><a href=http://example.org/posts/run-gitlab-runner-in-a-container/><i class="fa fa-chevron-circle-left"></i>Run Gitlab Runner in a container</a></li><li><a href=http://example.org/posts/how-to-change-default-account-username-for-rpi/>RPi(Raspberry Pi) Username 변경하기 <i class="fa fa-chevron-circle-right"></i></a></li></ul></section></main><footer><h6>|
+Rendered by <a href=https://gohugo.io title=Hugo>Hugo</a> |
+<a href=http://example.org/index.xml>Subscribe</a></h6></footer></div><script src=/js/scripts.js></script></body></html>

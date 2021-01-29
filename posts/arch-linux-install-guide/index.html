@@ -1,0 +1,130 @@
+<!doctype html><html lang=en-us><head><title>Arch Linix Installation Guide - Miscellaneous Notes</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="The HTML5 Herald"><meta name=author content><meta property="og:title" content="Arch Linix Installation Guide"><meta property="og:description" content="Arch Linix Installation Guide 현재 가지고 있는 시스템 위주로 설명한다.
+부트 디스크 만들기 ISO 파일을 다운로드 한다. 다운로드 후 필요한 경우 gpg 명령으로 파일을 검증한다.
+gpg --keyserver-options auto-key-retrieve --verify archlinux-2020.11.01-x86_64.iso.sig 아래와 같이 Can't check signature: No public key 에러가 발생하면
+gpg --keyserver-options auto-key-retrieve --verify archlinux-2020.11.01-x86_64.iso.sig gpg: assuming signed data in 'archlinux-2020.11.01-x86_64.iso' gpg: Signature made Sun 01 Nov 2020 03:42:16 PM KST gpg: using RSA key 4AA4767BBC9C4B1D18AE28B77F2D434B9741E8AC gpg: Can't check signature: No public key 아래와 같이 키서버를 지정해 준다."><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/posts/arch-linux-install-guide/"><meta name=twitter:card content="summary"><meta name=twitter:title content="Arch Linix Installation Guide"><meta name=twitter:description content="Arch Linix Installation Guide 현재 가지고 있는 시스템 위주로 설명한다.
+부트 디스크 만들기 ISO 파일을 다운로드 한다. 다운로드 후 필요한 경우 gpg 명령으로 파일을 검증한다.
+gpg --keyserver-options auto-key-retrieve --verify archlinux-2020.11.01-x86_64.iso.sig 아래와 같이 Can't check signature: No public key 에러가 발생하면
+gpg --keyserver-options auto-key-retrieve --verify archlinux-2020.11.01-x86_64.iso.sig gpg: assuming signed data in 'archlinux-2020.11.01-x86_64.iso' gpg: Signature made Sun 01 Nov 2020 03:42:16 PM KST gpg: using RSA key 4AA4767BBC9C4B1D18AE28B77F2D434B9741E8AC gpg: Can't check signature: No public key 아래와 같이 키서버를 지정해 준다."><meta name=generator content="Hugo 0.80.0"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin=anonymous><link rel=stylesheet href=http://example.org/fontawesome/css/all.min.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda"><link rel=stylesheet type=text/css href=/css/styles.css></head><body><div id=container><header><h1><a href=/>Miscellaneous Notes</a></h1><ul id=social-media></ul></header><nav><ul></ul></nav><main><article><h1>Arch Linix Installation Guide</h1><aside><ul><li><time class=post-date datetime=0001-01-01T00:00:00Z>Jan 1, 0001</time></li><li><em><a href=/tags/linux>#Linux</a>
+,
+<a href=/tags/arch-linux>#Arch Linux</a>
+,
+<a href=/tags/insync>#Insync</a></em></li><li>5 minutes read</li></ul></aside><h1 id=arch-linix-installation-guide>Arch Linix Installation Guide</h1><p>현재 가지고 있는 시스템 위주로 설명한다.</p><h2 id=부트-디스크-만들기>부트 디스크 만들기</h2><p>ISO 파일을 다운로드 한다. 다운로드 후 필요한 경우 gpg 명령으로 파일을 검증한다.</p><pre><code>gpg --keyserver-options auto-key-retrieve --verify archlinux-2020.11.01-x86_64.iso.sig
+</code></pre><p>아래와 같이 <code>Can't check signature: No public key</code> 에러가 발생하면</p><pre><code>gpg --keyserver-options auto-key-retrieve --verify archlinux-2020.11.01-x86_64.iso.sig
+gpg: assuming signed data in 'archlinux-2020.11.01-x86_64.iso'
+gpg: Signature made Sun 01 Nov 2020 03:42:16 PM KST
+gpg:                using RSA key 4AA4767BBC9C4B1D18AE28B77F2D434B9741E8AC
+gpg: Can't check signature: No public key
+</code></pre><p>아래와 같이 키서버를 지정해 준다.</p><pre><code>gpg --keyserver-options auto-key-retrieve --keyserver=hkp://pool.sks-keyservers.net --verify archlinux-2020.11.01-x86_64.iso.sig
+</code></pre><h2 id=부트-디스크-생성>부트 디스크 생성</h2><pre><code>dd bs=4M if=~/Downloads/archlinux-2020.11.01-x86_64.iso of=/dev/sdb status=progress oflag=sync
+</code></pre><p>부트 디스크로 부팅한다.</p><h2 id=prerequisite>Prerequisite</h2><p>부트 디스크로 부팅 후 쉘이 뜨면 부팅이 완려 된것이다. 설치를 위한 사전 준비 작업을 시작한다.</p><h3 id=네트워크-연결-확인>네트워크 연결 확인</h3><p>아래 명령으로 네트워크 연결을 확인한다.</p><pre><code>ip link 
+ping -c 3 google.co.kr 
+</code></pre><p>아래와 같이 <code>ping</code>이 성공 하면 네트워크 연결이 성공한것이다.</p><pre><code>ping -c 3 google.co.kr
+PING google.co.kr (172.217.161.67) 56(84) bytes of data.
+64 bytes from nrt20s09-in-f3.1e100.net (172.217.161.67): icmp_seq=1 ttl=116 time=46.8 ms
+64 bytes from nrt20s09-in-f3.1e100.net (172.217.161.67): icmp_seq=2 ttl=116 time=39.2 ms
+64 bytes from nrt20s09-in-f3.1e100.net (172.217.161.67): icmp_seq=3 ttl=116 time=39.2 ms
+
+--- google.co.kr ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2002ms
+rtt min/avg/max/mdev = 39.260/41.786/46.802/3.546 ms
+</code></pre><h3 id=update-system-clock-optional>Update system clock (optional)</h3><pre><code>timedatectl set-ntp true
+</code></pre><h2 id=bootstrapping>Bootstrapping</h2><h3 id=partition-the-disk>Partition the disk</h3><pre><code>fdisk -l /dev/nvme0n1
+</code></pre><table><thead><tr><th>Mount Point</th><th>Partition</th><th>Partition Type</th><th>Size</th><th>Notes</th></tr></thead><tbody><tr><td>/mnt/boot</td><td>/dev/nvme0n1p1</td><td>EFI system partition</td><td>512MiB</td><td></td></tr><tr><td>/mnt</td><td>/dev/nvme0n1p2</td><td>Linux filesystem</td><td>64GB</td><td></td></tr><tr><td>/mnt/home</td><td>/dev/nvme0n1p3</td><td>Linux filesystem</td><td>Remainder of the device</td><td></td></tr></tbody></table><p>별도의 SWAP 파티션을 생성하지 않는다. SWAP 파티션이 필요할 경우 <a href=https://wiki.archlinux.org/index.php/Swap#Swap_file>swap file</a>을 사용한다.</p><p>가용 디스크 용량이 충분하기 때문에 시스템이 설치될 파티션(<code>/</code>)과 <code>/home</code> 파티션을 분리 한다.
+OS 재설시 <code>/home</code> 파티션을 유지하면서 OS를 설치 할 수 있기 때문에 OS 재설치 시 유리한다.</p><p><code>fdisk</code>, <code>cfdisk</code>, <code>gfdisk</code> 명령 중 원하는 파티셔닝 프로그램으로 파티션을 진행한다.</p><pre><code>cfdisk /dev/nvme0n1
+</code></pre><h3 id=format-the-partitions>Format the partitions</h3><pre><code>mkfs.vfat -F32 /dev/nvme0n1p1
+mkfs.ext4 -j /dev/nvme0n1p2
+mkfs.ext4 -j /dev/nvme0n1p3
+</code></pre><h3 id=mount-filesystem>Mount filesystem</h3><pre><code>mount /dev/nvme0n1p2 /mnt
+mkdir -p /mnt/boot
+mount /dev/nvme0n1p1 /mnt/boot
+mkdir -o /mnt/home
+mount /dev/nvme0n1p3 /mnt/home
+</code></pre><h3 id=update-mirror-list>Update Mirror List</h3><pre><code>vi /etc/pacman.d/mirrorlist
+</code></pre><p>아래 라인을 서버리스트 가장 위에 추가한다.</p><pre><code>Server = http://mirror.premi.st/archlinux/$repo/os/$arch
+Server = http://ftp.lanet.kr/pub/archlinux/$repo/os/$arch
+Server = https://ftp.lanet.kr/pub/archlinux/$repo/os/$arch
+Server = http://ftp.harukasan.org/archlinux/$repo/os/$arch
+Server = https://ftp.harukasan.org/archlinux/$repo/os/$arch
+</code></pre><h3 id=pacstrap>pacstrap</h3><pre><code>pacstrap /mnt base linux linux-firmware vim networkmanager base-devel man-db man-pages texinfo dosfstools e2fsprogs
+</code></pre><h3 id=generate-etcfstab>Generate <code>/etc/fstab</code></h3><pre><code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</code></pre><h3 id=chrooting>chrooting</h3><pre><code>arch-chroot /mnt
+</code></pre><pre><code>ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+</code></pre><h3 id=generating-locales>Generating locales</h3><p>Edit <code>/etc/locale.gen</code> and uncomment en_US.UTF-8 UTF-8. Generate the locales by running</p><pre><code>locake-gen
+</code></pre><p>Create <code>locale.conf</code></p><pre><code>echo &quot;LANG=en_US.UTF-8&quot; &gt;&gt; /etc/locale.conf
+echo &quot;LC_ALL=en_US.UTF-8&quot; &gt;&gt; /etc/locale.conf
+</code></pre><h3 id=network-configuration>Network Configuration</h3><p>Set Hostname</p><pre><code>echo Coconut &gt; /etc/hostname 
+</code></pre><p>add to hosts</p><pre><code>127.0.0.1	localhost
+::1			localhost
+127.0.1.1	coconut.localdomain coconut
+</code></pre><p>Enable NetworkManager service</p><pre><code>systemctl enable NetworkManager.service
+</code></pre><h3 id=initramfs>initramfs</h3><pre><code>mkinitcpio -P
+</code></pre><pre><code>passwd
+</code></pre><h3 id=create-primary-user>Create primary user</h3><pre><code>useradd -m -G users,wheel -s /bin/bash euikook
+</code></pre><p>Set password to <code>euikook</code></p><pre><code>passwd euikook
+</code></pre><h3 id=enable-sudo-command-to-wheel-groups>Enable sudo command to wheel groups</h3><p>Run <code>visudo</code> command and uncomment <code>%wheel ALL=(ALL:ALL) ALL</code></p><pre><code>%wheel ALL=(ALL:ALL) ALL
+</code></pre><h3 id=install-bootloader-grub>Install bootloader (GRUB)</h3><pre><code>pacman -Syu
+pacman -S grub efibootmgt
+</code></pre><pre><code>grub-install --target=x86_64-efi --eif-directory=/boot --bootloader-id=arch --recheck
+</code></pre><p>Edit <code>/etc/default/grub</code></p><pre><code>grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre><h3 id=finish-bootstrapping>Finish bootstrapping</h3><p>Exit from chroot</p><pre><code>exit
+</code></pre><p>Un-Mount mounted directories</p><pre><code>umount -R /mnt
+</code></pre><pre><code>shutdown -r now
+</code></pre><h2 id=post-bootstrapping>Post bootstrapping</h2><h3 id=intel-microcode>Intel Microcode</h3><pre><code>sudo pacman -S intel-ucode
+grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre><h3 id=gui-설치>GUI 설치</h3><p>패키지 리스트 업데이트</p><pre><code>sudo pacman -Syu
+</code></pre><p>Gnome 설치</p><pre><code>sudo pacman -S xorg-server gnome
+sudo systemctl enable gdb
+</code></pre><p>그래픽 카드 드라이버 설치</p><pre><code>sudo pacman -S xf86-video-intel
+sudo pacman -S nvidia xf86-video-intel
+</code></pre><p>기타 어플리케이션 설치</p><pre><code>pacman -S firefox
+</code></pre><pre><code>sudo shutdown -r now
+</code></pre><h3 id=package-from-aur>Package from AUR</h3><pre><code>cd ~/Downloads
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -sic
+</code></pre><h4 id=fonts>Fonts</h4><pre><code> sudo yay -S ttf-nanum
+</code></pre><h4 id=google-chrome>Google Chrome</h4><pre><code>sydo yay -S google-chrome
+</code></pre><h3 id=한글-입력-설정>한글 입력 설정</h3><pre><code>sudo pacman -S ibus ibus-hangul
+</code></pre><p>Terminal에서 <code>ibus-setup</code> 을 실행한다.</p><pre><code>ibus-setup
+</code></pre><ul><li>Input Method에 다른 언어들은 모두 삭제 하고 <code>Korean - Hangul</code>을 추가 한다.</li><li>Korean - Hangul을 선택한 상태에서 Preferences를 클릭하여 <code>ibus-hangul</code> 설정을 진행한다.<ul><li>한영 전환 키 등</li><li></li></ul></li></ul><p><code>Settings</code> > <code>Region & Language</code> > <code>Input Sources</code></p><p><code>Korean(Hangul)</code>을 추가한다.</p><h4 id=kbd한영kbd-전환키가-없는-키보드에서-right-kbdraltkbd를-kbd한영kbd-전환키로-사용하기>한/영 전환키가 없는 키보드에서 Right RALT를 한/영 전환키로 사용하기</h4><p>몇가지 방법이 있지만 가장 쉬운 방법은 Gnome Tweak 툴에서 다음과 같이 설정한다.</p><p><code>Tweak</code> > <code>Keyboard @ Mouse</code> > <code>Additional Layout Options</code> > <code>Korean Hangul/Hanja Keys</code> > <code>Make right Alt a Hangul key</code> 선택</p><p>이유를 확인 해보지는 않았지만 <code>xev</code> 등의 명령으로 확인해보면 <code>RALT</code> 키가 <code>ISO_Level3_shift</code>로 설정 된 경우가 있다. 이 경우 <code>Tweak</code> > <code>Keyboard @ Mouse</code> > <code>Additional Layout Options</code> > <code>Key to choose the 3rd level</code> > <code>Right Alt</code> 선택을 해제한다.</p><h3 id=auto-completion-for-sudo-command>Auto completion for <code>sudo</code> command</h3><p><code>~/.bashrc</code></p><pre><code>complate -cf sudo
+</code></pre><h3 id=logitech-mouse-설정>Logitech Mouse 설정</h3><p>Install Logiops <a href=https://aur.archlinux.org/packages/logiops-git/>logiops-git</a>^AUR^</p><pre><code>yay -S logiops-git
+</code></pre><p>Create <code>/etc/logid.cfg</code> file as following:</p><pre><code>devices: ({
+  name: &quot;Logitech Wireless Mouse MX Master 3&quot;;
+
+  // A lower threshold number makes the wheel switch to free-spin mode
+  // quicker when scrolling fast.
+  smartshift: { on: true; threshold: 20; };
+
+  hiresscroll: { hires: true; invert: false; target: false; };
+
+  // Higher numbers make the mouse more sensitive (cursor moves faster),
+  // 4000 max for MX Master 3.
+  dpi: 3000;
+
+  buttons: (
+
+    // Make thumb button 10.
+    { cid: 0xc3; action = { type: &quot;Keypress&quot;; keys: [&quot;BTN_FORWARD&quot;]; }; },
+
+    // Make top button 11.
+    { cid: 0xc4; action = { type: &quot;Keypress&quot;; keys: [&quot;BTN_BACK&quot;];    }; }
+
+  );
+});
+</code></pre><h3 id=insync-3x>Insync 3.x</h3><p>Install <a href=https://aur.archlinux.org/packages/insync/>Insync</a>^AUR^</p><pre><code>yay -S insync
+</code></pre><p>재설치 이고 이전 데이터를 모두 가지고 있다면 실행전 이전 머신의 ~/.config/Insync 디렉터리를 복사 하여 덮어 쓰면 이전 설정을 그대로 사용할 수 있음.</p><pre><code>rsync -avz -e ssh ${OLDBOX}:/home/${USER}/.config/Insync ~/.config
+</code></pre><h4 id=autostart-with-login>Autostart with Login</h4><p><code>~/.config/autostart/insync.desktop</code></p><pre><code>[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Insync
+GenericName=Insync
+Comment=Launch Insync
+Icon=insync
+Categories=Network;
+Exec=insync start
+TryExec=insync
+Terminal=false
+X-GNOME-Autostart-Delay=15
+</code></pre><p><a href=https://extensions.gnome.org/extension/1503/tray-icons/>Tray Icons</a>^Extention^ 확장을 사용한다면 <code>X-GNOME-Autostart-Delay=15</code> 옵션을 주어야 한다.</p><blockquote></blockquote></article><section class=post-nav><ul><li><a href=http://example.org/posts/auto-mount-removable-drives-to-specific-mounting-point/><i class="fa fa-chevron-circle-left"></i>Auto mount removable drives to specific mounting point</a></li><li><a href=http://example.org/posts/right-alt-as-hangul/>Alt_R as Hangul on Ubuntu 18.04 <i class="fa fa-chevron-circle-right"></i></a></li></ul></section></main><footer><h6>|
+Rendered by <a href=https://gohugo.io title=Hugo>Hugo</a> |
+<a href=http://example.org/index.xml>Subscribe</a></h6></footer></div><script src=/js/scripts.js></script></body></html>

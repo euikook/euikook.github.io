@@ -1,0 +1,35 @@
+<!doctype html><html lang=en-us><head><title>Development Environment per Project - Miscellaneous Notes</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="The HTML5 Herald"><meta name=author content><meta property="og:title" content="Development Environment per Project"><meta property="og:description" content="Development environment per project Motivation Development environments installed in project directory /home/$USER/test-project/.env
+Example of environment file TOP_DIR=$(dirname $(realpath $_)) . ${TOP_DIR}/venv/bin/activate export LD_LIBRARY_PATH=${VIRTUAL_ENV}/lib cd ${TOP_DIR} Append alias to shell ~/.aliases
+alias test-project-env=&#34;. ~/working/test-project/.env&#34; ~/.bashrc or ~/.zshrc
+. ~/.aliases Appply alias without restart shell
+source ~/.aliases onto test-project environment
+test-project-env Using Docker Create Docker image for development docker build -t test-project-dev-env:latest . Run docker image for testing docker run --rm -it -v $(pwd):/apps test-project-devel bash"><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/posts/development-environment-per-project/"><meta name=twitter:card content="summary"><meta name=twitter:title content="Development Environment per Project"><meta name=twitter:description content="Development environment per project Motivation Development environments installed in project directory /home/$USER/test-project/.env
+Example of environment file TOP_DIR=$(dirname $(realpath $_)) . ${TOP_DIR}/venv/bin/activate export LD_LIBRARY_PATH=${VIRTUAL_ENV}/lib cd ${TOP_DIR} Append alias to shell ~/.aliases
+alias test-project-env=&#34;. ~/working/test-project/.env&#34; ~/.bashrc or ~/.zshrc
+. ~/.aliases Appply alias without restart shell
+source ~/.aliases onto test-project environment
+test-project-env Using Docker Create Docker image for development docker build -t test-project-dev-env:latest . Run docker image for testing docker run --rm -it -v $(pwd):/apps test-project-devel bash"><meta name=generator content="Hugo 0.80.0"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin=anonymous><link rel=stylesheet href=http://example.org/fontawesome/css/all.min.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda"><link rel=stylesheet type=text/css href=/css/styles.css></head><body><div id=container><header><h1><a href=/>Miscellaneous Notes</a></h1><ul id=social-media></ul></header><nav><ul></ul></nav><main><article><h1>Development Environment per Project</h1><aside><ul><li><time class=post-date datetime=0001-01-01T00:00:00Z>Jan 1, 0001</time></li><li><em><a href=/tags/linux>#Linux</a>
+,
+<a href=/tags/arch>#Arch</a>
+,
+<a href=/tags/arch-linux>#Arch Linux</a>
+,
+<a href=/tags/devel>#devel</a>
+,
+<a href=/tags/development>#Development</a>
+,
+<a href=/tags/environment>#Environment</a>
+,
+<a href=/tags/environment-variables>#Environment Variables</a></em></li><li>One minute read</li></ul></aside><h1 id=development-environment-per-project>Development environment per project</h1><h2 id=motivation>Motivation</h2><h2 id=development-environments-installed-in-project-directory>Development environments installed in project directory</h2><p><code>/home/$USER/test-project/.env</code></p><h3 id=example-of-environment-file>Example of environment file</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>TOP_DIR<span style=color:#f92672>=</span><span style=color:#66d9ef>$(</span>dirname <span style=color:#66d9ef>$(</span>realpath $_<span style=color:#66d9ef>))</span>
+. <span style=color:#e6db74>${</span>TOP_DIR<span style=color:#e6db74>}</span>/venv/bin/activate
+export LD_LIBRARY_PATH<span style=color:#f92672>=</span><span style=color:#e6db74>${</span>VIRTUAL_ENV<span style=color:#e6db74>}</span>/lib
+cd <span style=color:#e6db74>${</span>TOP_DIR<span style=color:#e6db74>}</span>
+</code></pre></div><h3 id=append-alias-to-shell>Append alias to shell</h3><p><code>~/.aliases</code></p><pre><code>alias test-project-env=&quot;. ~/working/test-project/.env&quot;
+</code></pre><p><code>~/.bashrc</code> or <code>~/.zshrc</code></p><pre><code>. ~/.aliases
+</code></pre><p>Appply alias without restart shell</p><pre><code>source ~/.aliases
+</code></pre><p>onto <code>test-project</code> environment</p><pre><code>test-project-env
+</code></pre><h2 id=using-docker>Using Docker</h2><h3 id=create-docker-image-for-development>Create Docker image for development</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>docker build -t test-project-dev-env:latest .
+</code></pre></div><h3 id=run-docker-image-for-testing>Run docker image for testing</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>docker run --rm -it  -v <span style=color:#66d9ef>$(</span>pwd<span style=color:#66d9ef>)</span>:/apps test-project-devel bash
+</code></pre></div></article><section class=post-nav><ul><li><a href=http://example.org/posts/disable-ralt-as-iso-level3-shift/><i class="fa fa-chevron-circle-left"></i>Disable RALT as ISO_Level3_Shift</a></li><li><a href=http://example.org/posts/change-nodeport-range-local-kubernetes/>Change NodePort range local kubernetes <i class="fa fa-chevron-circle-right"></i></a></li></ul></section></main><footer><h6>|
+Rendered by <a href=https://gohugo.io title=Hugo>Hugo</a> |
+<a href=http://example.org/index.xml>Subscribe</a></h6></footer></div><script src=/js/scripts.js></script></body></html>

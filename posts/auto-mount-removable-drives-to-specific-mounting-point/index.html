@@ -1,0 +1,98 @@
+<!doctype html><html lang=en-us><head><title>Auto mount removable drives to specific mounting point - Miscellaneous Notes</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="The HTML5 Herald"><meta name=author content><meta property="og:title" content="Auto mount removable drives to specific mounting point"><meta property="og:description" content="Auto mount removable drives to specific mounting point Check Block identifier for disk using blkid command.
+blkid blkid /dev/sda2 /dev/sda2: UUID=&#34;ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3&#34; BLOCK_SIZE=&#34;4096&#34; TYPE=&#34;ext4&#34; PARTUUID=&#34;39b52ccd-5972-4bb7-ba9b-279441d990df&#34; <blkid> is ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3
+Unmount disk if it alrady mounted
+sudo umount /dev/sda2 Edit /etc/fstab
+# Disk from USB UUID=ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3	/home/data ext4 noauto,rw,relatime	0 2 /usr/local/bin/usb-mount
+#!/bin/bash UUID=$2 DEVF=$(blkid --uuid ${UUID}) [[ -n ${DEVF} ]] || { echo &#34; No such disk partition from ${UUID}&#34; exit -1 } # Check partition already mounted MOUNTED=$(/bin/mount | /bin/grep ${DEVF} | /usr/bin/awk '{ print $3 }') start() { [[ -n ${MOUNTED} ]] || { /bin/mount -U ${UUID} } } stop() { [[ -n ${MOUNTED} ]] && { /bin/umount -l ${DEVF} } || exit 0 } status() { /bin/mount | /bin/grep ${DEVF} || exit 0 } case &#34;${1:-status}&#34; in start) start ;; stop) stop ;; restart) stop start ;; status) status ;; *) echo &#34;Usage: $0 {start|stop|restart|status}&#34; >&2 exit 1 ;; esac sudo chmod +x /usr/local/bin/usb-mount` cat /etc/systemd/system/usb."><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/posts/auto-mount-removable-drives-to-specific-mounting-point/"><meta name=twitter:card content="summary"><meta name=twitter:title content="Auto mount removable drives to specific mounting point"><meta name=twitter:description content="Auto mount removable drives to specific mounting point Check Block identifier for disk using blkid command.
+blkid blkid /dev/sda2 /dev/sda2: UUID=&#34;ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3&#34; BLOCK_SIZE=&#34;4096&#34; TYPE=&#34;ext4&#34; PARTUUID=&#34;39b52ccd-5972-4bb7-ba9b-279441d990df&#34; <blkid> is ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3
+Unmount disk if it alrady mounted
+sudo umount /dev/sda2 Edit /etc/fstab
+# Disk from USB UUID=ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3	/home/data ext4 noauto,rw,relatime	0 2 /usr/local/bin/usb-mount
+#!/bin/bash UUID=$2 DEVF=$(blkid --uuid ${UUID}) [[ -n ${DEVF} ]] || { echo &#34; No such disk partition from ${UUID}&#34; exit -1 } # Check partition already mounted MOUNTED=$(/bin/mount | /bin/grep ${DEVF} | /usr/bin/awk '{ print $3 }') start() { [[ -n ${MOUNTED} ]] || { /bin/mount -U ${UUID} } } stop() { [[ -n ${MOUNTED} ]] && { /bin/umount -l ${DEVF} } || exit 0 } status() { /bin/mount | /bin/grep ${DEVF} || exit 0 } case &#34;${1:-status}&#34; in start) start ;; stop) stop ;; restart) stop start ;; status) status ;; *) echo &#34;Usage: $0 {start|stop|restart|status}&#34; >&2 exit 1 ;; esac sudo chmod +x /usr/local/bin/usb-mount` cat /etc/systemd/system/usb."><meta name=generator content="Hugo 0.80.0"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin=anonymous><link rel=stylesheet href=http://example.org/fontawesome/css/all.min.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda"><link rel=stylesheet type=text/css href=/css/styles.css></head><body><div id=container><header><h1><a href=/>Miscellaneous Notes</a></h1><ul id=social-media></ul></header><nav><ul></ul></nav><main><article><h1>Auto mount removable drives to specific mounting point</h1><aside><ul><li><time class=post-date datetime=0001-01-01T00:00:00Z>Jan 1, 0001</time></li><li><em><a href=/tags/linux>#Linux</a>
+,
+<a href=/tags/arch>#Arch</a>
+,
+<a href=/tags/arch-linux>#Arch Linux</a>
+,
+<a href=/tags/gnome>#Gnome</a>
+,
+<a href=/tags/auto-mounting>#auto mounting</a>
+,
+<a href=/tags/mount>#mount</a>
+,
+<a href=/tags/usb>#usb</a>
+,
+<a href=/tags/removable>#removable</a></em></li><li>One minute read</li></ul></aside><h1 id=auto-mount-removable-drives-to-specific-mounting-point>Auto mount removable drives to specific mounting point</h1><p>Check Block identifier for disk using <code>blkid</code> command.</p><pre><code>blkid
+</code></pre><pre><code>blkid /dev/sda2
+/dev/sda2: UUID=&quot;ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3&quot; BLOCK_SIZE=&quot;4096&quot; TYPE=&quot;ext4&quot; PARTUUID=&quot;39b52ccd-5972-4bb7-ba9b-279441d990df&quot;
+</code></pre><p><code>&lt;blkid></code> is <code>ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3</code></p><p>Unmount disk if it alrady mounted</p><pre><code>sudo umount /dev/sda2
+</code></pre><p>Edit <code>/etc/fstab</code></p><pre><code># Disk from USB
+UUID=ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3	/home/data     	ext4      	noauto,rw,relatime	0 2
+</code></pre><p><code>/usr/local/bin/usb-mount</code></p><pre><code>#!/bin/bash
+
+UUID=$2
+DEVF=$(blkid --uuid ${UUID})
+
+[[ -n ${DEVF} ]] || {
+    echo &quot; No such disk partition from ${UUID}&quot;
+    exit -1
+}
+
+# Check partition already mounted
+MOUNTED=$(/bin/mount | /bin/grep ${DEVF} | /usr/bin/awk '{ print $3 }')
+
+start() {
+    [[ -n ${MOUNTED} ]] || {
+        /bin/mount -U ${UUID}
+    }
+	
+}
+
+stop()
+{
+    [[ -n ${MOUNTED} ]] &amp;&amp; {
+        /bin/umount -l ${DEVF}
+    } || exit 0
+}
+
+status() {
+    /bin/mount | /bin/grep ${DEVF} || exit 0
+}
+
+case &quot;${1:-status}&quot; in
+    start)
+       	start
+        ;;
+    stop)
+        stop
+	;;
+    restart)
+	stop
+	start
+        ;;
+    status)
+	status
+	;;
+    *)
+        echo &quot;Usage: $0 {start|stop|restart|status}&quot; &gt;&amp;2
+        exit 1
+        ;;
+esac
+</code></pre><pre><code>sudo chmod +x /usr/local/bin/usb-mount`
+</code></pre><p><code>cat /etc/systemd/system/usb.mount@.service</code></p><pre><code>
+[Unit]
+Description=Mount USB Disk %i
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/usr/local/bin/usb.mount start %i
+ExecStop=/usr/local/bin/usb.mount stop %i
+</code></pre><pre><code>sudo systemctl daemon-reload
+</code></pre><p>Create <code>/etc/udev/rules.d/99-usb-ssd.rules</code></p><pre><code>ACTION==&quot;add&quot;, SUBSYSTEM==&quot;block&quot;, ENV{ID_FS_UUID}==&quot;ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3&quot;, ENV{UDISKS_IGNORE}=&quot;1&quot;, RUN+=&quot;/usr/bin/systemctl start usb.mount@$env{ID_FS_UUID}.service&quot;
+ACTION==&quot;remove&quot;, SUBSYSTEM==&quot;block&quot;, ENV{ID_FS_UUID}==&quot;ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3&quot;, ENV{UDISKS_IGNORE}=&quot;1&quot;, RUN+=&quot;/usr/bin/systemctl stop usb.mount@$env{ID_FS_UUID}.service&quot;
+
+</code></pre><pre><code>sudo udevadm control --reload-rules &amp;&amp; sudo udevadm trigger
+</code></pre></article><section class=post-nav><ul><li><a href=http://example.org/posts/building-docker-image-for-cross-platform/><i class="fa fa-chevron-circle-left"></i>Building Docker Image for Cross Platform(ARM64, ARM)</a></li><li><a href=http://example.org/posts/arch-linux-install-guide/>Arch Linix Installation Guide <i class="fa fa-chevron-circle-right"></i></a></li></ul></section></main><footer><h6>|
+Rendered by <a href=https://gohugo.io title=Hugo>Hugo</a> |
+<a href=http://example.org/index.xml>Subscribe</a></h6></footer></div><script src=/js/scripts.js></script></body></html>

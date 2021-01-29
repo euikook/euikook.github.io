@@ -1,0 +1,64 @@
+<!doctype html><html lang=en-us><head><title>SSH config with Include - Miscellaneous Notes</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="The HTML5 Herald"><meta name=author content><meta property="og:title" content="SSH config with Include"><meta property="og:description" content="SSH Config with Include OpenSSH 7.3에서 Include 기능이 추가 되었다.
+About ~/.ssh/config SSH 접속 정보를 ~/.ssh/config 파일에 저장한다.
+접속하고자 하는 SSH 서버의 연결 옵션을 달리 해야 되는 경우나 IP를 외울 필요 없이 지정한 서버 이름으로 접속할 수 있기 때문에 매우 유용하다.
+또한 보안등의 이유나 NAT내부의 Port Forwarding된 외우기 힘든 SSH Port 주소로 접속 해야 한다면 아래 예제의 Port 파라미터를 정하기만 하면 된다.
+아래는 ~/ssh/config 파일의 예제 이다.
+Host 1.2.3.4 test Hostname 1."><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/posts/ssh-config-with-include/"><meta name=twitter:card content="summary"><meta name=twitter:title content="SSH config with Include"><meta name=twitter:description content="SSH Config with Include OpenSSH 7.3에서 Include 기능이 추가 되었다.
+About ~/.ssh/config SSH 접속 정보를 ~/.ssh/config 파일에 저장한다.
+접속하고자 하는 SSH 서버의 연결 옵션을 달리 해야 되는 경우나 IP를 외울 필요 없이 지정한 서버 이름으로 접속할 수 있기 때문에 매우 유용하다.
+또한 보안등의 이유나 NAT내부의 Port Forwarding된 외우기 힘든 SSH Port 주소로 접속 해야 한다면 아래 예제의 Port 파라미터를 정하기만 하면 된다.
+아래는 ~/ssh/config 파일의 예제 이다.
+Host 1.2.3.4 test Hostname 1."><meta name=generator content="Hugo 0.80.0"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin=anonymous><link rel=stylesheet href=http://example.org/fontawesome/css/all.min.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda"><link rel=stylesheet type=text/css href=/css/styles.css></head><body><div id=container><header><h1><a href=/>Miscellaneous Notes</a></h1><ul id=social-media></ul></header><nav><ul></ul></nav><main><article><h1>SSH config with Include</h1><aside><ul><li><time class=post-date datetime=0001-01-01T00:00:00Z>Jan 1, 0001</time></li><li><em><a href=/tags/linux>#Linux</a>
+,
+<a href=/tags/openssh>#OpenSSH</a>
+,
+<a href=/tags/config>#config</a>
+,
+<a href=/tags/ssh>#ssh</a>
+,
+<a href=/tags/client>#client</a>
+,
+<a href=/tags/ssh-client>#ssh client</a></em></li><li>2 minutes read</li></ul></aside><h1 id=ssh-config-with-include>SSH Config with Include</h1><p>OpenSSH 7.3에서 <code>Include</code> 기능이 추가 되었다.</p><h2 id=about-sshconfig>About <code>~/.ssh/config</code></h2><p>SSH 접속 정보를 <code>~/.ssh/config</code> 파일에 저장한다.</p><p>접속하고자 하는 SSH 서버의 연결 옵션을 달리 해야 되는 경우나 IP를 외울 필요 없이 지정한 서버 이름으로 접속할 수 있기 때문에 매우 유용하다.</p><p>또한 보안등의 이유나 NAT내부의 Port Forwarding된 외우기 힘든 SSH Port 주소로 접속 해야 한다면 아래 예제의 <code>Port</code> 파라미터를 정하기만 하면 된다.</p><p>아래는 ~/ssh/config 파일의 예제 이다.</p><pre><code>Host 1.2.3.4 test
+    Hostname 1.2.3.4
+    Port 22
+    User username
+    SendEnv LANG LC_*
+    IdentityFile ~/.ssh/test
+    ConnectTimeout 0
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no
+    ServerAliveInterval 30
+    ServerAliveCountMax 3
+</code></pre><p>접속하고자 하는 IP 1.2.3.4에 Domain Name이 할당되어 있지 않거나 해당 IP 정보가 <code>/etc/hosts</code>에 지정되어 있지 않더라도 호스트 지정자로 <code>test</code> 지정하여 접속할 수 있다.</p><pre><code>ssh test 
+</code></pre><h2 id=include-statement><code>Include</code> statement</h2><p>이게 문제가 되는게 너무 관리해야될 SSH서버의 수가 많아지면 <code>~/.ssh/config</code> 파일이 너무 커져 버려서 관리가 힘들게 된다. 해당 설정 파일을 분할 하면 좋겠지만 OpenSSH 7.3 이전 버젼에서는 <code>Include</code> 기능을 지원하지 않았기 때분에 불가능 했다. 하지만 이제는 가능하다.</p><p>먼저 설치된 OpenSSH 패키지의 버젼을 확인한다.</p><pre><code>ssh -V
+</code></pre><p>내가 사용하는 시스템의 경우 <code>8.4p1</code>이다.</p><pre><code>$ lsb_release -a
+LSB Version:	1.4
+Distributor ID:	Arch
+Description:	Arch Linux
+Release:	rolling
+Codename:	n/a
+$ ssh -V
+OpenSSH_8.4p1, OpenSSL 1.1.1h  22 Sep 2020
+</code></pre><p><code>Ubuntu 18.04</code> 의 경우 <code>7.6p1</code> 이로 확인되었다.</p><pre><code>$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 18.04.5 LTS
+Release:	18.04
+Codename:	bionic
+$ ssh -V
+OpenSSH_7.6p1 Ubuntu-4ubuntu0.3, OpenSSL 1.0.2n  7 Dec 2017
+</code></pre><p>SSH Client가 <code>7.4</code> 이전 버전이거나 OpenSSH 가 아니라면 7.4 이상의 OpenSSH 패키지를 설치 한다.</p><h3 id=split-config-file>Split config file</h3><p><code>~/.ssh/config</code> 파일을 분할한다.</p><p>나의 경우 아래와 같이 <code>conf.d</code> 라는 디렉터리를 만들고 해당 디렉터리에 프로젝트별로 서버들을 분리 하였다.</p><blockquote><p>해당 프로젝트가 끝났거나 잠시 중단된 경우 파일 이름뒤에 <code>.disable</code> 확장자를 붙여 설정이 로드 되지 않게 한다.</p></blockquote><pre><code>.
+├── authorized_keys
+├── conf.d
+│   ├── common.conf
+│   ├── p1.conf.disable
+│   ├── p2.conf
+│   ├── p3.conf
+│   ├── p4.conf.disable
+│   ├── p5.conf
+├── config
+</code></pre><p>~/.ssh/config</p><pre><code>Include conf.d/*.conf
+</code></pre></article><section class=post-nav><ul><li><a href=http://example.org/posts/synergy-software-kvm/><i class="fa fa-chevron-circle-left"></i>Synergy - Software KVM</a></li><li><a href=http://example.org/posts/shrink-dynamically-allocated-virtualbox-disk-image/>Shrink dynamically extended VirtualBox image for export appliance <i class="fa fa-chevron-circle-right"></i></a></li></ul></section></main><footer><h6>|
+Rendered by <a href=https://gohugo.io title=Hugo>Hugo</a> |
+<a href=http://example.org/index.xml>Subscribe</a></h6></footer></div><script src=/js/scripts.js></script></body></html>

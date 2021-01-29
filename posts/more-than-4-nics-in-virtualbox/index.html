@@ -1,0 +1,40 @@
+<!doctype html><html lang=en-us><head><title>VirtualBox에서 4개 이상의 네트워크 인터페이스(NIC) 설정하기 - Miscellaneous Notes</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="The HTML5 Herald"><meta name=author content><meta property="og:title" content="VirtualBox에서 4개 이상의 네트워크 인터페이스(NIC) 설정하기"><meta property="og:description" content="More than 4 NICs in VirtualBox
+VirtualBox에서 4개 이상의 네트워크 인터페이스(NIC) 설정하기
+VirtualBox에서서 네트워크를 구성하여 테스트환경을 만들다 보면 4개 이상의 NIC 이 필요 할때가 종종 있다. 하지만 UI에서는 4개 까지만 NIC을 설정 가능하기 때문에 Command Line Interface를 통해 NIC을 생성하고 설정 하여야 한다. 설정 방법은 다음과 같다. 각 모드에 대한 자세한 내용은 다음 페이지를 참조 하기 바란다. https://www.virtualbox.org/manual/ch06.html
+Bridge Mode
+VBoxManage modifyvm test-vm --nic5 bridged
+VBoxManage modifyvm test-vm --bridgeadapter5 eno1
+Host Only Mode
+VBoxManage modifyvm test-vm --nic5 hostonly
+VBoxManage modifyvm test-vm --hostonlyadapter5 vboxnet0"><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/posts/more-than-4-nics-in-virtualbox/"><meta name=twitter:card content="summary"><meta name=twitter:title content="VirtualBox에서 4개 이상의 네트워크 인터페이스(NIC) 설정하기"><meta name=twitter:description content="More than 4 NICs in VirtualBox
+VirtualBox에서 4개 이상의 네트워크 인터페이스(NIC) 설정하기
+VirtualBox에서서 네트워크를 구성하여 테스트환경을 만들다 보면 4개 이상의 NIC 이 필요 할때가 종종 있다. 하지만 UI에서는 4개 까지만 NIC을 설정 가능하기 때문에 Command Line Interface를 통해 NIC을 생성하고 설정 하여야 한다. 설정 방법은 다음과 같다. 각 모드에 대한 자세한 내용은 다음 페이지를 참조 하기 바란다. https://www.virtualbox.org/manual/ch06.html
+Bridge Mode
+VBoxManage modifyvm test-vm --nic5 bridged
+VBoxManage modifyvm test-vm --bridgeadapter5 eno1
+Host Only Mode
+VBoxManage modifyvm test-vm --nic5 hostonly
+VBoxManage modifyvm test-vm --hostonlyadapter5 vboxnet0"><meta name=generator content="Hugo 0.80.0"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin=anonymous><link rel=stylesheet href=http://example.org/fontawesome/css/all.min.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda"><link rel=stylesheet type=text/css href=/css/styles.css></head><body><div id=container><header><h1><a href=/>Miscellaneous Notes</a></h1><ul id=social-media></ul></header><nav><ul></ul></nav><main><article><h1>VirtualBox에서 4개 이상의 네트워크 인터페이스(NIC) 설정하기</h1><aside><ul><li><time class=post-date datetime=0001-01-01T00:00:00Z>Jan 1, 0001</time></li><li><em><a href=/tags/linux>#Linux</a>
+,
+<a href=/tags/virtualbox>#VirtualBox</a>
+,
+<a href=/tags/nic>#NIC</a>
+,
+<a href=/tags/bridge>#Bridge</a>
+,
+<a href=/tags/hostonly>#HostOnly</a>
+,
+<a href=/tags/internal>#Internal</a>
+,
+<a href=/tags/nat>#NAT</a></em></li><li>One minute read</li></ul></aside><h4 id=more-than-4-nics-in-virtualbox>More than 4 NICs in VirtualBox</h4><p>VirtualBox에서 4개 이상의 네트워크 인터페이스(NIC) 설정하기</p><p>VirtualBox에서서 네트워크를 구성하여 테스트환경을 만들다 보면 4개 이상의 NIC 이 필요 할때가 종종 있다. 하지만 UI에서는 4개 까지만 NIC을 설정 가능하기 때문에 Command Line Interface를 통해 NIC을 생성하고 설정 하여야 한다. 설정 방법은 다음과 같다. 각 모드에 대한 자세한 내용은 다음 페이지를 참조 하기 바란다. <a href=https://www.virtualbox.org/manual/ch06.html>https://www.virtualbox.org/manual/ch06.html</a></p><h2 id=bridge-mode>Bridge Mode</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>VBoxManage modifyvm test-vm --nic5 bridged
+VBoxManage modifyvm test-vm --bridgeadapter5 eno1
+</code></pre></div><h2 id=host-only-mode>Host Only Mode</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>VBoxManage modifyvm test-vm --nic5 hostonly
+VBoxManage modifyvm test-vm --hostonlyadapter5 vboxnet0
+</code></pre></div><h2 id=internal-mode>Internal Mode</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>VBoxManage modifyvm test-vm --nic5 intnet
+VBoxManage modifyvm test-vm --intnet5 <span style=color:#e6db74>&#39;intnet0&#39;</span>
+</code></pre></div><h2 id=nat-mode>NAT Mode</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>VBoxManage modifyvm test-vm --nic5 nat
+</code></pre></div><h2 id=nat-network-mode>NAT Network Mode</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>VBoxManage modifyvm test-vm --nic5 natnetwork
+VBoxManage modifyvm test-vm --nat-network5 test-nat
+</code></pre></div></article><section class=post-nav><ul><li><a href=http://example.org/posts/home/><i class="fa fa-chevron-circle-left"></i>Welcome to euikook's wiki pages</a></li><li><a href=http://example.org/posts/usages-of-ssh-key-pair/>Usages of SSH key pair <i class="fa fa-chevron-circle-right"></i></a></li></ul></section></main><footer><h6>|
+Rendered by <a href=https://gohugo.io title=Hugo>Hugo</a> |
+<a href=http://example.org/index.xml>Subscribe</a></h6></footer></div><script src=/js/scripts.js></script></body></html>

@@ -1,0 +1,36 @@
+<!doctype html><html lang=en-us><head><title>Alt_R as Hangul on Ubuntu 18.04 - Miscellaneous Notes</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="The HTML5 Herald"><meta name=author content><meta property="og:title" content="Alt_R as Hangul on Ubuntu 18.04"><meta property="og:description" content="Alt_R as Hangul on Ubuntu 18.04 Troubles  영문 키보드 구입 오른쪽 Alt키 (Alt_R)을 한글 키로 사용 하고 싶음. IBus 등에서 한/영 변환을 Alt_R키로 등록  다른 프로그램에서는 잘 동작. Alt_R키를 단축키로 사용하는 프로그램(Chrome)등에서는 동작이 안됨   Ctrl_R은 Hanja 키로 매핑 시키고 싶이 않음.  Use Xmodmap Hangul key xmodmap -e 'remove mod1 = Alt_R' # Alt_R의 기본 키 매핑 제거 xmodmap -e 'keycode 108 = Hangul' # Alt_R을 Hangul 키로 매핑 Hanja Key xmodmap -e 'remove control = Control_R' xmodmap -e 'keycode 105 = Hangul_Hanja' Save permanently xmodmap -pke > ~/."><meta property="og:type" content="article"><meta property="og:url" content="http://example.org/posts/right-alt-as-hangul/"><meta name=twitter:card content="summary"><meta name=twitter:title content="Alt_R as Hangul on Ubuntu 18.04"><meta name=twitter:description content="Alt_R as Hangul on Ubuntu 18.04 Troubles  영문 키보드 구입 오른쪽 Alt키 (Alt_R)을 한글 키로 사용 하고 싶음. IBus 등에서 한/영 변환을 Alt_R키로 등록  다른 프로그램에서는 잘 동작. Alt_R키를 단축키로 사용하는 프로그램(Chrome)등에서는 동작이 안됨   Ctrl_R은 Hanja 키로 매핑 시키고 싶이 않음.  Use Xmodmap Hangul key xmodmap -e 'remove mod1 = Alt_R' # Alt_R의 기본 키 매핑 제거 xmodmap -e 'keycode 108 = Hangul' # Alt_R을 Hangul 키로 매핑 Hanja Key xmodmap -e 'remove control = Control_R' xmodmap -e 'keycode 105 = Hangul_Hanja' Save permanently xmodmap -pke > ~/."><meta name=generator content="Hugo 0.80.0"><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin=anonymous><link rel=stylesheet href=http://example.org/fontawesome/css/all.min.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda"><link rel=stylesheet type=text/css href=/css/styles.css></head><body><div id=container><header><h1><a href=/>Miscellaneous Notes</a></h1><ul id=social-media></ul></header><nav><ul></ul></nav><main><article><h1>Alt_R as Hangul on Ubuntu 18.04</h1><aside><ul><li><time class=post-date datetime=0001-01-01T00:00:00Z>Jan 1, 0001</time></li><li><em><a href=/tags/linux>#Linux</a>
+,
+<a href=/tags/alt_r>#ALt_R</a>
+,
+<a href=/tags/ralt>#RALT</a>
+,
+<a href=/tags/hangul>#Hangul</a>
+,
+<a href=/tags/%ED%95%9C/%EC%98%81>#한/영</a></em></li><li>2 minutes read</li></ul></aside><h1 id=alt_r-as-hangul-on-ubuntu-1804>Alt_R as Hangul on Ubuntu 18.04</h1><h2 id=troubles>Troubles</h2><ul><li>영문 키보드 구입</li><li>오른쪽 Alt 키 (Alt_R)을 한글 키로 사용 하고 싶음.</li><li>IBus 등에서 한/영 변환을 Alt_R 키로 등록<ul><li>다른 프로그램에서는 잘 동작.</li><li>Alt_R 키를 단축키로 사용하는 프로그램(Chrome)등에서는 동작이 안됨</li></ul></li><li>Ctrl_R은 Hanja 키로 매핑 시키고 싶이 않음.</li></ul><h2 id=use-xmodmap>Use Xmodmap</h2><h3 id=hangul-key>Hangul key</h3><pre><code>xmodmap -e 'remove mod1 = Alt_R' # Alt_R의 기본 키 매핑 제거
+xmodmap -e 'keycode 108 = Hangul' # Alt_R을 Hangul 키로 매핑
+</code></pre><h3 id=hanja-key>Hanja Key</h3><pre><code>xmodmap -e 'remove control = Control_R'
+xmodmap -e 'keycode 105 = Hangul_Hanja'
+</code></pre><h3 id=save-permanently>Save permanently</h3><pre><code>xmodmap -pke &gt; ~/.Xmodmap
+</code></pre><h3 id=troubles-1>Troubles</h3><p>ubuntu 18.04 로 가면서 X11 이 아나라 Wayland가 기본 X 서버로 변경 되면서 xmodmap은 더이상 도작 하지 않는다.
+xmodmap이 동작 하게 하려면 기본 X 서버를 xorg로 변경 하여야 한다.</p><h2 id=use--gnome-tweak-tool>Use Gnome Tweak Tool</h2><p>Run <code>Gnome Tweaks Tool</code> > <code>Keyboard & Mouse</code> > <code>Additional Layout Options</code> > <code>Korean Hangul/Hanja Keys</code>
+Check <code>Right Alt as Hangul, right Ctrl as Hanja</code></p><h3 id=troubles-2>Troubles</h3><p>잘 동작한다. 하지만 Ctrl_R 키 까지 한자키로 매핑되어 VirtualBox 사용시 Host Key를 변경 해주어 야 한다.</p><h2 id=use-xkb>Use XKB</h2><p>Edit <code>/usr/share/X11/xkb/symbols/altwin</code></p><pre><code>// Meta is mapped to second level of Alt.
+partial modifier_keys
+xkb_symbols &quot;meta_alt&quot; {
+    key &lt;LALT&gt; { [ Alt_L, Meta_L ] };
+    key &lt;RALT&gt; { type[Group1] = &quot;TWO_LEVEL&quot;,
+                 symbols[Group1] = [ Alt_R, Meta_R ] };
+    modifier_map Mod1 { Alt_L, Alt_R, Meta_L, Meta_R };
+//  modifier_map Mod4 {};
+};
+</code></pre><pre><code>// Meta is mapped to second level of Alt.
+partial modifier_keys
+xkb_symbols &quot;meta_alt&quot; {
+    key &lt;LALT&gt; { [ Alt_L, Meta_L ] };
+    key &lt;RALT&gt; { type[Group1] = &quot;TWO_LEVEL&quot;,
+                 symbols[Group1] = [ Hangul ] };
+    modifier_map Mod1 { Alt_L, Alt_R, Meta_L, Meta_R };
+//  modifier_map Mod4 {};
+};
+</code></pre><h2 id=references>References</h2><ul><li><a href=https://zapary.blogspot.com/2014/08/ubuntu-xkb-keyboard-map.html>https://zapary.blogspot.com/2014/08/ubuntu-xkb-keyboard-map.html</a></li></ul><blockquote></blockquote></article><section class=post-nav><ul><li><a href=http://example.org/posts/arch-linux-install-guide/><i class="fa fa-chevron-circle-left"></i>Arch Linix Installation Guide</a></li><li><a href=http://example.org/posts/about/>About <i class="fa fa-chevron-circle-right"></i></a></li></ul></section></main><footer><h6>|
+Rendered by <a href=https://gohugo.io title=Hugo>Hugo</a> |
+<a href=http://example.org/index.xml>Subscribe</a></h6></footer></div><script src=/js/scripts.js></script></body></html>
