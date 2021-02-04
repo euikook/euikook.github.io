@@ -1,4 +1,11 @@
-baseURL = "http://example.org/"
+baseURL = "http://harues.com/"
 languageCode = "en-us"
 title = "Miscellaneous Notes"
-theme = "hugo-kiera"
+theme = "anatole"
+staticDir = ["static"]
+
+[params]
+title = "I'm euikook"
+author = "euikook"
+description = "Call me Jane"
+profilePicture = "images/logo.png"
