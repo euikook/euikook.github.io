@@ -1,7 +1,7 @@
-baseURL = "https://example.com"
+baseURL = "https://euikook.github.io"
 languageCode = "en"
 DefaultContentLanguage = "en"
-title = "Website of Jane Doe"
+title = "Miscellaneous Notes"
 theme = "anatole"
 summarylength = 10
 enableEmoji = true
@@ -19,10 +19,10 @@ pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 
 [params]
-title = "I'm Jane Doe"
-author = "Jane Doe"
+title = "Miscellaneous Notes"
+author = "euikook"
 #copyright = "2020-2021"
-description = "Call me Jane"
+description = "end. end. end."
 profilePicture = "images/logo.png"
 keywords = ""
 favicon = "favicons/"
