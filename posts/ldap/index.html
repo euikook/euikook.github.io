@@ -1,17 +1,12 @@
-<!doctype html><html lang=en data-theme><head><title>euikook | HOWTO install LDAP Server</title><meta charset=utf-8><meta name=generator content="Hugo 0.80.0"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name=description content="Call me Jane"><link rel=stylesheet href=http://harues.com/css/style.min.9a6700e4461b50dccdddfc4f81dc65d77e7fca22c35665e398a0c36568db59c7.css integrity="sha256-mmcA5EYbUNzN3fxPgdxl135/yiLDVmXjmKDDZWjbWcc=" crossorigin=anonymous type=text/css><link rel=stylesheet href=http://harues.com/css/markupHighlight.min.9755453ffb7bc4cd220f86ebb5922107b49f193cc62fc17e9785d27b33a8bf5b.css integrity="sha256-l1VFP/t7xM0iD4brtZIhB7SfGTzGL8F+l4XSezOov1s=" crossorigin=anonymous type=text/css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin=anonymous><link rel="shortcut icon" href=http://harues.com/favicon.ico type=image/x-icon><link rel=apple-touch-icon sizes=180x180 href=http://harues.com/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=http://harues.com/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=http://harues.com/favicon-16x16.png><link rel=canonical href=http://harues.com/posts/ldap/><script type=text/javascript src=http://harues.com/js/anatole-header.min.d8599ee07b7d3f11bafbac30657ccc591e8d7fd36a9f580cd4c09e24e0e4a971.js integrity="sha256-2Fme4Ht9PxG6+6wwZXzMWR6Nf9Nqn1gM1MCeJODkqXE=" crossorigin=anonymous></script><script type=text/javascript src=http://harues.com/js/anatole-theme-switcher.min.e289e9ebb2a4e7a7f895859c8a2b0da2de1ec73f22cea58d8475aa0597023837.js integrity="sha256-4onp67Kk56f4lYWciisNot4exz8izqWNhHWqBZcCODc=" crossorigin=anonymous></script><meta name=twitter:card content="summary"><meta name=twitter:title content="HOWTO install LDAP Server"><meta name=twitter:description content="HOWTO install LDAP Server 본 포스트는 OpenLDAP을 사용하고자 하는 분들에게 도움을 주고자 작성 되었습니다.
-Prerequisite 패키지 리스트를 최신으로 업데이트한다.
-sudo apt-get update Important notes # Configure vim as default editor sudo apt-get install -y vim sudo update-alternatives --set editor /usr/bin/vim.basic LDAP에 사요할 Domain Name을 /etc/hosts 파일에 추가한다.
-sudo editor /etc/hosts 다음과 같이 추가한다.
-127.0.1.1 ldap.harues.com ldap ldap.harues.com OpenLDAP 과 관련 유틸리티를 설치한다.
-sudo apt-get install slapd ldap-utils -y This will prompt a setup window so we need to populate it with the correct credentials."></head><body><div class="sidebar animated fadeInDown"><div class=logo-title><div class=title><img src=http://harues.com/images/logo.png alt="profile picture"><h3><a href=/>I'm euikook</a></h3><div class=description><p>Call me Jane</p></div></div></div><ul class=social-links></ul><div class=footer><div class=by_farbox>&copy; euikook 2021</div></div></div><div class=main><div class="page-top animated fadeInDown"><a role=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a><ul class=nav id=navMenu><li class=theme-switch-item><a class=theme-switch title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></li></ul></div><div class=autopagerize_page_element><div class=content><div class="post animated fadeInDown"><div class=post-content><div class=post-title><h3>HOWTO install LDAP Server</h3></div><h1 id=howto-install-ldap-server>HOWTO install LDAP Server</h1><p>본 포스트는 OpenLDAP을 사용하고자 하는 분들에게 도움을 주고자 작성 되었습니다.</p><h2 id=prerequisite>Prerequisite</h2><p>패키지 리스트를 최신으로 업데이트한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo apt-get update
-</code></pre></div><h3 id=important-notes>Important notes</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Configure vim as default editor</span>
+<!doctype html><html lang=en data-theme><head><title>Jane Doe | HOWTO install LDAP Server</title><meta charset=utf-8><meta name=generator content="Hugo 0.80.0"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name=description content="Call me Jane"><link rel=stylesheet href=https://example.com/css/style.min.9a6700e4461b50dccdddfc4f81dc65d77e7fca22c35665e398a0c36568db59c7.css integrity="sha256-mmcA5EYbUNzN3fxPgdxl135/yiLDVmXjmKDDZWjbWcc=" crossorigin=anonymous type=text/css><link rel=stylesheet href=https://example.com/css/markupHighlight.min.9755453ffb7bc4cd220f86ebb5922107b49f193cc62fc17e9785d27b33a8bf5b.css integrity="sha256-l1VFP/t7xM0iD4brtZIhB7SfGTzGL8F+l4XSezOov1s=" crossorigin=anonymous type=text/css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin=anonymous><link rel="shortcut icon" href=https://example.com/favicons/favicon.ico type=image/x-icon><link rel=apple-touch-icon sizes=180x180 href=https://example.com/favicons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=https://example.com/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://example.com/favicons/favicon-16x16.png><link rel=canonical href=https://example.com/posts/ldap/><script type=text/javascript src=https://example.com/js/anatole-header.min.d8599ee07b7d3f11bafbac30657ccc591e8d7fd36a9f580cd4c09e24e0e4a971.js integrity="sha256-2Fme4Ht9PxG6+6wwZXzMWR6Nf9Nqn1gM1MCeJODkqXE=" crossorigin=anonymous></script><script type=text/javascript src=https://example.com/js/anatole-theme-switcher.min.e289e9ebb2a4e7a7f895859c8a2b0da2de1ec73f22cea58d8475aa0597023837.js integrity="sha256-4onp67Kk56f4lYWciisNot4exz8izqWNhHWqBZcCODc=" crossorigin=anonymous></script><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://example.com/images/site-feature-image.png"><meta name=twitter:title content="HOWTO install LDAP Server"><meta name=twitter:description content="HOWTO install LDAP Server 본 포스트는 OpenLDAP을 사용하고자 하는 분들에게 도움을 주고자 작성 되었습니다."></head><body><div class="sidebar animated fadeInDown"><div class=logo-title><div class=title><img src=https://example.com/images/logo.png alt="profile picture"><h3><a href=/>I'm Jane Doe</a></h3><div class=description><p>Call me Jane</p></div></div></div><ul class=social-links><li><a href=https://de.linkedin.com/ rel=me aria-label=Linkedin><i class="fab fa-linkedin fa-2x" aria-hidden=true></i></a></li><li><a href=https://github.com/lxndrblz/anatole/ rel=me aria-label=GitHub><i class="fab fa-github fa-2x" aria-hidden=true></i></a></li><li><a href=https://www.instagram.com/ rel=me aria-label=instagram><i class="fab fa-instagram fa-2x" aria-hidden=true></i></a></li><li><a href=mailto:mail@alexbilz.com rel=me aria-label=e-mail><i class="fas fa-envelope fa-2x" aria-hidden=true></i></a></li></ul><div class=footer><div class=by_farbox>&copy; Jane Doe 2021</div></div></div><div class=main><div class="page-top animated fadeInDown"><a role=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a><ul class=nav id=navMenu><li><a href=/>Home</a></li><li><a href=/posts/>Posts</a></li><li><a href=/about/>About</a></li><li><a href=/contact/>Contact</a></li><li class=theme-switch-item><a class=theme-switch title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></li></ul></div><div class=autopagerize_page_element><div class=content><div class="post animated fadeInDown"><div class=post-content><div class=post-title><h3>HOWTO install LDAP Server</h3></div><h1 id=howto-install-ldap-server>HOWTO install LDAP Server</h1><p>본 포스트는 OpenLDAP을 사용하고자 하는 분들에게 도움을 주고자 작성 되었습니다.</p><h2 id=prerequisite>Prerequisite</h2><p>패키지 리스트를 최신으로 업데이트한다.</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>sudo apt-get update
+</code></pre></div><h3 id=important-notes>Important notes</h3><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash><span class=c1># Configure vim as default editor</span>
 sudo apt-get install -y vim
 sudo update-alternatives --set editor /usr/bin/vim.basic
-</code></pre></div><p>LDAP에 사요할 Domain Name을 <code>/etc/hosts</code> 파일에 추가한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo editor /etc/hosts
-</code></pre></div><p>다음과 같이 추가한다.</p><pre><code>127.0.1.1 ldap.harues.com ldap ldap.harues.com
-</code></pre><p>OpenLDAP 과 관련 유틸리티를 설치한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo apt-get install slapd ldap-utils -y
+</code></pre></div><p>LDAP에 사요할 Domain Name을 <code>/etc/hosts</code> 파일에 추가한다.</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>sudo editor /etc/hosts
+</code></pre></div><p>다음과 같이 추가한다.</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>127.0.1.1 ldap.harues.com ldap ldap.harues.com
+</code></pre></div><p>OpenLDAP 과 관련 유틸리티를 설치한다.</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>sudo apt-get install slapd ldap-utils -y
 </code></pre></div><p>This will prompt a setup window so we need to populate it with the correct credentials.</p><p>When asked for administrator password use <code>************</code>.
-Repeat the password to confirm it.</p><p>We will use the advantage of slapd setup to fully configure LDAP instead of filling in the details by hand in a text file:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo dpkg-reconfigure slapd
+Repeat the password to confirm it.</p><p>We will use the advantage of slapd setup to fully configure LDAP instead of filling in the details by hand in a text file:</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>sudo dpkg-reconfigure slapd
 </code></pre></div><p>Answer the following questions:</p><p>You will be asked to omit OpenLDAP server configuration: <code>No</code>
 Under DNS domain name fill in: <code>harues.com</code>
 Under organization name fill in: <code>Harues Inc.</code>
@@ -20,21 +15,21 @@ Repeat password: <code>************</code>
 Database backend to use, select: <code>HDB</code>
 Do you want database to be removed when slapd is purged: <code>Yes</code>
 Move old database, choose: <code>Yes</code>
-Allow LDAPv2 protocol, choose: <code>No</code></p><p>** If at any point you get the error: **</p><pre><code>ldap_bind: Invalid credentials (49)
-</code></pre><p>configure slapd again.</p><p>Next, add index to make lookup easier, create a file index.ldif</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>editor index.ldif
-</code></pre></div><p>and populate with the following:</p><pre><code>dn: olcDatabase={1}hdb,cn=config
+Allow LDAPv2 protocol, choose: <code>No</code></p><p>** If at any point you get the error: **</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>ldap_bind: Invalid credentials (49)
+</code></pre></div><p>configure slapd again.</p><p>Next, add index to make lookup easier, create a file index.ldif</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>editor index.ldif
+</code></pre></div><p>and populate with the following:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>dn: olcDatabase={1}hdb,cn=config
 changetype: modify
 add: olcDbIndex
 olcDbIndex: uid eq,pres,sub
-</code></pre><p>and add it to ldap database:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo ldapmodify -Q -Y EXTERNAL -H ldapi:/// -f index.ldif
-</code></pre></div><p>This should produce the following output:</p><pre><code>modifying entry &quot;olcDatabase={1}hdb,cn=config&quot;
-</code></pre><p>If this is not the case recheck your steps and try again.</p><p>You can verify that all is working:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo ldapsearch -Q -LLL -Y EXTERNAL -H ldapi:/// -b cn<span style=color:#f92672>=</span>config <span style=color:#e6db74>&#39;(olcDatabase={1}hdb)&#39;</span> olcDbIndex
-</code></pre></div><p>This should produce the following output:</p><pre><code>dn: olcDatabase={1}hdb,cn=config
+</code></pre></div><p>and add it to ldap database:</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>sudo ldapmodify -Q -Y EXTERNAL -H ldapi:/// -f index.ldif
+</code></pre></div><p>This should produce the following output:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>modifying entry &#34;olcDatabase={1}hdb,cn=config&#34;
+</code></pre></div><p>If this is not the case recheck your steps and try again.</p><p>You can verify that all is working:</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>sudo ldapsearch -Q -LLL -Y EXTERNAL -H ldapi:/// -b <span class=nv>cn</span><span class=o>=</span>config <span class=s1>&#39;(olcDatabase={1}hdb)&#39;</span> olcDbIndex
+</code></pre></div><p>This should produce the following output:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>dn: olcDatabase={1}hdb,cn=config
 olcDbIndex: objectClass eq
 olcDbIndex: uid eq,pres,sub
-</code></pre><p>If this is not the case recheck your steps and try again.</p><p>Next step is to create an ldap user.
-Create <code>base.ldif</code></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>editor base.ldif
-</code></pre></div><p>and populate with:</p><pre><code>dn: ou=Users,dc=harues,dc=com
+</code></pre></div><p>If this is not the case recheck your steps and try again.</p><p>Next step is to create an ldap user.
+Create <code>base.ldif</code></p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>editor base.ldif
+</code></pre></div><p>and populate with:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>dn: ou=Users,dc=harues,dc=com
 objectClass: organizationalUnit
 ou: Users
 
@@ -76,63 +71,63 @@ shadowMin: 8
 shadowMax: 999999
 shadowLastChange: 10877
 title: System Administrator
-</code></pre><p>Add the user to the LDAP database:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ldapadd -x -D cn<span style=color:#f92672>=</span>admin,dc<span style=color:#f92672>=</span>gitlab,dc<span style=color:#f92672>=</span>dev -w gitlabldap -f base.ldif
-</code></pre></div><p>This should produce the following output:</p><pre><code>adding new entry &quot;ou=Users,dc=harues,dc=com&quot;
+</code></pre></div><p>Add the user to the LDAP database:</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>ldapadd -x -D <span class=nv>cn</span><span class=o>=</span>admin,dc<span class=o>=</span>gitlab,dc<span class=o>=</span>dev -w gitlabldap -f base.ldif
+</code></pre></div><p>This should produce the following output:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>adding new entry &#34;ou=Users,dc=harues,dc=com&#34;
 
-adding new entry &quot;uid=euikook,ou=Users,dc=harues,dc=com&quot;
-</code></pre><p>If this is not the case recheck your steps and try again.</p><p>To confirm that the user is in LDAP, use:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ldapsearch -x -LLL -b dc<span style=color:#f92672>=</span>harues,dc<span style=color:#f92672>=</span>com <span style=color:#e6db74>&#39;uid=euikook&#39;</span> uid uidNumber displayName mail
-</code></pre></div><p>and that should produce the output that looks like:</p><pre><code>dn: uid=euikook,ou=Users,dc=harues,dc=com
+adding new entry &#34;uid=euikook,ou=Users,dc=harues,dc=com&#34;
+</code></pre></div><p>If this is not the case recheck your steps and try again.</p><p>To confirm that the user is in LDAP, use:</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>ldapsearch -x -LLL -b <span class=nv>dc</span><span class=o>=</span>harues,dc<span class=o>=</span>com <span class=s1>&#39;uid=euikook&#39;</span> uid uidNumber displayName mail
+</code></pre></div><p>and that should produce the output that looks like:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>dn: uid=euikook,ou=Users,dc=harues,dc=com
 uid: euikook
 displayName: E.K. KIM
 uidNumber: 10000
-</code></pre><p>This would complete setting up the OpenLDAP server. Only thing that is left to do is to give the correct details to GitLab.
-Under <code>gitlab.yml</code> there is a LDAP section that should look like this:</p><pre><code>  ## LDAP settings
+</code></pre></div><p>This would complete setting up the OpenLDAP server. Only thing that is left to do is to give the correct details to GitLab.
+Under <code>gitlab.yml</code> there is a LDAP section that should look like this:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>  ## LDAP settings
   ldap:
     enabled: true
-    host: 'ldap.harues.com'
-    base: 'dc=harues,dc=com'
+    host: &#39;ldap.harues.com&#39;
+    base: &#39;dc=harues,dc=com&#39;
     port: 389
-    uid: 'uid'
-    method: 'plain' # &quot;ssl&quot; or &quot;plain&quot;
-    bind_dn: 'dc=harues,dc=com'
-    password: 'gitlabldap'
-</code></pre><p>Navigate to <code>gitlab</code> source directory and start the GitLab instance with:</p><pre><code>bundle exec foreman start
-</code></pre><p>If you now navigate to <code>http://192.168.3.14:3000/</code> and fill in the sign in page under the LDAP section with:</p><p><code>username</code>: euikook
-<code>password</code>: test</p><p>you will be authenticated with OpenLDAP server and logged into GitLab.</p><h4 id=logging>Logging</h4><p>Activity logging for slapd is indispensible when implementing an OpenLDAP-based solution yet it must be manually enabled after software installation. Otherwise, only rudimentary messages will appear in the logs. Logging, like any other slapd configuration, is enabled via the slapd-config database.</p><p>OpenLDAP comes with multiple logging subsystems (levels) with each one containing the lower one (additive). A good level to try is stats. The slapd-config man page has more to say on the different subsystems.</p><p>Create the file logging.ldif with the following contents:</p><pre><code>dn: cn=config
+    uid: &#39;uid&#39;
+    method: &#39;plain&#39; # &#34;ssl&#34; or &#34;plain&#34;
+    bind_dn: &#39;dc=harues,dc=com&#39;
+    password: &#39;gitlabldap&#39;
+</code></pre></div><p>Navigate to <code>gitlab</code> source directory and start the GitLab instance with:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>bundle exec foreman start
+</code></pre></div><p>If you now navigate to <code>http://192.168.3.14:3000/</code> and fill in the sign in page under the LDAP section with:</p><p><code>username</code>: euikook
+<code>password</code>: test</p><p>you will be authenticated with OpenLDAP server and logged into GitLab.</p><h4 id=logging>Logging</h4><p>Activity logging for slapd is indispensible when implementing an OpenLDAP-based solution yet it must be manually enabled after software installation. Otherwise, only rudimentary messages will appear in the logs. Logging, like any other slapd configuration, is enabled via the slapd-config database.</p><p>OpenLDAP comes with multiple logging subsystems (levels) with each one containing the lower one (additive). A good level to try is stats. The slapd-config man page has more to say on the different subsystems.</p><p>Create the file logging.ldif with the following contents:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>dn: cn=config
 changetype: modify
 replace: olcLogLevel
 olcLogLevel: stats
-</code></pre><p>Implement the change:</p><pre><code>sudo ldapmodify -Q -Y EXTERNAL -H ldapi:/// -f logging.ldif
-</code></pre><p>This will produce a significant amount of logging and you will want to throttle back to a less verbose level once your system is in production. While in this verbose mode your host&rsquo;s syslog engine (rsyslog) may have a hard time keeping up and may drop messages:</p><p>rsyslogd-2177: imuxsock lost 228 messages from pid 2547 due to rate-limiting
-You may consider a change to rsyslog&rsquo;s configuration. In /etc/rsyslog.conf, put:</p><pre><code># Disable rate limiting
+</code></pre></div><p>Implement the change:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>sudo ldapmodify -Q -Y EXTERNAL -H ldapi:/// -f logging.ldif
+</code></pre></div><p>This will produce a significant amount of logging and you will want to throttle back to a less verbose level once your system is in production. While in this verbose mode your host&rsquo;s syslog engine (rsyslog) may have a hard time keeping up and may drop messages:</p><p>rsyslogd-2177: imuxsock lost 228 messages from pid 2547 due to rate-limiting
+You may consider a change to rsyslog&rsquo;s configuration. In /etc/rsyslog.conf, put:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback># Disable rate limiting
 # (default is 200 messages in 5 seconds; below we make the 5 become 0)
 $SystemLogRateLimitInterval 0
-</code></pre><p>And then restart the rsyslog daemon:</p><pre><code>sudo service rsyslog restart
-</code></pre><h4 id=ldap-tls>LDAP TLS</h4><p>When authenticating to an OpenLDAP server it is best to do so using an encrypted session. This can be accomplished using Transport Layer Security (TLS).</p><p>Here, we will be our own Certificate Authority and then create and sign our LDAP server certificate as that CA. Since slapd is compiled using the gnutls library, we will use the certtool utility to complete these tasks.</p><p>Install the gnutls-bin and ssl-cert packages:</p><pre><code>sudo apt-get install gnutls-bin ssl-cert
-</code></pre><p>Create a private key for the Certificate Authority:</p><pre><code>sudo sh -c &quot;certtool --generate-privkey &gt; /etc/ssl/private/cakey.pem&quot;
-</code></pre><p>Create the template/file /etc/ssl/ca.info to define the CA:</p><pre><code>cn = Netvision Telecom Inc.
+</code></pre></div><p>And then restart the rsyslog daemon:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>sudo service rsyslog restart
+</code></pre></div><h4 id=ldap-tls>LDAP TLS</h4><p>When authenticating to an OpenLDAP server it is best to do so using an encrypted session. This can be accomplished using Transport Layer Security (TLS).</p><p>Here, we will be our own Certificate Authority and then create and sign our LDAP server certificate as that CA. Since slapd is compiled using the gnutls library, we will use the certtool utility to complete these tasks.</p><p>Install the gnutls-bin and ssl-cert packages:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>sudo apt-get install gnutls-bin ssl-cert
+</code></pre></div><p>Create a private key for the Certificate Authority:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>sudo sh -c &#34;certtool --generate-privkey &gt; /etc/ssl/private/cakey.pem&#34;
+</code></pre></div><p>Create the template/file /etc/ssl/ca.info to define the CA:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>cn = Netvision Telecom Inc.
 ca
 cert_signing_key
-</code></pre><p>Create the self-signed CA certificate:</p><pre><code>sudo certtool --generate-self-signed \
+</code></pre></div><p>Create the self-signed CA certificate:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>sudo certtool --generate-self-signed \
 --load-privkey /etc/ssl/private/cakey.pem \ 
 --template /etc/ssl/ca.info \
 --outfile /etc/ssl/certs/cacert.pem
-</code></pre><p>Make a private key for the server:</p><pre><code>sudo certtool --generate-privkey \
+</code></pre></div><p>Make a private key for the server:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>sudo certtool --generate-privkey \
 --bits 1024 \
 --outfile /etc/ssl/private/ldap_slapd_key.pem
-</code></pre><p>Replace ldap in the filename with your server&rsquo;s hostname. Naming the certificate and key for the host and service that will be using them will help keep things clear.</p><p>Create the /etc/ssl/ldap.info info file containing:</p><pre><code>organization = Example Company
+</code></pre></div><p>Replace ldap in the filename with your server&rsquo;s hostname. Naming the certificate and key for the host and service that will be using them will help keep things clear.</p><p>Create the /etc/ssl/ldap.info info file containing:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>organization = Example Company
 cn = ldap01.example.com
 tls_www_server
 encryption_key
 signing_key
 expiration_days = 3650
-</code></pre><p>The above certificate is good for 10 years. Adjust accordingly.</p><p>Create the server&rsquo;s certificate:</p><pre><code>sudo certtool --generate-certificate \
+</code></pre></div><p>The above certificate is good for 10 years. Adjust accordingly.</p><p>Create the server&rsquo;s certificate:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>sudo certtool --generate-certificate \
 --load-privkey /etc/ssl/private/ldap_slapd_key.pem \
 --load-ca-certificate /etc/ssl/certs/cacert.pem \
 --load-ca-privkey /etc/ssl/private/cakey.pem \
 --template /etc/ssl/ldap01.info \
 --outfile /etc/ssl/certs/ldap_slapd_cert.pem
-</code></pre><p>Create the file certinfo.ldif with the following contents (adjust accordingly, our example assumes we created certs using <a href=https://www.cacert.org>https://www.cacert.org</a>):</p><pre><code>dn: cn=config
+</code></pre></div><p>Create the file certinfo.ldif with the following contents (adjust accordingly, our example assumes we created certs using <a href=https://www.cacert.org>https://www.cacert.org</a>):</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>dn: cn=config
 add: olcTLSCACertificateFile
 olcTLSCACertificateFile: /etc/ssl/certs/cacert.pem
 -
@@ -141,10 +136,10 @@ olcTLSCertificateFile: /etc/ssl/certs/ldap_slapd_cert.pem
 -
 add: olcTLSCertificateKeyFile
 olcTLSCertificateKeyFile: /etc/ssl/private/ldap_slapd_key.pem
-</code></pre><p>Use the ldapmodify command to tell slapd about our TLS work via the slapd-config database:</p><pre><code>sudo ldapmodify -Y EXTERNAL -H ldapi:/// -f /etc/ssl/certinfo.ldif
-</code></pre><p>Tighten up ownership and permissions:</p><pre><code>sudo adduser openldap ssl-cert
+</code></pre></div><p>Use the ldapmodify command to tell slapd about our TLS work via the slapd-config database:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>sudo ldapmodify -Y EXTERNAL -H ldapi:/// -f /etc/ssl/certinfo.ldif
+</code></pre></div><p>Tighten up ownership and permissions:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>sudo adduser openldap ssl-cert
 sudo chgrp ssl-cert /etc/ssl/private/ldap_slapd_key.pem
 sudo chmod g+r /etc/ssl/private/ldap_slapd_key.pem
 sudo chmod o-r /etc/ssl/private/ldap_slapd_key.pem
-</code></pre><p>Restart OpenLDAP:</p><pre><code>sudo service slapd restart
-</code></pre><p>Check your host&rsquo;s logs (/var/log/syslog) to see if the server has started properly.</p><blockquote></blockquote></div><div class=post-footer><div class=info><span class=separator><a class=tag href=/tags/linux/>Linux</a><a class=tag href=/tags/ldap/>LDAP</a></span></div></div></div></div></div></div><script type=text/javascript src=http://harues.com/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js integrity="sha256-hrHo+BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw=" crossorigin=anonymous></script><script type=text/javascript src=http://harues.com/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4=" crossorigin=anonymous></script><script type=text/javascript src=http://harues.com/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js integrity="sha256-kvIchWEp+ErrcZRZs+asYhowMv17GAoYwE4dEgg/iro=" crossorigin=anonymous></script></body></html>
+</code></pre></div><p>Restart OpenLDAP:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>sudo service slapd restart
+</code></pre></div><p>Check your host&rsquo;s logs (/var/log/syslog) to see if the server has started properly.</p><blockquote></blockquote></div><div class=post-footer><div class=info><span class=separator><a class=tag href=/tags/linux/>Linux</a><a class=tag href=/tags/ldap/>LDAP</a></span></div></div></div></div></div></div><script type=text/javascript src=https://example.com/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js integrity="sha256-hrHo+BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw=" crossorigin=anonymous></script><script type=text/javascript src=https://example.com/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4=" crossorigin=anonymous></script><script type=text/javascript src=https://example.com/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js integrity="sha256-kvIchWEp+ErrcZRZs+asYhowMv17GAoYwE4dEgg/iro=" crossorigin=anonymous></script></body></html>

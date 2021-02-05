@@ -1,17 +1,14 @@
-<!doctype html><html lang=en data-theme><head><title>euikook | Arch Linix Installation Guide</title><meta charset=utf-8><meta name=generator content="Hugo 0.80.0"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name=description content="Call me Jane"><link rel=stylesheet href=http://harues.com/css/style.min.9a6700e4461b50dccdddfc4f81dc65d77e7fca22c35665e398a0c36568db59c7.css integrity="sha256-mmcA5EYbUNzN3fxPgdxl135/yiLDVmXjmKDDZWjbWcc=" crossorigin=anonymous type=text/css><link rel=stylesheet href=http://harues.com/css/markupHighlight.min.9755453ffb7bc4cd220f86ebb5922107b49f193cc62fc17e9785d27b33a8bf5b.css integrity="sha256-l1VFP/t7xM0iD4brtZIhB7SfGTzGL8F+l4XSezOov1s=" crossorigin=anonymous type=text/css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin=anonymous><link rel="shortcut icon" href=http://harues.com/favicon.ico type=image/x-icon><link rel=apple-touch-icon sizes=180x180 href=http://harues.com/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=http://harues.com/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=http://harues.com/favicon-16x16.png><link rel=canonical href=http://harues.com/posts/arch-linux-install-guide/><script type=text/javascript src=http://harues.com/js/anatole-header.min.d8599ee07b7d3f11bafbac30657ccc591e8d7fd36a9f580cd4c09e24e0e4a971.js integrity="sha256-2Fme4Ht9PxG6+6wwZXzMWR6Nf9Nqn1gM1MCeJODkqXE=" crossorigin=anonymous></script><script type=text/javascript src=http://harues.com/js/anatole-theme-switcher.min.e289e9ebb2a4e7a7f895859c8a2b0da2de1ec73f22cea58d8475aa0597023837.js integrity="sha256-4onp67Kk56f4lYWciisNot4exz8izqWNhHWqBZcCODc=" crossorigin=anonymous></script><meta name=twitter:card content="summary"><meta name=twitter:title content="Arch Linix Installation Guide"><meta name=twitter:description content="Arch Linix Installation Guide 현재 가지고 있는 시스템 위주로 설명한다.
-부트 디스크 만들기 ISO 파일을 다운로드 한다. 다운로드 후 필요한 경우 gpg 명령으로 파일을 검증한다.
-gpg --keyserver-options auto-key-retrieve --verify archlinux-2020.11.01-x86_64.iso.sig 아래와 같이 Can't check signature: No public key 에러가 발생하면
-gpg --keyserver-options auto-key-retrieve --verify archlinux-2020.11.01-x86_64.iso.sig gpg: assuming signed data in 'archlinux-2020.11.01-x86_64.iso' gpg: Signature made Sun 01 Nov 2020 03:42:16 PM KST gpg: using RSA key 4AA4767BBC9C4B1D18AE28B77F2D434B9741E8AC gpg: Can't check signature: No public key 아래와 같이 키서버를 지정해 준다."></head><body><div class="sidebar animated fadeInDown"><div class=logo-title><div class=title><img src=http://harues.com/images/logo.png alt="profile picture"><h3><a href=/>I'm euikook</a></h3><div class=description><p>Call me Jane</p></div></div></div><ul class=social-links></ul><div class=footer><div class=by_farbox>&copy; euikook 2021</div></div></div><div class=main><div class="page-top animated fadeInDown"><a role=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a><ul class=nav id=navMenu><li class=theme-switch-item><a class=theme-switch title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></li></ul></div><div class=autopagerize_page_element><div class=content><div class="post animated fadeInDown"><div class=post-content><div class=post-title><h3>Arch Linix Installation Guide</h3></div><h1 id=arch-linix-installation-guide>Arch Linix Installation Guide</h1><p>현재 가지고 있는 시스템 위주로 설명한다.</p><h2 id=부트-디스크-만들기>부트 디스크 만들기</h2><p>ISO 파일을 다운로드 한다. 다운로드 후 필요한 경우 gpg 명령으로 파일을 검증한다.</p><pre><code>gpg --keyserver-options auto-key-retrieve --verify archlinux-2020.11.01-x86_64.iso.sig
-</code></pre><p>아래와 같이 <code>Can't check signature: No public key</code> 에러가 발생하면</p><pre><code>gpg --keyserver-options auto-key-retrieve --verify archlinux-2020.11.01-x86_64.iso.sig
-gpg: assuming signed data in 'archlinux-2020.11.01-x86_64.iso'
+<!doctype html><html lang=en data-theme><head><title>Jane Doe | Arch Linix Installation Guide</title><meta charset=utf-8><meta name=generator content="Hugo 0.80.0"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name=description content="Call me Jane"><link rel=stylesheet href=https://example.com/css/style.min.9a6700e4461b50dccdddfc4f81dc65d77e7fca22c35665e398a0c36568db59c7.css integrity="sha256-mmcA5EYbUNzN3fxPgdxl135/yiLDVmXjmKDDZWjbWcc=" crossorigin=anonymous type=text/css><link rel=stylesheet href=https://example.com/css/markupHighlight.min.9755453ffb7bc4cd220f86ebb5922107b49f193cc62fc17e9785d27b33a8bf5b.css integrity="sha256-l1VFP/t7xM0iD4brtZIhB7SfGTzGL8F+l4XSezOov1s=" crossorigin=anonymous type=text/css><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin=anonymous><link rel="shortcut icon" href=https://example.com/favicons/favicon.ico type=image/x-icon><link rel=apple-touch-icon sizes=180x180 href=https://example.com/favicons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=https://example.com/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://example.com/favicons/favicon-16x16.png><link rel=canonical href=https://example.com/posts/arch-linux-install-guide/><script type=text/javascript src=https://example.com/js/anatole-header.min.d8599ee07b7d3f11bafbac30657ccc591e8d7fd36a9f580cd4c09e24e0e4a971.js integrity="sha256-2Fme4Ht9PxG6+6wwZXzMWR6Nf9Nqn1gM1MCeJODkqXE=" crossorigin=anonymous></script><script type=text/javascript src=https://example.com/js/anatole-theme-switcher.min.e289e9ebb2a4e7a7f895859c8a2b0da2de1ec73f22cea58d8475aa0597023837.js integrity="sha256-4onp67Kk56f4lYWciisNot4exz8izqWNhHWqBZcCODc=" crossorigin=anonymous></script><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://example.com/images/site-feature-image.png"><meta name=twitter:title content="Arch Linix Installation Guide"><meta name=twitter:description content="Arch Linix Installation Guide 현재 가지고 있는 시스템 위주로 설명한다."></head><body><div class="sidebar animated fadeInDown"><div class=logo-title><div class=title><img src=https://example.com/images/logo.png alt="profile picture"><h3><a href=/>I'm Jane Doe</a></h3><div class=description><p>Call me Jane</p></div></div></div><ul class=social-links><li><a href=https://de.linkedin.com/ rel=me aria-label=Linkedin><i class="fab fa-linkedin fa-2x" aria-hidden=true></i></a></li><li><a href=https://github.com/lxndrblz/anatole/ rel=me aria-label=GitHub><i class="fab fa-github fa-2x" aria-hidden=true></i></a></li><li><a href=https://www.instagram.com/ rel=me aria-label=instagram><i class="fab fa-instagram fa-2x" aria-hidden=true></i></a></li><li><a href=mailto:mail@alexbilz.com rel=me aria-label=e-mail><i class="fas fa-envelope fa-2x" aria-hidden=true></i></a></li></ul><div class=footer><div class=by_farbox>&copy; Jane Doe 2021</div></div></div><div class=main><div class="page-top animated fadeInDown"><a role=button class=navbar-burger data-target=navMenu aria-label=menu aria-expanded=false><span aria-hidden=true></span><span aria-hidden=true></span><span aria-hidden=true></span></a><ul class=nav id=navMenu><li><a href=/>Home</a></li><li><a href=/posts/>Posts</a></li><li><a href=/about/>About</a></li><li><a href=/contact/>Contact</a></li><li class=theme-switch-item><a class=theme-switch title="Switch Theme"><i class="fas fa-adjust fa-fw" aria-hidden=true></i></a></li></ul></div><div class=autopagerize_page_element><div class=content><div class="post animated fadeInDown"><div class=post-content><div class=post-title><h3>Arch Linix Installation Guide</h3></div><h1 id=arch-linix-installation-guide>Arch Linix Installation Guide</h1><p>현재 가지고 있는 시스템 위주로 설명한다.</p><h2 id=부트-디스크-만들기>부트 디스크 만들기</h2><p>ISO 파일을 다운로드 한다. 다운로드 후 필요한 경우 gpg 명령으로 파일을 검증한다.</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>gpg --keyserver-options auto-key-retrieve --verify archlinux-2020.11.01-x86_64.iso.sig
+</code></pre></div><p>아래와 같이 <code>Can't check signature: No public key</code> 에러가 발생하면</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>gpg --keyserver-options auto-key-retrieve --verify archlinux-2020.11.01-x86_64.iso.sig
+gpg: assuming signed data in &#39;archlinux-2020.11.01-x86_64.iso&#39;
 gpg: Signature made Sun 01 Nov 2020 03:42:16 PM KST
 gpg:                using RSA key 4AA4767BBC9C4B1D18AE28B77F2D434B9741E8AC
-gpg: Can't check signature: No public key
-</code></pre><p>아래와 같이 키서버를 지정해 준다.</p><pre><code>gpg --keyserver-options auto-key-retrieve --keyserver=hkp://pool.sks-keyservers.net --verify archlinux-2020.11.01-x86_64.iso.sig
-</code></pre><h2 id=부트-디스크-생성>부트 디스크 생성</h2><pre><code>dd bs=4M if=~/Downloads/archlinux-2020.11.01-x86_64.iso of=/dev/sdb status=progress oflag=sync
-</code></pre><p>부트 디스크로 부팅한다.</p><h2 id=prerequisite>Prerequisite</h2><p>부트 디스크로 부팅 후 쉘이 뜨면 부팅이 완려 된것이다. 설치를 위한 사전 준비 작업을 시작한다.</p><h3 id=네트워크-연결-확인>네트워크 연결 확인</h3><p>아래 명령으로 네트워크 연결을 확인한다.</p><pre><code>ip link 
+gpg: Can&#39;t check signature: No public key
+</code></pre></div><p>아래와 같이 키서버를 지정해 준다.</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>gpg --keyserver-options auto-key-retrieve --keyserver=hkp://pool.sks-keyservers.net --verify archlinux-2020.11.01-x86_64.iso.sig
+</code></pre></div><h2 id=부트-디스크-생성>부트 디스크 생성</h2><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>dd bs=4M if=~/Downloads/archlinux-2020.11.01-x86_64.iso of=/dev/sdb status=progress oflag=sync
+</code></pre></div><p>부트 디스크로 부팅한다.</p><h2 id=prerequisite>Prerequisite</h2><p>부트 디스크로 부팅 후 쉘이 뜨면 부팅이 완려 된것이다. 설치를 위한 사전 준비 작업을 시작한다.</p><h3 id=네트워크-연결-확인>네트워크 연결 확인</h3><p>아래 명령으로 네트워크 연결을 확인한다.</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>ip link 
 ping -c 3 google.co.kr 
-</code></pre><p>아래와 같이 <code>ping</code>이 성공 하면 네트워크 연결이 성공한것이다.</p><pre><code>ping -c 3 google.co.kr
+</code></pre></div><p>아래와 같이 <code>ping</code>이 성공 하면 네트워크 연결이 성공한것이다.</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>ping -c 3 google.co.kr
 PING google.co.kr (172.217.161.67) 56(84) bytes of data.
 64 bytes from nrt20s09-in-f3.1e100.net (172.217.161.67): icmp_seq=1 ttl=116 time=46.8 ms
 64 bytes from nrt20s09-in-f3.1e100.net (172.217.161.67): icmp_seq=2 ttl=116 time=39.2 ms
@@ -20,69 +17,69 @@ PING google.co.kr (172.217.161.67) 56(84) bytes of data.
 --- google.co.kr ping statistics ---
 3 packets transmitted, 3 received, 0% packet loss, time 2002ms
 rtt min/avg/max/mdev = 39.260/41.786/46.802/3.546 ms
-</code></pre><h3 id=update-system-clock-optional>Update system clock (optional)</h3><pre><code>timedatectl set-ntp true
-</code></pre><h2 id=bootstrapping>Bootstrapping</h2><h3 id=partition-the-disk>Partition the disk</h3><pre><code>fdisk -l /dev/nvme0n1
-</code></pre><table><thead><tr><th>Mount Point</th><th>Partition</th><th>Partition Type</th><th>Size</th><th>Notes</th></tr></thead><tbody><tr><td>/mnt/boot</td><td>/dev/nvme0n1p1</td><td>EFI system partition</td><td>512MiB</td><td></td></tr><tr><td>/mnt</td><td>/dev/nvme0n1p2</td><td>Linux filesystem</td><td>64GB</td><td></td></tr><tr><td>/mnt/home</td><td>/dev/nvme0n1p3</td><td>Linux filesystem</td><td>Remainder of the device</td><td></td></tr></tbody></table><p>별도의 SWAP 파티션을 생성하지 않는다. SWAP 파티션이 필요할 경우 <a href=https://wiki.archlinux.org/index.php/Swap#Swap_file>swap file</a>을 사용한다.</p><p>가용 디스크 용량이 충분하기 때문에 시스템이 설치될 파티션(<code>/</code>)과 <code>/home</code> 파티션을 분리 한다.
-OS 재설시 <code>/home</code> 파티션을 유지하면서 OS를 설치 할 수 있기 때문에 OS 재설치 시 유리한다.</p><p><code>fdisk</code>, <code>cfdisk</code>, <code>gfdisk</code> 명령 중 원하는 파티셔닝 프로그램으로 파티션을 진행한다.</p><pre><code>cfdisk /dev/nvme0n1
-</code></pre><h3 id=format-the-partitions>Format the partitions</h3><pre><code>mkfs.vfat -F32 /dev/nvme0n1p1
+</code></pre></div><h3 id=update-system-clock-optional>Update system clock (optional)</h3><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>timedatectl set-ntp true
+</code></pre></div><h2 id=bootstrapping>Bootstrapping</h2><h3 id=partition-the-disk>Partition the disk</h3><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>fdisk -l /dev/nvme0n1
+</code></pre></div><table><thead><tr><th>Mount Point</th><th>Partition</th><th>Partition Type</th><th>Size</th><th>Notes</th></tr></thead><tbody><tr><td>/mnt/boot</td><td>/dev/nvme0n1p1</td><td>EFI system partition</td><td>512MiB</td><td></td></tr><tr><td>/mnt</td><td>/dev/nvme0n1p2</td><td>Linux filesystem</td><td>64GB</td><td></td></tr><tr><td>/mnt/home</td><td>/dev/nvme0n1p3</td><td>Linux filesystem</td><td>Remainder of the device</td><td></td></tr></tbody></table><p>별도의 SWAP 파티션을 생성하지 않는다. SWAP 파티션이 필요할 경우 <a href=https://wiki.archlinux.org/index.php/Swap#Swap_file>swap file</a>을 사용한다.</p><p>가용 디스크 용량이 충분하기 때문에 시스템이 설치될 파티션(<code>/</code>)과 <code>/home</code> 파티션을 분리 한다.
+OS 재설시 <code>/home</code> 파티션을 유지하면서 OS를 설치 할 수 있기 때문에 OS 재설치 시 유리한다.</p><p><code>fdisk</code>, <code>cfdisk</code>, <code>gfdisk</code> 명령 중 원하는 파티셔닝 프로그램으로 파티션을 진행한다.</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>cfdisk /dev/nvme0n1
+</code></pre></div><h3 id=format-the-partitions>Format the partitions</h3><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>mkfs.vfat -F32 /dev/nvme0n1p1
 mkfs.ext4 -j /dev/nvme0n1p2
 mkfs.ext4 -j /dev/nvme0n1p3
-</code></pre><h3 id=mount-filesystem>Mount filesystem</h3><pre><code>mount /dev/nvme0n1p2 /mnt
+</code></pre></div><h3 id=mount-filesystem>Mount filesystem</h3><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>mount /dev/nvme0n1p2 /mnt
 mkdir -p /mnt/boot
 mount /dev/nvme0n1p1 /mnt/boot
 mkdir -o /mnt/home
 mount /dev/nvme0n1p3 /mnt/home
-</code></pre><h3 id=update-mirror-list>Update Mirror List</h3><pre><code>vi /etc/pacman.d/mirrorlist
-</code></pre><p>아래 라인을 서버리스트 가장 위에 추가한다.</p><pre><code>Server = http://mirror.premi.st/archlinux/$repo/os/$arch
+</code></pre></div><h3 id=update-mirror-list>Update Mirror List</h3><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>vi /etc/pacman.d/mirrorlist
+</code></pre></div><p>아래 라인을 서버리스트 가장 위에 추가한다.</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>Server = http://mirror.premi.st/archlinux/$repo/os/$arch
 Server = http://ftp.lanet.kr/pub/archlinux/$repo/os/$arch
 Server = https://ftp.lanet.kr/pub/archlinux/$repo/os/$arch
 Server = http://ftp.harukasan.org/archlinux/$repo/os/$arch
 Server = https://ftp.harukasan.org/archlinux/$repo/os/$arch
-</code></pre><h3 id=pacstrap>pacstrap</h3><pre><code>pacstrap /mnt base linux linux-firmware vim networkmanager base-devel man-db man-pages texinfo dosfstools e2fsprogs
-</code></pre><h3 id=generate-etcfstab>Generate <code>/etc/fstab</code></h3><pre><code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
-</code></pre><h3 id=chrooting>chrooting</h3><pre><code>arch-chroot /mnt
-</code></pre><pre><code>ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
-</code></pre><h3 id=generating-locales>Generating locales</h3><p>Edit <code>/etc/locale.gen</code> and uncomment en_US.UTF-8 UTF-8. Generate the locales by running</p><pre><code>locake-gen
-</code></pre><p>Create <code>locale.conf</code></p><pre><code>echo &quot;LANG=en_US.UTF-8&quot; &gt;&gt; /etc/locale.conf
-echo &quot;LC_ALL=en_US.UTF-8&quot; &gt;&gt; /etc/locale.conf
-</code></pre><h3 id=network-configuration>Network Configuration</h3><p>Set Hostname</p><pre><code>echo Coconut &gt; /etc/hostname 
-</code></pre><p>add to hosts</p><pre><code>127.0.0.1	localhost
+</code></pre></div><h3 id=pacstrap>pacstrap</h3><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>pacstrap /mnt base linux linux-firmware vim networkmanager base-devel man-db man-pages texinfo dosfstools e2fsprogs
+</code></pre></div><h3 id=generate-etcfstab>Generate <code>/etc/fstab</code></h3><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</code></pre></div><h3 id=chrooting>chrooting</h3><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>arch-chroot /mnt
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+</code></pre></div><h3 id=generating-locales>Generating locales</h3><p>Edit <code>/etc/locale.gen</code> and uncomment en_US.UTF-8 UTF-8. Generate the locales by running</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>locake-gen
+</code></pre></div><p>Create <code>locale.conf</code></p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>echo &#34;LANG=en_US.UTF-8&#34; &gt;&gt; /etc/locale.conf
+echo &#34;LC_ALL=en_US.UTF-8&#34; &gt;&gt; /etc/locale.conf
+</code></pre></div><h3 id=network-configuration>Network Configuration</h3><p>Set Hostname</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>echo Coconut &gt; /etc/hostname 
+</code></pre></div><p>add to hosts</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>127.0.0.1	localhost
 ::1			localhost
 127.0.1.1	coconut.localdomain coconut
-</code></pre><p>Enable NetworkManager service</p><pre><code>systemctl enable NetworkManager.service
-</code></pre><h3 id=initramfs>initramfs</h3><pre><code>mkinitcpio -P
-</code></pre><pre><code>passwd
-</code></pre><h3 id=create-primary-user>Create primary user</h3><pre><code>useradd -m -G users,wheel -s /bin/bash euikook
-</code></pre><p>Set password to <code>euikook</code></p><pre><code>passwd euikook
-</code></pre><h3 id=enable-sudo-command-to-wheel-groups>Enable sudo command to wheel groups</h3><p>Run <code>visudo</code> command and uncomment <code>%wheel ALL=(ALL:ALL) ALL</code></p><pre><code>%wheel ALL=(ALL:ALL) ALL
-</code></pre><h3 id=install-bootloader-grub>Install bootloader (GRUB)</h3><pre><code>pacman -Syu
+</code></pre></div><p>Enable NetworkManager service</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>systemctl enable NetworkManager.service
+</code></pre></div><h3 id=initramfs>initramfs</h3><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>mkinitcpio -P
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>passwd
+</code></pre></div><h3 id=create-primary-user>Create primary user</h3><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>useradd -m -G users,wheel -s /bin/bash euikook
+</code></pre></div><p>Set password to <code>euikook</code></p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>passwd euikook
+</code></pre></div><h3 id=enable-sudo-command-to-wheel-groups>Enable sudo command to wheel groups</h3><p>Run <code>visudo</code> command and uncomment <code>%wheel ALL=(ALL:ALL) ALL</code></p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>%wheel ALL=(ALL:ALL) ALL
+</code></pre></div><h3 id=install-bootloader-grub>Install bootloader (GRUB)</h3><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>pacman -Syu
 pacman -S grub efibootmgt
-</code></pre><pre><code>grub-install --target=x86_64-efi --eif-directory=/boot --bootloader-id=arch --recheck
-</code></pre><p>Edit <code>/etc/default/grub</code></p><pre><code>grub-mkconfig -o /boot/grub/grub.cfg
-</code></pre><h3 id=finish-bootstrapping>Finish bootstrapping</h3><p>Exit from chroot</p><pre><code>exit
-</code></pre><p>Un-Mount mounted directories</p><pre><code>umount -R /mnt
-</code></pre><pre><code>shutdown -r now
-</code></pre><h2 id=post-bootstrapping>Post bootstrapping</h2><h3 id=intel-microcode>Intel Microcode</h3><pre><code>sudo pacman -S intel-ucode
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>grub-install --target=x86_64-efi --eif-directory=/boot --bootloader-id=arch --recheck
+</code></pre></div><p>Edit <code>/etc/default/grub</code></p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre></div><h3 id=finish-bootstrapping>Finish bootstrapping</h3><p>Exit from chroot</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>exit
+</code></pre></div><p>Un-Mount mounted directories</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>umount -R /mnt
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>shutdown -r now
+</code></pre></div><h2 id=post-bootstrapping>Post bootstrapping</h2><h3 id=intel-microcode>Intel Microcode</h3><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>sudo pacman -S intel-ucode
 grub-mkconfig -o /boot/grub/grub.cfg
-</code></pre><h3 id=gui-설치>GUI 설치</h3><p>패키지 리스트 업데이트</p><pre><code>sudo pacman -Syu
-</code></pre><p>Gnome 설치</p><pre><code>sudo pacman -S xorg-server gnome
+</code></pre></div><h3 id=gui-설치>GUI 설치</h3><p>패키지 리스트 업데이트</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>sudo pacman -Syu
+</code></pre></div><p>Gnome 설치</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>sudo pacman -S xorg-server gnome
 sudo systemctl enable gdb
-</code></pre><p>그래픽 카드 드라이버 설치</p><pre><code>sudo pacman -S xf86-video-intel
+</code></pre></div><p>그래픽 카드 드라이버 설치</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>sudo pacman -S xf86-video-intel
 sudo pacman -S nvidia xf86-video-intel
-</code></pre><p>기타 어플리케이션 설치</p><pre><code>pacman -S firefox
-</code></pre><pre><code>sudo shutdown -r now
-</code></pre><h3 id=package-from-aur>Package from AUR</h3><pre><code>cd ~/Downloads
+</code></pre></div><p>기타 어플리케이션 설치</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>pacman -S firefox
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>sudo shutdown -r now
+</code></pre></div><h3 id=package-from-aur>Package from AUR</h3><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>cd ~/Downloads
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -sic
-</code></pre><h4 id=fonts>Fonts</h4><pre><code> sudo yay -S ttf-nanum
-</code></pre><h4 id=google-chrome>Google Chrome</h4><pre><code>sydo yay -S google-chrome
-</code></pre><h3 id=한글-입력-설정>한글 입력 설정</h3><pre><code>sudo pacman -S ibus ibus-hangul
-</code></pre><p>Terminal에서 <code>ibus-setup</code> 을 실행한다.</p><pre><code>ibus-setup
-</code></pre><ul><li>Input Method에 다른 언어들은 모두 삭제 하고 <code>Korean - Hangul</code>을 추가 한다.</li><li>Korean - Hangul을 선택한 상태에서 Preferences를 클릭하여 <code>ibus-hangul</code> 설정을 진행한다.<ul><li>한영 전환 키 등</li><li></li></ul></li></ul><p><code>Settings</code> > <code>Region & Language</code> > <code>Input Sources</code></p><p><code>Korean(Hangul)</code>을 추가한다.</p><h4 id=kbd한영kbd-전환키가-없는-키보드에서-right-kbdraltkbd를-kbd한영kbd-전환키로-사용하기>한/영 전환키가 없는 키보드에서 Right RALT를 한/영 전환키로 사용하기</h4><p>몇가지 방법이 있지만 가장 쉬운 방법은 Gnome Tweak 툴에서 다음과 같이 설정한다.</p><p><code>Tweak</code> > <code>Keyboard @ Mouse</code> > <code>Additional Layout Options</code> > <code>Korean Hangul/Hanja Keys</code> > <code>Make right Alt a Hangul key</code> 선택</p><p>이유를 확인 해보지는 않았지만 <code>xev</code> 등의 명령으로 확인해보면 <code>RALT</code> 키가 <code>ISO_Level3_shift</code>로 설정 된 경우가 있다. 이 경우 <code>Tweak</code> > <code>Keyboard @ Mouse</code> > <code>Additional Layout Options</code> > <code>Key to choose the 3rd level</code> > <code>Right Alt</code> 선택을 해제한다.</p><h3 id=auto-completion-for-sudo-command>Auto completion for <code>sudo</code> command</h3><p><code>~/.bashrc</code></p><pre><code>complate -cf sudo
-</code></pre><h3 id=logitech-mouse-설정>Logitech Mouse 설정</h3><p>Install Logiops <a href=https://aur.archlinux.org/packages/logiops-git/>logiops-git</a>^AUR^</p><pre><code>yay -S logiops-git
-</code></pre><p>Create <code>/etc/logid.cfg</code> file as following:</p><pre><code>devices: ({
-  name: &quot;Logitech Wireless Mouse MX Master 3&quot;;
+</code></pre></div><h4 id=fonts>Fonts</h4><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback> sudo yay -S ttf-nanum
+</code></pre></div><h4 id=google-chrome>Google Chrome</h4><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>sydo yay -S google-chrome
+</code></pre></div><h3 id=한글-입력-설정>한글 입력 설정</h3><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>sudo pacman -S ibus ibus-hangul
+</code></pre></div><p>Terminal에서 <code>ibus-setup</code> 을 실행한다.</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>ibus-setup
+</code></pre></div><ul><li>Input Method에 다른 언어들은 모두 삭제 하고 <code>Korean - Hangul</code>을 추가 한다.</li><li>Korean - Hangul을 선택한 상태에서 Preferences를 클릭하여 <code>ibus-hangul</code> 설정을 진행한다.<ul><li>한영 전환 키 등</li><li></li></ul></li></ul><p><code>Settings</code> > <code>Region & Language</code> > <code>Input Sources</code></p><p><code>Korean(Hangul)</code>을 추가한다.</p><h4 id=kbd한영kbd-전환키가-없는-키보드에서-right-kbdraltkbd를-kbd한영kbd-전환키로-사용하기>한/영 전환키가 없는 키보드에서 Right RALT를 한/영 전환키로 사용하기</h4><p>몇가지 방법이 있지만 가장 쉬운 방법은 Gnome Tweak 툴에서 다음과 같이 설정한다.</p><p><code>Tweak</code> > <code>Keyboard @ Mouse</code> > <code>Additional Layout Options</code> > <code>Korean Hangul/Hanja Keys</code> > <code>Make right Alt a Hangul key</code> 선택</p><p>이유를 확인 해보지는 않았지만 <code>xev</code> 등의 명령으로 확인해보면 <code>RALT</code> 키가 <code>ISO_Level3_shift</code>로 설정 된 경우가 있다. 이 경우 <code>Tweak</code> > <code>Keyboard @ Mouse</code> > <code>Additional Layout Options</code> > <code>Key to choose the 3rd level</code> > <code>Right Alt</code> 선택을 해제한다.</p><h3 id=auto-completion-for-sudo-command>Auto completion for <code>sudo</code> command</h3><p><code>~/.bashrc</code></p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>complate -cf sudo
+</code></pre></div><h3 id=logitech-mouse-설정>Logitech Mouse 설정</h3><p>Install Logiops <a href=https://aur.archlinux.org/packages/logiops-git/>logiops-git</a>^AUR^</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>yay -S logiops-git
+</code></pre></div><p>Create <code>/etc/logid.cfg</code> file as following:</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>devices: ({
+  name: &#34;Logitech Wireless Mouse MX Master 3&#34;;
 
   // A lower threshold number makes the wheel switch to free-spin mode
   // quicker when scrolling fast.
@@ -97,16 +94,16 @@ makepkg -sic
   buttons: (
 
     // Make thumb button 10.
-    { cid: 0xc3; action = { type: &quot;Keypress&quot;; keys: [&quot;BTN_FORWARD&quot;]; }; },
+    { cid: 0xc3; action = { type: &#34;Keypress&#34;; keys: [&#34;BTN_FORWARD&#34;]; }; },
 
     // Make top button 11.
-    { cid: 0xc4; action = { type: &quot;Keypress&quot;; keys: [&quot;BTN_BACK&quot;];    }; }
+    { cid: 0xc4; action = { type: &#34;Keypress&#34;; keys: [&#34;BTN_BACK&#34;];    }; }
 
   );
 });
-</code></pre><h3 id=insync-3x>Insync 3.x</h3><p>Install <a href=https://aur.archlinux.org/packages/insync/>Insync</a>^AUR^</p><pre><code>yay -S insync
-</code></pre><p>재설치 이고 이전 데이터를 모두 가지고 있다면 실행전 이전 머신의 ~/.config/Insync 디렉터리를 복사 하여 덮어 쓰면 이전 설정을 그대로 사용할 수 있음.</p><pre><code>rsync -avz -e ssh ${OLDBOX}:/home/${USER}/.config/Insync ~/.config
-</code></pre><h4 id=autostart-with-login>Autostart with Login</h4><p><code>~/.config/autostart/insync.desktop</code></p><pre><code>[Desktop Entry]
+</code></pre></div><h3 id=insync-3x>Insync 3.x</h3><p>Install <a href=https://aur.archlinux.org/packages/insync/>Insync</a>^AUR^</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>yay -S insync
+</code></pre></div><p>재설치 이고 이전 데이터를 모두 가지고 있다면 실행전 이전 머신의 ~/.config/Insync 디렉터리를 복사 하여 덮어 쓰면 이전 설정을 그대로 사용할 수 있음.</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>rsync -avz -e ssh ${OLDBOX}:/home/${USER}/.config/Insync ~/.config
+</code></pre></div><h4 id=autostart-with-login>Autostart with Login</h4><p><code>~/.config/autostart/insync.desktop</code></p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>[Desktop Entry]
 Version=1.0
 Type=Application
 Name=Insync
@@ -118,4 +115,4 @@ Exec=insync start
 TryExec=insync
 Terminal=false
 X-GNOME-Autostart-Delay=15
-</code></pre><p><a href=https://extensions.gnome.org/extension/1503/tray-icons/>Tray Icons</a>^Extention^ 확장을 사용한다면 <code>X-GNOME-Autostart-Delay=15</code> 옵션을 주어야 한다.</p><blockquote></blockquote></div><div class=post-footer><div class=info><span class=separator><a class=tag href=/tags/linux/>Linux</a><a class=tag href=/tags/arch-linux/>Arch Linux</a><a class=tag href=/tags/insync/>Insync</a></span></div></div></div></div></div></div><script type=text/javascript src=http://harues.com/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js integrity="sha256-hrHo+BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw=" crossorigin=anonymous></script><script type=text/javascript src=http://harues.com/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4=" crossorigin=anonymous></script><script type=text/javascript src=http://harues.com/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js integrity="sha256-kvIchWEp+ErrcZRZs+asYhowMv17GAoYwE4dEgg/iro=" crossorigin=anonymous></script></body></html>
+</code></pre></div><p><a href=https://extensions.gnome.org/extension/1503/tray-icons/>Tray Icons</a>^Extention^ 확장을 사용한다면 <code>X-GNOME-Autostart-Delay=15</code> 옵션을 주어야 한다.</p><blockquote></blockquote></div><div class=post-footer><div class=info><span class=separator><a class=tag href=/tags/linux/>Linux</a><a class=tag href=/tags/arch-linux/>Arch Linux</a><a class=tag href=/tags/insync/>Insync</a></span></div></div></div></div></div></div><script type=text/javascript src=https://example.com/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js integrity="sha256-hrHo+BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw=" crossorigin=anonymous></script><script type=text/javascript src=https://example.com/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4=" crossorigin=anonymous></script><script type=text/javascript src=https://example.com/js/medium-zoom.min.92f21c856129f84aeb719459b3e6ac621a3032fd7b180a18c04e1d12083f8aba.js integrity="sha256-kvIchWEp+ErrcZRZs+asYhowMv17GAoYwE4dEgg/iro=" crossorigin=anonymous></script></body></html>

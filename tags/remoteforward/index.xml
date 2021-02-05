@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RemoteForward on Miscellaneous Notes</title><link>http://harues.com/tags/remoteforward/</link><description>Recent content in RemoteForward on Miscellaneous Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="http://harues.com/tags/remoteforward/index.xml" rel="self" type="application/rss+xml"/><item><title>Keep persistent SSH session using autossh and cron</title><link>http://harues.com/posts/keep-persistent-ssh-session-using-autossh-and-cron/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://harues.com/posts/keep-persistent-ssh-session-using-autossh-and-cron/</guid><description>&lt;h1 id="keep-persistent-ssh-session-using-autossh-and-cron">Keep persistent SSH session using autossh and cron&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RemoteForward on Website of Jane Doe</title><link>https://example.com/tags/remoteforward/</link><description>Recent content in RemoteForward on Website of Jane Doe</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://example.com/tags/remoteforward/index.xml" rel="self" type="application/rss+xml"/><item><title>Keep persistent SSH session using autossh and cron</title><link>https://example.com/posts/keep-persistent-ssh-session-using-autossh-and-cron/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.com/posts/keep-persistent-ssh-session-using-autossh-and-cron/</guid><description>&lt;h1 id="keep-persistent-ssh-session-using-autossh-and-cron">Keep persistent SSH session using autossh and cron&lt;/h1>
 &lt;h2 id="background-knowledge">Background Knowledge&lt;/h2>
 &lt;h3 id="ssh-tunneling">SSH Tunneling&lt;/h3>
 &lt;ul>
@@ -6,8 +6,8 @@
 &lt;li>Remote Port Forwarding:&lt;/li>
 &lt;/ul>
 &lt;h4 id="local-port-forwarding">Local Port Forwarding&lt;/h4>
-&lt;pre>&lt;code>ssh -L [bind_addr:]port:target_addr:target_port user@server
-&lt;/code>&lt;/pre>&lt;ul>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">ssh -L [bind_addr:]port:target_addr:target_port user@server
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>bind_addr&lt;/li>
 &lt;li>port&lt;/li>
 &lt;li>target_addr&lt;/li>
@@ -16,8 +16,8 @@
 &lt;li>server&lt;/li>
 &lt;/ul>
 &lt;h4 id="remote-port-forwarding">Remote Port Forwarding&lt;/h4>
-&lt;pre>&lt;code>ssh -R [bind_addr:]port:target_addr:target_port user@server
-&lt;/code>&lt;/pre>&lt;ul>
+&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-fallback" data-lang="fallback">ssh -R [bind_addr:]port:target_addr:target_port user@server
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
 &lt;li>bind_addr&lt;/li>
 &lt;li>port&lt;/li>
 &lt;li>target_addr&lt;/li>
