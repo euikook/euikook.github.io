@@ -1,6 +1,7 @@
-+++
+---
 author = "Hugo Authors"
-+++
+date = 2021-02-05 09:30:36 +0900
+---
 <!--
 This file is left intentionally empty by default to be backward compatible with initial theme setup.
 
