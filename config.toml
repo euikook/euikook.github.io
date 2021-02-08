@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://notes.harues.com/"
 languageCode = "en-us"
 title = "Notes"
 # Enable comments by entering your Disqus shortname
