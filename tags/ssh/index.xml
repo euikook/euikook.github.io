@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SSH on Notes</title><link>/tags/ssh/</link><description>Recent content in SSH on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 21 Dec 2020 15:41:13 +0900</lastBuildDate><atom:link href="/tags/ssh/index.xml" rel="self" type="application/rss+xml"/><item><title>SSH config with Include</title><link>/posts/ssh-config-with-include/</link><pubDate>Mon, 21 Dec 2020 15:41:13 +0900</pubDate><guid>/posts/ssh-config-with-include/</guid><description>SSH Config with Include OpenSSH 7.3에서 Include 기능이 추가 되었다.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SSH on Notes</title><link>https://notes.harues.com/tags/ssh/</link><description>Recent content in SSH on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 21 Dec 2020 15:41:13 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/ssh/index.xml" rel="self" type="application/rss+xml"/><item><title>SSH config with Include</title><link>https://notes.harues.com/posts/ssh-config-with-include/</link><pubDate>Mon, 21 Dec 2020 15:41:13 +0900</pubDate><guid>https://notes.harues.com/posts/ssh-config-with-include/</guid><description>SSH Config with Include OpenSSH 7.3에서 Include 기능이 추가 되었다.
 About ~/.ssh/config SSH 접속 정보를 ~/.ssh/config 파일에 저장한다.
 접속하고자 하는 SSH 서버의 연결 옵션을 달리 해야 되는 경우나 IP를 외울 필요 없이 지정한 서버 이름으로 접속할 수 있기 때문에 매우 유용하다.
 또한 보안등의 이유나 NAT내부의 Port Forwarding된 외우기 힘든 SSH Port 주소로 접속 해야 한다면 아래 예제의 Port 파라미터를 정하기만 하면 된다.
 아래는 ~/ssh/config 파일의 예제 이다.
-Host 1.2.3.4 test Hostname 1.</description></item><item><title>Keep persistent SSH session using autossh and cron</title><link>/posts/keep-persistent-ssh-session-using-autossh-and-cron/</link><pubDate>Mon, 16 Nov 2020 09:37:41 +0900</pubDate><guid>/posts/keep-persistent-ssh-session-using-autossh-and-cron/</guid><description>&lt;h1 id="keep-persistent-ssh-session-using-autossh-and-cron">Keep persistent SSH session using autossh and cron&lt;/h1>
+Host 1.2.3.4 test Hostname 1.</description></item><item><title>Keep persistent SSH session using autossh and cron</title><link>https://notes.harues.com/posts/keep-persistent-ssh-session-using-autossh-and-cron/</link><pubDate>Mon, 16 Nov 2020 09:37:41 +0900</pubDate><guid>https://notes.harues.com/posts/keep-persistent-ssh-session-using-autossh-and-cron/</guid><description>&lt;h1 id="keep-persistent-ssh-session-using-autossh-and-cron">Keep persistent SSH session using autossh and cron&lt;/h1>
 &lt;h2 id="background-knowledge">Background Knowledge&lt;/h2>
 &lt;h3 id="ssh-tunneling">SSH Tunneling&lt;/h3>
 &lt;ul>
@@ -30,9 +30,9 @@ Host 1.2.3.4 test Hostname 1.</description></item><item><title>Keep persistent S
 &lt;li>user&lt;/li>
 &lt;li>server&lt;/li>
 &lt;/ul>
-&lt;p>Please see &lt;a href="http://dirk-loss.de/ssh-port-forwarding.pdf">http://dirk-loss.de/ssh-port-forwarding.pdf&lt;/a>&lt;/p></description></item><item><title>RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화</title><link>/posts/incremental-backup-using-rsyncssh/</link><pubDate>Mon, 16 Nov 2020 09:37:41 +0900</pubDate><guid>/posts/incremental-backup-using-rsyncssh/</guid><description>&lt;h4 id="incremental-backup-using-rsyncssh-and-cron">Incremental Backup Using RSYNC+SSH and cron&lt;/h4>
+&lt;p>Please see &lt;a href="http://dirk-loss.de/ssh-port-forwarding.pdf">http://dirk-loss.de/ssh-port-forwarding.pdf&lt;/a>&lt;/p></description></item><item><title>RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화</title><link>https://notes.harues.com/posts/incremental-backup-using-rsyncssh/</link><pubDate>Mon, 16 Nov 2020 09:37:41 +0900</pubDate><guid>https://notes.harues.com/posts/incremental-backup-using-rsyncssh/</guid><description>&lt;h4 id="incremental-backup-using-rsyncssh-and-cron">Incremental Backup Using RSYNC+SSH and cron&lt;/h4>
 &lt;p>RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화&lt;/p>
-&lt;p>관리 하는 서버가 많아지고 서버에 저장되는 데이터의 양이 늘어 날 수록 백업을 어떻게 하여야 하는지 고민이 생긴다. 이 포스트에서는 RSYNC와 SSH를 이용하여 여러 서버의 데이터를 백업하고 이를 자동화 하는 방법에 대하여 기술 한다. 테스트를 위한 서버 구성은 다음과 같다.   &lt;img src="/wp-content/uploads/2018/03/Incremental-Backup-using-RSYNCSSH.png" alt="">   아래 예제 에서는 &lt;em>S-01&lt;/em>, &lt;em>S-02&lt;/em>, _S-03_의 /home 디렉터리를 BackupBot으로 백업 하고자 한다.&lt;/p>
+&lt;p>관리 하는 서버가 많아지고 서버에 저장되는 데이터의 양이 늘어 날 수록 백업을 어떻게 하여야 하는지 고민이 생긴다. 이 포스트에서는 RSYNC와 SSH를 이용하여 여러 서버의 데이터를 백업하고 이를 자동화 하는 방법에 대하여 기술 한다. 테스트를 위한 서버 구성은 다음과 같다.   &lt;img src="https://notes.harues.com/wp-content/uploads/2018/03/Incremental-Backup-using-RSYNCSSH.png" alt="">   아래 예제 에서는 &lt;em>S-01&lt;/em>, &lt;em>S-02&lt;/em>, _S-03_의 /home 디렉터리를 BackupBot으로 백업 하고자 한다.&lt;/p>
 &lt;h2 id="공통-준비-사항">공통 준비 사항&lt;/h2>
 &lt;h3 id="backup-user-생성">Backup User 생성&lt;/h3>
 &lt;p>백업을 위한 사용자 계정을 생성한다.&lt;/p>
@@ -41,7 +41,7 @@ Host 1.2.3.4 test Hostname 1.</description></item><item><title>Keep persistent S
 &lt;h3 id="ssh-key-생성-backupbot">SSH KEY 생성 (BackupBot)&lt;/h3>
 &lt;p>&lt;em>ssh-keygen&lt;/em> 명령으로 SSH KEY를 생성한다.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ssh-keygen -t rsa -b &lt;span style="color:#ae81ff">4096&lt;/span> -f backupman -C BackupMan
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Usages of SSH key pair</title><link>/posts/usages-of-ssh-key-pair/</link><pubDate>Mon, 16 Nov 2020 09:37:41 +0900</pubDate><guid>/posts/usages-of-ssh-key-pair/</guid><description>Usages of SSH key pair Generate SSH key pair ssh-keygen
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Usages of SSH key pair</title><link>https://notes.harues.com/posts/usages-of-ssh-key-pair/</link><pubDate>Mon, 16 Nov 2020 09:37:41 +0900</pubDate><guid>https://notes.harues.com/posts/usages-of-ssh-key-pair/</guid><description>Usages of SSH key pair Generate SSH key pair ssh-keygen
 ssh-keygen -t rsa -b 4096 -f test test.pub: Public Key test: Private Key Use key Copy to remote system Copy Public key to $REMOTE_HOST
 ssh-copy-id $USER@$REMOTE_HOST -i test or, if there is no public key in remote host
 scp ~/.ssh/test.pub $USER@$REMOTE_HOST:.ssh/authorized_keys Login use Private Key ssh $USER@$REMOTE_HOST -i .ssh/test
