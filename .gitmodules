@@ -12,4 +12,4 @@
 	url = https://github.com/lxndrblz/anatole.git
 [submodule "themes/icarus"]
 	path = themes/hugo-icarus
-	url = https://gitlab.com/toryanderson/hugo-icarus.git
+	url = https://github.com/euikook/hugo-icarus.git
