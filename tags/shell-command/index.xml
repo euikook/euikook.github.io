@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shell Command on Miscellaneous Notes</title><link>/tags/shell-command/</link><description>Recent content in Shell Command on Miscellaneous Notes</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="/tags/shell-command/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux Shell 에서 대소문자 치환</title><link>/posts/linux-shell-%EC%97%90%EC%84%9C-%EB%8C%80%EC%86%8C%EB%AC%B8%EC%9E%90-%EC%B9%98%ED%99%98/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/posts/linux-shell-%EC%97%90%EC%84%9C-%EB%8C%80%EC%86%8C%EB%AC%B8%EC%9E%90-%EC%B9%98%ED%99%98/</guid><description>Linux Shell 에서 대소문자 치환 Linux tr 명령 사용
-tr [:lower:] [:upper:] Examples:</description></item><item><title>개발자와 시스템 관리자의 친구 tmux, GNU screen Alternative - 01</title><link>/posts/usages-of-tmux-gnu-screen-alternative-01/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/posts/usages-of-tmux-gnu-screen-alternative-01/</guid><description>&lt;h4 id="usages-of-tmux-gnu-screen-alternative">Usages of tmux, GNU screen Alternative&lt;/h4>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shell Command on Notes</title><link>https://example.org/tags/shell-command/</link><description>Recent content in Shell Command on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 16 Nov 2020 09:37:41 +0900</lastBuildDate><atom:link href="https://example.org/tags/shell-command/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux Shell 에서 대소문자 치환</title><link>https://example.org/posts/linux-shell-%EC%97%90%EC%84%9C-%EB%8C%80%EC%86%8C%EB%AC%B8%EC%9E%90-%EC%B9%98%ED%99%98/</link><pubDate>Mon, 16 Nov 2020 09:37:41 +0900</pubDate><guid>https://example.org/posts/linux-shell-%EC%97%90%EC%84%9C-%EB%8C%80%EC%86%8C%EB%AC%B8%EC%9E%90-%EC%B9%98%ED%99%98/</guid><description>Linux Shell 에서 대소문자 치환 Linux tr 명령 사용
+tr [:lower:] [:upper:] Examples:
+echo test | tr [:lower:] [:upper:]</description></item><item><title>개발자와 시스템 관리자의 친구 tmux, GNU screen Alternative - 01</title><link>https://example.org/posts/usages-of-tmux-gnu-screen-alternative-01/</link><pubDate>Mon, 16 Nov 2020 09:37:41 +0900</pubDate><guid>https://example.org/posts/usages-of-tmux-gnu-screen-alternative-01/</guid><description>&lt;h4 id="usages-of-tmux-gnu-screen-alternative">Usages of tmux, GNU screen Alternative&lt;/h4>
 &lt;p>개발자와 시스템 관리자의 친구 tmux, GNU screen Alternative - 01&lt;/p>
 &lt;p>개발자와 시스템 관리자의 친구, tmux 에 대하여 알아보자&lt;/p>
 &lt;p>tmux는 GNU screen을 대체 할 수 있는 가장 매력적인 대안이다. Terminal Multiplex 로 매뉴얼은 다음에서 볼 수 있다.&lt;/p>
@@ -13,16 +14,16 @@ tr [:lower:] [:upper:] Examples:</description></item><item><title>개발자와 �
 &lt;li>Windows 자동 업데이트로 인한 시스템 재시작으로 인한 세션 해제&lt;/li>
 &lt;li>네트워크 불안으로 인한 세션 해제&lt;/li>
 &lt;li>정전등 전원 불안으로 인한 세션 해제&lt;/li>
-&lt;/ul></description></item><item><title>왜 디렉터리 Hard link를 만들 수 없나요?</title><link>/posts/why-hard-link-not-allowed-for-directory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/posts/why-hard-link-not-allowed-for-directory/</guid><description>&lt;h4 id="why-hard-link-not-allowed-for-directory">Why Hard Link Not Allowed for Directory&lt;/h4>
+&lt;/ul></description></item><item><title>왜 디렉터리 Hard link를 만들 수 없나요?</title><link>https://example.org/posts/why-hard-link-not-allowed-for-directory/</link><pubDate>Mon, 16 Nov 2020 09:37:41 +0900</pubDate><guid>https://example.org/posts/why-hard-link-not-allowed-for-directory/</guid><description>&lt;h4 id="why-hard-link-not-allowed-for-directory">Why Hard Link Not Allowed for Directory&lt;/h4>
 &lt;p>왜 디렉터리 Hard link를 만들 수 없나요?&lt;/p>
 &lt;p>  디렉터리 Hard Link를 만들고 싶지만 만들어 지지 않는다.&lt;/p>
 &lt;p>예전에는 &lt;em>root&lt;/em> 권한으로 &lt;em>&lt;strong>-d&lt;/strong>&lt;/em> 옵셥을 주면 만들어 진것 같은데 _Ubuntu 16.04_에서 테스트 해보니 &lt;em>root&lt;/em> 권한으로도 디렉터리 Hard Link가 만들어 지지 않는다.&lt;/p>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">mkdir a
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">mkdir a
 ln a b
-ln: a: hard link not allowed &lt;span class="k">for&lt;/span> directory
+ln: a: hard link not allowed &lt;span style="color:#66d9ef">for&lt;/span> directory
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>디렉터리 Hard Link는 여러 문제점을 야기 시킨다. 디렉터리 Hard Link에 의해 발생할 수 있는 문제점들에 대하여 알아본다.&lt;/p>
 &lt;h2 id="파일시스템에-루프를-만든다">파일시스템에 루프를 만든다.&lt;/h2>
-&lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-bash" data-lang="bash">mkdir -p ~/a/b
-&lt;span class="nb">cd&lt;/span> ~/a/b
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">mkdir -p ~/a/b
+cd ~/a/b
 ln ~/a c
 &lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
