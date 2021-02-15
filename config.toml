@@ -41,6 +41,13 @@ theme = "hugo-icarus"
 	custom_css = []
 	custom_js  = []
 
+[params.utterances]
+    repo = "euikook/wiki.notes"
+    # term = "pathname"
+    # theme = "github-light"
+    # crossorigin = "anonymous"
+
+
 # Create custom menu entries by defining a label and a link for
 # them. Since you can also link posts, you've the option the
 # place the links before or after them.
