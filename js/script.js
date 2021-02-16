@@ -51,4 +51,30 @@
         });
     }
 
+
+    const shuffle = array => {
+        let shuffled = [...array],
+          currIndex = array.length,
+          tempValue,
+          randIndex
+      
+        while (currIndex) {
+          randIndex = Math.floor(Math.random() * currIndex)
+          currIndex--
+      
+          tempValue = shuffled[currIndex]
+          shuffled[currIndex] = shuffled[randIndex]
+          shuffled[randIndex] = tempValue
+        }
+        return shuffled
+      }
+      
+      let termClouds = document.querySelectorAll('.term-cloud')
+
+      for (let termCloud of termClouds) {
+        if (termCloud) {
+            let terms = termCloud.querySelectorAll('.term-cloud li')
+            shuffle(terms).forEach(term => term.parentElement.appendChild(term))
+        }
+      }
 })(jQuery);

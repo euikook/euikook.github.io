@@ -2155,3 +2155,17 @@ ol.toc {
 .highlight .code .selector-id {
   font-weight: bold;
 }
+
+.term-cloud li a:hover {
+  color: hotpink;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.term-cloud li {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0px 4px;
+}
