@@ -95,21 +95,21 @@ gtag('js',new Date());gtag('config','G-XR6RLEW3M1');</script><script src=https:/
 words
 &#183;
 2
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/ssh>SSH</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/ssh>SSH</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/autossh>autossh</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/autossh>autossh</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/cron>cron</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/cron>cron</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/persistent>persistent</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/persistent>persistent</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/localforward>LocalForward</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/localforward>LocalForward</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/remoteforward>RemoteForward</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/remoteforward>RemoteForward</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/tunneling>Tunneling</a> aa</div></div></header><div class=article-entry itemprop=articleBody><h1 id=keep-persistent-ssh-session-using-autossh-and-cron>Keep persistent SSH session using autossh and cron</h1><h2 id=background-knowledge>Background Knowledge</h2><h3 id=ssh-tunneling>SSH Tunneling</h3><ul><li>Local Port Forwarding: used to forward a port from the client machine to the server machine.</li><li>Remote Port Forwarding:</li></ul><h4 id=local-port-forwarding>Local Port Forwarding</h4><pre><code>ssh -L [bind_addr:]port:target_addr:target_port user@server
+<a class=article-category-link href=https://notes.harues.com/tags/tunneling>Tunneling</a></div></div></header><div class=article-entry itemprop=articleBody><h1 id=keep-persistent-ssh-session-using-autossh-and-cron>Keep persistent SSH session using autossh and cron</h1><h2 id=background-knowledge>Background Knowledge</h2><h3 id=ssh-tunneling>SSH Tunneling</h3><ul><li>Local Port Forwarding: used to forward a port from the client machine to the server machine.</li><li>Remote Port Forwarding:</li></ul><h4 id=local-port-forwarding>Local Port Forwarding</h4><pre><code>ssh -L [bind_addr:]port:target_addr:target_port user@server
 </code></pre><ul><li>bind_addr</li><li>port</li><li>target_addr</li><li>target_port</li><li>user</li><li>server</li></ul><h4 id=remote-port-forwarding>Remote Port Forwarding</h4><pre><code>ssh -R [bind_addr:]port:target_addr:target_port user@server
 </code></pre><ul><li>bind_addr</li><li>port</li><li>target_addr</li><li>target_port</li><li>user</li><li>server</li></ul><p>Please see <a href=http://dirk-loss.de/ssh-port-forwarding.pdf>http://dirk-loss.de/ssh-port-forwarding.pdf</a></p><h2 id=prerequisites>Prerequisites</h2><ul><li>autossh</li></ul><pre><code>sudo apt-get install autossh
 </code></pre><h2 id=server-side>Server Side</h2><h3 id=add-user-for-ssh-tunneling>Add User for SSH tunneling</h3><pre><code>sudo adduser --system --shell /bin/false --gecos &quot;Auto SSH&quot; --disabled-password --home=/home/autossh autossh

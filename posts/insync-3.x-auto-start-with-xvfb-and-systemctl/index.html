@@ -20,15 +20,15 @@ gtag('js',new Date());gtag('config','G-XR6RLEW3M1');</script><script src=https:/
 words
 &#183;
 1
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/insync>Insync</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/insync>Insync</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/autostart>autostart</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/autostart>autostart</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/xvfb>xvfb</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/xvfb>xvfb</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/systemctl>systemctl</a> aa</div></div></header><div class=article-entry itemprop=articleBody><h1 id=insync-3x-auto-start-with-xvfb-and-systemctl>Insync 3.x auto start with xvfb and systemctl</h1><h2 id=prerequisites>Prerequisites</h2><ul><li>insync</li><li>xvfb</li></ul><h2 id=systemctl-script>Systemctl script</h2><h3 id=xvfb>xvfb</h3><p>Create a file <code>/home/euikook/.config/systemd/user/xvfb.service</code></p><pre><code>[Unit]
+<a class=article-category-link href=https://notes.harues.com/tags/systemctl>systemctl</a></div></div></header><div class=article-entry itemprop=articleBody><h1 id=insync-3x-auto-start-with-xvfb-and-systemctl>Insync 3.x auto start with xvfb and systemctl</h1><h2 id=prerequisites>Prerequisites</h2><ul><li>insync</li><li>xvfb</li></ul><h2 id=systemctl-script>Systemctl script</h2><h3 id=xvfb>xvfb</h3><p>Create a file <code>/home/euikook/.config/systemd/user/xvfb.service</code></p><pre><code>[Unit]
 Description=X Virtual Frame Buffer Service
 After=network.target
 

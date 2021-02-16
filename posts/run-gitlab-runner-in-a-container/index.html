@@ -14,23 +14,23 @@ gtag('js',new Date());gtag('config','G-XR6RLEW3M1');</script><script src=https:/
 words
 &#183;
 1
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/gitlab>Gitlab</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/gitlab>Gitlab</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/ci>CI</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/ci>CI</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/cd>CD</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/cd>CD</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/cicd>CI／CD</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/cicd>CI／CD</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/docker>Docker</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/docker>Docker</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/container>Container</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/container>Container</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/compose>Compose</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/compose>Compose</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/docker-compose>docker-compose</a> aa</div></div></header><div class=article-entry itemprop=articleBody><h1 id=run-gitlab-runner-in-a-container>Run Gitlab Runner in a container</h1><h2 id=prerequisites>Prerequisites</h2><ul><li><a href=https://www.docker.com/>Docker</a></li><li><a href=https://docs.docker.com/compose/>Docker Compose</a></li></ul><h2 id=usages>Usages</h2><h3 id=clone-repository>Clone Repository</h3><pre><code>git clone https://gitlab.com/euikook/gitlab-runner-compose.git
+<a class=article-category-link href=https://notes.harues.com/tags/docker-compose>docker-compose</a></div></div></header><div class=article-entry itemprop=articleBody><h1 id=run-gitlab-runner-in-a-container>Run Gitlab Runner in a container</h1><h2 id=prerequisites>Prerequisites</h2><ul><li><a href=https://www.docker.com/>Docker</a></li><li><a href=https://docs.docker.com/compose/>Docker Compose</a></li></ul><h2 id=usages>Usages</h2><h3 id=clone-repository>Clone Repository</h3><pre><code>git clone https://gitlab.com/euikook/gitlab-runner-compose.git
 </code></pre><h3 id=configuration>Configuration</h3><ul><li>Replace <em>CI_SERVER_URL</em> value with your Gitlab server e.g. <a href=https://gitlab.com>https://gitlab.com</a></li><li><a href=https://docs.gitlab.com/ee/ci/runners/>Obtain a token</a> for a shared or specific Runner via GitLab’s interface and replace <em>REGISTRATION_TOKEN</em> value</li></ul><pre><code>tee .env &lt;&lt; END
 CI_SERVER_URL=https://gitlab.com/
 REGISTRATION_TOKEN=zDsz34JuZf95NoBaQPX

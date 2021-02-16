@@ -17,15 +17,15 @@ gtag('js',new Date());gtag('config','G-XR6RLEW3M1');</script><script src=https:/
 words
 &#183;
 1
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/docker>Docker</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/docker>Docker</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/kubernetes>Kubernetes</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/kubernetes>Kubernetes</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/k8s>k8s</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/k8s>k8s</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/nodeport>nodeport</a> aa</div></div></header><div class=article-entry itemprop=articleBody><h4 id=change-nodeport-range-local-kubernetes>Change NodePort range local kubernetes</h4><p>Add following line to add following line to <em>/etc/kubernetes/manifests/kube-apiserver.yaml</em></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>- --service-node-port-range<span style=color:#f92672>=</span>80-32767
+<a class=article-category-link href=https://notes.harues.com/tags/nodeport>nodeport</a></div></div></header><div class=article-entry itemprop=articleBody><h4 id=change-nodeport-range-local-kubernetes>Change NodePort range local kubernetes</h4><p>Add following line to add following line to <em>/etc/kubernetes/manifests/kube-apiserver.yaml</em></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>- --service-node-port-range<span style=color:#f92672>=</span>80-32767
 </code></pre></div><h2 id=examples>Examples</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo vi /etc/kubernetes/manifests/kube-apiserver.yaml
 </code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>- --advertise-address<span style=color:#f92672>=</span>172.168.2.11
 - --service-cluster-ip-range<span style=color:#f92672>=</span>10.96.0.0/12

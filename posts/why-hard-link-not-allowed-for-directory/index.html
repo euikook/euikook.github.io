@@ -47,17 +47,17 @@ gtag('js',new Date());gtag('config','G-XR6RLEW3M1');</script><script src=https:/
 words
 &#183;
 3
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/shell>Shell</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/shell>Shell</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/shell-command>Shell Command</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/shell-command>Shell Command</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/ln>ln</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/ln>ln</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/hard-link>Hard Link</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/hard-link>Hard Link</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/symblic-link>Symblic Link</a> aa</div></div></header><div class=article-entry itemprop=articleBody><h4 id=why-hard-link-not-allowed-for-directory>Why Hard Link Not Allowed for Directory</h4><p>왜 디렉터리 Hard link를 만들 수 없나요?</p><p>  디렉터리 Hard Link를 만들고 싶지만 만들어 지지 않는다.</p><p>예전에는 <em>root</em> 권한으로 <em><strong>-d</strong></em> 옵셥을 주면 만들어 진것 같은데 _Ubuntu 16.04_에서 테스트 해보니 <em>root</em> 권한으로도 디렉터리 Hard Link가 만들어 지지 않는다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mkdir a
+<a class=article-category-link href=https://notes.harues.com/tags/symblic-link>Symblic Link</a></div></div></header><div class=article-entry itemprop=articleBody><h4 id=why-hard-link-not-allowed-for-directory>Why Hard Link Not Allowed for Directory</h4><p>왜 디렉터리 Hard link를 만들 수 없나요?</p><p>  디렉터리 Hard Link를 만들고 싶지만 만들어 지지 않는다.</p><p>예전에는 <em>root</em> 권한으로 <em><strong>-d</strong></em> 옵셥을 주면 만들어 진것 같은데 _Ubuntu 16.04_에서 테스트 해보니 <em>root</em> 권한으로도 디렉터리 Hard Link가 만들어 지지 않는다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mkdir a
 ln a b
 ln: a: hard link not allowed <span style=color:#66d9ef>for</span> directory
 </code></pre></div><p>디렉터리 Hard Link는 여러 문제점을 야기 시킨다. 디렉터리 Hard Link에 의해 발생할 수 있는 문제점들에 대하여 알아본다.</p><h2 id=파일시스템에-루프를-만든다>파일시스템에 루프를 만든다.</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>mkdir -p ~/a/b

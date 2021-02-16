@@ -29,13 +29,13 @@ gtag('js',new Date());gtag('config','G-XR6RLEW3M1');</script><script src=https:/
 words
 &#183;
 1
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/ssh>SSH</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/ssh>SSH</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/key>Key</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/key>Key</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/key-pair>Key pair</a> aa</div></div></header><div class=article-entry itemprop=articleBody><h1 id=usages-of-ssh-key-pair>Usages of SSH key pair</h1><h2 id=generate-ssh-key-pair>Generate SSH key pair</h2><p><code>ssh-keygen</code></p><pre><code>ssh-keygen -t rsa -b 4096 -f test
+<a class=article-category-link href=https://notes.harues.com/tags/key-pair>Key pair</a></div></div></header><div class=article-entry itemprop=articleBody><h1 id=usages-of-ssh-key-pair>Usages of SSH key pair</h1><h2 id=generate-ssh-key-pair>Generate SSH key pair</h2><p><code>ssh-keygen</code></p><pre><code>ssh-keygen -t rsa -b 4096 -f test
 </code></pre><ul><li><code>test.pub</code>: Public Key</li><li><code>test</code>: Private Key</li></ul><h2 id=use-key>Use key</h2><h3 id=copy-to-remote-system>Copy to remote system</h3><p>Copy Public key to <code>$REMOTE_HOST</code></p><pre><code>ssh-copy-id $USER@$REMOTE_HOST -i test
 </code></pre><p>or, if there is no public key in remote host</p><pre><code>scp ~/.ssh/test.pub $USER@$REMOTE_HOST:.ssh/authorized_keys
 </code></pre><h3 id=login-use-private-key>Login use Private Key</h3><p>ssh $USER@$REMOTE_HOST -i .ssh/test</p><h3 id=sshconfig>./ssh/config</h3><p>Edit <code>~/.ssh/config</code> as following.</p><pre><code>Host 1.2.3.4 test

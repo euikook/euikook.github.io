@@ -14,17 +14,17 @@ gtag('js',new Date());gtag('config','G-XR6RLEW3M1');</script><script src=https:/
 words
 &#183;
 3
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/backup>Backup</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/backup>Backup</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/incremental-backup>Incremental Backup</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/incremental-backup>Incremental Backup</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/rsync>RSYNC</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/rsync>RSYNC</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/ssh>SSH</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/ssh>SSH</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/cron>cron</a> aa</div></div></header><div class=article-entry itemprop=articleBody><p><h4 id=incremental-backup-using-rsyncssh-and-cron>Incremental Backup Using RSYNC+SSH and cron</h4><p>RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화</p><p>관리 하는 서버가 많아지고 서버에 저장되는 데이터의 양이 늘어 날 수록 백업을 어떻게 하여야 하는지 고민이 생긴다. 이 포스트에서는 RSYNC와 SSH를 이용하여 여러 서버의 데이터를 백업하고 이를 자동화 하는 방법에 대하여 기술 한다. 테스트를 위한 서버 구성은 다음과 같다.   <img src=/wp-content/uploads/2018/03/Incremental-Backup-using-RSYNCSSH.png alt>   아래 예제 에서는 <em>S-01</em>, <em>S-02</em>, _S-03_의 /home 디렉터리를 BackupBot으로 백업 하고자 한다.</p><h2 id=공통-준비-사항>공통 준비 사항</h2><h3 id=backup-user-생성>Backup User 생성</h3><p>백업을 위한 사용자 계정을 생성한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo adduser --disabled-password --gecos <span style=color:#e6db74>&#39;BackupMan&#39;</span> backupman
+<a class=article-category-link href=https://notes.harues.com/tags/cron>cron</a></div></div></header><div class=article-entry itemprop=articleBody><p><h4 id=incremental-backup-using-rsyncssh-and-cron>Incremental Backup Using RSYNC+SSH and cron</h4><p>RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화</p><p>관리 하는 서버가 많아지고 서버에 저장되는 데이터의 양이 늘어 날 수록 백업을 어떻게 하여야 하는지 고민이 생긴다. 이 포스트에서는 RSYNC와 SSH를 이용하여 여러 서버의 데이터를 백업하고 이를 자동화 하는 방법에 대하여 기술 한다. 테스트를 위한 서버 구성은 다음과 같다.   <img src=/wp-content/uploads/2018/03/Incremental-Backup-using-RSYNCSSH.png alt>   아래 예제 에서는 <em>S-01</em>, <em>S-02</em>, _S-03_의 /home 디렉터리를 BackupBot으로 백업 하고자 한다.</p><h2 id=공통-준비-사항>공통 준비 사항</h2><h3 id=backup-user-생성>Backup User 생성</h3><p>백업을 위한 사용자 계정을 생성한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo adduser --disabled-password --gecos <span style=color:#e6db74>&#39;BackupMan&#39;</span> backupman
 </code></pre></div><h2 id=ssh-키-생성-및-배포>SSH 키 생성 및 배포</h2><h3 id=ssh-key-생성-backupbot>SSH KEY 생성 (BackupBot)</h3><p><em>ssh-keygen</em> 명령으로 SSH KEY를 생성한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>ssh-keygen -t rsa -b <span style=color:#ae81ff>4096</span> -f backupman -C BackupMan
 </code></pre></div></p><p class=article-more-link><a href=https://notes.harues.com/posts/incremental-backup-using-rsyncssh/>Read more</a></p></div><footer class=article-footer><a data-url=https://notes.harues.com/posts/incremental-backup-using-rsyncssh/ data-id=4579b486081b02fd2a112dca71b931b1 class=article-share-link><i class="fa fa-share"></i>Share</a>
 <script>(function($){if(typeof(__SHARE_BUTTON_BINDED__)==='undefined'||!__SHARE_BUTTON_BINDED__){__SHARE_BUTTON_BINDED__=true;}else{return;}
@@ -35,23 +35,23 @@ $('.article-share-box.on').hide();box.css({top:offset.top+25,left:offset.left}).
 words
 &#183;
 1
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/gitlab>Gitlab</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/gitlab>Gitlab</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/ci>CI</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/ci>CI</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/cd>CD</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/cd>CD</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/cicd>CI／CD</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/cicd>CI／CD</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/docker>Docker</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/docker>Docker</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/container>Container</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/container>Container</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/compose>Compose</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/compose>Compose</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/docker-compose>docker-compose</a> aa</div></div></header><div class=article-entry itemprop=articleBody><p>Run Gitlab Runner in a container Prerequisites Docker Docker Compose Usages Clone Repository git clone https://gitlab.com/euikook/gitlab-runner-compose.git Configuration Replace CI_SERVER_URL value with your Gitlab server e.g. https://gitlab.com Obtain a token for a shared or specific Runner via GitLab’s interface and replace REGISTRATION_TOKEN value tee .env &lt;&lt; END CI_SERVER_URL=https://gitlab.com/ REGISTRATION_TOKEN=zDsz34JuZf95NoBaQPX END Registration and run gitlab-runner docker-compose up -d References https://docs.gitlab.com/ee/ci/runners/ https://docs.gitlab.com/runner/install/docker.html https://dev.to/imichael/this-one-trick-gives-you-unlimited-ci-minutes-on-gitlab-e92</p><p class=article-more-link><a href=https://notes.harues.com/posts/run-gitlab-runner-in-a-container/>Read more</a></p></div><footer class=article-footer><a data-url=https://notes.harues.com/posts/run-gitlab-runner-in-a-container/ data-id=4475acd417c844300bbbb6a0e7fa1e4d class=article-share-link><i class="fa fa-share"></i>Share</a>
+<a class=article-category-link href=https://notes.harues.com/tags/docker-compose>docker-compose</a></div></div></header><div class=article-entry itemprop=articleBody><p>Run Gitlab Runner in a container Prerequisites Docker Docker Compose Usages Clone Repository git clone https://gitlab.com/euikook/gitlab-runner-compose.git Configuration Replace CI_SERVER_URL value with your Gitlab server e.g. https://gitlab.com Obtain a token for a shared or specific Runner via GitLab’s interface and replace REGISTRATION_TOKEN value tee .env &lt;&lt; END CI_SERVER_URL=https://gitlab.com/ REGISTRATION_TOKEN=zDsz34JuZf95NoBaQPX END Registration and run gitlab-runner docker-compose up -d References https://docs.gitlab.com/ee/ci/runners/ https://docs.gitlab.com/runner/install/docker.html https://dev.to/imichael/this-one-trick-gives-you-unlimited-ci-minutes-on-gitlab-e92</p><p class=article-more-link><a href=https://notes.harues.com/posts/run-gitlab-runner-in-a-container/>Read more</a></p></div><footer class=article-footer><a data-url=https://notes.harues.com/posts/run-gitlab-runner-in-a-container/ data-id=4475acd417c844300bbbb6a0e7fa1e4d class=article-share-link><i class="fa fa-share"></i>Share</a>
 <script>(function($){if(typeof(__SHARE_BUTTON_BINDED__)==='undefined'||!__SHARE_BUTTON_BINDED__){__SHARE_BUTTON_BINDED__=true;}else{return;}
 $('body').on('click',function(){$('.article-share-box.on').removeClass('on');}).on('click','.article-share-link',function(e){e.stopPropagation();var $this=$(this),url=$this.attr('data-url'),encodedUrl=encodeURIComponent(url),id='article-share-box-'+$this.attr('data-id'),offset=$this.offset(),box;if($('#'+id).length){box=$('#'+id);if(box.hasClass('on')){box.removeClass('on');return;}}else{var html=['<div id="'+id+'" class="article-share-box">','<input class="article-share-input" value="'+url+'">','<div class="article-share-links">','<a href="https://twitter.com/intent/tweet?url='+encodedUrl+'" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>','<a href="https://www.facebook.com/sharer.php?u='+encodedUrl+'" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>','<a href="http://pinterest.com/pin/create/button/?url='+encodedUrl+'" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>','<a href="https://plus.google.com/share?url='+encodedUrl+'" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>','</div>','</div>'].join('');box=$(html);$('body').append(box);}
 $('.article-share-box.on').hide();box.css({top:offset.top+25,left:offset.left}).addClass('on');}).on('click','.article-share-box',function(e){e.stopPropagation();}).on('click','.article-share-box-input',function(){$(this).select();}).on('click','.article-share-box-link',function(e){e.preventDefault();e.stopPropagation();window.open(this.href,'article-share-box-window-'+Date.now(),'width=500,height=450');});})(jQuery);</script></footer></div></article><article class="article article-type-post" itemscope itemprop=blogPost><div class=article-inner><a href=https://notes.harues.com/posts/shrink-dynamically-allocated-virtualbox-disk-image-en/ itemprop=url><img src=https://source.unsplash.com/aIlAhLdwk2g class=article-banner></a><header class=article-header><a href=https://notes.harues.com/posts/shrink-dynamically-allocated-virtualbox-disk-image-en/><h1 class=article-title itemprop=name>Shrink dynamically extended VirtualBox image for export appliance</h1></a><div class=article-meta><div class=article-date><i class="fa fa-calendar"></i><time datetime="2020-11-16 09:37:41 +0900 +0900" itemprop=datePublished>2020-11-16</time>
@@ -60,15 +60,15 @@ $('.article-share-box.on').hide();box.css({top:offset.top+25,left:offset.left}).
 words
 &#183;
 1
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/virtualbox>VirtualBox</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/virtualbox>VirtualBox</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/vdi>VDI</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/vdi>VDI</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/shrink>Shrink</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/shrink>Shrink</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/export>Export</a> aa</div></div></header><div class=article-entry itemprop=articleBody><p>Shrink dynamically extended VirtualBox image for export appliance Cleanup your system System Cleanup APT cache sudo apt-get clean sudo rm -rf /var/lib/apt/lists/* Cleanup docker cache (Optional, if you need) docker system prune -a -f Uninstall snap (Optional, if you need) sudo apt-get autoremove --purge snapd Cleanup Logs (Optional, if you need) for f in $(find /var/log -type f); do sudo cat /dev/null > $f; echo " Log $f has been cleared"; done Shutdown system and boot using ubuntu installation image.</p><p class=article-more-link><a href=https://notes.harues.com/posts/shrink-dynamically-allocated-virtualbox-disk-image-en/>Read more</a></p></div><footer class=article-footer><a data-url=https://notes.harues.com/posts/shrink-dynamically-allocated-virtualbox-disk-image-en/ data-id=60f600a4a8e172525aaf3d5a28cfb729 class=article-share-link><i class="fa fa-share"></i>Share</a>
+<a class=article-category-link href=https://notes.harues.com/tags/export>Export</a></div></div></header><div class=article-entry itemprop=articleBody><p>Shrink dynamically extended VirtualBox image for export appliance Cleanup your system System Cleanup APT cache sudo apt-get clean sudo rm -rf /var/lib/apt/lists/* Cleanup docker cache (Optional, if you need) docker system prune -a -f Uninstall snap (Optional, if you need) sudo apt-get autoremove --purge snapd Cleanup Logs (Optional, if you need) for f in $(find /var/log -type f); do sudo cat /dev/null > $f; echo " Log $f has been cleared"; done Shutdown system and boot using ubuntu installation image.</p><p class=article-more-link><a href=https://notes.harues.com/posts/shrink-dynamically-allocated-virtualbox-disk-image-en/>Read more</a></p></div><footer class=article-footer><a data-url=https://notes.harues.com/posts/shrink-dynamically-allocated-virtualbox-disk-image-en/ data-id=60f600a4a8e172525aaf3d5a28cfb729 class=article-share-link><i class="fa fa-share"></i>Share</a>
 <script>(function($){if(typeof(__SHARE_BUTTON_BINDED__)==='undefined'||!__SHARE_BUTTON_BINDED__){__SHARE_BUTTON_BINDED__=true;}else{return;}
 $('body').on('click',function(){$('.article-share-box.on').removeClass('on');}).on('click','.article-share-link',function(e){e.stopPropagation();var $this=$(this),url=$this.attr('data-url'),encodedUrl=encodeURIComponent(url),id='article-share-box-'+$this.attr('data-id'),offset=$this.offset(),box;if($('#'+id).length){box=$('#'+id);if(box.hasClass('on')){box.removeClass('on');return;}}else{var html=['<div id="'+id+'" class="article-share-box">','<input class="article-share-input" value="'+url+'">','<div class="article-share-links">','<a href="https://twitter.com/intent/tweet?url='+encodedUrl+'" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>','<a href="https://www.facebook.com/sharer.php?u='+encodedUrl+'" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>','<a href="http://pinterest.com/pin/create/button/?url='+encodedUrl+'" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>','<a href="https://plus.google.com/share?url='+encodedUrl+'" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>','</div>','</div>'].join('');box=$(html);$('body').append(box);}
 $('.article-share-box.on').hide();box.css({top:offset.top+25,left:offset.left}).addClass('on');}).on('click','.article-share-box',function(e){e.stopPropagation();}).on('click','.article-share-box-input',function(){$(this).select();}).on('click','.article-share-box-link',function(e){e.preventDefault();e.stopPropagation();window.open(this.href,'article-share-box-window-'+Date.now(),'width=500,height=450');});})(jQuery);</script></footer></div></article><article class="article article-type-post" itemscope itemprop=blogPost><div class=article-inner><a href=https://notes.harues.com/posts/shrink-dynamically-allocated-virtualbox-disk-image/ itemprop=url><img src=https://source.unsplash.com/aIlAhLdwk2g class=article-banner></a><header class=article-header><a href=https://notes.harues.com/posts/shrink-dynamically-allocated-virtualbox-disk-image/><h1 class=article-title itemprop=name>Shrink dynamically extended VirtualBox image for export appliance</h1></a><div class=article-meta><div class=article-date><i class="fa fa-calendar"></i><time datetime="2020-11-16 09:37:41 +0900 +0900" itemprop=datePublished>2020-11-16</time>
@@ -77,15 +77,15 @@ $('.article-share-box.on').hide();box.css({top:offset.top+25,left:offset.left}).
 words
 &#183;
 3
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/virtualbox>VirtualBox</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/virtualbox>VirtualBox</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/vdi>VDI</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/vdi>VDI</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/shrink>Shrink</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/shrink>Shrink</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/export>Export</a> aa</div></div></header><div class=article-entry itemprop=articleBody><p>Shrink dynamically allocated VirtualBox Disk Image(VDI) Motivation 업무에 VirtualBox을 자주 활용한다.
+<a class=article-category-link href=https://notes.harues.com/tags/export>Export</a></div></div></header><div class=article-entry itemprop=articleBody><p>Shrink dynamically allocated VirtualBox Disk Image(VDI) Motivation 업무에 VirtualBox을 자주 활용한다.
 개발 환경등을 시스템에 설치 하기 힘들때 VirtualBox를 사용하여 개발환경을 구축 하거나 결과물을 설치 하여 테스트용으로 배포한다.
 여러대의 머신이 필요하지만 AWS나 GCP를 사용하기 힘들때 유용한 대안이 바로 VirtualBox이다.
 Virtualbox 가상머신의 디스크를 동적 할당 디스크로 생성 하였을 경우 경우 환경 설치 후 불필요한 파일을 삭제 하더라도 디스크의 크기가 줄어들지 않기 때문에 내보내기 한 이미지도 같이 커진다.
@@ -98,19 +98,19 @@ $('.article-share-box.on').hide();box.css({top:offset.top+25,left:offset.left}).
 words
 &#183;
 1
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/windows>Windows</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/windows>Windows</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/mac>Mac</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/mac>Mac</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/synergy>Synergy</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/synergy>Synergy</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/kvm>KVM</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/kvm>KVM</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/software-kvm>Software KVM</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/software-kvm>Software KVM</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/symless>symless</a> aa</div></div></header><div class=article-entry itemprop=articleBody><p><h4 id=synergy---software-kvm>Synergy - Software KVM</h4><p>작업을 하다 보면 한 책상위에서 여러대의 PC로 작업을 해야 하는 경우가 생긴다. 나의 경의 예전에 개발은 Linux 머신에서 문서 작업 및 기타 업무는 Windows PC에서 진행을 하고는 했었는데 키보드와 마우스가 항상 문제였다. 모니터야 source를 변경 하면 (귀찮기는 하지만) 쉽게 되지만 Keyboard와 마우스를 공유 하려면 별도의 KVM을 구입 하야야 한다. KVM 없이 공유 할 수 있는 솔루션을 찾다가 Synergy라는 S/W KVM을 찾았다. 키보드와 마우스만을 공유 할 수 있으니 엄밀히 말하면 KVM이 아니라 KM 이다. Synergy를 사용한지는 Open source 일때 부터이니 10년도 더 지났다. 그때 이 소프트웨어가 너무 마음에 들어 기부하고 받은 1.8 버젼용 Pro License를 아직 사용가능 하다. 몇년전 Symless라는 회사를 만들고 본격적으로 판매를 하고 있더니만 작년에 Synergy 2가 나왔고 2017년 말에 2를 12달러에 판매하는 프로모션이 있어 잽싸게 구매를 하였다. 현재 Basic, Pro 버전이 있으며 각각 29, 39 달러에 판매 되고 있다. <a href=https://symless.com/>https://symless.com/</a></p></p><p class=article-more-link><a href=https://notes.harues.com/posts/synergy-software-kvm/>Read more</a></p></div><footer class=article-footer><a data-url=https://notes.harues.com/posts/synergy-software-kvm/ data-id=17f8e8ac70718f358da293e3b750fb98 class=article-share-link><i class="fa fa-share"></i>Share</a>
+<a class=article-category-link href=https://notes.harues.com/tags/symless>symless</a></div></div></header><div class=article-entry itemprop=articleBody><p><h4 id=synergy---software-kvm>Synergy - Software KVM</h4><p>작업을 하다 보면 한 책상위에서 여러대의 PC로 작업을 해야 하는 경우가 생긴다. 나의 경의 예전에 개발은 Linux 머신에서 문서 작업 및 기타 업무는 Windows PC에서 진행을 하고는 했었는데 키보드와 마우스가 항상 문제였다. 모니터야 source를 변경 하면 (귀찮기는 하지만) 쉽게 되지만 Keyboard와 마우스를 공유 하려면 별도의 KVM을 구입 하야야 한다. KVM 없이 공유 할 수 있는 솔루션을 찾다가 Synergy라는 S/W KVM을 찾았다. 키보드와 마우스만을 공유 할 수 있으니 엄밀히 말하면 KVM이 아니라 KM 이다. Synergy를 사용한지는 Open source 일때 부터이니 10년도 더 지났다. 그때 이 소프트웨어가 너무 마음에 들어 기부하고 받은 1.8 버젼용 Pro License를 아직 사용가능 하다. 몇년전 Symless라는 회사를 만들고 본격적으로 판매를 하고 있더니만 작년에 Synergy 2가 나왔고 2017년 말에 2를 12달러에 판매하는 프로모션이 있어 잽싸게 구매를 하였다. 현재 Basic, Pro 버전이 있으며 각각 29, 39 달러에 판매 되고 있다. <a href=https://symless.com/>https://symless.com/</a></p></p><p class=article-more-link><a href=https://notes.harues.com/posts/synergy-software-kvm/>Read more</a></p></div><footer class=article-footer><a data-url=https://notes.harues.com/posts/synergy-software-kvm/ data-id=17f8e8ac70718f358da293e3b750fb98 class=article-share-link><i class="fa fa-share"></i>Share</a>
 <script>(function($){if(typeof(__SHARE_BUTTON_BINDED__)==='undefined'||!__SHARE_BUTTON_BINDED__){__SHARE_BUTTON_BINDED__=true;}else{return;}
 $('body').on('click',function(){$('.article-share-box.on').removeClass('on');}).on('click','.article-share-link',function(e){e.stopPropagation();var $this=$(this),url=$this.attr('data-url'),encodedUrl=encodeURIComponent(url),id='article-share-box-'+$this.attr('data-id'),offset=$this.offset(),box;if($('#'+id).length){box=$('#'+id);if(box.hasClass('on')){box.removeClass('on');return;}}else{var html=['<div id="'+id+'" class="article-share-box">','<input class="article-share-input" value="'+url+'">','<div class="article-share-links">','<a href="https://twitter.com/intent/tweet?url='+encodedUrl+'" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>','<a href="https://www.facebook.com/sharer.php?u='+encodedUrl+'" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>','<a href="http://pinterest.com/pin/create/button/?url='+encodedUrl+'" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>','<a href="https://plus.google.com/share?url='+encodedUrl+'" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>','</div>','</div>'].join('');box=$(html);$('body').append(box);}
 $('.article-share-box.on').hide();box.css({top:offset.top+25,left:offset.left}).addClass('on');}).on('click','.article-share-box',function(e){e.stopPropagation();}).on('click','.article-share-box-input',function(){$(this).select();}).on('click','.article-share-box-link',function(e){e.preventDefault();e.stopPropagation();window.open(this.href,'article-share-box-window-'+Date.now(),'width=500,height=450');});})(jQuery);</script></footer></div></article><article class="article article-type-post" itemscope itemprop=blogPost><div class=article-inner><a href=https://notes.harues.com/posts/system-level-linux-dns-over-tls-on-arch-linux/ itemprop=url><img src=https://source.unsplash.com/0Yiy0XajJHQ class=article-banner></a><header class=article-header><a href=https://notes.harues.com/posts/system-level-linux-dns-over-tls-on-arch-linux/><h1 class=article-title itemprop=name>System Level Linux DNS over TLS on Arch Linux</h1></a><div class=article-meta><div class=article-date><i class="fa fa-calendar"></i><time datetime="2020-11-16 09:37:41 +0900 +0900" itemprop=datePublished>2020-11-16</time>
@@ -119,17 +119,17 @@ $('.article-share-box.on').hide();box.css({top:offset.top+25,left:offset.left}).
 words
 &#183;
 1
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/arch>Arch</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/arch>Arch</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/dnssec>DNSSEC</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/dnssec>DNSSEC</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/dns>DNS</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/dns>DNS</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/tls>TLS</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/tls>TLS</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/dns-over-tls>DNS-over-TLS</a> aa</div></div></header><div class=article-entry itemprop=articleBody><p>System Level Linux DNS over TLS on Arch Linux Prerequisite stubby dnsmasq Installation stubby sudo pacmas -S stubby Start and endable stubby sudo systemctl enable stubby sudo systemctl start stubby Configuration Open and edit /etc/stubby/stubby.yml
+<a class=article-category-link href=https://notes.harues.com/tags/dns-over-tls>DNS-over-TLS</a></div></div></header><div class=article-entry itemprop=articleBody><p>System Level Linux DNS over TLS on Arch Linux Prerequisite stubby dnsmasq Installation stubby sudo pacmas -S stubby Start and endable stubby sudo systemctl enable stubby sudo systemctl start stubby Configuration Open and edit /etc/stubby/stubby.yml
 listen_addresses: - 127.0.0.1@53000 - 0::1@53000 upstream_recursive_servers: - address_data: 9.9.9.9 tls_auth_name: "dns.quad9.net" - address_data: 9.9.9.10 tls_auth_name: "dns.quad9.net" - address_data: 1.1.1.1 tls_auth_name: "cloudflare-dns.com" - address_data: 1.0.0.1 tls_auth_name: "cloudflare-dns.com" dnsmasq Arch Linux based distribution sudo pacmas -S dnsmasq Start and endable stubby sudo systemctl enable dnsmasq sudo systemctl start dnsmasq Configurations Open and edit /etc/dnsmasq.</p><p class=article-more-link><a href=https://notes.harues.com/posts/system-level-linux-dns-over-tls-on-arch-linux/>Read more</a></p></div><footer class=article-footer><a data-url=https://notes.harues.com/posts/system-level-linux-dns-over-tls-on-arch-linux/ data-id=ce7f305e6ea569e7c466e1f65868243a class=article-share-link><i class="fa fa-share"></i>Share</a>
 <script>(function($){if(typeof(__SHARE_BUTTON_BINDED__)==='undefined'||!__SHARE_BUTTON_BINDED__){__SHARE_BUTTON_BINDED__=true;}else{return;}
 $('body').on('click',function(){$('.article-share-box.on').removeClass('on');}).on('click','.article-share-link',function(e){e.stopPropagation();var $this=$(this),url=$this.attr('data-url'),encodedUrl=encodeURIComponent(url),id='article-share-box-'+$this.attr('data-id'),offset=$this.offset(),box;if($('#'+id).length){box=$('#'+id);if(box.hasClass('on')){box.removeClass('on');return;}}else{var html=['<div id="'+id+'" class="article-share-box">','<input class="article-share-input" value="'+url+'">','<div class="article-share-links">','<a href="https://twitter.com/intent/tweet?url='+encodedUrl+'" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>','<a href="https://www.facebook.com/sharer.php?u='+encodedUrl+'" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>','<a href="http://pinterest.com/pin/create/button/?url='+encodedUrl+'" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>','<a href="https://plus.google.com/share?url='+encodedUrl+'" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>','</div>','</div>'].join('');box=$(html);$('body').append(box);}
@@ -139,23 +139,23 @@ $('.article-share-box.on').hide();box.css({top:offset.top+25,left:offset.left}).
 words
 &#183;
 1
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/ubuntu>Ubuntu</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/ubuntu>Ubuntu</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/20.04>20.04</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/20.04>20.04</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/focal>Focal</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/focal>Focal</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/ubuntu-20.04>Ubuntu 20.04</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/ubuntu-20.04>Ubuntu 20.04</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/dnssec>DNSSEC</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/dnssec>DNSSEC</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/dns>DNS</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/dns>DNS</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/tls>TLS</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/tls>TLS</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/dns-over-tls>DNS-over-TLS</a> aa</div></div></header><div class=article-entry itemprop=articleBody><p>System Level Linux DNS over TLS on Ubuntu 20.04 Prerequisite stubby dnsmasq Installation stubby sudo apt install stubby Start and endable stubby sudo systemctl enable stubby sudo systemctl start stubby Configuration Open and edit /etc/stubby/stubby.yml
+<a class=article-category-link href=https://notes.harues.com/tags/dns-over-tls>DNS-over-TLS</a></div></div></header><div class=article-entry itemprop=articleBody><p>System Level Linux DNS over TLS on Ubuntu 20.04 Prerequisite stubby dnsmasq Installation stubby sudo apt install stubby Start and endable stubby sudo systemctl enable stubby sudo systemctl start stubby Configuration Open and edit /etc/stubby/stubby.yml
 listen_addresses: - 127.0.0.1@53000 - 0::1@53000 upstream_recursive_servers: - address_data: 9.9.9.9 tls_auth_name: "dns.quad9.net" - address_data: 9.9.9.10 tls_auth_name: "dns.quad9.net" - address_data: 1.1.1.1 tls_auth_name: "cloudflare-dns.com" - address_data: 1.0.0.1 tls_auth_name: "cloudflare-dns.com" dnsmasq sudo apt install dnsmasq Start and endable stubby sudo systemctl enable dnsmasq sudo systemctl start dnsmasq Configurations Open and edit /etc/dnsmasq.</p><p class=article-more-link><a href=https://notes.harues.com/posts/system-level-linux-dns-over-tls-on-utuntu-20.04/>Read more</a></p></div><footer class=article-footer><a data-url=https://notes.harues.com/posts/system-level-linux-dns-over-tls-on-utuntu-20.04/ data-id=07d7478ca1fdc80188afe3de1ac7a9c9 class=article-share-link><i class="fa fa-share"></i>Share</a>
 <script>(function($){if(typeof(__SHARE_BUTTON_BINDED__)==='undefined'||!__SHARE_BUTTON_BINDED__){__SHARE_BUTTON_BINDED__=true;}else{return;}
 $('body').on('click',function(){$('.article-share-box.on').removeClass('on');}).on('click','.article-share-link',function(e){e.stopPropagation();var $this=$(this),url=$this.attr('data-url'),encodedUrl=encodeURIComponent(url),id='article-share-box-'+$this.attr('data-id'),offset=$this.offset(),box;if($('#'+id).length){box=$('#'+id);if(box.hasClass('on')){box.removeClass('on');return;}}else{var html=['<div id="'+id+'" class="article-share-box">','<input class="article-share-input" value="'+url+'">','<div class="article-share-links">','<a href="https://twitter.com/intent/tweet?url='+encodedUrl+'" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>','<a href="https://www.facebook.com/sharer.php?u='+encodedUrl+'" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>','<a href="http://pinterest.com/pin/create/button/?url='+encodedUrl+'" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>','<a href="https://plus.google.com/share?url='+encodedUrl+'" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>','</div>','</div>'].join('');box=$(html);$('body').append(box);}
@@ -165,11 +165,11 @@ $('.article-share-box.on').hide();box.css({top:offset.top+25,left:offset.left}).
 words
 &#183;
 1
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/ubuntu>Ubuntu</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/ubuntu>Ubuntu</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/mirror>Mirror</a> aa</div></div></header><div class=article-entry itemprop=articleBody><p>Update Ubuntu Mirror Site in sources.list sudo sed -i 's|http://archive.ubuntu.com|http://ftp.daumkakao.com|g' /etc/apt/sources.list</p><p class=article-more-link><a href=https://notes.harues.com/posts/update-ubuntu-mirror-site-in-sources-list/>Read more</a></p></div><footer class=article-footer><a data-url=https://notes.harues.com/posts/update-ubuntu-mirror-site-in-sources-list/ data-id=311cd40429fede7d5adaa9f7b8580e17 class=article-share-link><i class="fa fa-share"></i>Share</a>
+<a class=article-category-link href=https://notes.harues.com/tags/mirror>Mirror</a></div></div></header><div class=article-entry itemprop=articleBody><p>Update Ubuntu Mirror Site in sources.list sudo sed -i 's|http://archive.ubuntu.com|http://ftp.daumkakao.com|g' /etc/apt/sources.list</p><p class=article-more-link><a href=https://notes.harues.com/posts/update-ubuntu-mirror-site-in-sources-list/>Read more</a></p></div><footer class=article-footer><a data-url=https://notes.harues.com/posts/update-ubuntu-mirror-site-in-sources-list/ data-id=311cd40429fede7d5adaa9f7b8580e17 class=article-share-link><i class="fa fa-share"></i>Share</a>
 <script>(function($){if(typeof(__SHARE_BUTTON_BINDED__)==='undefined'||!__SHARE_BUTTON_BINDED__){__SHARE_BUTTON_BINDED__=true;}else{return;}
 $('body').on('click',function(){$('.article-share-box.on').removeClass('on');}).on('click','.article-share-link',function(e){e.stopPropagation();var $this=$(this),url=$this.attr('data-url'),encodedUrl=encodeURIComponent(url),id='article-share-box-'+$this.attr('data-id'),offset=$this.offset(),box;if($('#'+id).length){box=$('#'+id);if(box.hasClass('on')){box.removeClass('on');return;}}else{var html=['<div id="'+id+'" class="article-share-box">','<input class="article-share-input" value="'+url+'">','<div class="article-share-links">','<a href="https://twitter.com/intent/tweet?url='+encodedUrl+'" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>','<a href="https://www.facebook.com/sharer.php?u='+encodedUrl+'" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>','<a href="http://pinterest.com/pin/create/button/?url='+encodedUrl+'" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>','<a href="https://plus.google.com/share?url='+encodedUrl+'" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>','</div>','</div>'].join('');box=$(html);$('body').append(box);}
 $('.article-share-box.on').hide();box.css({top:offset.top+25,left:offset.left}).addClass('on');}).on('click','.article-share-box',function(e){e.stopPropagation();}).on('click','.article-share-box-input',function(){$(this).select();}).on('click','.article-share-box-link',function(e){e.preventDefault();e.stopPropagation();window.open(this.href,'article-share-box-window-'+Date.now(),'width=500,height=450');});})(jQuery);</script></footer></div></article><article class="article article-type-post" itemscope itemprop=blogPost><div class=article-inner><a href=https://notes.harues.com/posts/usages-of-ssh-key-pair/ itemprop=url><img src=https://source.unsplash.com/random/800x400 class=article-banner></a><header class=article-header><a href=https://notes.harues.com/posts/usages-of-ssh-key-pair/><h1 class=article-title itemprop=name>Usages of SSH key pair</h1></a><div class=article-meta><div class=article-date><i class="fa fa-calendar"></i><time datetime="2020-11-16 09:37:41 +0900 +0900" itemprop=datePublished>2020-11-16</time>
@@ -178,13 +178,13 @@ $('.article-share-box.on').hide();box.css({top:offset.top+25,left:offset.left}).
 words
 &#183;
 1
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/ssh>SSH</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/ssh>SSH</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/key>Key</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/key>Key</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/key-pair>Key pair</a> aa</div></div></header><div class=article-entry itemprop=articleBody><p>Usages of SSH key pair Generate SSH key pair ssh-keygen
+<a class=article-category-link href=https://notes.harues.com/tags/key-pair>Key pair</a></div></div></header><div class=article-entry itemprop=articleBody><p>Usages of SSH key pair Generate SSH key pair ssh-keygen
 ssh-keygen -t rsa -b 4096 -f test test.pub: Public Key test: Private Key Use key Copy to remote system Copy Public key to $REMOTE_HOST
 ssh-copy-id $USER@$REMOTE_HOST -i test or, if there is no public key in remote host
 scp ~/.ssh/test.pub $USER@$REMOTE_HOST:.ssh/authorized_keys Login use Private Key ssh $USER@$REMOTE_HOST -i .ssh/test
@@ -198,19 +198,19 @@ $('.article-share-box.on').hide();box.css({top:offset.top+25,left:offset.left}).
 words
 &#183;
 1
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/virtualbox>VirtualBox</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/virtualbox>VirtualBox</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/nic>NIC</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/nic>NIC</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/bridge>Bridge</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/bridge>Bridge</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/hostonly>HostOnly</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/hostonly>HostOnly</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/internal>Internal</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/internal>Internal</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/nat>NAT</a> aa</div></div></header><div class=article-entry itemprop=articleBody><p><h4 id=more-than-4-nics-in-virtualbox>More than 4 NICs in VirtualBox</h4><p>VirtualBox에서 4개 이상의 네트워크 인터페이스(NIC) 설정하기</p><p>VirtualBox에서서 네트워크를 구성하여 테스트환경을 만들다 보면 4개 이상의 NIC 이 필요 할때가 종종 있다. 하지만 UI에서는 4개 까지만 NIC을 설정 가능하기 때문에 Command Line Interface를 통해 NIC을 생성하고 설정 하여야 한다. 설정 방법은 다음과 같다. 각 모드에 대한 자세한 내용은 다음 페이지를 참조 하기 바란다. <a href=https://www.virtualbox.org/manual/ch06.html>https://www.virtualbox.org/manual/ch06.html</a></p><h2 id=bridge-mode>Bridge Mode</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>VBoxManage modifyvm test-vm --nic5 bridged
+<a class=article-category-link href=https://notes.harues.com/tags/nat>NAT</a></div></div></header><div class=article-entry itemprop=articleBody><p><h4 id=more-than-4-nics-in-virtualbox>More than 4 NICs in VirtualBox</h4><p>VirtualBox에서 4개 이상의 네트워크 인터페이스(NIC) 설정하기</p><p>VirtualBox에서서 네트워크를 구성하여 테스트환경을 만들다 보면 4개 이상의 NIC 이 필요 할때가 종종 있다. 하지만 UI에서는 4개 까지만 NIC을 설정 가능하기 때문에 Command Line Interface를 통해 NIC을 생성하고 설정 하여야 한다. 설정 방법은 다음과 같다. 각 모드에 대한 자세한 내용은 다음 페이지를 참조 하기 바란다. <a href=https://www.virtualbox.org/manual/ch06.html>https://www.virtualbox.org/manual/ch06.html</a></p><h2 id=bridge-mode>Bridge Mode</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>VBoxManage modifyvm test-vm --nic5 bridged
 VBoxManage modifyvm test-vm --bridgeadapter5 eno1
 </code></pre></div><h2 id=host-only-mode>Host Only Mode</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>VBoxManage modifyvm test-vm --nic5 hostonly
 VBoxManage modifyvm test-vm --hostonlyadapter5 vboxnet0

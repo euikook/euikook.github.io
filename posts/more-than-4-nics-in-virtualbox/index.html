@@ -38,19 +38,19 @@ gtag('js',new Date());gtag('config','G-XR6RLEW3M1');</script><script src=https:/
 words
 &#183;
 1
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/virtualbox>VirtualBox</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/virtualbox>VirtualBox</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/nic>NIC</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/nic>NIC</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/bridge>Bridge</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/bridge>Bridge</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/hostonly>HostOnly</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/hostonly>HostOnly</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/internal>Internal</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/internal>Internal</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/nat>NAT</a> aa</div></div></header><div class=article-entry itemprop=articleBody><h4 id=more-than-4-nics-in-virtualbox>More than 4 NICs in VirtualBox</h4><p>VirtualBox에서 4개 이상의 네트워크 인터페이스(NIC) 설정하기</p><p>VirtualBox에서서 네트워크를 구성하여 테스트환경을 만들다 보면 4개 이상의 NIC 이 필요 할때가 종종 있다. 하지만 UI에서는 4개 까지만 NIC을 설정 가능하기 때문에 Command Line Interface를 통해 NIC을 생성하고 설정 하여야 한다. 설정 방법은 다음과 같다. 각 모드에 대한 자세한 내용은 다음 페이지를 참조 하기 바란다. <a href=https://www.virtualbox.org/manual/ch06.html>https://www.virtualbox.org/manual/ch06.html</a></p><h2 id=bridge-mode>Bridge Mode</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>VBoxManage modifyvm test-vm --nic5 bridged
+<a class=article-category-link href=https://notes.harues.com/tags/nat>NAT</a></div></div></header><div class=article-entry itemprop=articleBody><h4 id=more-than-4-nics-in-virtualbox>More than 4 NICs in VirtualBox</h4><p>VirtualBox에서 4개 이상의 네트워크 인터페이스(NIC) 설정하기</p><p>VirtualBox에서서 네트워크를 구성하여 테스트환경을 만들다 보면 4개 이상의 NIC 이 필요 할때가 종종 있다. 하지만 UI에서는 4개 까지만 NIC을 설정 가능하기 때문에 Command Line Interface를 통해 NIC을 생성하고 설정 하여야 한다. 설정 방법은 다음과 같다. 각 모드에 대한 자세한 내용은 다음 페이지를 참조 하기 바란다. <a href=https://www.virtualbox.org/manual/ch06.html>https://www.virtualbox.org/manual/ch06.html</a></p><h2 id=bridge-mode>Bridge Mode</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>VBoxManage modifyvm test-vm --nic5 bridged
 VBoxManage modifyvm test-vm --bridgeadapter5 eno1
 </code></pre></div><h2 id=host-only-mode>Host Only Mode</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>VBoxManage modifyvm test-vm --nic5 hostonly
 VBoxManage modifyvm test-vm --hostonlyadapter5 vboxnet0

@@ -16,15 +16,15 @@ words
 2
 minute read</div><div class=article-category><i class="fa fa-folder"></i><a class=article-category-link href=https://notes.harues.com/categories/howto>HowTo</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/categories/linux>Linux</a></div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+<a class=article-category-link href=https://notes.harues.com/categories/linux>Linux</a></div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/alt_r>ALt_R</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/alt_r>ALt_R</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/ralt>RALT</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/ralt>RALT</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/hangul>Hangul</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/hangul>Hangul</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/%ED%95%9C%EC%98%81>한／영</a> aa</div></div></header><div class=article-entry itemprop=articleBody><p><img src=https://source.unsplash.com/PT_9ux0j-x4 alt=Splash></p><h1 id=alt_r-as-hangul-on-ubuntu-1804>Alt_R as Hangul on Ubuntu 18.04</h1><h2 id=troubles>Troubles</h2><ul><li>영문 키보드 구입</li><li>오른쪽 Alt 키 (Alt_R)을 한글 키로 사용 하고 싶음.</li><li>IBus 등에서 한/영 변환을 Alt_R 키로 등록<ul><li>다른 프로그램에서는 잘 동작.</li><li>Alt_R 키를 단축키로 사용하는 프로그램(Chrome)등에서는 동작이 안됨</li></ul></li><li>Ctrl_R은 Hanja 키로 매핑 시키고 싶이 않음.</li></ul><h2 id=use-xmodmap>Use Xmodmap</h2><h3 id=hangul-key>Hangul key</h3><pre><code>xmodmap -e 'remove mod1 = Alt_R' # Alt_R의 기본 키 매핑 제거
+<a class=article-category-link href=https://notes.harues.com/tags/%ED%95%9C%EC%98%81>한／영</a></div></div></header><div class=article-entry itemprop=articleBody><p><img src=https://source.unsplash.com/PT_9ux0j-x4 alt=Splash></p><h1 id=alt_r-as-hangul-on-ubuntu-1804>Alt_R as Hangul on Ubuntu 18.04</h1><h2 id=troubles>Troubles</h2><ul><li>영문 키보드 구입</li><li>오른쪽 Alt 키 (Alt_R)을 한글 키로 사용 하고 싶음.</li><li>IBus 등에서 한/영 변환을 Alt_R 키로 등록<ul><li>다른 프로그램에서는 잘 동작.</li><li>Alt_R 키를 단축키로 사용하는 프로그램(Chrome)등에서는 동작이 안됨</li></ul></li><li>Ctrl_R은 Hanja 키로 매핑 시키고 싶이 않음.</li></ul><h2 id=use-xmodmap>Use Xmodmap</h2><h3 id=hangul-key>Hangul key</h3><pre><code>xmodmap -e 'remove mod1 = Alt_R' # Alt_R의 기본 키 매핑 제거
 xmodmap -e 'keycode 108 = Hangul' # Alt_R을 Hangul 키로 매핑
 </code></pre><h3 id=hanja-key>Hanja Key</h3><pre><code>xmodmap -e 'remove control = Control_R'
 xmodmap -e 'keycode 105 = Hangul_Hanja'

@@ -53,15 +53,15 @@ gtag('js',new Date());gtag('config','G-XR6RLEW3M1');</script><script src=https:/
 words
 &#183;
 4
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/shell>Shell</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/shell>Shell</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/shell-command>Shell Command</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/shell-command>Shell Command</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/screen>screen</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/screen>screen</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/tmux>tmux</a> aa</div></div></header><div class=article-entry itemprop=articleBody><h4 id=usages-of-tmux-gnu-screen-alternative>Usages of tmux, GNU screen Alternative</h4><p>개발자와 시스템 관리자의 친구 tmux, GNU screen Alternative - 01</p><p>개발자와 시스템 관리자의 친구, tmux 에 대하여 알아보자</p><p>tmux는 GNU screen을 대체 할 수 있는 가장 매력적인 대안이다. Terminal Multiplex 로 매뉴얼은 다음에서 볼 수 있다.</p><p><a href=http://man.openbsd.org/OpenBSD-current/man1/tmux.1>http://man.openbsd.org/OpenBSD-current/man1/tmux.1</a></p><p>tmux의 주요 기능에 대하여 알아본다. 먼저 세션 유지 기능과 화면 공유 기능에 대하여 알아보자.</p><h2 id=세션-유지-기능>세션 유지 기능</h2><p>PuTTY등으로 SSH 세션을 연결 한 후 프로그램을 실행하여 작업 도중 네트워크 문제 등으로 세션이 끊겼기면 Logout이 되면서 해당 쉘에서 작업 중이던 모든 작업이 Hangup Signal (SIGHUP)을 받아 Termination  된다. 자칫 작업한 내용을 잃어 버릴 수도 있다.</p><p>예를 들어 아래와 같은 상황들이 있을 수 있다.</p><ul><li>장시간 미사용으로 인항 세션 해제</li><li>Windows 자동 업데이트로 인한 시스템 재시작으로 인한 세션 해제</li><li>네트워크 불안으로 인한 세션 해제</li><li>정전등 전원 불안으로 인한 세션 해제</li></ul><p>TMUX 세션을 생성 한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>tmux
+<a class=article-category-link href=https://notes.harues.com/tags/tmux>tmux</a></div></div></header><div class=article-entry itemprop=articleBody><h4 id=usages-of-tmux-gnu-screen-alternative>Usages of tmux, GNU screen Alternative</h4><p>개발자와 시스템 관리자의 친구 tmux, GNU screen Alternative - 01</p><p>개발자와 시스템 관리자의 친구, tmux 에 대하여 알아보자</p><p>tmux는 GNU screen을 대체 할 수 있는 가장 매력적인 대안이다. Terminal Multiplex 로 매뉴얼은 다음에서 볼 수 있다.</p><p><a href=http://man.openbsd.org/OpenBSD-current/man1/tmux.1>http://man.openbsd.org/OpenBSD-current/man1/tmux.1</a></p><p>tmux의 주요 기능에 대하여 알아본다. 먼저 세션 유지 기능과 화면 공유 기능에 대하여 알아보자.</p><h2 id=세션-유지-기능>세션 유지 기능</h2><p>PuTTY등으로 SSH 세션을 연결 한 후 프로그램을 실행하여 작업 도중 네트워크 문제 등으로 세션이 끊겼기면 Logout이 되면서 해당 쉘에서 작업 중이던 모든 작업이 Hangup Signal (SIGHUP)을 받아 Termination  된다. 자칫 작업한 내용을 잃어 버릴 수도 있다.</p><p>예를 들어 아래와 같은 상황들이 있을 수 있다.</p><ul><li>장시간 미사용으로 인항 세션 해제</li><li>Windows 자동 업데이트로 인한 시스템 재시작으로 인한 세션 해제</li><li>네트워크 불안으로 인한 세션 해제</li><li>정전등 전원 불안으로 인한 세션 해제</li></ul><p>TMUX 세션을 생성 한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>tmux
 </code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>tmux new-session -s test
 </code></pre></div><p>또는 간단히</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>tmux new -s test
 </code></pre></div><p>tmux 세션 내에서 vi 명령을 사용하여 테스트 해본다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>vi test.txt

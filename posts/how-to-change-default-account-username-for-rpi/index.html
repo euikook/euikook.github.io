@@ -41,19 +41,19 @@ gtag('js',new Date());gtag('config','G-XR6RLEW3M1');</script><script src=https:/
 words
 &#183;
 1
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/rpi>RPi</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/rpi>RPi</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/raspberry-pi>Raspberry Pi</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/raspberry-pi>Raspberry Pi</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/howto>HowTo</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/howto>HowTo</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/username>Username</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/username>Username</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/password>Password</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/password>Password</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/raspian>Raspian</a> aa</div></div></header><div class=article-entry itemprop=articleBody><h4 id=rpiraspberry-pi-username-변경하기>RPi(Raspberry Pi) Username 변경하기</h4><h2 id=how-to-change-default-account-username-for-rpiraspberry-pi>How to change default account username for RPi(Raspberry Pi)</h2><p>Raspberry Pi 공식 이미지의 username 과 password는 다음과 같다.</p><blockquote><p>username: <em>pi</em><br>password : <em>raspberry</em></p></blockquote><p>쓸때마다 느끼는 거지만 pi 와 raspberry는 정말 손에 익지 않는다. 키보드로 칠때마다 오타가 나서 한번에 로그인 할때가 거의 없다. pi 계정을 계속 쓰면 보안 문제도 생길 수 있으니 자신만의 손에 익은 username과 password로 변경 해 보자.</p><p>먼저 root 계정으로 로그인 해야 한다. 먼저 root 로 로그인 하기 위하여 root 계정의 Password를 설정한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo passwd root
+<a class=article-category-link href=https://notes.harues.com/tags/raspian>Raspian</a></div></div></header><div class=article-entry itemprop=articleBody><h4 id=rpiraspberry-pi-username-변경하기>RPi(Raspberry Pi) Username 변경하기</h4><h2 id=how-to-change-default-account-username-for-rpiraspberry-pi>How to change default account username for RPi(Raspberry Pi)</h2><p>Raspberry Pi 공식 이미지의 username 과 password는 다음과 같다.</p><blockquote><p>username: <em>pi</em><br>password : <em>raspberry</em></p></blockquote><p>쓸때마다 느끼는 거지만 pi 와 raspberry는 정말 손에 익지 않는다. 키보드로 칠때마다 오타가 나서 한번에 로그인 할때가 거의 없다. pi 계정을 계속 쓰면 보안 문제도 생길 수 있으니 자신만의 손에 익은 username과 password로 변경 해 보자.</p><p>먼저 root 계정으로 로그인 해야 한다. 먼저 root 로 로그인 하기 위하여 root 계정의 Password를 설정한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>sudo passwd root
 </code></pre></div><p>pi 계정 에서 로그아웃 후 root 계정으로 로그인 한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>logout
 </code></pre></div><p>pi 계정을 harues로 변경한다.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>usermod -l harues pi
 </code></pre></div><p>이제 /home/pi 디렉터리를 /home/harues로 변경하자.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>usermod -m -d /home/harues harues

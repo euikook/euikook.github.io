@@ -29,17 +29,17 @@ gtag('js',new Date());gtag('config','G-XR6RLEW3M1');</script><script src=https:/
 words
 &#183;
 2
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/openssh>OpenSSH</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/openssh>OpenSSH</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/config>config</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/config>config</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/ssh>ssh</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/ssh>ssh</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/client>client</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/client>client</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/ssh-client>ssh client</a> aa</div></div></header><div class=article-entry itemprop=articleBody><h1 id=ssh-config-with-include>SSH Config with Include</h1><p>OpenSSH 7.3에서 <code>Include</code> 기능이 추가 되었다.</p><h2 id=about-sshconfig>About <code>~/.ssh/config</code></h2><p>SSH 접속 정보를 <code>~/.ssh/config</code> 파일에 저장한다.</p><p>접속하고자 하는 SSH 서버의 연결 옵션을 달리 해야 되는 경우나 IP를 외울 필요 없이 지정한 서버 이름으로 접속할 수 있기 때문에 매우 유용하다.</p><p>또한 보안등의 이유나 NAT내부의 Port Forwarding된 외우기 힘든 SSH Port 주소로 접속 해야 한다면 아래 예제의 <code>Port</code> 파라미터를 정하기만 하면 된다.</p><p>아래는 ~/ssh/config 파일의 예제 이다.</p><pre><code>Host 1.2.3.4 test
+<a class=article-category-link href=https://notes.harues.com/tags/ssh-client>ssh client</a></div></div></header><div class=article-entry itemprop=articleBody><h1 id=ssh-config-with-include>SSH Config with Include</h1><p>OpenSSH 7.3에서 <code>Include</code> 기능이 추가 되었다.</p><h2 id=about-sshconfig>About <code>~/.ssh/config</code></h2><p>SSH 접속 정보를 <code>~/.ssh/config</code> 파일에 저장한다.</p><p>접속하고자 하는 SSH 서버의 연결 옵션을 달리 해야 되는 경우나 IP를 외울 필요 없이 지정한 서버 이름으로 접속할 수 있기 때문에 매우 유용하다.</p><p>또한 보안등의 이유나 NAT내부의 Port Forwarding된 외우기 힘든 SSH Port 주소로 접속 해야 한다면 아래 예제의 <code>Port</code> 파라미터를 정하기만 하면 된다.</p><p>아래는 ~/ssh/config 파일의 예제 이다.</p><pre><code>Host 1.2.3.4 test
     Hostname 1.2.3.4
     Port 22
     User username

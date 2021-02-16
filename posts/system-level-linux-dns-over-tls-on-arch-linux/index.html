@@ -17,17 +17,17 @@ gtag('js',new Date());gtag('config','G-XR6RLEW3M1');</script><script src=https:/
 words
 &#183;
 1
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/arch>Arch</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/arch>Arch</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/dnssec>DNSSEC</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/dnssec>DNSSEC</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/dns>DNS</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/dns>DNS</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/tls>TLS</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/tls>TLS</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/dns-over-tls>DNS-over-TLS</a> aa</div></div></header><div class=article-entry itemprop=articleBody><h1 id=system-level-linux-dns-over-tls-on-arch-linux>System Level Linux DNS over TLS on Arch Linux</h1><h2 id=prerequisite>Prerequisite</h2><ul><li>stubby</li><li>dnsmasq</li></ul><h2 id=installation>Installation</h2><h3 id=stubby>stubby</h3><pre><code>sudo pacmas -S stubby
+<a class=article-category-link href=https://notes.harues.com/tags/dns-over-tls>DNS-over-TLS</a></div></div></header><div class=article-entry itemprop=articleBody><h1 id=system-level-linux-dns-over-tls-on-arch-linux>System Level Linux DNS over TLS on Arch Linux</h1><h2 id=prerequisite>Prerequisite</h2><ul><li>stubby</li><li>dnsmasq</li></ul><h2 id=installation>Installation</h2><h3 id=stubby>stubby</h3><pre><code>sudo pacmas -S stubby
 </code></pre><h4 id=start-and-endable-stubby>Start and endable stubby</h4><pre><code>sudo systemctl enable stubby
 sudo systemctl start stubby
 </code></pre><h4 id=configuration>Configuration</h4><p>Open and edit <code>/etc/stubby/stubby.yml</code></p><pre><code>listen_addresses:

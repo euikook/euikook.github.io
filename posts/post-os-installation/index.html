@@ -26,17 +26,17 @@ gtag('js',new Date());gtag('config','G-XR6RLEW3M1');</script><script src=https:/
 words
 &#183;
 1
-minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a> aa
+minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/git>git</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/git>git</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/user.name>user.name</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/user.name>user.name</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/user.email>user.email</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/user.email>user.email</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/override>override</a> aa
+<a class=article-category-link href=https://notes.harues.com/tags/override>override</a>
 &#183;
-<a class=article-category-link href=https://notes.harues.com/tags/overriding>overriding</a> aa</div></div></header><div class=article-entry itemprop=articleBody><h1 id=os-재설치-후-해야-하는것-들>OS 재설치 후 해야 하는것 들</h1><p>OS 재설치 후 해야 하는 내용들을 정리 한다.</p><h2 id=파일-복사>파일 복사</h2><p><code>rsync</code>를 이용한다.</p><h3 id=usb등-외부-디스크를-통한-복사>USB등 외부 디스크를 통한 복사</h3><pre><code>rsync -avzh $SRC $DST
+<a class=article-category-link href=https://notes.harues.com/tags/overriding>overriding</a></div></div></header><div class=article-entry itemprop=articleBody><h1 id=os-재설치-후-해야-하는것-들>OS 재설치 후 해야 하는것 들</h1><p>OS 재설치 후 해야 하는 내용들을 정리 한다.</p><h2 id=파일-복사>파일 복사</h2><p><code>rsync</code>를 이용한다.</p><h3 id=usb등-외부-디스크를-통한-복사>USB등 외부 디스크를 통한 복사</h3><pre><code>rsync -avzh $SRC $DST
 </code></pre><h3 id=네트워크ssh통한-복사>네트워크(SSH)통한 복사.</h3><p>시간이 오래 걸리지만 편함.</p><pre><code>rsync -avz -e ssh $REMOTE_HOST:/$$SRC $DST
 </code></pre><h4 id=root-권한이-필요한-경우>Root 권한이 필요한 경우</h4><pre><code>rsync -avz -e ssh --rsync-path='sudo ssh' $REMOTE_HOST:/$$SRC $DST
 </code></pre><p>리모트 시스템에 해당 유저의 <code>sudo</code> 설정이 <code>NOPASSWD</code>로 설정되어 있아야 한다.</p><pre><code>visudo
