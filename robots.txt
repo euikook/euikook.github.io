@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: http://notes.harues.com/sitemap.xml
