@@ -2169,3 +2169,20 @@ ul {
   display: inline-block;
   padding: 0px 4px;
 }
+
+
+.article-entry blockquote:before {
+  content: none;
+}
+
+.article-entry blockquote {
+  margin: 0 4px;
+  
+  border-left: 4px solid coral;
+  padding: 0 8px;
+  background: #eee;
+}
+
+.article-entry blockquote p {
+  margin: 0 0;
+}
