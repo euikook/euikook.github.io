@@ -1,15 +1,6 @@
-[submodule "themes/hugo-kiera"]
-	path = themes/hugo-kiera
-	url = https://github.com/funkydan2/hugo-kiera.git
-[submodule "themes/eureka"]
-	path = themes/eureka
-	url = https://github.com/wangchucheng/hugo-eureka.git
 [submodule "content/posts"]
 	path = content/posts
 	url = https://github.com/euikook/notes.git
-[submodule "themes/anatole"]
-	path = themes/anatole
-	url = https://github.com/lxndrblz/anatole.git
 [submodule "themes/icarus"]
 	path = themes/hugo-icarus
 	url = https://github.com/euikook/hugo-icarus.git
