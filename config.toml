@@ -41,6 +41,8 @@ theme = "hugo-icarus"
 	custom_css = []
 	custom_js  = []
 
+    use_jqcloud = false
+
 [params.utterances]
     repo = "euikook/wiki.notes"
     # term = "pathname"
