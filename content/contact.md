@@ -5,4 +5,7 @@ date: 2019-03-08
 description: Contact Page
 contact: true
 banner: https://source.unsplash.com/jay5BqVyf5A
+aliases:
+    - /gollum/contact
+    - /gollum/contact.md
 ---

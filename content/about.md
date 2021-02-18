@@ -6,6 +6,9 @@ status: publish
 tags: [About, euikook]
 date: 2021-02-08 11:16:05 +0900
 banner: https://source.unsplash.com/BfrQnKBulYQ
+aliases:
+    - /gollum/about
+    - /gollum/about.md
 ---
 
 
