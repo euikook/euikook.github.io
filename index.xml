@@ -20,7 +20,11 @@ thmem/&amp;lt;theme-name&amp;gt;/partials/utterances.html
 Comment를 위한 별도의 저장소를 사용하고자 한다면 해당 저장소의 이름으로 변경한다.
 More graceful .Site.Params.utterances.repo 변수가 설정 되었을 경우에만 해당 코드가 로그 되게 설정하고 싶다면 utterances.html 파일을 아래와 같이 수정한다.
 thmem/&amp;lt;theme-name&amp;gt;/partials/utterances.html
-{{ if (not (eq .</description></item><item><title>How to use Hugo for starter</title><link>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</link><pubDate>Wed, 10 Feb 2021 14:44:10 +0900</pubDate><guid>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</guid><description>Installing ArchLinux pacman 명령으로 설치한다.
+{{ if (not (eq .</description></item><item><title>About authentication to Github</title><link>https://notes.harues.com/posts/about-authentication-to-github/</link><pubDate>Fri, 12 Feb 2021 17:34:41 +0900</pubDate><guid>https://notes.harues.com/posts/about-authentication-to-github/</guid><description>About authentication to Github Github에 인증하는 방법은 다음과 같다.
+(2 단계 인증을 통한) username, password Personal access token SSH Key 아래 링크에서 알 수 있듯이 2021년 08월 13일 부터 Github.com 에서 Git 작업을 할때 Account Password를 통한 인증을 지원하지 않는다고한다.
+Github.com에 수정사항을 Contribution 하지 않는 다면 크게 상관 없다.
+https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/
+Two-factor Authentication을 사용하고 있다면 현재도 Account Password가 아니라 Personal Access Token을 통해서 인증 해야 하기 때문에 상관이 없다.</description></item><item><title>How to use Hugo for starter</title><link>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</link><pubDate>Wed, 10 Feb 2021 14:44:10 +0900</pubDate><guid>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</guid><description>Installing ArchLinux pacman 명령으로 설치한다.
 sudo pacman -Syu hugo Ubuntu Ubuntu 공식 패키지로 등록 되어 있으므로 apt 명령으로 설치 한다.
 sudo apt install hugo Snap Package with Sass/CSCC support
 snap install hugo --channel=extedned whtiout Sass/CSCC support
