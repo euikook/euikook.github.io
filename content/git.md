@@ -15,7 +15,7 @@ banner: https://source.unsplash.com/46juD4zY1XA
 alias git='git -c "user.name=euikook" -c "user.email=euikook@gmail.com"'
 ```
 
-### Custom Domain
+### Harues.com Domain
 ```
 alias git='git -c "user.name=euikook" -c "user.email=euikook@harues.com"'
 ```
