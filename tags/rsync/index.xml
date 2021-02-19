@@ -1,12 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RSYNC on Notes</title><link>https://notes.harues.com/tags/rsync/</link><description>Recent content in RSYNC on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 16 Nov 2020 09:37:41 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/rsync/index.xml" rel="self" type="application/rss+xml"/><item><title>RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화</title><link>https://notes.harues.com/posts/incremental-backup-using-rsyncssh/</link><pubDate>Mon, 16 Nov 2020 09:37:41 +0900</pubDate><guid>https://notes.harues.com/posts/incremental-backup-using-rsyncssh/</guid><description>&lt;h4 id="incremental-backup-using-rsyncssh-and-cron">Incremental Backup Using RSYNC+SSH and cron&lt;/h4>
-&lt;p>RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화&lt;/p>
-&lt;p>관리 하는 서버가 많아지고 서버에 저장되는 데이터의 양이 늘어 날 수록 백업을 어떻게 하여야 하는지 고민이 생긴다. 이 포스트에서는 RSYNC와 SSH를 이용하여 여러 서버의 데이터를 백업하고 이를 자동화 하는 방법에 대하여 기술 한다. 테스트를 위한 서버 구성은 다음과 같다.   &lt;img src="https://notes.harues.com/wp-content/uploads/2018/03/Incremental-Backup-using-RSYNCSSH.png" alt="">   아래 예제 에서는 &lt;em>S-01&lt;/em>, &lt;em>S-02&lt;/em>, _S-03_의 /home 디렉터리를 BackupBot으로 백업 하고자 한다.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RSYNC on Notes</title><link>https://notes.harues.com/tags/rsync/</link><description>Recent content in RSYNC on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 16 Nov 2020 09:37:41 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/rsync/index.xml" rel="self" type="application/rss+xml"/><item><title>RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화</title><link>https://notes.harues.com/posts/incremental-backup-using-rsyncssh/</link><pubDate>Mon, 16 Nov 2020 09:37:41 +0900</pubDate><guid>https://notes.harues.com/posts/incremental-backup-using-rsyncssh/</guid><description>&lt;p>RSYNC+SSH 를 이용한 증분 백업 및 Cron을 이용한 자동화&lt;/p>
+&lt;p>관리 하는 서버가 많아지고 서버에 저장되는 데이터의 양이 늘어 날 수록 백업을 어떻게 하여야 하는지 고민이 생긴다.&lt;/p>
+&lt;p>이 포스트에서는 RSYNC와 SSH를 이용하여 여러 서버의 데이터를 백업하고 이를 자동화 하는 방법에 대하여 기술 한다. 테스트를 위한 서버 구성은 다음과 같다.  &lt;/p>
+&lt;p>아래 예제 에서는 &lt;em>apple&lt;/em>, &lt;em>banana&lt;/em>, &lt;em>coconut&lt;/em>의 &lt;em>/home&lt;/em> 디렉터리를 backupbot으로 백업 하고자 한다.&lt;/p>
+&lt;p>&lt;img src="https://notes.harues.com/images/backup-env.png" alt="Backup Environment">&lt;/p>
 &lt;h2 id="공통-준비-사항">공통 준비 사항&lt;/h2>
 &lt;h3 id="backup-user-생성">Backup User 생성&lt;/h3>
-&lt;p>백업을 위한 사용자 계정을 생성한다.&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo adduser --disabled-password --gecos &lt;span style="color:#e6db74">&amp;#39;BackupMan&amp;#39;&lt;/span> backupman
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ssh-키-생성-및-배포">SSH 키 생성 및 배포&lt;/h2>
-&lt;h3 id="ssh-key-생성-backupbot">SSH KEY 생성 (BackupBot)&lt;/h3>
-&lt;p>&lt;em>ssh-keygen&lt;/em> 명령으로 SSH KEY를 생성한다.&lt;/p>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ssh-keygen -t rsa -b &lt;span style="color:#ae81ff">4096&lt;/span> -f backupman -C BackupMan
+&lt;p>백업 서버와 백업을 할 서버 모두 백업을 위한 사용자 계정 &lt;code>backupbot&lt;/code>을 생성한다.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo adduser --disabled-password --gecos &lt;span style="color:#e6db74">&amp;#39;BackupBot&amp;#39;&lt;/span> backupbot
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>/etc/hosts&lt;/code> 파일을 편집하여 아래 와 같이 host 정보를 추가 한다.&lt;/p>
+&lt;pre>&lt;code>192.168.0.10 apple
+192.168.0.20 banana
+192.168.0.30 coconut
+192.168.0.100 backupbot
+&lt;/code>&lt;/pre>&lt;h2 id="ssh-키-생성-및-배포">SSH 키 생성 및 배포&lt;/h2>
+&lt;p>Backup 서버에서 SSH Key Pair를 생성하고 각 서버로 배포 한다.&lt;/p>
+&lt;p>&lt;code>ssh-keygen&lt;/code> 명령으로 SSH Key pair를 생성한다.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">ssh-keygen -t rsa -b &lt;span style="color:#ae81ff">4096&lt;/span> -f backupbot -C BackupBot
 &lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
