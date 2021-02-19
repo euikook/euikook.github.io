@@ -5,9 +5,4 @@
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">mkdir a
 ln a b
 ln: a: hard link not allowed &lt;span style="color:#66d9ef">for&lt;/span> directory
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>디렉터리 Hard Link는 여러 문제점을 야기 시킨다. 디렉터리 Hard Link에 의해 발생할 수 있는 문제점들에 대하여 알아본다.&lt;/p>
-&lt;h2 id="파일시스템에-루프를-만든다">파일시스템에 루프를 만든다.&lt;/h2>
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">mkdir -p ~/a/b
-cd ~/a/b
-ln ~/a c
 &lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

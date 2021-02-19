@@ -1,10 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>override on Notes</title><link>https://notes.harues.com/tags/override/</link><description>Recent content in override on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 16 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://notes.harues.com/tags/override/index.xml" rel="self" type="application/rss+xml"/><item><title>Override git user name and email address temporarily</title><link>https://notes.harues.com/posts/override-git-user-name-and-emal-address-temporarily/</link><pubDate>Mon, 16 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/override-git-user-name-and-emal-address-temporarily/</guid><description>Override git user name and email address temporarily 이 글에서는 전역이나 프로젝트에 설정된 git 사용자가 자신이 아닌경우 임시로 username과 email을 설정 하는 방법을 설명한다.
-Terminal에서 git 명령을 수행 하기 전에 아래 명령을 수행하여 git 명령을 잠시 override 하자.
-alias git='git -c &amp;quot;user.name=euikook&amp;quot; -c &amp;quot;user.email=euikook@harues.com&amp;quot;' 임시 사용자 이름 및 이메일 주소 설정
-Terminal을 빠져 나오면 설정이 날아가기 때문에 타인의 PC에서 수정한 사항을 커밋할 경우 유용하게 사용할 수 있다.
-현재 설정된 user.</description></item><item><title>Instructions of post OS install</title><link>https://notes.harues.com/posts/post-os-installation/</link><pubDate>Fri, 13 Nov 2020 16:53:29 +0900</pubDate><guid>https://notes.harues.com/posts/post-os-installation/</guid><description>OS 재설치 후 해야 하는것 들 OS 재설치 후 해야 하는 내용들을 정리 한다.
-파일 복사 rsync를 이용한다.
-USB등 외부 디스크를 통한 복사 rsync -avzh $SRC $DST 네트워크(SSH)통한 복사. 시간이 오래 걸리지만 편함.
-rsync -avz -e ssh $REMOTE_HOST:/$$SRC $DST Root 권한이 필요한 경우 rsync -avz -e ssh --rsync-path='sudo ssh' $REMOTE_HOST:/$$SRC $DST 리모트 시스템에 해당 유저의 sudo 설정이 NOPASSWD로 설정되어 있아야 한다.
-visudo username ALL=NOPASSWD:/usr/bin/rsync Application Virtualbox rsync -avzh $OLD_HOME/.config/VirtualBox $HOME/.config/VirtualBox Insync Stop Insync</description></item><item><title>Python3 ad default python interpreter on ubuntu</title><link>https://notes.harues.com/posts/python3-as-default-python-interpreter-on-ubuntu/</link><pubDate>Wed, 21 Oct 2020 09:41:48 +0900</pubDate><guid>https://notes.harues.com/posts/python3-as-default-python-interpreter-on-ubuntu/</guid><description>Python 기본 인터프리터 설정 하기 sudo update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 10 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10 sudo update-alternatives --config pip sudo update-alternatives --config python 아래와 같이 직접 --set 옵션을 사용하여 설정 한다.
-sudo update-alternatives --set python /usr/bin/python3 sudo update-alternatives --set pip /usr/bin/pip3</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>override on Notes</title><link>https://notes.harues.com/tags/override/</link><description>Recent content in override on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 16 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://notes.harues.com/tags/override/index.xml" rel="self" type="application/rss+xml"/><item><title>Override git user name and email address temporarily</title><link>https://notes.harues.com/posts/override-git-user-name-and-emal-address-temporarily/</link><pubDate>Mon, 16 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/override-git-user-name-and-emal-address-temporarily/</guid><description>&lt;h1 id="override-git-user-name-and-email-address-temporarily">Override git user name and email address temporarily&lt;/h1>
+&lt;p>이 글에서는 전역이나 프로젝트에 설정된 git 사용자가 자신이 아닌경우 임시로 username과 email을 설정 하는 방법을 설명한다.&lt;/p>
+&lt;p>Terminal에서 git 명령을 수행 하기 전에 아래 명령을 수행하여 git 명령을 잠시 override 하자.&lt;/p>
+&lt;pre>&lt;code>alias git='git -c &amp;quot;user.name=euikook&amp;quot; -c &amp;quot;user.email=euikook@harues.com&amp;quot;'
+&lt;/code>&lt;/pre>&lt;blockquote>
+&lt;p>임시 사용자 이름 및 이메일 주소 설정&lt;/p>
+&lt;/blockquote>
+&lt;p>Terminal을 빠져 나오면 설정이 날아가기 때문에 타인의 PC에서 수정한 사항을 커밋할 경우 유용하게 사용할 수 있다.&lt;/p></description></item><item><title>Instructions of post OS install</title><link>https://notes.harues.com/posts/post-os-installation/</link><pubDate>Fri, 13 Nov 2020 16:53:29 +0900</pubDate><guid>https://notes.harues.com/posts/post-os-installation/</guid><description>&lt;h1 id="os-재설치-후-해야-하는것-들">OS 재설치 후 해야 하는것 들&lt;/h1>
+&lt;p>OS 재설치 후 해야 하는 내용들을 정리 한다.&lt;/p>
+&lt;h2 id="파일-복사">파일 복사&lt;/h2>
+&lt;p>&lt;code>rsync&lt;/code>를 이용한다.&lt;/p>
+&lt;h3 id="usb등-외부-디스크를-통한-복사">USB등 외부 디스크를 통한 복사&lt;/h3>
+&lt;pre>&lt;code>rsync -avzh $SRC $DST
+&lt;/code>&lt;/pre>&lt;h3 id="네트워크ssh통한-복사">네트워크(SSH)통한 복사.&lt;/h3>
+&lt;p>시간이 오래 걸리지만 편함.&lt;/p>
+&lt;pre>&lt;code>rsync -avz -e ssh $REMOTE_HOST:/$$SRC $DST
+&lt;/code>&lt;/pre></description></item><item><title>Python3 ad default python interpreter on ubuntu</title><link>https://notes.harues.com/posts/python3-as-default-python-interpreter-on-ubuntu/</link><pubDate>Wed, 21 Oct 2020 09:41:48 +0900</pubDate><guid>https://notes.harues.com/posts/python3-as-default-python-interpreter-on-ubuntu/</guid><description>&lt;h1 id="python-기본-인터프리터-설정-하기">Python 기본 인터프리터 설정 하기&lt;/h1>
+&lt;pre>&lt;code>sudo update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 10
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10
+sudo update-alternatives --config pip
+sudo update-alternatives --config python
+&lt;/code>&lt;/pre></description></item></channel></rss>

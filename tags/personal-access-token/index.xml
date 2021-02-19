@@ -1,5 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Personal Access Token on Notes</title><link>https://notes.harues.com/tags/personal-access-token/</link><description>Recent content in Personal Access Token on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 12 Feb 2021 17:34:41 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/personal-access-token/index.xml" rel="self" type="application/rss+xml"/><item><title>About authentication to Github</title><link>https://notes.harues.com/posts/about-authentication-to-github/</link><pubDate>Fri, 12 Feb 2021 17:34:41 +0900</pubDate><guid>https://notes.harues.com/posts/about-authentication-to-github/</guid><description>About authentication to Github Github에 인증하는 방법은 다음과 같다.
-(2 단계 인증을 통한) username, password Personal access token SSH Key 아래 링크에서 알 수 있듯이 2021년 08월 13일 부터 Github.com 에서 Git 작업을 할때 Account Password를 통한 인증을 지원하지 않는다고한다.
-Github.com에 수정사항을 Contribution 하지 않는 다면 크게 상관 없다.
-https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/
-Two-factor Authentication을 사용하고 있다면 현재도 Account Password가 아니라 Personal Access Token을 통해서 인증 해야 하기 때문에 상관이 없다.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Personal Access Token on Notes</title><link>https://notes.harues.com/tags/personal-access-token/</link><description>Recent content in Personal Access Token on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 12 Feb 2021 17:34:41 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/personal-access-token/index.xml" rel="self" type="application/rss+xml"/><item><title>About authentication to Github</title><link>https://notes.harues.com/posts/about-authentication-to-github/</link><pubDate>Fri, 12 Feb 2021 17:34:41 +0900</pubDate><guid>https://notes.harues.com/posts/about-authentication-to-github/</guid><description>&lt;h2 id="about-authentication-to-github">About authentication to Github&lt;/h2>
+&lt;p>Github에 인증하는 방법은 다음과 같다.&lt;/p>
+&lt;ul>
+&lt;li>(2 단계 인증을 통한) &lt;code>username&lt;/code>, &lt;code>password&lt;/code>&lt;/li>
+&lt;li>Personal access token&lt;/li>
+&lt;li>SSH Key&lt;/li>
+&lt;/ul>
+&lt;p>아래 링크에서 알 수 있듯이 2021년 08월 13일 부터 Github.com 에서 Git 작업을 할때 &lt;code>Account Password&lt;/code>를 통한 인증을 지원하지 않는다고한다.&lt;/p>
+&lt;blockquote>
+&lt;p>Github.com에 수정사항을 Contribution 하지 않는 다면 크게 상관 없다.&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;a href="https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/">https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/&lt;/a>&lt;/p></description></item></channel></rss>

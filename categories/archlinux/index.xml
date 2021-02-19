@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ArchLinux on Notes</title><link>https://notes.harues.com/categories/archlinux/</link><description>Recent content in ArchLinux on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 12 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://notes.harues.com/categories/archlinux/index.xml" rel="self" type="application/rss+xml"/><item><title>Arch Linix Installation Guide</title><link>https://notes.harues.com/posts/arch-linux-install-guide/</link><pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/arch-linux-install-guide/</guid><description>Arch Linix Installation Guide 현재 가지고 있는 시스템 위주로 설명한다.
-부트 디스크 만들기 ISO 파일을 다운로드 한다. 다운로드 후 필요한 경우 gpg 명령으로 파일을 검증한다.
-gpg --keyserver-options auto-key-retrieve --verify archlinux-2020.11.01-x86_64.iso.sig 아래와 같이 Can't check signature: No public key 에러가 발생하면
-gpg --keyserver-options auto-key-retrieve --verify archlinux-2020.11.01-x86_64.iso.sig gpg: assuming signed data in 'archlinux-2020.11.01-x86_64.iso' gpg: Signature made Sun 01 Nov 2020 03:42:16 PM KST gpg: using RSA key 4AA4767BBC9C4B1D18AE28B77F2D434B9741E8AC gpg: Can't check signature: No public key 아래와 같이 키서버를 지정해 준다.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ArchLinux on Notes</title><link>https://notes.harues.com/categories/archlinux/</link><description>Recent content in ArchLinux on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 12 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://notes.harues.com/categories/archlinux/index.xml" rel="self" type="application/rss+xml"/><item><title>Arch Linix Installation Guide</title><link>https://notes.harues.com/posts/arch-linux-install-guide/</link><pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/arch-linux-install-guide/</guid><description>&lt;h1 id="arch-linix-installation-guide">Arch Linix Installation Guide&lt;/h1>
+&lt;p>현재 가지고 있는 시스템 위주로 설명한다.&lt;/p>
+&lt;h2 id="부트-디스크-만들기">부트 디스크 만들기&lt;/h2>
+&lt;p>ISO 파일을 다운로드 한다. 다운로드 후 필요한 경우 gpg 명령으로 파일을 검증한다.&lt;/p>
+&lt;pre>&lt;code>gpg --keyserver-options auto-key-retrieve --verify archlinux-2020.11.01-x86_64.iso.sig
+&lt;/code>&lt;/pre>&lt;p>아래와 같이 &lt;code>Can't check signature: No public key&lt;/code> 에러가 발생하면&lt;/p>
+&lt;pre>&lt;code>gpg --keyserver-options auto-key-retrieve --verify archlinux-2020.11.01-x86_64.iso.sig
+gpg: assuming signed data in 'archlinux-2020.11.01-x86_64.iso'
+gpg: Signature made Sun 01 Nov 2020 03:42:16 PM KST
+gpg: using RSA key 4AA4767BBC9C4B1D18AE28B77F2D434B9741E8AC
+gpg: Can't check signature: No public key
+&lt;/code>&lt;/pre>&lt;p>아래와 같이 키서버를 지정해 준다.&lt;/p>
+&lt;pre>&lt;code>gpg --keyserver-options auto-key-retrieve --keyserver=hkp://pool.sks-keyservers.net --verify archlinux-2020.11.01-x86_64.iso.sig
+&lt;/code>&lt;/pre></description></item></channel></rss>

@@ -1,7 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>utterances on Notes</title><link>https://notes.harues.com/tags/utterances/</link><description>Recent content in utterances on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 15 Feb 2021 13:11:33 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/utterances/index.xml" rel="self" type="application/rss+xml"/><item><title>utterances: github issue as comment for Hugo</title><link>https://notes.harues.com/posts/utterances-github-issue-as-comment-for-hugo/</link><pubDate>Mon, 15 Feb 2021 13:11:33 +0900</pubDate><guid>https://notes.harues.com/posts/utterances-github-issue-as-comment-for-hugo/</guid><description>utterances: github issue as comment for Hugo Simple method thmem/&amp;lt;theme-name&amp;gt;/partials/ 디렉터리에 utterances.html 파일을 만들고 아래 와 같은 내용을 추가 한다.
-thmem/&amp;lt;theme-name&amp;gt;/partials/utterances.html
-&amp;lt;script src=&amp;#34;https://utteranc.es/client.js&amp;#34; repo=&amp;#34;&amp;lt;username&amp;gt;/&amp;lt;username&amp;gt;.github.io&amp;#34; issue-term=&amp;#34;pathname&amp;#34; theme=&amp;#34;github-light&amp;#34; crossorigin=&amp;#34;anon&amp;#34; async&amp;gt; &amp;lt;/script&amp;gt; &amp;lt;username&amp;gt;/&amp;lt;username&amp;gt;.github.io의 은 자신의 github username으로 변경 한다.
-Comment를 위한 별도의 저장소를 사용하고자 한다면 해당 저장소의 이름으로 변경한다.
-More graceful .Site.Params.utterances.repo 변수가 설정 되었을 경우에만 해당 코드가 로그 되게 설정하고 싶다면 utterances.html 파일을 아래와 같이 수정한다.
-thmem/&amp;lt;theme-name&amp;gt;/partials/utterances.html
-{{ if (not (eq .</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>utterances on Notes</title><link>https://notes.harues.com/tags/utterances/</link><description>Recent content in utterances on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 15 Feb 2021 13:11:33 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/utterances/index.xml" rel="self" type="application/rss+xml"/><item><title>utterances: github issue as comment for Hugo</title><link>https://notes.harues.com/posts/utterances-github-issue-as-comment-for-hugo/</link><pubDate>Mon, 15 Feb 2021 13:11:33 +0900</pubDate><guid>https://notes.harues.com/posts/utterances-github-issue-as-comment-for-hugo/</guid><description>&lt;h1 id="utterances-github-issue-as-comment-for-hugo">utterances: github issue as comment for Hugo&lt;/h1>
+&lt;h2 id="simple-method">Simple method&lt;/h2>
+&lt;p>&lt;code>thmem/&amp;lt;theme-name&amp;gt;/partials/&lt;/code> 디렉터리에 &lt;code>utterances.html&lt;/code> 파일을 만들고 아래 와 같은 내용을 추가 한다.&lt;/p>
+&lt;p>&lt;code>thmem/&amp;lt;theme-name&amp;gt;/partials/utterances.html&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-html" data-lang="html">&amp;lt;&lt;span style="color:#f92672">script&lt;/span> &lt;span style="color:#a6e22e">src&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;https://utteranc.es/client.js&amp;#34;&lt;/span>
+&lt;span style="color:#a6e22e">repo&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&amp;lt;username&amp;gt;/&amp;lt;username&amp;gt;.github.io&amp;#34;&lt;/span>
+&lt;span style="color:#a6e22e">issue-term&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;pathname&amp;#34;&lt;/span>
+&lt;span style="color:#a6e22e">theme&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;github-light&amp;#34;&lt;/span>
+&lt;span style="color:#a6e22e">crossorigin&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;anon&amp;#34;&lt;/span>
+&lt;span style="color:#a6e22e">async&lt;/span>&amp;gt;
+&amp;lt;/&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>&lt;code>&amp;lt;username&amp;gt;/&amp;lt;username&amp;gt;.github.io&lt;/code>의 &lt;!-- raw HTML omitted -->은 자신의 github username으로 변경 한다.&lt;/p>
+&lt;/blockquote></description></item></channel></rss>

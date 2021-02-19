@@ -1,8 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ArchLinux on Notes</title><link>https://notes.harues.com/tags/archlinux/</link><description>Recent content in ArchLinux on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 10 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://notes.harues.com/tags/archlinux/index.xml" rel="self" type="application/rss+xml"/><item><title>How to use Hugo for starter</title><link>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</link><pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</guid><description>Installing ArchLinux pacman 명령으로 설치한다.
-sudo pacman -Syu hugo Ubuntu Ubuntu 공식 패키지로 등록 되어 있으므로 apt 명령으로 설치 한다.
-sudo apt install hugo Snap Package with Sass/CSCC support
-snap install hugo --channel=extedned whtiout Sass/CSCC support
-snap install hugo Create New Sites hugo new site sandbox Add a Theme themes.gohugo.io에서 테마를 선택한다.
-본 예제에서는 ananke 테마를 사용하도록 한다.
-cd sandbox git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke echo 'theme = &amp;quot;ananke&amp;quot;' &amp;gt;&amp;gt; config.</description></item><item><title>Petalinux error on ArchLinux</title><link>https://notes.harues.com/posts/petalinux-error/</link><pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/petalinux-error/</guid><description>Errors petalinux-config -c rootfs [INFO] generating Kconfig for project ERROR: Failed to generate /home/euikook/working/oran/xilinx/102/build/misc/config/Kconfig.syshw ERROR: Failed to Kconfig project ERROR: Failed to config rootfs. petalinux-config with the -v option
-petalinux-config -c rootfs -v [INFO] generating Kconfig for project package require hsi FAILED: invalid command name &amp;quot;hsi::create_dt_node&amp;quot; while executing &amp;quot;hsi::create_dt_node -help&amp;quot; (in namespace eval &amp;quot;::hsi::help&amp;quot; script line 6) invoked from within &amp;quot;namespace eval ::hsi::help { variable version 0.1 ::xsdb::setcmdmeta {hsi create_dt_node} categories {hsi} ::xsdb::setcmdmeta {hsi create.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ArchLinux on Notes</title><link>https://notes.harues.com/tags/archlinux/</link><description>Recent content in ArchLinux on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 10 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://notes.harues.com/tags/archlinux/index.xml" rel="self" type="application/rss+xml"/><item><title>How to use Hugo for starter</title><link>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</link><pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</guid><description>&lt;h2 id="installing">Installing&lt;/h2>
+&lt;h3 id="archlinux">ArchLinux&lt;/h3>
+&lt;p>pacman 명령으로 설치한다.&lt;/p>
+&lt;pre>&lt;code>sudo pacman -Syu hugo
+&lt;/code>&lt;/pre>&lt;h3 id="ubuntu">Ubuntu&lt;/h3>
+&lt;p>Ubuntu 공식 패키지로 등록 되어 있으므로 apt 명령으로 설치 한다.&lt;/p>
+&lt;pre>&lt;code>sudo apt install hugo
+&lt;/code>&lt;/pre></description></item><item><title>Petalinux error on ArchLinux</title><link>https://notes.harues.com/posts/petalinux-error/</link><pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/petalinux-error/</guid><description>&lt;h2 id="errors">Errors&lt;/h2>
+&lt;pre>&lt;code>petalinux-config -c rootfs
+&lt;/code>&lt;/pre>&lt;pre>&lt;code>[INFO] generating Kconfig for project
+ERROR: Failed to generate /home/euikook/working/oran/xilinx/102/build/misc/config/Kconfig.syshw
+ERROR: Failed to Kconfig project
+ERROR: Failed to config rootfs.
+&lt;/code>&lt;/pre>&lt;p>&lt;code>petalinux-config&lt;/code> with the &lt;code>-v&lt;/code> option&lt;/p>
+&lt;pre>&lt;code>petalinux-config -c rootfs -v
+&lt;/code>&lt;/pre>&lt;pre>&lt;code>[INFO] generating Kconfig for project
+package require hsi FAILED:
+invalid command name &amp;quot;hsi::create_dt_node&amp;quot;
+while executing
+&amp;quot;hsi::create_dt_node -help&amp;quot;
+(in namespace eval &amp;quot;::hsi::help&amp;quot; script line 6)
+invoked from within
+&amp;quot;namespace eval ::hsi::help {
+variable version 0.1
+::xsdb::setcmdmeta {hsi create_dt_node} categories {hsi}
+::xsdb::setcmdmeta {hsi create...&amp;quot;
+(file &amp;quot;/home/euikook/Tools/Xilinx/PetaLinux/2019.2/tools/xsct/scripts/xsct/hsi/hsihelp.tcl&amp;quot; line 25)
+invoked from within
+&amp;quot;source /home/euikook/Tools/Xilinx/PetaLinux/2019.2/tools/xsct/scripts/xsct/hsi/hsihelp.tcl&amp;quot;
+(&amp;quot;package ifneeded hsi::help 0.1&amp;quot; script)
+ERROR: Failed to generate /home/euikook/working/oran/xilinx/102/build/misc/config/Kconfig.syshw
+ERROR: Failed to Kconfig project
+ERROR: Failed to config rootfs.
+&lt;/code>&lt;/pre></description></item></channel></rss>
