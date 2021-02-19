@@ -28,4 +28,4 @@
 &lt;p>관리 하는 서버가 많아지고 서버에 저장되는 데이터의 양이 늘어 날 수록 백업을 어떻게 하여야 하는지 고민이 생긴다.&lt;/p>
 &lt;p>이 포스트에서는 RSYNC와 SSH를 이용하여 여러 서버의 데이터를 백업하고 이를 자동화 하는 방법에 대하여 기술 한다. 테스트를 위한 서버 구성은 다음과 같다.  &lt;/p>
 &lt;p>아래 예제 에서는 &lt;em>apple&lt;/em>, &lt;em>banana&lt;/em>, &lt;em>coconut&lt;/em>의 &lt;em>/home&lt;/em> 디렉터리를 backupbot으로 백업 하고자 한다.&lt;/p>
-&lt;p>&lt;img src="https://notes.harues.com/images/backup-env.png" alt="Backup Environment">&lt;/p></description></item></channel></rss>
+&lt;p>&lt;img src="images/backup-env.png" alt="Backup Environment">&lt;/p></description></item></channel></rss>
