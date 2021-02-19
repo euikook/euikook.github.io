@@ -15,14 +15,14 @@ thmem/&amp;lt;theme-name&amp;gt;/partials/utterances.html
 Comment를 위한 별도의 저장소를 사용하고자 한다면 해당 저장소의 이름으로 변경한다.
 More graceful .Site.Params.utterances.repo 변수가 설정 되었을 경우에만 해당 코드가 로그 되게 설정하고 싶다면 utterances.html 파일을 아래와 같이 수정한다.
 thmem/&amp;lt;theme-name&amp;gt;/partials/utterances.html
-{{ if (not (eq .</description></item><item><title>How to use Hugo for starter</title><link>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</link><pubDate>Wed, 10 Feb 2021 14:44:10 +0900</pubDate><guid>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</guid><description>Installing ArchLinux pacman 명령으로 설치한다.
+{{ if (not (eq .</description></item><item><title>Continous Deployment Hugo with Github Actions</title><link>https://notes.harues.com/posts/continous-deployment-hugo-with-github-actions/</link><pubDate>Thu, 11 Feb 2021 09:37:41 +0900</pubDate><guid>https://notes.harues.com/posts/continous-deployment-hugo-with-github-actions/</guid><description>Continous Deployment Hugo with Github Actions Github Page(이하 GH)를 사용하여 정적 사이트를 배포 하고자 한다.
+jekyll 유명한 Static Site Generator가 있지만 Go를 공부할 목적으로 Hugo 를 선택했다.
+Hugo는 Github Page에서 공식적으로 지원하는 jekyll과 달리 로컬에서 정적 사이트를 빌드 하여 GH 저장소에 push 해주어야 한다.
+Github 에서지원하는 CI/CD 인 Github Actions을 이용하여 이를 자동화 할 수 있는데 Github Actions은 일반적은 CI/CD 와 사용법이 비슷하다.
+Setting up github repository for github pages Github Page를 생성 하기 위해서는 github 계정에 로그인 하여 &amp;lt;username&amp;gt;.</description></item><item><title>How to use Hugo for starter</title><link>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</link><pubDate>Wed, 10 Feb 2021 14:44:10 +0900</pubDate><guid>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</guid><description>Installing ArchLinux pacman 명령으로 설치한다.
 sudo pacman -Syu hugo Ubuntu Ubuntu 공식 패키지로 등록 되어 있으므로 apt 명령으로 설치 한다.
 sudo apt install hugo Snap Package with Sass/CSCC support
 snap install hugo --channel=extedned whtiout Sass/CSCC support
 snap install hugo Create New Sites hugo new site sandbox Add a Theme themes.gohugo.io에서 테마를 선택한다.
 본 예제에서는 ananke 테마를 사용하도록 한다.
-cd sandbox git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke echo 'theme = &amp;quot;ananke&amp;quot;' &amp;gt;&amp;gt; config.</description></item><item><title>Continous Deployment Hugo with Github Actions</title><link>https://notes.harues.com/posts/continous-deployment-hugo-with-github-actions/</link><pubDate>Tue, 09 Feb 2021 09:37:41 +0900</pubDate><guid>https://notes.harues.com/posts/continous-deployment-hugo-with-github-actions/</guid><description>Continous Deployment Hugo with Github Actions Github Page(이하 GH)를 사용하여 정적 사이트를 배포 하고자 한다.
-jekyll 유명한 Static Site Generator가 있지만 Go를 공부할 목적으로 Hugo 를 선택했다.
-Hugo는 Github Page에서 공식적으로 지원하는 jekyll과 달리 로컬에서 정적 사이트를 빌드 하여 GH 저장소에 push 해주어야 한다.
-Github 에서지원하는 CI/CD 인 Github Actions을 이용하여 이를 자동화 할 수 있는데 Github Actions은 일반적은 CI/CD 와 사용법이 비슷하다.
-Setting up github repository for github pages Github Page를 생성 하기 위해서는 github 계정에 로그인 하여 &amp;lt;username&amp;gt;.</description></item></channel></rss>
+cd sandbox git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke echo 'theme = &amp;quot;ananke&amp;quot;' &amp;gt;&amp;gt; config.</description></item></channel></rss>
