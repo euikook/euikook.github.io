@@ -5,9 +5,9 @@
 &lt;pre>&lt;code>ssh-keygen -t rsa -b 4096 -f euikook -C &amp;quot;euikook@gmail.com&amp;quot;
 &lt;/code>&lt;/pre></description></item><item><title>Generate SSH keypair for Windows using puttygen</title><link>https://notes.harues.com/posts/generate-ssh-key-pare-for-windows/</link><pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/generate-ssh-key-pare-for-windows/</guid><description>&lt;p>이 글은 &lt;code>PuTTY&lt;/code> 사이트에서 &lt;code>PuTTY&lt;/code>와 같이 배포되는 &lt;code>puttygen&lt;/code>프로그램을 이용하여 SSH Key Pair를 생성하는 방법을 설명한다.&lt;/p>
 &lt;p>아래 링크에서 puttygen.exe 파일을 다운 받는다.
-&lt;a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html&lt;/a>&lt;/p>
+&lt;a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY Download Page&lt;/a>&lt;/p>
 &lt;p>이미 설치 되어 있다면 &lt;code>puttygen.exe&lt;/code> 파일을 실행한다.&lt;/p>
-&lt;p>&lt;img src="https://notes.harues.com/images/puttygen/puttygen-001.png" alt="puttygen - open">&lt;/p></description></item><item><title>About authentication to Github</title><link>https://notes.harues.com/posts/about-authentication-to-github/</link><pubDate>Fri, 12 Feb 2021 17:34:41 +0900</pubDate><guid>https://notes.harues.com/posts/about-authentication-to-github/</guid><description>&lt;h2 id="about-authentication-to-github">About authentication to Github&lt;/h2>
+&lt;p>&lt;img src="images/puttygen/puttygen-001.png" alt="puttygen - open">&lt;/p></description></item><item><title>About authentication to Github</title><link>https://notes.harues.com/posts/about-authentication-to-github/</link><pubDate>Fri, 12 Feb 2021 17:34:41 +0900</pubDate><guid>https://notes.harues.com/posts/about-authentication-to-github/</guid><description>&lt;h2 id="about-authentication-to-github">About authentication to Github&lt;/h2>
 &lt;p>Github에 인증하는 방법은 다음과 같다.&lt;/p>
 &lt;ul>
 &lt;li>(2 단계 인증을 통한) &lt;code>username&lt;/code>, &lt;code>password&lt;/code>&lt;/li>
@@ -18,7 +18,7 @@
 &lt;blockquote>
 &lt;p>Github.com에 수정사항을 Contribution 하지 않는 다면 크게 상관 없다.&lt;/p>
 &lt;/blockquote>
-&lt;p>&lt;a href="https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/">https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/&lt;/a>&lt;/p></description></item><item><title>SSH config with Include</title><link>https://notes.harues.com/posts/ssh-config-with-include/</link><pubDate>Wed, 25 Nov 2020 11:34:02 +0900</pubDate><guid>https://notes.harues.com/posts/ssh-config-with-include/</guid><description>&lt;h1 id="ssh-config-with-include">SSH Config with Include&lt;/h1>
+&lt;p>&lt;a href="https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/">Github Blog Token: Token authentication requirements for Git operations&lt;/a>&lt;/p></description></item><item><title>SSH config with Include</title><link>https://notes.harues.com/posts/ssh-config-with-include/</link><pubDate>Wed, 25 Nov 2020 11:34:02 +0900</pubDate><guid>https://notes.harues.com/posts/ssh-config-with-include/</guid><description>&lt;h1 id="ssh-config-with-include">SSH Config with Include&lt;/h1>
 &lt;p>OpenSSH 7.3에서 &lt;code>Include&lt;/code> 기능이 추가 되었다.&lt;/p>
 &lt;h2 id="about-sshconfig">About &lt;code>~/.ssh/config&lt;/code>&lt;/h2>
 &lt;p>SSH 접속 정보를 &lt;code>~/.ssh/config&lt;/code> 파일에 저장한다.&lt;/p>

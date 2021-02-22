@@ -22,7 +22,7 @@
 &lt;blockquote>
 &lt;p>Github.com에 수정사항을 Contribution 하지 않는 다면 크게 상관 없다.&lt;/p>
 &lt;/blockquote>
-&lt;p>&lt;a href="https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/">https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/&lt;/a>&lt;/p></description></item><item><title>Continous Deployment Hugo with Github Actions</title><link>https://notes.harues.com/posts/continous-deployment-hugo-with-github-actions/</link><pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/continous-deployment-hugo-with-github-actions/</guid><description>&lt;h1 id="continous-deployment-hugo-with-github-actions">Continous Deployment Hugo with Github Actions&lt;/h1>
+&lt;p>&lt;a href="https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/">Github Blog Token: Token authentication requirements for Git operations&lt;/a>&lt;/p></description></item><item><title>Continous Deployment Hugo with Github Actions</title><link>https://notes.harues.com/posts/continous-deployment-hugo-with-github-actions/</link><pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/continous-deployment-hugo-with-github-actions/</guid><description>&lt;h1 id="continous-deployment-hugo-with-github-actions">Continous Deployment Hugo with Github Actions&lt;/h1>
 &lt;p>&lt;code>Github Page&lt;/code>(이하 &lt;code>GH&lt;/code>)를 사용하여 정적 사이트를 배포 하고자 한다.&lt;/p>
 &lt;p>&lt;code>jekyll&lt;/code> 유명한 Static Site Generator가 있지만 &lt;code>Go&lt;/code>를 공부할 목적으로 &lt;code>Hugo&lt;/code> 를 선택했다.&lt;/p>
 &lt;p>Hugo는 Github Page에서 공식적으로 지원하는 &lt;code>jekyll&lt;/code>과 달리 로컬에서 정적 사이트를 빌드 하여 GH 저장소에 &lt;code>push&lt;/code> 해주어야 한다.&lt;/p>

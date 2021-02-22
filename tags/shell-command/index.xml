@@ -2,7 +2,7 @@
 &lt;p>개발자와 시스템 관리자의 친구 tmux, GNU screen Alternative - 01&lt;/p>
 &lt;p>개발자와 시스템 관리자의 친구, tmux 에 대하여 알아보자&lt;/p>
 &lt;p>tmux는 GNU screen을 대체 할 수 있는 가장 매력적인 대안이다. Terminal Multiplex 로 매뉴얼은 다음에서 볼 수 있다.&lt;/p>
-&lt;p>&lt;a href="http://man.openbsd.org/OpenBSD-current/man1/tmux.1">http://man.openbsd.org/OpenBSD-current/man1/tmux.1&lt;/a>&lt;/p>
+&lt;p>&lt;a href="http://man.openbsd.org/OpenBSD-current/man1/tmux.1">tmux man page&lt;/a>&lt;/p>
 &lt;p>tmux의 주요 기능에 대하여 알아본다. 먼저 세션 유지 기능과 화면 공유 기능에 대하여 알아보자.&lt;/p></description></item><item><title>왜 디렉터리 Hard link를 만들 수 없나요?</title><link>https://notes.harues.com/posts/why-hard-link-not-allowed-for-directory/</link><pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/why-hard-link-not-allowed-for-directory/</guid><description>&lt;h4 id="why-hard-link-not-allowed-for-directory">Why Hard Link Not Allowed for Directory&lt;/h4>
 &lt;p>왜 디렉터리 Hard link를 만들 수 없나요?&lt;/p>
 &lt;p>  디렉터리 Hard Link를 만들고 싶지만 만들어 지지 않는다.&lt;/p>
