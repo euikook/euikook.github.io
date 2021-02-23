@@ -1,7 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>config on Notes</title><link>https://notes.harues.com/tags/config/</link><description>Recent content in config on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 25 Nov 2020 11:34:02 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/config/index.xml" rel="self" type="application/rss+xml"/><item><title>SSH config with Include</title><link>https://notes.harues.com/posts/ssh-config-with-include/</link><pubDate>Wed, 25 Nov 2020 11:34:02 +0900</pubDate><guid>https://notes.harues.com/posts/ssh-config-with-include/</guid><description>&lt;h1 id="ssh-config-with-include">SSH Config with Include&lt;/h1>
-&lt;p>OpenSSH 7.3에서 &lt;code>Include&lt;/code> 기능이 추가 되었다.&lt;/p>
-&lt;h2 id="about-sshconfig">About &lt;code>~/.ssh/config&lt;/code>&lt;/h2>
-&lt;p>SSH 접속 정보를 &lt;code>~/.ssh/config&lt;/code> 파일에 저장한다.&lt;/p>
-&lt;p>접속하고자 하는 SSH 서버의 연결 옵션을 달리 해야 되는 경우나 IP를 외울 필요 없이 지정한 서버 이름으로 접속할 수 있기 때문에 매우 유용하다.&lt;/p>
-&lt;p>또한 보안등의 이유나 NAT내부의 Port Forwarding된 외우기 힘든 SSH Port 주소로 접속 해야 한다면 아래 예제의 &lt;code>Port&lt;/code> 파라미터를 정하기만 하면 된다.&lt;/p>
-&lt;p>아래는 ~/ssh/config 파일의 예제 이다.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>config on Notes</title><link>https://notes.harues.com/tags/config/</link><description>Recent content in config on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 25 Nov 2020 11:34:02 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/config/index.xml" rel="self" type="application/rss+xml"/><item><title>SSH config with Include</title><link>https://notes.harues.com/posts/ssh-config-with-include/</link><pubDate>Wed, 25 Nov 2020 11:34:02 +0900</pubDate><guid>https://notes.harues.com/posts/ssh-config-with-include/</guid><description>&lt;h2 id="about-sshconfig">About &lt;code>~/.ssh/config&lt;/code>&lt;/h2>
+&lt;p>SSH를 사용하다보면 서버별 접속 옵션이나 암호화 방식을 달리 해야 될 경우가 있다. 이때 이러한 설정 정보들을 &lt;code>~/ssh/config&lt;/code> 파일에 저장해 두면 접속시에 명령행에 옵션으로 주지 않더라도 자동 적용된다.&lt;/p>
+&lt;p>&lt;code>~/.ssh/config&lt;/code>파일의 활용법은 다음과 같다.&lt;/p>
+&lt;h3 id="서버-별칭aliases-부여">서버 별칭(Aliases) 부여&lt;/h3>
+&lt;p>또한 Domain Name이 할당되어 있지 않고 IP 주소로 접속하는 경우 서버에 자신만의 이름을 부여한 후 그 이름으로 접속할 수 있기 때문에 매우 유용하다.&lt;/p>
+&lt;p>접속하고자 하는 IP 1.2.3.4에 Domain Name이 할당되어 있지 않거나 해당 IP 정보가 &lt;code>/etc/hosts&lt;/code>에 지정되어 있지 않더라도 호스트 지정자로 &lt;code>1.2.3.4&lt;/code>와 &lt;code>test&lt;/code>로 지정돼어 있기 때문에 &lt;code>1.2.3.4&lt;/code> 뿐 아니라 &lt;code>test&lt;/code>로 접속 해도 &lt;code>1.2.3.4&lt;/code> 로 접속된다.&lt;/p>
+&lt;pre>&lt;code>ssh 1.2.3.4
+&lt;/code>&lt;/pre>&lt;p>또는&lt;/p>
+&lt;pre>&lt;code>ssh test
+&lt;/code>&lt;/pre>&lt;h3 id="접속-ssh-port-변경">접속 SSH Port 변경&lt;/h3>
+&lt;p>또한 보안등의 이유나 SSH Port가 변경된 경우 매 서버마다 변경된 SSH 포트를 외우기 보다 &lt;code>config&lt;/code> 파일에 &lt;code>Port&lt;/code> 파라미터를 지정한다.&lt;/p>
+&lt;pre>&lt;code>Host example.com
+Hostmname example.com
+Port 5545
+PreferredAuthentications password
+PubkeyAuthentication no
+&lt;/code>&lt;/pre>&lt;h3 id="인증을-위한-identity-파일-지정">인증을 위한 Identity 파일 지정&lt;/h3>
+&lt;p>키 관리를 위해 Key Agent를 사용하지 않는 경우 인증을 위해 Identity 파일을 명시적으로 &lt;code>-i&lt;/code> 옵션으로 지정할 수 있다.&lt;/p>
+&lt;p>&lt;code>~/ssh/config&lt;/code> 파일에 &lt;code>IdentityFile&lt;/code> 옵션을 사용하여 명시적으로 Private Key를 지정할 수 있다.&lt;/p>
+&lt;p>아래는 &lt;code>example.com&lt;/code>인증을 위해 개인키로 &lt;code>~/.ssh/test&lt;/code>를 지정한 예제이다.&lt;/p>
+&lt;pre>&lt;code>Host example.com
+Hostmname example.com
+IdentityFile ~/.ssh/test
+&lt;/code>&lt;/pre></description></item></channel></rss>
