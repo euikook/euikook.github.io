@@ -73,17 +73,17 @@ invoked from within
 ERROR: Failed to generate /home/euikook/working/oran/xilinx/102/build/misc/config/Kconfig.syshw
 ERROR: Failed to Kconfig project
 ERROR: Failed to config rootfs.
-&lt;/code>&lt;/pre></description></item><item><title>SSH config with Include</title><link>https://notes.harues.com/posts/ssh-config-with-include/</link><pubDate>Wed, 25 Nov 2020 11:34:02 +0900</pubDate><guid>https://notes.harues.com/posts/ssh-config-with-include/</guid><description>&lt;h2 id="about-sshconfig">About &lt;code>~/.ssh/config&lt;/code>&lt;/h2>
-&lt;p>SSH를 사용하다보면 서버별 접속 옵션이나 암호화 방식을 달리 해야 될 경우가 있다. 이때 이러한 설정 정보들을 &lt;code>~/ssh/config&lt;/code> 파일에 저장해 두면 접속시에 명령행에 옵션으로 주지 않더라도 자동 적용된다.&lt;/p>
+&lt;/code>&lt;/pre></description></item><item><title>SSH config and Include Statement</title><link>https://notes.harues.com/posts/ssh-config-and-include-statement/</link><pubDate>Wed, 25 Nov 2020 11:34:02 +0900</pubDate><guid>https://notes.harues.com/posts/ssh-config-and-include-statement/</guid><description>&lt;h2 id="sshconfig">&lt;code>~/.ssh/config&lt;/code>&lt;/h2>
+&lt;p>SSH를 사용하다보면 서버별 접속 옵션이나 암호화 방식을 달리 해야 될 경우가 있다. 이때 이러한 설정 정보들을 &lt;code>~/ssh/config&lt;/code> 파일에 저장해 두면 접속시에 명령행에 옵션으로 주지 않더라도 적용된다.&lt;/p>
 &lt;p>&lt;code>~/.ssh/config&lt;/code>파일의 활용법은 다음과 같다.&lt;/p>
 &lt;h3 id="서버-별칭aliases-부여">서버 별칭(Aliases) 부여&lt;/h3>
-&lt;p>또한 Domain Name이 할당되어 있지 않고 IP 주소로 접속하는 경우 서버에 자신만의 이름을 부여한 후 그 이름으로 접속할 수 있기 때문에 매우 유용하다.&lt;/p>
+&lt;p>또한 Domain Name이 할당되어 있지 않고 IP 주소로 접속하는 경우 서버에 자신만의 이름을 부여하고 그 이름으로 접속할 수 있기 때문에 매우 유용하다.&lt;/p>
 &lt;p>접속하고자 하는 IP 1.2.3.4에 Domain Name이 할당되어 있지 않거나 해당 IP 정보가 &lt;code>/etc/hosts&lt;/code>에 지정되어 있지 않더라도 호스트 지정자로 &lt;code>1.2.3.4&lt;/code>와 &lt;code>test&lt;/code>로 지정돼어 있기 때문에 &lt;code>1.2.3.4&lt;/code> 뿐 아니라 &lt;code>test&lt;/code>로 접속 해도 &lt;code>1.2.3.4&lt;/code> 로 접속된다.&lt;/p>
 &lt;pre>&lt;code>ssh 1.2.3.4
 &lt;/code>&lt;/pre>&lt;p>또는&lt;/p>
 &lt;pre>&lt;code>ssh test
 &lt;/code>&lt;/pre>&lt;h3 id="접속-ssh-port-변경">접속 SSH Port 변경&lt;/h3>
-&lt;p>또한 보안등의 이유나 SSH Port가 변경된 경우 매 서버마다 변경된 SSH 포트를 외우기 보다 &lt;code>config&lt;/code> 파일에 &lt;code>Port&lt;/code> 파라미터를 지정한다.&lt;/p>
+&lt;p>외부에 공개된 서버의 SSH 데몬의 포트 번호를 보안상의 이유등으로 변경한 경우 변경된 SSH 포트 번호를 &lt;code>config&lt;/code> 파일에 &lt;code>Port&lt;/code> 옵션으로 지정하면 &lt;code>-p&lt;/code> 옵션으로 포트번호를 지정할 필요 없이 접속가능하다.&lt;/p>
 &lt;pre>&lt;code>Host example.com
 Hostmname example.com
 Port 5545
