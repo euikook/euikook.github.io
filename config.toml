@@ -13,9 +13,13 @@ theme = "hugo-icarus"
 # themesDir = "../.."
 
 
-[permalinks]
-    post = "/:year/:month/:day/:slug"
+enableGitInfo = true
 
+# [permalinks]
+#     post = "/:year/:month/:day/:slug"
+
+[permalinks]
+  posts = "/:06/:01/:02/:title/"
 
 [params]
     # Tell me who you are
@@ -121,3 +125,10 @@ theme = "hugo-icarus"
     categories = false
     tags = false
     tag_cloud = true
+
+[frontmatter]
+date = ["date","lastmod"]
+lastmod = [":git", "lastmod", "date"]
+publishDate = ["publishDate", "date"]
+expiryDate = ["expiryDate"]
+
