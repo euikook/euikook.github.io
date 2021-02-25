@@ -2176,11 +2176,11 @@ ul {
 }
 
 .article-entry blockquote {
-  margin: 0 4px;
-  
+  margin: 12px 4px;
   border-left: 4px solid coral;
   padding: 0 8px;
   background: #eee;
+  font-size: small;
 }
 
 .article-entry blockquote p {

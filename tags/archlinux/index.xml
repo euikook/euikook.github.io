@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ArchLinux on Notes</title><link>https://notes.harues.com/tags/archlinux/</link><description>Recent content in ArchLinux on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 10 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://notes.harues.com/tags/archlinux/index.xml" rel="self" type="application/rss+xml"/><item><title>How to use Hugo for starter</title><link>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</link><pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</guid><description>&lt;h2 id="installing">Installing&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ArchLinux on Notes</title><link>https://notes.harues.com/tags/archlinux/</link><description>Recent content in ArchLinux on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 10 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://notes.harues.com/tags/archlinux/index.xml" rel="self" type="application/rss+xml"/><item><title>How to use Hugo for starter</title><link>https://notes.harues.com/21/02/10/how-to-use-hugo-for-starter/</link><pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/21/02/10/how-to-use-hugo-for-starter/</guid><description>&lt;h2 id="installing">Installing&lt;/h2>
 &lt;h3 id="archlinux">ArchLinux&lt;/h3>
 &lt;p>pacman 명령으로 설치한다.&lt;/p>
 &lt;pre>&lt;code>sudo pacman -Syu hugo
 &lt;/code>&lt;/pre>&lt;h3 id="ubuntu">Ubuntu&lt;/h3>
 &lt;p>Ubuntu 공식 패키지로 등록 되어 있으므로 apt 명령으로 설치 한다.&lt;/p>
 &lt;pre>&lt;code>sudo apt install hugo
-&lt;/code>&lt;/pre></description></item><item><title>Petalinux error on ArchLinux</title><link>https://notes.harues.com/posts/petalinux-error/</link><pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/petalinux-error/</guid><description>&lt;h2 id="errors">Errors&lt;/h2>
+&lt;/code>&lt;/pre></description></item><item><title>Petalinux error on ArchLinux</title><link>https://notes.harues.com/20/12/21/petalinux-error-on-archlinux/</link><pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/12/21/petalinux-error-on-archlinux/</guid><description>&lt;h2 id="errors">Errors&lt;/h2>
 &lt;pre>&lt;code>petalinux-config -c rootfs
 &lt;/code>&lt;/pre>&lt;pre>&lt;code>[INFO] generating Kconfig for project
 ERROR: Failed to generate /home/euikook/working/oran/xilinx/102/build/misc/config/Kconfig.syshw

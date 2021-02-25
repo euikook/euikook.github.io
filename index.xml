@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes</title><link>https://notes.harues.com/</link><description>Recent content on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 05 Feb 2021 09:30:36 +0900</lastBuildDate><atom:link href="https://notes.harues.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo Tag Cloud with jQCloud</title><link>https://notes.harues.com/posts/hugo-tag-cloud-with-jqcloud/</link><pubDate>Wed, 17 Feb 2021 14:35:59 +0900</pubDate><guid>https://notes.harues.com/posts/hugo-tag-cloud-with-jqcloud/</guid><description>&lt;p>이 글은 Hugo 기반 Blog에서 jQuery 기반 Word Cloud 라이브러인 &lt;a href="http://mistic100.github.io/jQCloud/">jQCloud&lt;/a>를 이용하여 Tag Cloud를 만드는 방법에 대하여 설명한다.&lt;/p>
-&lt;p>&lt;img src="images/hugo-tag-qcloud.png" alt="tag cloud">&lt;/p></description></item><item><title>Weighted Tag Cloud to Hugo</title><link>https://notes.harues.com/posts/hugo-weighted-tag-cloud/</link><pubDate>Wed, 17 Feb 2021 10:22:59 +0900</pubDate><guid>https://notes.harues.com/posts/hugo-weighted-tag-cloud/</guid><description>&lt;p>이 글은 Hugo 기반 Blog에서 Tag Cloud를 만드는 방법에 대하여 설명한다.&lt;/p>
-&lt;p>&lt;img src="images/hugo-tag-cloud.png" alt="tag cloud">&lt;/p>
-&lt;p>Tag의 사용빈도에 따라 Tag의 크기를 조절한다.&lt;/p></description></item><item><title>Generate SSH keypair for Linux</title><link>https://notes.harues.com/posts/generate-ssh-key-pare-for-linux/</link><pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/generate-ssh-key-pare-for-linux/</guid><description>&lt;p>이 글은 &lt;code>Linux&lt;/code>환경에서 SSH Key Pair를 생성하는 방법을 설명한다.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes</title><link>https://notes.harues.com/</link><description>Recent content on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 05 Feb 2021 09:30:36 +0900</lastBuildDate><atom:link href="https://notes.harues.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo Tag Cloud with jQCloud</title><link>https://notes.harues.com/21/02/17/hugo-tag-cloud-with-jqcloud/</link><pubDate>Wed, 17 Feb 2021 14:35:59 +0900</pubDate><guid>https://notes.harues.com/21/02/17/hugo-tag-cloud-with-jqcloud/</guid><description>&lt;p>이 글은 Hugo 기반 Blog에서 jQuery 기반 Word Cloud 라이브러인 &lt;a href="http://mistic100.github.io/jQCloud/">jQCloud&lt;/a>를 이용하여 Tag Cloud를 만드는 방법에 대하여 설명한다.&lt;/p>
+&lt;p>&lt;img src="https://notes.harues.com/images/hugo-tag-qcloud.png" alt="tag cloud">&lt;/p></description></item><item><title>Weighted Tag Cloud to Hugo</title><link>https://notes.harues.com/21/02/17/weighted-tag-cloud-to-hugo/</link><pubDate>Wed, 17 Feb 2021 10:22:59 +0900</pubDate><guid>https://notes.harues.com/21/02/17/weighted-tag-cloud-to-hugo/</guid><description>&lt;p>이 글은 Hugo 기반 Blog에서 Tag Cloud를 만드는 방법에 대하여 설명한다.&lt;/p>
+&lt;p>&lt;img src="https://notes.harues.com/images/hugo-tag-cloud.png" alt="tag cloud">&lt;/p>
+&lt;p>Tag의 사용빈도에 따라 Tag의 크기를 조절한다.&lt;/p></description></item><item><title>Generate SSH keypair for Linux</title><link>https://notes.harues.com/21/02/16/generate-ssh-keypair-for-linux/</link><pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/21/02/16/generate-ssh-keypair-for-linux/</guid><description>&lt;p>이 글은 &lt;code>Linux&lt;/code>환경에서 SSH Key Pair를 생성하는 방법을 설명한다.&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>OpenSSH&lt;/code>가 설치 되어 있다고 가정한다.&lt;/li>
 &lt;/ul>
 &lt;pre>&lt;code>ssh-keygen -t rsa -b 4096 -f euikook -C &amp;quot;euikook@gmail.com&amp;quot;
-&lt;/code>&lt;/pre></description></item><item><title>Generate SSH keypair for Windows using puttygen</title><link>https://notes.harues.com/posts/generate-ssh-key-pare-for-windows/</link><pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/generate-ssh-key-pare-for-windows/</guid><description>&lt;p>이 글은 &lt;code>PuTTY&lt;/code> 사이트에서 &lt;code>PuTTY&lt;/code>와 같이 배포되는 &lt;code>puttygen&lt;/code>프로그램을 이용하여 SSH Key Pair를 생성하는 방법을 설명한다.&lt;/p>
+&lt;/code>&lt;/pre></description></item><item><title>Generate SSH keypair for Windows using puttygen</title><link>https://notes.harues.com/21/02/16/generate-ssh-keypair-for-windows-using-puttygen/</link><pubDate>Tue, 16 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/21/02/16/generate-ssh-keypair-for-windows-using-puttygen/</guid><description>&lt;p>이 글은 &lt;code>PuTTY&lt;/code> 사이트에서 &lt;code>PuTTY&lt;/code>와 같이 배포되는 &lt;code>puttygen&lt;/code>프로그램을 이용하여 SSH Key Pair를 생성하는 방법을 설명한다.&lt;/p>
 &lt;p>아래 링크에서 puttygen.exe 파일을 다운 받는다.
 &lt;a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY Download Page&lt;/a>&lt;/p>
 &lt;p>이미 설치 되어 있다면 &lt;code>puttygen.exe&lt;/code> 파일을 실행한다.&lt;/p>
-&lt;p>&lt;img src="images/puttygen/puttygen-001.png" alt="puttygen - open">&lt;/p></description></item><item><title>utterances: github issue as comment for Hugo</title><link>https://notes.harues.com/posts/utterances-github-issue-as-comment-for-hugo/</link><pubDate>Mon, 15 Feb 2021 13:11:33 +0900</pubDate><guid>https://notes.harues.com/posts/utterances-github-issue-as-comment-for-hugo/</guid><description>&lt;h1 id="utterances-github-issue-as-comment-for-hugo">utterances: github issue as comment for Hugo&lt;/h1>
+&lt;p>&lt;img src="https://notes.harues.com/images/puttygen/puttygen-001.png" alt="puttygen - open">&lt;/p></description></item><item><title>utterances: github issue as comment for Hugo</title><link>https://notes.harues.com/21/02/15/utterances-github-issue-as-comment-for-hugo/</link><pubDate>Mon, 15 Feb 2021 13:11:33 +0900</pubDate><guid>https://notes.harues.com/21/02/15/utterances-github-issue-as-comment-for-hugo/</guid><description>&lt;h1 id="utterances-github-issue-as-comment-for-hugo">utterances: github issue as comment for Hugo&lt;/h1>
 &lt;h2 id="simple-method">Simple method&lt;/h2>
 &lt;p>&lt;code>thmem/&amp;lt;theme-name&amp;gt;/partials/&lt;/code> 디렉터리에 &lt;code>utterances.html&lt;/code> 파일을 만들고 아래 와 같은 내용을 추가 한다.&lt;/p>
 &lt;p>&lt;code>thmem/&amp;lt;theme-name&amp;gt;/partials/utterances.html&lt;/code>&lt;/p>
@@ -23,7 +23,7 @@
 &amp;lt;/&lt;span style="color:#f92672">script&lt;/span>&amp;gt;
 &lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
 &lt;p>&lt;code>&amp;lt;username&amp;gt;/&amp;lt;username&amp;gt;.github.io&lt;/code>의 &lt;!-- raw HTML omitted -->은 자신의 github username으로 변경 한다.&lt;/p>
-&lt;/blockquote></description></item><item><title>About authentication to Github</title><link>https://notes.harues.com/posts/about-authentication-to-github/</link><pubDate>Fri, 12 Feb 2021 17:34:41 +0900</pubDate><guid>https://notes.harues.com/posts/about-authentication-to-github/</guid><description>&lt;h2 id="about-authentication-to-github">About authentication to Github&lt;/h2>
+&lt;/blockquote></description></item><item><title>About authentication to Github</title><link>https://notes.harues.com/21/02/12/about-authentication-to-github/</link><pubDate>Fri, 12 Feb 2021 17:34:41 +0900</pubDate><guid>https://notes.harues.com/21/02/12/about-authentication-to-github/</guid><description>&lt;h2 id="about-authentication-to-github">About authentication to Github&lt;/h2>
 &lt;p>Github에 인증하는 방법은 다음과 같다.&lt;/p>
 &lt;ul>
 &lt;li>(2 단계 인증을 통한) &lt;code>username&lt;/code>, &lt;code>password&lt;/code>&lt;/li>
@@ -34,20 +34,20 @@
 &lt;blockquote>
 &lt;p>Github.com에 수정사항을 Contribution 하지 않는 다면 크게 상관 없다.&lt;/p>
 &lt;/blockquote>
-&lt;p>&lt;a href="https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/">Github Blog Token: Token authentication requirements for Git operations&lt;/a>&lt;/p></description></item><item><title>Continous Deployment Hugo with Github Actions</title><link>https://notes.harues.com/posts/continous-deployment-hugo-with-github-actions/</link><pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/continous-deployment-hugo-with-github-actions/</guid><description>&lt;h1 id="continous-deployment-hugo-with-github-actions">Continous Deployment Hugo with Github Actions&lt;/h1>
+&lt;p>&lt;a href="https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/">Github Blog Token: Token authentication requirements for Git operations&lt;/a>&lt;/p></description></item><item><title>Continous Deployment Hugo with Github Actions</title><link>https://notes.harues.com/21/02/10/continous-deployment-hugo-with-github-actions/</link><pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/21/02/10/continous-deployment-hugo-with-github-actions/</guid><description>&lt;h1 id="continous-deployment-hugo-with-github-actions">Continous Deployment Hugo with Github Actions&lt;/h1>
 &lt;p>&lt;code>Github Page&lt;/code>(이하 &lt;code>GH&lt;/code>)를 사용하여 정적 사이트를 배포 하고자 한다.&lt;/p>
 &lt;p>&lt;code>jekyll&lt;/code> 유명한 Static Site Generator가 있지만 &lt;code>Go&lt;/code>를 공부할 목적으로 &lt;code>Hugo&lt;/code> 를 선택했다.&lt;/p>
 &lt;p>Hugo는 Github Page에서 공식적으로 지원하는 &lt;code>jekyll&lt;/code>과 달리 로컬에서 정적 사이트를 빌드 하여 GH 저장소에 &lt;code>push&lt;/code> 해주어야 한다.&lt;/p>
-&lt;p>Github 에서지원하는 CI/CD 인 &lt;code>Github Actions&lt;/code>을 이용하여 이를 자동화 할 수 있는데 Github Actions은 일반적은 CI/CD 와 사용법이 비슷하다.&lt;/p></description></item><item><title>How to use Hugo for starter</title><link>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</link><pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</guid><description>&lt;h2 id="installing">Installing&lt;/h2>
+&lt;p>Github 에서지원하는 CI/CD 인 &lt;code>Github Actions&lt;/code>을 이용하여 이를 자동화 할 수 있는데 Github Actions은 일반적은 CI/CD 와 사용법이 비슷하다.&lt;/p></description></item><item><title>How to use Hugo for starter</title><link>https://notes.harues.com/21/02/10/how-to-use-hugo-for-starter/</link><pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/21/02/10/how-to-use-hugo-for-starter/</guid><description>&lt;h2 id="installing">Installing&lt;/h2>
 &lt;h3 id="archlinux">ArchLinux&lt;/h3>
 &lt;p>pacman 명령으로 설치한다.&lt;/p>
 &lt;pre>&lt;code>sudo pacman -Syu hugo
 &lt;/code>&lt;/pre>&lt;h3 id="ubuntu">Ubuntu&lt;/h3>
 &lt;p>Ubuntu 공식 패키지로 등록 되어 있으므로 apt 명령으로 설치 한다.&lt;/p>
 &lt;pre>&lt;code>sudo apt install hugo
-&lt;/code>&lt;/pre></description></item><item><title>About</title><link>https://notes.harues.com/about/</link><pubDate>Mon, 08 Feb 2021 11:16:05 +0900</pubDate><guid>https://notes.harues.com/about/</guid><description>Biography 소프트웨어 개발자 입니다. 대한민국 대전에 거주하고 있습니다. Contacts euikook at gmail.com</description></item><item><title>Git Override</title><link>https://notes.harues.com/git/</link><pubDate>Mon, 08 Feb 2021 11:16:05 +0900</pubDate><guid>https://notes.harues.com/git/</guid><description>Personal alias git='git -c &amp;quot;user.name=euikook&amp;quot; -c &amp;quot;user.email=euikook@gmail.com&amp;quot;' Harues.com alias git='git -c &amp;quot;user.name=euikook&amp;quot; -c &amp;quot;user.email=euikook@harues.com&amp;quot;' Workspace alias git='git -c &amp;quot;user.name=euikook&amp;quot; -c &amp;quot;user.email=ekkim@netvisiontel.com&amp;quot;'</description></item><item><title>How to set application switching on current workspace only</title><link>https://notes.harues.com/posts/gnome-application-switching-on-current-workspace-only/</link><pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/gnome-application-switching-on-current-workspace-only/</guid><description>&lt;h1 id="how-to-set-application-switching-on-current-workspace-only">How to set application switching on current workspace only&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title>About</title><link>https://notes.harues.com/about/</link><pubDate>Mon, 08 Feb 2021 11:16:05 +0900</pubDate><guid>https://notes.harues.com/about/</guid><description>Biography 소프트웨어 개발자 입니다. 대한민국 대전에 거주하고 있습니다. Contacts euikook at gmail.com</description></item><item><title>Git Override</title><link>https://notes.harues.com/git/</link><pubDate>Mon, 08 Feb 2021 11:16:05 +0900</pubDate><guid>https://notes.harues.com/git/</guid><description>Personal alias git='git -c &amp;quot;user.name=euikook&amp;quot; -c &amp;quot;user.email=euikook@gmail.com&amp;quot;' Harues.com alias git='git -c &amp;quot;user.name=euikook&amp;quot; -c &amp;quot;user.email=euikook@harues.com&amp;quot;' Workspace alias git='git -c &amp;quot;user.name=euikook&amp;quot; -c &amp;quot;user.email=ekkim@netvisiontel.com&amp;quot;'</description></item><item><title>How to set application switching on current workspace only</title><link>https://notes.harues.com/20/12/21/how-to-set-application-switching-on-current-workspace-only/</link><pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/12/21/how-to-set-application-switching-on-current-workspace-only/</guid><description>&lt;h1 id="how-to-set-application-switching-on-current-workspace-only">How to set application switching on current workspace only&lt;/h1>
 &lt;pre>&lt;code>gsettings set org.gnome.shell.app-switcher current-workspace-only true
-&lt;/code>&lt;/pre></description></item><item><title>Petalinux error on ArchLinux</title><link>https://notes.harues.com/posts/petalinux-error/</link><pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/petalinux-error/</guid><description>&lt;h2 id="errors">Errors&lt;/h2>
+&lt;/code>&lt;/pre></description></item><item><title>Petalinux error on ArchLinux</title><link>https://notes.harues.com/20/12/21/petalinux-error-on-archlinux/</link><pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/12/21/petalinux-error-on-archlinux/</guid><description>&lt;h2 id="errors">Errors&lt;/h2>
 &lt;pre>&lt;code>petalinux-config -c rootfs
 &lt;/code>&lt;/pre>&lt;pre>&lt;code>[INFO] generating Kconfig for project
 ERROR: Failed to generate /home/euikook/working/oran/xilinx/102/build/misc/config/Kconfig.syshw
@@ -73,7 +73,7 @@ invoked from within
 ERROR: Failed to generate /home/euikook/working/oran/xilinx/102/build/misc/config/Kconfig.syshw
 ERROR: Failed to Kconfig project
 ERROR: Failed to config rootfs.
-&lt;/code>&lt;/pre></description></item><item><title>SSH config and Include Statement</title><link>https://notes.harues.com/posts/ssh-config-and-include-statement/</link><pubDate>Wed, 25 Nov 2020 11:34:02 +0900</pubDate><guid>https://notes.harues.com/posts/ssh-config-and-include-statement/</guid><description>&lt;h2 id="sshconfig">&lt;code>~/.ssh/config&lt;/code>&lt;/h2>
+&lt;/code>&lt;/pre></description></item><item><title>SSH config and Include Statement</title><link>https://notes.harues.com/20/11/25/ssh-config-and-include-statement/</link><pubDate>Wed, 25 Nov 2020 11:34:02 +0900</pubDate><guid>https://notes.harues.com/20/11/25/ssh-config-and-include-statement/</guid><description>&lt;h2 id="sshconfig">&lt;code>~/.ssh/config&lt;/code>&lt;/h2>
 &lt;p>SSH를 사용하다보면 서버별 접속 옵션이나 암호화 방식을 달리 해야 될 경우가 있다. 이때 이러한 설정 정보들을 &lt;code>~/ssh/config&lt;/code> 파일에 저장해 두면 접속시에 명령행에 옵션으로 주지 않더라도 적용된다.&lt;/p>
 &lt;p>&lt;code>~/.ssh/config&lt;/code>파일의 활용법은 다음과 같다.&lt;/p>
 &lt;h3 id="서버-별칭aliases-부여">서버 별칭(Aliases) 부여&lt;/h3>
@@ -96,7 +96,7 @@ PubkeyAuthentication no
 &lt;pre>&lt;code>Host example.com
 Hostmname example.com
 IdentityFile ~/.ssh/test
-&lt;/code>&lt;/pre></description></item><item><title>Auto mount removable drives to specific mounting point</title><link>https://notes.harues.com/posts/auto-mount-removable-drives-to-specific-mounting-point/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/auto-mount-removable-drives-to-specific-mounting-point/</guid><description>&lt;h1 id="auto-mount-removable-drives-to-specific-mounting-point">Auto mount removable drives to specific mounting point&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title>Auto mount removable drives to specific mounting point</title><link>https://notes.harues.com/20/11/17/auto-mount-removable-drives-to-specific-mounting-point/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/11/17/auto-mount-removable-drives-to-specific-mounting-point/</guid><description>&lt;h1 id="auto-mount-removable-drives-to-specific-mounting-point">Auto mount removable drives to specific mounting point&lt;/h1>
 &lt;p>Check Block identifier for disk using &lt;code>blkid&lt;/code> command.&lt;/p>
 &lt;pre>&lt;code>blkid
 &lt;/code>&lt;/pre>&lt;pre>&lt;code>blkid /dev/sda2
@@ -104,7 +104,7 @@ IdentityFile ~/.ssh/test
 &lt;/code>&lt;/pre>&lt;p>&lt;code>&amp;lt;blkid&amp;gt;&lt;/code> is &lt;code>ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3&lt;/code>&lt;/p>
 &lt;p>Unmount disk if it alrady mounted&lt;/p>
 &lt;pre>&lt;code>sudo umount /dev/sda2
-&lt;/code>&lt;/pre></description></item><item><title>Development Environment per Project</title><link>https://notes.harues.com/posts/development-environment-per-project/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/development-environment-per-project/</guid><description>&lt;h1 id="development-environment-per-project">Development environment per project&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title>Development Environment per Project</title><link>https://notes.harues.com/20/11/17/development-environment-per-project/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/11/17/development-environment-per-project/</guid><description>&lt;h1 id="development-environment-per-project">Development environment per project&lt;/h1>
 &lt;h2 id="motivation">Motivation&lt;/h2>
 &lt;h2 id="development-environments-installed-in-project-directory">Development environments installed in project directory&lt;/h2>
 &lt;p>&lt;code>/home/$USER/test-project/.env&lt;/code>&lt;/p>
@@ -113,7 +113,7 @@ IdentityFile ~/.ssh/test
 . &lt;span style="color:#e6db74">${&lt;/span>TOP_DIR&lt;span style="color:#e6db74">}&lt;/span>/venv/bin/activate
 export LD_LIBRARY_PATH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>VIRTUAL_ENV&lt;span style="color:#e6db74">}&lt;/span>/lib
 cd &lt;span style="color:#e6db74">${&lt;/span>TOP_DIR&lt;span style="color:#e6db74">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Disable RALT as ISO_Level3_Shift</title><link>https://notes.harues.com/posts/disable-ralt-as-iso-level3-shift/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/disable-ralt-as-iso-level3-shift/</guid><description>&lt;h1 id="disable-kbdraltkbd--as-kbdiso_level3_shiftkbd">Disable &lt;!-- raw HTML omitted -->RALT&lt;!-- raw HTML omitted --> as &lt;!-- raw HTML omitted -->ISO_Level3_Shift&lt;!-- raw HTML omitted -->&lt;/h1>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Disable RALT as ISO_Level3_Shift</title><link>https://notes.harues.com/20/11/17/disable-ralt-as-iso_level3_shift/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/11/17/disable-ralt-as-iso_level3_shift/</guid><description>&lt;h1 id="disable-kbdraltkbd--as-kbdiso_level3_shiftkbd">Disable &lt;!-- raw HTML omitted -->RALT&lt;!-- raw HTML omitted --> as &lt;!-- raw HTML omitted -->ISO_Level3_Shift&lt;!-- raw HTML omitted -->&lt;/h1>
 &lt;p>그놈을 최신 버전으로 업그레이드 하면서 &lt;!-- raw HTML omitted -->Right ALT&lt;!-- raw HTML omitted --> 키가 &lt;!-- raw HTML omitted -->ISO_Level3_Shift&lt;!-- raw HTML omitted --> 로 인식 되는 경우 가 있다.&lt;/p>
 &lt;pre>&lt;code>xev
 &lt;/code>&lt;/pre>&lt;p>아래와 같이 Keycode 108 번이 &lt;!-- raw HTML omitted -->ISO_Level3_Shift&lt;!-- raw HTML omitted -->로 인식된다.&lt;/p>
@@ -123,7 +123,7 @@ state 0x90, keycode 108 (keysym 0xfe03, ISO_Level3_Shift), same_screen YES,
 XKeysymToKeycode returns keycode: 92
 XLookupString gives 0 bytes:
 XFilterEvent returns: False
-&lt;/code>&lt;/pre></description></item><item><title>Pacman Cheatsheet</title><link>https://notes.harues.com/posts/pacman-cheatsheet/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/pacman-cheatsheet/</guid><description>&lt;h1 id="pacman-cheatsheet">Pacman Cheatsheet&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title>Pacman Cheatsheet</title><link>https://notes.harues.com/20/11/17/pacman-cheatsheet/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/11/17/pacman-cheatsheet/</guid><description>&lt;h1 id="pacman-cheatsheet">Pacman Cheatsheet&lt;/h1>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -159,22 +159,22 @@ XFilterEvent returns: False
 &lt;td>Sync package list and update available packages.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Let use gollum wiki</title><link>https://notes.harues.com/posts/drafts/let-use-gollum-wiki/</link><pubDate>Mon, 16 Nov 2020 09:37:41 +0900</pubDate><guid>https://notes.harues.com/posts/drafts/let-use-gollum-wiki/</guid><description>Let use gollum wiki gollum - A git-based Wiki Docker Image https://github.com/euikook/gollum-unicorn.git Install instruction Let&amp;rsquo;s Encrypt Set DOMAINS variable
+&lt;/table></description></item><item><title>Let use gollum wiki</title><link>https://notes.harues.com/20/11/16/let-use-gollum-wiki/</link><pubDate>Mon, 16 Nov 2020 09:37:41 +0900</pubDate><guid>https://notes.harues.com/20/11/16/let-use-gollum-wiki/</guid><description>Let use gollum wiki gollum - A git-based Wiki Docker Image https://github.com/euikook/gollum-unicorn.git Install instruction Let&amp;rsquo;s Encrypt Set DOMAINS variable
 export DOMAINS=&amp;quot;harues.com notes.harues.com&amp;quot; Start nginx webroot server
 make webroot Get Let&amp;rsquo;s Encrypt certificate using certbot
 make certbot Run Gollum as docker service docker-compose up -d Generate sitemap.xml gollum/app.rb
 bin/gollum.rb
 views/sitemap.rb
-&amp;laquo;Note(&amp;ldquo;Did you know?&amp;rdquo;, &amp;ldquo;https://github.com/euikook/gollum&amp;quot;)&amp;gt;&amp;gt;</description></item><item><title>LICENSE</title><link>https://notes.harues.com/posts/license/</link><pubDate>Mon, 16 Nov 2020 09:37:41 +0900</pubDate><guid>https://notes.harues.com/posts/license/</guid><description>MIT License
+&amp;laquo;Note(&amp;ldquo;Did you know?&amp;rdquo;, &amp;ldquo;https://github.com/euikook/gollum&amp;quot;)&amp;gt;&amp;gt;</description></item><item><title>LICENSE</title><link>https://notes.harues.com/20/11/16/license/</link><pubDate>Mon, 16 Nov 2020 09:37:41 +0900</pubDate><guid>https://notes.harues.com/20/11/16/license/</guid><description>MIT License
 Copyright (c) 2020 E.K. KIM
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;ldquo;Software&amp;rdquo;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</description></item><item><title>Override git user name and email address temporarily</title><link>https://notes.harues.com/posts/override-git-user-name-and-emal-address-temporarily/</link><pubDate>Mon, 16 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/override-git-user-name-and-emal-address-temporarily/</guid><description>&lt;h1 id="override-git-user-name-and-email-address-temporarily">Override git user name and email address temporarily&lt;/h1>
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &amp;ldquo;Software&amp;rdquo;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</description></item><item><title>Override git user name and email address temporarily</title><link>https://notes.harues.com/20/11/16/override-git-user-name-and-email-address-temporarily/</link><pubDate>Mon, 16 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/11/16/override-git-user-name-and-email-address-temporarily/</guid><description>&lt;h1 id="override-git-user-name-and-email-address-temporarily">Override git user name and email address temporarily&lt;/h1>
 &lt;p>이 글에서는 전역이나 프로젝트에 설정된 git 사용자가 자신이 아닌경우 임시로 username과 email을 설정 하는 방법을 설명한다.&lt;/p>
 &lt;p>Terminal에서 git 명령을 수행 하기 전에 아래 명령을 수행하여 git 명령을 잠시 override 하자.&lt;/p>
 &lt;pre>&lt;code>alias git='git -c &amp;quot;user.name=euikook&amp;quot; -c &amp;quot;user.email=euikook@harues.com&amp;quot;'
 &lt;/code>&lt;/pre>&lt;blockquote>
 &lt;p>임시 사용자 이름 및 이메일 주소 설정&lt;/p>
 &lt;/blockquote>
-&lt;p>Terminal을 빠져 나오면 설정이 날아가기 때문에 타인의 PC에서 수정한 사항을 커밋할 경우 유용하게 사용할 수 있다.&lt;/p></description></item><item><title>Let use zsh</title><link>https://notes.harues.com/posts/let-use-zsh/</link><pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/let-use-zsh/</guid><description>&lt;h1 id="let-use-zsh">Let use zsh&lt;/h1>
+&lt;p>Terminal을 빠져 나오면 설정이 날아가기 때문에 타인의 PC에서 수정한 사항을 커밋할 경우 유용하게 사용할 수 있다.&lt;/p></description></item><item><title>Let use zsh</title><link>https://notes.harues.com/20/11/14/let-use-zsh/</link><pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/11/14/let-use-zsh/</guid><description>&lt;h1 id="let-use-zsh">Let use zsh&lt;/h1>
 &lt;h2 id="zshrc">.zshrc&lt;/h2>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-zsh" data-lang="zsh">ZSH&lt;span style="color:#f92672">=&lt;/span>/usr/share/oh-my-zsh/
 ZSH_THEME&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;agnoster&amp;#34;&lt;/span>
@@ -200,14 +200,14 @@ prompt_segment black default &lt;span style="color:#e6db74">${&lt;/span>CONTEXT&
 &lt;span style="color:#f92672">[[&lt;/span> -s &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$HOME&lt;span style="color:#e6db74">/.rvm/scripts/rvm&amp;#34;&lt;/span> &lt;span style="color:#f92672">]]&lt;/span> &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> source &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$HOME&lt;span style="color:#e6db74">/.rvm/scripts/rvm&amp;#34;&lt;/span> &lt;span style="color:#75715e"># Load RVM into a shell session *as a function*&lt;/span>
 &lt;span style="color:#75715e"># Add RVM to PATH for scripting. Make sure this is the last PATH variable change.&lt;/span>
 export PATH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>$PATH&lt;span style="color:#e6db74">:&lt;/span>$HOME&lt;span style="color:#e6db74">/.rvm/bin&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Usages of SSH key pair</title><link>https://notes.harues.com/posts/usages-of-ssh-key-pair/</link><pubDate>Fri, 13 Nov 2020 16:54:45 +0900</pubDate><guid>https://notes.harues.com/posts/usages-of-ssh-key-pair/</guid><description>&lt;h1 id="usages-of-ssh-key-pair">Usages of SSH key pair&lt;/h1>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Usages of SSH key pair</title><link>https://notes.harues.com/20/11/13/usages-of-ssh-key-pair/</link><pubDate>Fri, 13 Nov 2020 16:54:45 +0900</pubDate><guid>https://notes.harues.com/20/11/13/usages-of-ssh-key-pair/</guid><description>&lt;h1 id="usages-of-ssh-key-pair">Usages of SSH key pair&lt;/h1>
 &lt;h2 id="generate-ssh-key-pair">Generate SSH key pair&lt;/h2>
 &lt;p>&lt;code>ssh-keygen&lt;/code>&lt;/p>
 &lt;pre>&lt;code>ssh-keygen -t rsa -b 4096 -f test
 &lt;/code>&lt;/pre>&lt;ul>
 &lt;li>&lt;code>test.pub&lt;/code>: Public Key&lt;/li>
 &lt;li>&lt;code>test&lt;/code>: Private Key&lt;/li>
-&lt;/ul></description></item><item><title>Instructions of post OS install</title><link>https://notes.harues.com/posts/post-os-installation/</link><pubDate>Fri, 13 Nov 2020 16:53:29 +0900</pubDate><guid>https://notes.harues.com/posts/post-os-installation/</guid><description>&lt;h1 id="os-재설치-후-해야-하는것-들">OS 재설치 후 해야 하는것 들&lt;/h1>
+&lt;/ul></description></item><item><title>Instructions of post OS install</title><link>https://notes.harues.com/20/11/13/instructions-of-post-os-install/</link><pubDate>Fri, 13 Nov 2020 16:53:29 +0900</pubDate><guid>https://notes.harues.com/20/11/13/instructions-of-post-os-install/</guid><description>&lt;h1 id="os-재설치-후-해야-하는것-들">OS 재설치 후 해야 하는것 들&lt;/h1>
 &lt;p>OS 재설치 후 해야 하는 내용들을 정리 한다.&lt;/p>
 &lt;h2 id="파일-복사">파일 복사&lt;/h2>
 &lt;p>&lt;code>rsync&lt;/code>를 이용한다.&lt;/p>
@@ -216,7 +216,7 @@ export PATH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db
 &lt;/code>&lt;/pre>&lt;h3 id="네트워크ssh통한-복사">네트워크(SSH)통한 복사.&lt;/h3>
 &lt;p>시간이 오래 걸리지만 편함.&lt;/p>
 &lt;pre>&lt;code>rsync -avz -e ssh $REMOTE_HOST:/$$SRC $DST
-&lt;/code>&lt;/pre></description></item><item><title>Shrink dynamically extended VirtualBox image for export appliance</title><link>https://notes.harues.com/posts/shrink-dynamically-allocated-virtualbox-disk-image/</link><pubDate>Thu, 12 Nov 2020 12:40:05 +0900</pubDate><guid>https://notes.harues.com/posts/shrink-dynamically-allocated-virtualbox-disk-image/</guid><description>&lt;h1 id="shrink-dynamically-allocated--virtualbox-disk-imagevdi">Shrink dynamically allocated VirtualBox Disk Image(VDI)&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title>Shrink dynamically extended VirtualBox image for export appliance</title><link>https://notes.harues.com/20/11/12/shrink-dynamically-extended-virtualbox-image-for-export-appliance/</link><pubDate>Thu, 12 Nov 2020 12:40:05 +0900</pubDate><guid>https://notes.harues.com/20/11/12/shrink-dynamically-extended-virtualbox-image-for-export-appliance/</guid><description>&lt;h1 id="shrink-dynamically-allocated--virtualbox-disk-imagevdi">Shrink dynamically allocated VirtualBox Disk Image(VDI)&lt;/h1>
 &lt;h2 id="motivation">Motivation&lt;/h2>
 &lt;p>업무에 &lt;a href="https://www.virtualbox.org/">VirtualBox&lt;/a>을 자주 활용한다.&lt;/p>
 &lt;p>개발 환경등을 시스템에 설치 하기 힘들때 VirtualBox를 사용하여 개발환경을 구축 하거나 결과물을 설치 하여 테스트용으로 배포한다.&lt;/p>
@@ -224,7 +224,7 @@ export PATH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db
 &lt;p>Virtualbox 가상머신의 디스크를 &lt;strong>동적 할당 디스크&lt;/strong>로 생성 하였을 경우 경우 환경 설치 후 불필요한 파일을 삭제 하더라도 디스크의 크기가 줄어들지 않기 때문에 내보내기 한 이미지도 같이 커진다.&lt;/p>
 &lt;p>혼자만 사용할 때는 디스크 용량만 차지할 뿐 아무 문제가 없지만 가상머신을 배포 해야 하는 경우가 되면 이미지의 사이즈가 너무 커서 배포하기 부담스러워 진다.&lt;/p>
 &lt;p>위와 같은 경우에 효율적인 배포를 위한 동적 할당 디스크의 이미지 사이즈를 줄이는 방법을 소개 한다.&lt;/p>
-&lt;p>&lt;code>vboxmanage modifymedium --compact&lt;/code> 명령을 이용하여 VDI 이미지 사이즈를 줄일 수 있다. &lt;code>--compact&lt;/code> 옵션에 대한 설명은 다으과 같다.&lt;/p></description></item><item><title>System Level Linux DNS over TLS on Arch Linux</title><link>https://notes.harues.com/posts/system-level-linux-dns-over-tls-on-arch-linux/</link><pubDate>Thu, 12 Nov 2020 12:37:16 +0900</pubDate><guid>https://notes.harues.com/posts/system-level-linux-dns-over-tls-on-arch-linux/</guid><description>&lt;h1 id="system-level-linux-dns-over-tls-on-arch-linux">System Level Linux DNS over TLS on Arch Linux&lt;/h1>
+&lt;p>&lt;code>vboxmanage modifymedium --compact&lt;/code> 명령을 이용하여 VDI 이미지 사이즈를 줄일 수 있다. &lt;code>--compact&lt;/code> 옵션에 대한 설명은 다으과 같다.&lt;/p></description></item><item><title>System Level Linux DNS over TLS on Arch Linux</title><link>https://notes.harues.com/20/11/12/system-level-linux-dns-over-tls-on-arch-linux/</link><pubDate>Thu, 12 Nov 2020 12:37:16 +0900</pubDate><guid>https://notes.harues.com/20/11/12/system-level-linux-dns-over-tls-on-arch-linux/</guid><description>&lt;h1 id="system-level-linux-dns-over-tls-on-arch-linux">System Level Linux DNS over TLS on Arch Linux&lt;/h1>
 &lt;h2 id="prerequisite">Prerequisite&lt;/h2>
 &lt;ul>
 &lt;li>stubby&lt;/li>
@@ -236,7 +236,7 @@ export PATH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db
 &lt;/code>&lt;/pre>&lt;h4 id="start-and-endable-stubby">Start and endable stubby&lt;/h4>
 &lt;pre>&lt;code>sudo systemctl enable stubby
 sudo systemctl start stubby
-&lt;/code>&lt;/pre></description></item><item><title>System Level Linux DNS over TLS on Ubuntu 20.04</title><link>https://notes.harues.com/posts/system-level-linux-dns-over-tls-on-utuntu-20.04/</link><pubDate>Thu, 12 Nov 2020 12:36:20 +0900</pubDate><guid>https://notes.harues.com/posts/system-level-linux-dns-over-tls-on-utuntu-20.04/</guid><description>&lt;h1 id="system-level-linux-dns-over-tls-on-ubuntu-2004">System Level Linux DNS over TLS on Ubuntu 20.04&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title>System Level Linux DNS over TLS on Ubuntu 20.04</title><link>https://notes.harues.com/20/11/12/system-level-linux-dns-over-tls-on-ubuntu-20.04/</link><pubDate>Thu, 12 Nov 2020 12:36:20 +0900</pubDate><guid>https://notes.harues.com/20/11/12/system-level-linux-dns-over-tls-on-ubuntu-20.04/</guid><description>&lt;h1 id="system-level-linux-dns-over-tls-on-ubuntu-2004">System Level Linux DNS over TLS on Ubuntu 20.04&lt;/h1>
 &lt;h2 id="prerequisite">Prerequisite&lt;/h2>
 &lt;ul>
 &lt;li>stubby&lt;/li>
@@ -248,7 +248,7 @@ sudo systemctl start stubby
 &lt;/code>&lt;/pre>&lt;h4 id="start-and-endable-stubby">Start and endable stubby&lt;/h4>
 &lt;pre>&lt;code>sudo systemctl enable stubby
 sudo systemctl start stubby
-&lt;/code>&lt;/pre></description></item><item><title>Arch Linix Installation Guide</title><link>https://notes.harues.com/posts/arch-linux-install-guide/</link><pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/arch-linux-install-guide/</guid><description>&lt;h1 id="arch-linix-installation-guide">Arch Linix Installation Guide&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title>Arch Linix Installation Guide</title><link>https://notes.harues.com/20/11/12/arch-linix-installation-guide/</link><pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/11/12/arch-linix-installation-guide/</guid><description>&lt;h1 id="arch-linix-installation-guide">Arch Linix Installation Guide&lt;/h1>
 &lt;p>현재 가지고 있는 시스템 위주로 설명한다.&lt;/p>
 &lt;h2 id="부트-디스크-만들기">부트 디스크 만들기&lt;/h2>
 &lt;p>ISO 파일을 다운로드 한다. 다운로드 후 필요한 경우 gpg 명령으로 파일을 검증한다.&lt;/p>
@@ -261,7 +261,7 @@ gpg: using RSA key 4AA4767BBC9C4B1D18AE28B77F2D434B9741E8AC
 gpg: Can't check signature: No public key
 &lt;/code>&lt;/pre>&lt;p>아래와 같이 키서버를 지정해 준다.&lt;/p>
 &lt;pre>&lt;code>gpg --keyserver-options auto-key-retrieve --keyserver=hkp://pool.sks-keyservers.net --verify archlinux-2020.11.01-x86_64.iso.sig
-&lt;/code>&lt;/pre></description></item><item><title>git fetch all branches and push it to another remote</title><link>https://notes.harues.com/posts/gpg-error-on-ubuntu/</link><pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/gpg-error-on-ubuntu/</guid><description>&lt;h1 id="fix-gpg-error-on-ubuntu">Fix GPG Error on Ubuntu&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title>git fetch all branches and push it to another remote</title><link>https://notes.harues.com/20/11/12/git-fetch-all-branches-and-push-it-to-another-remote/</link><pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/11/12/git-fetch-all-branches-and-push-it-to-another-remote/</guid><description>&lt;h1 id="fix-gpg-error-on-ubuntu">Fix GPG Error on Ubuntu&lt;/h1>
 &lt;pre>&lt;code>$ sudo apt update
 ...
 W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://packages.gitlab.com/gitlab/gitlab-ee/ubuntu bionic InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 3F01618A51312F3F
@@ -271,12 +271,12 @@ W: Failed to fetch https://packages.gitlab.com/runner/gitlab-runner/ubuntu/dists
 W: Some index files failed to download. They have been ignored, or old ones used instead.
 euikook@argentum:/etc/apt/sources.list.d$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3F01618A51312F3F
 Executing: /tmp/apt-key-gpghome.SpBMyBEzT0/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys 3F01618A51312F3F
-&lt;/code>&lt;/pre></description></item><item><title>Python3 ad default python interpreter on ubuntu</title><link>https://notes.harues.com/posts/python3-as-default-python-interpreter-on-ubuntu/</link><pubDate>Wed, 21 Oct 2020 09:41:48 +0900</pubDate><guid>https://notes.harues.com/posts/python3-as-default-python-interpreter-on-ubuntu/</guid><description>&lt;h1 id="python-기본-인터프리터-설정-하기">Python 기본 인터프리터 설정 하기&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title>Python3 ad default python interpreter on ubuntu</title><link>https://notes.harues.com/20/10/21/python3-ad-default-python-interpreter-on-ubuntu/</link><pubDate>Wed, 21 Oct 2020 09:41:48 +0900</pubDate><guid>https://notes.harues.com/20/10/21/python3-ad-default-python-interpreter-on-ubuntu/</guid><description>&lt;h1 id="python-기본-인터프리터-설정-하기">Python 기본 인터프리터 설정 하기&lt;/h1>
 &lt;pre>&lt;code>sudo update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 10
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 sudo update-alternatives --config pip
 sudo update-alternatives --config python
-&lt;/code>&lt;/pre></description></item><item><title>Building Docker Image for Cross Platform(ARM64, ARM)</title><link>https://notes.harues.com/posts/building-docker-image-for-cross-platform/</link><pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/building-docker-image-for-cross-platform/</guid><description>&lt;h1 id="building-docker-image-for-cross-platform">Building Docker Image for Cross Platform&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title>Building Docker Image for Cross Platform(ARM64, ARM)</title><link>https://notes.harues.com/20/10/21/building-docker-image-for-cross-platformarm64-arm/</link><pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/10/21/building-docker-image-for-cross-platformarm64-arm/</guid><description>&lt;h1 id="building-docker-image-for-cross-platform">Building Docker Image for Cross Platform&lt;/h1>
 &lt;p>arm64 머신과 x86 머신에서 동작해야 하는 프로젝트를 진행하게 되었다. 동일한 소스 트리를 유지하지 위해 하나의 아키텍처로 작업하는 경우 보다 더 많은 노력이 팔요하지만 프로젝트 진행 중 가장 귀찮(&lt;del>짜증나는&lt;/del>)은 작업은 테스트를 위해 arm64과 x86 머신에서 이미지를 따로 빌드 해야 하는 것이었다.&lt;/p>
 &lt;p>개발 서버(PC)에서 ARM 이미지를 빌드 하는 방법을 찾던 중 qemu의 arm emulation 기능을 이용하여 x86 머신에서 arm용 Docker 이미지를 Cross Build 하는 방법을 찾아 공유한다.&lt;/p>
 &lt;h2 id="install-docker">Install Docker&lt;/h2>
@@ -285,17 +285,17 @@ sudo apt dist-upgrade
 &lt;/code>&lt;/pre>&lt;pre>&lt;code>curl -fsSL test.docker.com -o get-docker.sh &amp;amp;&amp;amp; sh get-docker.sh
 &lt;/code>&lt;/pre>&lt;p>And add current user to docker group&lt;/p>
 &lt;pre>&lt;code>sudo usermode -aG docker $USER
-&lt;/code>&lt;/pre></description></item><item><title>HOWTO install LDAP Server</title><link>https://notes.harues.com/posts/ldap/</link><pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/ldap/</guid><description>&lt;h1 id="howto-install-ldap-server">HOWTO install LDAP Server&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title>HOWTO install LDAP Server</title><link>https://notes.harues.com/20/10/21/howto-install-ldap-server/</link><pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/10/21/howto-install-ldap-server/</guid><description>&lt;h1 id="howto-install-ldap-server">HOWTO install LDAP Server&lt;/h1>
 &lt;p>본 포스트는 OpenLDAP을 사용하고자 하는 분들에게 도움을 주고자 작성 되었습니다.&lt;/p>
 &lt;h2 id="prerequisite">Prerequisite&lt;/h2>
 &lt;p>패키지 리스트를 최신으로 업데이트한다.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt-get update
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Insync 3.x auto start with xvfb and systemctl</title><link>https://notes.harues.com/posts/insync-3.x-auto-start-with-xvfb-and-systemctl/</link><pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/insync-3.x-auto-start-with-xvfb-and-systemctl/</guid><description>&lt;h1 id="insync-3x-auto-start-with-xvfb-and-systemctl">Insync 3.x auto start with xvfb and systemctl&lt;/h1>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Insync 3.x auto start with xvfb and systemctl</title><link>https://notes.harues.com/20/10/21/insync-3.x-auto-start-with-xvfb-and-systemctl/</link><pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/10/21/insync-3.x-auto-start-with-xvfb-and-systemctl/</guid><description>&lt;h1 id="insync-3x-auto-start-with-xvfb-and-systemctl">Insync 3.x auto start with xvfb and systemctl&lt;/h1>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
 &lt;li>insync&lt;/li>
 &lt;li>xvfb&lt;/li>
-&lt;/ul></description></item><item><title>Alt_R as Hangul on Ubuntu 18.04</title><link>https://notes.harues.com/posts/right-alt-as-hangul/</link><pubDate>Wed, 21 Oct 2020 08:35:41 +0900</pubDate><guid>https://notes.harues.com/posts/right-alt-as-hangul/</guid><description>&lt;p>&lt;img src="https://source.unsplash.com/PT_9ux0j-x4" alt="Splash">&lt;/p>
+&lt;/ul></description></item><item><title>Alt_R as Hangul on Ubuntu 18.04</title><link>https://notes.harues.com/20/10/21/alt_r-as-hangul-on-ubuntu-18.04/</link><pubDate>Wed, 21 Oct 2020 08:35:41 +0900</pubDate><guid>https://notes.harues.com/20/10/21/alt_r-as-hangul-on-ubuntu-18.04/</guid><description>&lt;p>&lt;img src="https://source.unsplash.com/PT_9ux0j-x4" alt="Splash">&lt;/p>
 &lt;h1 id="alt_r-as-hangul-on-ubuntu-1804">Alt_R as Hangul on Ubuntu 18.04&lt;/h1>
 &lt;h2 id="troubles">Troubles&lt;/h2>
 &lt;ul>
@@ -308,7 +308,7 @@ sudo apt dist-upgrade
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;!-- raw HTML omitted -->Ctrl_R&lt;!-- raw HTML omitted -->은 Hanja 키로 매핑 시키고 싶이 않음.&lt;/li>
-&lt;/ul></description></item><item><title>Shrink dynamically extended VirtualBox image for export appliance</title><link>https://notes.harues.com/posts/shrink-dynamically-allocated-virtualbox-disk-image-en/</link><pubDate>Wed, 21 Oct 2020 08:35:41 +0900</pubDate><guid>https://notes.harues.com/posts/shrink-dynamically-allocated-virtualbox-disk-image-en/</guid><description>&lt;h1 id="shrink-dynamically-extended-virtualbox-image-for-export-appliance">Shrink dynamically extended VirtualBox image for export appliance&lt;/h1>
+&lt;/ul></description></item><item><title>Shrink dynamically extended VirtualBox image for export appliance</title><link>https://notes.harues.com/20/10/21/shrink-dynamically-extended-virtualbox-image-for-export-appliance/</link><pubDate>Wed, 21 Oct 2020 08:35:41 +0900</pubDate><guid>https://notes.harues.com/20/10/21/shrink-dynamically-extended-virtualbox-image-for-export-appliance/</guid><description>&lt;h1 id="shrink-dynamically-extended-virtualbox-image-for-export-appliance">Shrink dynamically extended VirtualBox image for export appliance&lt;/h1>
 &lt;h2 id="cleanup-your-system-system">Cleanup your system System&lt;/h2>
 &lt;h3 id="cleanup-apt-cache">Cleanup APT cache&lt;/h3>
 &lt;pre>&lt;code>sudo apt-get clean
@@ -317,7 +317,7 @@ sudo rm -rf /var/lib/apt/lists/*
 &lt;pre>&lt;code>docker system prune -a -f
 &lt;/code>&lt;/pre>&lt;h3 id="uninstall-snap-optional-if-you-need">Uninstall snap (Optional, if you need)&lt;/h3>
 &lt;pre>&lt;code>sudo apt-get autoremove --purge snapd
-&lt;/code>&lt;/pre></description></item><item><title/><link>https://notes.harues.com/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/archives/</guid><description/></item><item><title>Contact</title><link>https://notes.harues.com/contact/</link><pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/contact/</guid><description/></item><item><title>Run Gitlab Runner in a container</title><link>https://notes.harues.com/posts/run-gitlab-runner-in-a-container/</link><pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/run-gitlab-runner-in-a-container/</guid><description>&lt;h1 id="run-gitlab-runner-in-a-container">Run Gitlab Runner in a container&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title/><link>https://notes.harues.com/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/archives/</guid><description/></item><item><title>Contact</title><link>https://notes.harues.com/contact/</link><pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/contact/</guid><description/></item><item><title>Run Gitlab Runner in a container</title><link>https://notes.harues.com/19/02/20/run-gitlab-runner-in-a-container/</link><pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/19/02/20/run-gitlab-runner-in-a-container/</guid><description>&lt;h1 id="run-gitlab-runner-in-a-container">Run Gitlab Runner in a container&lt;/h1>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://www.docker.com/">Docker&lt;/a>&lt;/li>
@@ -326,7 +326,7 @@ sudo rm -rf /var/lib/apt/lists/*
 &lt;h2 id="usages">Usages&lt;/h2>
 &lt;h3 id="clone-repository">Clone Repository&lt;/h3>
 &lt;pre>&lt;code>git clone https://gitlab.com/euikook/gitlab-runner-compose.git
-&lt;/code>&lt;/pre></description></item><item><title>Keep persistent SSH session using autossh and cron</title><link>https://notes.harues.com/posts/keep-persistent-ssh-session-using-autossh-and-cron/</link><pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/keep-persistent-ssh-session-using-autossh-and-cron/</guid><description>&lt;h1 id="keep-persistent-ssh-session-using-autossh-and-cron">Keep persistent SSH session using autossh and cron&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title>Keep persistent SSH session using autossh and cron</title><link>https://notes.harues.com/19/02/13/keep-persistent-ssh-session-using-autossh-and-cron/</link><pubDate>Wed, 13 Feb 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/19/02/13/keep-persistent-ssh-session-using-autossh-and-cron/</guid><description>&lt;h1 id="keep-persistent-ssh-session-using-autossh-and-cron">Keep persistent SSH session using autossh and cron&lt;/h1>
 &lt;h2 id="background-knowledge">Background Knowledge&lt;/h2>
 &lt;h3 id="ssh-tunneling">SSH Tunneling&lt;/h3>
 &lt;ul>
@@ -352,7 +352,7 @@ sudo rm -rf /var/lib/apt/lists/*
 &lt;li>target_port&lt;/li>
 &lt;li>user&lt;/li>
 &lt;li>server&lt;/li>
-&lt;/ul></description></item><item><title>RPi(Raspberry Pi) Username 변경하기</title><link>https://notes.harues.com/posts/how-to-change-default-account-username-for-rpi/</link><pubDate>Wed, 14 Mar 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/how-to-change-default-account-username-for-rpi/</guid><description>&lt;h4 id="rpiraspberry-pi-username-변경하기">RPi(Raspberry Pi) Username 변경하기&lt;/h4>
+&lt;/ul></description></item><item><title>RPi(Raspberry Pi) Username 변경하기</title><link>https://notes.harues.com/18/03/14/rpiraspberry-pi-username-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0/</link><pubDate>Wed, 14 Mar 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/18/03/14/rpiraspberry-pi-username-%EB%B3%80%EA%B2%BD%ED%95%98%EA%B8%B0/</guid><description>&lt;h4 id="rpiraspberry-pi-username-변경하기">RPi(Raspberry Pi) Username 변경하기&lt;/h4>
 &lt;h2 id="how-to-change-default-account-username-for-rpiraspberry-pi">How to change default account username for RPi(Raspberry Pi)&lt;/h2>
 &lt;p>Raspberry Pi 공식 이미지의 username 과 password는 다음과 같다.&lt;/p>
 &lt;blockquote>
@@ -362,41 +362,41 @@ password : &lt;em>raspberry&lt;/em>&lt;/p>
 &lt;p>쓸때마다 느끼는 거지만 pi 와 raspberry는 정말 손에 익지 않는다. 키보드로 칠때마다 오타가 나서 한번에 로그인 할때가 거의 없다. pi 계정을 계속 쓰면 보안 문제도 생길 수 있으니 자신만의 손에 익은 username과 password로 변경 해 보자.&lt;/p>
 &lt;p>먼저 root 계정으로 로그인 해야 한다. 먼저 root 로 로그인 하기 위하여 root 계정의 Password를 설정한다.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo passwd root
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>History 파일에서 특정 엔트리 삭제하기</title><link>https://notes.harues.com/posts/remove-specific-entries-from-history-file/</link><pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/remove-specific-entries-from-history-file/</guid><description>&lt;h4 id="remove-specific-history-entries-from-history-file">Remove specific history entries from history file&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>History 파일에서 특정 엔트리 삭제하기</title><link>https://notes.harues.com/18/03/08/history-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-%ED%8A%B9%EC%A0%95-%EC%97%94%ED%8A%B8%EB%A6%AC-%EC%82%AD%EC%A0%9C%ED%95%98%EA%B8%B0/</link><pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/18/03/08/history-%ED%8C%8C%EC%9D%BC%EC%97%90%EC%84%9C-%ED%8A%B9%EC%A0%95-%EC%97%94%ED%8A%B8%EB%A6%AC-%EC%82%AD%EC%A0%9C%ED%95%98%EA%B8%B0/</guid><description>&lt;h4 id="remove-specific-history-entries-from-history-file">Remove specific history entries from history file&lt;/h4>
 &lt;p>History 파일에서 특정 엔트리 삭제하기&lt;/p>
 &lt;h2 id="history-파일에서-특정-엔트리-삭제하기">History 파일에서 특정 엔트리 삭제하기&lt;/h2>
 &lt;p>  작업을 하다 보면 민감한 정보가 History에 남아 있는 경우가 있다. 다음과 같이 명령 앞에 white space를 추가 하여 해당 명령을 history 파일에 남기지 않는 방법이 있다.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">mysql -u root -ppassword -h localhost
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Synergy - Software KVM</title><link>https://notes.harues.com/posts/synergy-software-kvm/</link><pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/synergy-software-kvm/</guid><description>&lt;h4 id="synergy---software-kvm">Synergy - Software KVM&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Synergy - Software KVM</title><link>https://notes.harues.com/18/03/08/synergy-software-kvm/</link><pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/18/03/08/synergy-software-kvm/</guid><description>&lt;h4 id="synergy---software-kvm">Synergy - Software KVM&lt;/h4>
 &lt;p>작업을 하다 보면 한 책상위에서 여러대의 PC로 작업을 해야 하는 경우가 생긴다. 나의 경의 예전에 개발은 Linux 머신에서 문서 작업 및 기타 업무는 Windows PC에서 진행을 하고는 했었는데 키보드와 마우스가 항상 문제였다. 모니터야 source를 변경 하면 (귀찮기는 하지만) 쉽게 되지만 Keyboard와 마우스를 공유 하려면 별도의 KVM을 구입 하야야 한다. KVM 없이 공유 할 수 있는 솔루션을 찾다가 Synergy라는 S/W KVM을 찾았다. 키보드와 마우스만을 공유 할 수 있으니 엄밀히 말하면 KVM이 아니라 KM 이다. Synergy를 사용한지는 Open source 일때 부터이니 10년도 더 지났다. 그때 이 소프트웨어가 너무 마음에 들어 기부하고 받은 1.8 버젼용 Pro License를 아직 사용가능 하다. 몇년전 Symless라는 회사를 만들고 본격적으로 판매를 하고 있더니만 작년에 Synergy 2가 나왔고 2017년 말에 2를 12달러에 판매하는 프로모션이 있어 잽싸게 구매를 하였다. 현재 Basic, Pro 버전이 있으며 각각 29, 39 달러에 판매 되고 있다.&lt;/p>
-&lt;p>&lt;a href="https://symless.com/">Symless&lt;/a>&lt;/p></description></item><item><title>개발자와 시스템 관리자의 친구 tmux, GNU screen Alternative - 01</title><link>https://notes.harues.com/posts/usages-of-tmux-gnu-screen-alternative-01/</link><pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/usages-of-tmux-gnu-screen-alternative-01/</guid><description>&lt;h4 id="usages-of-tmux-gnu-screen-alternative">Usages of tmux, GNU screen Alternative&lt;/h4>
+&lt;p>&lt;a href="https://symless.com/">Symless&lt;/a>&lt;/p></description></item><item><title>개발자와 시스템 관리자의 친구 tmux, GNU screen Alternative - 01</title><link>https://notes.harues.com/18/03/07/%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%99%80-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B4%80%EB%A6%AC%EC%9E%90%EC%9D%98-%EC%B9%9C%EA%B5%AC-tmux-gnu-screen-alternative-01/</link><pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/18/03/07/%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%99%80-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B4%80%EB%A6%AC%EC%9E%90%EC%9D%98-%EC%B9%9C%EA%B5%AC-tmux-gnu-screen-alternative-01/</guid><description>&lt;h4 id="usages-of-tmux-gnu-screen-alternative">Usages of tmux, GNU screen Alternative&lt;/h4>
 &lt;p>개발자와 시스템 관리자의 친구 tmux, GNU screen Alternative - 01&lt;/p>
 &lt;p>개발자와 시스템 관리자의 친구, tmux 에 대하여 알아보자&lt;/p>
 &lt;p>tmux는 GNU screen을 대체 할 수 있는 가장 매력적인 대안이다. Terminal Multiplex 로 매뉴얼은 다음에서 볼 수 있다.&lt;/p>
 &lt;p>&lt;a href="http://man.openbsd.org/OpenBSD-current/man1/tmux.1">tmux man page&lt;/a>&lt;/p>
-&lt;p>tmux의 주요 기능에 대하여 알아본다. 먼저 세션 유지 기능과 화면 공유 기능에 대하여 알아보자.&lt;/p></description></item><item><title>왜 디렉터리 Hard link를 만들 수 없나요?</title><link>https://notes.harues.com/posts/why-hard-link-not-allowed-for-directory/</link><pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/why-hard-link-not-allowed-for-directory/</guid><description>&lt;h4 id="why-hard-link-not-allowed-for-directory">Why Hard Link Not Allowed for Directory&lt;/h4>
+&lt;p>tmux의 주요 기능에 대하여 알아본다. 먼저 세션 유지 기능과 화면 공유 기능에 대하여 알아보자.&lt;/p></description></item><item><title>왜 디렉터리 Hard link를 만들 수 없나요?</title><link>https://notes.harues.com/18/03/07/%EC%99%9C-%EB%94%94%EB%A0%89%ED%84%B0%EB%A6%AC-hard-link%EB%A5%BC-%EB%A7%8C%EB%93%A4-%EC%88%98-%EC%97%86%EB%82%98%EC%9A%94/</link><pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/18/03/07/%EC%99%9C-%EB%94%94%EB%A0%89%ED%84%B0%EB%A6%AC-hard-link%EB%A5%BC-%EB%A7%8C%EB%93%A4-%EC%88%98-%EC%97%86%EB%82%98%EC%9A%94/</guid><description>&lt;h4 id="why-hard-link-not-allowed-for-directory">Why Hard Link Not Allowed for Directory&lt;/h4>
 &lt;p>왜 디렉터리 Hard link를 만들 수 없나요?&lt;/p>
 &lt;p>  디렉터리 Hard Link를 만들고 싶지만 만들어 지지 않는다.&lt;/p>
 &lt;p>예전에는 &lt;em>root&lt;/em> 권한으로 &lt;em>&lt;strong>-d&lt;/strong>&lt;/em> 옵셥을 주면 만들어 진것 같은데 _Ubuntu 16.04_에서 테스트 해보니 &lt;em>root&lt;/em> 권한으로도 디렉터리 Hard Link가 만들어 지지 않는다.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">mkdir a
 ln a b
 ln: a: hard link not allowed &lt;span style="color:#66d9ef">for&lt;/span> directory
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Insync - Linux에서 Google Drive Desktop Client 사용하기</title><link>https://notes.harues.com/posts/alternative-google-drive-desktop-client-for-linux/</link><pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/alternative-google-drive-desktop-client-for-linux/</guid><description>&lt;h4 id="an-alternativegoogle-drive-desktop-client-for-linux">An Alternative Google Drive Desktop Client for Linux&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Insync - Linux에서 Google Drive Desktop Client 사용하기</title><link>https://notes.harues.com/18/02/27/insync-linux%EC%97%90%EC%84%9C-google-drive-desktop-client-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</link><pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/18/02/27/insync-linux%EC%97%90%EC%84%9C-google-drive-desktop-client-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</guid><description>&lt;h4 id="an-alternativegoogle-drive-desktop-client-for-linux">An Alternative Google Drive Desktop Client for Linux&lt;/h4>
 &lt;p>Insync - Linux에서 Google Drive Desktop Client 사용하기&lt;/p>
 &lt;p>데스크탑을 Linux로 써온지도 벌써 10년 가까이 되어 간다. 처음 데스크탑을 Linux로 변경하고 불편했던 인터넷 뱅킹등의 문제는 스마트폰에서 은행 업무를 볼 수 있게 되면서 해결되었다. 그외 민원업무등 반드시 Windows가 필요한 일은 VirtualBox를 통해 해결한다.&lt;/p>
 &lt;p>그외 어플리케이션들은 Linux Alternate나 google docs 같은 웹 기반 어플리케이션으로 대체 가능하다.  하지만 데이터 백업 및 관리용으로 사용하는 Google Drive는 신뢰할 수 있는 Alternate가 없어 고민 했하던 차에 3년전 즈음에 insync라는 Application을 알게 되었다 유료지만 요즘 트렌트인 정기 결제가 아닌 one time 결제로 사용 가능하고 각 배포판용 Repository도 별도로 제공 하기때문에 설치 역시 간편하다.  headless application도 지원 하기 때문에 UI 없이 콘솔 상에서 실행도 가능하다. &lt;a href="https://www.insynchq.com">https://www.insynchq.com&lt;/a>   다른 Agent들과 비교한 자료를 원하면 아래 사이트를 참조 하기 바란다.&lt;/p>
-&lt;p>&lt;a href="https://itsfoss.com/use-google-drive-linux/">use google drive linux&lt;/a>&lt;/p></description></item><item><title>RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화</title><link>https://notes.harues.com/posts/incremental-backup-using-rsyncssh/</link><pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/incremental-backup-using-rsyncssh/</guid><description>&lt;p>RSYNC+SSH 를 이용한 증분 백업 및 Cron을 이용한 자동화&lt;/p>
+&lt;p>&lt;a href="https://itsfoss.com/use-google-drive-linux/">use google drive linux&lt;/a>&lt;/p></description></item><item><title>RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화</title><link>https://notes.harues.com/18/02/20/rsync-ssh-%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%A6%9D%EB%B6%84-%EB%B0%B1%EC%97%85-%EC%84%A4%EC%A0%95-%EB%B0%8F-cron%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9E%90%EB%8F%99%ED%99%94/</link><pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/18/02/20/rsync-ssh-%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%A6%9D%EB%B6%84-%EB%B0%B1%EC%97%85-%EC%84%A4%EC%A0%95-%EB%B0%8F-cron%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%9E%90%EB%8F%99%ED%99%94/</guid><description>&lt;p>RSYNC+SSH 를 이용한 증분 백업 및 Cron을 이용한 자동화&lt;/p>
 &lt;p>관리 하는 서버가 많아지고 서버에 저장되는 데이터의 양이 늘어 날 수록 백업을 어떻게 하여야 하는지 고민이 생긴다.&lt;/p>
 &lt;p>이 포스트에서는 RSYNC와 SSH를 이용하여 여러 서버의 데이터를 백업하고 이를 자동화 하는 방법에 대하여 기술 한다. 테스트를 위한 서버 구성은 다음과 같다.  &lt;/p>
 &lt;p>아래 예제 에서는 &lt;em>apple&lt;/em>, &lt;em>banana&lt;/em>, &lt;em>coconut&lt;/em>의 &lt;em>/home&lt;/em> 디렉터리를 backupbot으로 백업 하고자 한다.&lt;/p>
-&lt;p>&lt;img src="images/backup-env.png" alt="Backup Environment">&lt;/p></description></item><item><title>Update Ubuntu Mirror Site in sources.list</title><link>https://notes.harues.com/posts/update-ubuntu-mirror-site-in-sources-list/</link><pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/update-ubuntu-mirror-site-in-sources-list/</guid><description>&lt;h4 id="update-ubuntu-mirror--site-in-sourceslist">Update Ubuntu Mirror Site in sources.list&lt;/h4>
+&lt;p>&lt;img src="https://notes.harues.com/images/backup-env.png" alt="Backup Environment">&lt;/p></description></item><item><title>Update Ubuntu Mirror Site in sources.list</title><link>https://notes.harues.com/18/02/05/update-ubuntu-mirror-site-in-sources.list/</link><pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/18/02/05/update-ubuntu-mirror-site-in-sources.list/</guid><description>&lt;h4 id="update-ubuntu-mirror--site-in-sourceslist">Update Ubuntu Mirror Site in sources.list&lt;/h4>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo sed -i &lt;span style="color:#e6db74">&amp;#39;s|http://archive.ubuntu.com|http://ftp.daumkakao.com|g&amp;#39;&lt;/span> /etc/apt/sources.list
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Change NodePort range local kubernetes</title><link>https://notes.harues.com/posts/change-nodeport-range-local-kubernetes/</link><pubDate>Mon, 29 Jan 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/change-nodeport-range-local-kubernetes/</guid><description>&lt;h4 id="change-nodeport-range-local-kubernetes">Change NodePort range local kubernetes&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Change NodePort range local kubernetes</title><link>https://notes.harues.com/18/01/29/change-nodeport-range-local-kubernetes/</link><pubDate>Mon, 29 Jan 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/18/01/29/change-nodeport-range-local-kubernetes/</guid><description>&lt;h4 id="change-nodeport-range-local-kubernetes">Change NodePort range local kubernetes&lt;/h4>
 &lt;p>Add following line to add following line to &lt;em>/etc/kubernetes/manifests/kube-apiserver.yaml&lt;/em>&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">- --service-node-port-range&lt;span style="color:#f92672">=&lt;/span>80-32767
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="examples">Examples&lt;/h2>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo vi /etc/kubernetes/manifests/kube-apiserver.yaml
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>git fetch all branches and push it to another remote</title><link>https://notes.harues.com/posts/git-fetch-all-branches-and-push-it-to-another-remote/</link><pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/git-fetch-all-branches-and-push-it-to-another-remote/</guid><description>&lt;h4 id="git-fetch-all-branches-and-push-it-to-another-remote">git fetch all branches and push it to another remote&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>git fetch all branches and push it to another remote</title><link>https://notes.harues.com/18/01/26/git-fetch-all-branches-and-push-it-to-another-remote/</link><pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/18/01/26/git-fetch-all-branches-and-push-it-to-another-remote/</guid><description>&lt;h4 id="git-fetch-all-branches-and-push-it-to-another-remote">git fetch all branches and push it to another remote&lt;/h4>
 &lt;h2 id="git-fetch-all-branches-and-tags-from-origin-then-push-it-to-new-remote">git fetch all branches and tags from origin, then push it to new remote&lt;/h2>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">git fetch --all
 &lt;span style="color:#66d9ef">for&lt;/span> branch in &lt;span style="color:#e6db74">`&lt;/span>git branch -r&lt;span style="color:#e6db74">`&lt;/span>; &lt;span style="color:#66d9ef">do&lt;/span> git branch --track &lt;span style="color:#e6db74">${&lt;/span>branch#origin/&lt;span style="color:#e6db74">}&lt;/span> $branch; &lt;span style="color:#66d9ef">done&lt;/span>
@@ -404,14 +404,14 @@ git remote add new https://newrepos.com/new.git
 git push new --all
 git fetch --tags
 git push new tags
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>VirtualBox에서 4개 이상의 네트워크 인터페이스(NIC) 설정하기</title><link>https://notes.harues.com/posts/more-than-4-nics-in-virtualbox/</link><pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/more-than-4-nics-in-virtualbox/</guid><description>&lt;h4 id="more-than-4-nics-in-virtualbox">More than 4 NICs in VirtualBox&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>VirtualBox에서 4개 이상의 네트워크 인터페이스(NIC) 설정하기</title><link>https://notes.harues.com/18/01/26/virtualbox%EC%97%90%EC%84%9C-4%EA%B0%9C-%EC%9D%B4%EC%83%81%EC%9D%98-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4nic-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/</link><pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/18/01/26/virtualbox%EC%97%90%EC%84%9C-4%EA%B0%9C-%EC%9D%B4%EC%83%81%EC%9D%98-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4nic-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/</guid><description>&lt;h4 id="more-than-4-nics-in-virtualbox">More than 4 NICs in VirtualBox&lt;/h4>
 &lt;p>VirtualBox에서 4개 이상의 네트워크 인터페이스(NIC) 설정하기&lt;/p>
 &lt;p>VirtualBox에서서 네트워크를 구성하여 테스트환경을 만들다 보면 4개 이상의 NIC 이 필요 할때가 종종 있다. 하지만 UI에서는 4개 까지만 NIC을 설정 가능하기 때문에 Command Line Interface를 통해 NIC을 생성하고 설정 하여야 한다. 설정 방법은 다음과 같다. 각 모드에 대한 자세한 내용은 다음 페이지를 참조 하기 바란다.&lt;/p>
 &lt;p>&lt;a href="https://www.virtualbox.org/manual/ch06.html">VirtualBox Manual: Chapter 6. Virtual Networking&lt;/a>&lt;/p>
 &lt;h2 id="bridge-mode">Bridge Mode&lt;/h2>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">VBoxManage modifyvm test-vm --nic5 bridged
 VBoxManage modifyvm test-vm --bridgeadapter5 eno1
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Linux Shell 에서 대소문자 치환</title><link>https://notes.harues.com/posts/linux-shell-%EC%97%90%EC%84%9C-%EB%8C%80%EC%86%8C%EB%AC%B8%EC%9E%90-%EC%B9%98%ED%99%98/</link><pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/linux-shell-%EC%97%90%EC%84%9C-%EB%8C%80%EC%86%8C%EB%AC%B8%EC%9E%90-%EC%B9%98%ED%99%98/</guid><description>&lt;h4 id="linux-shell-에서-대소문자-치환">Linux Shell 에서 대소문자 치환&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Linux Shell 에서 대소문자 치환</title><link>https://notes.harues.com/18/01/19/linux-shell-%EC%97%90%EC%84%9C-%EB%8C%80%EC%86%8C%EB%AC%B8%EC%9E%90-%EC%B9%98%ED%99%98/</link><pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/18/01/19/linux-shell-%EC%97%90%EC%84%9C-%EB%8C%80%EC%86%8C%EB%AC%B8%EC%9E%90-%EC%B9%98%ED%99%98/</guid><description>&lt;h4 id="linux-shell-에서-대소문자-치환">Linux Shell 에서 대소문자 치환&lt;/h4>
 &lt;p>Linux tr 명령 사용&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">tr &lt;span style="color:#f92672">[&lt;/span>:lower:&lt;span style="color:#f92672">]&lt;/span> &lt;span style="color:#f92672">[&lt;/span>:upper:&lt;span style="color:#f92672">]&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

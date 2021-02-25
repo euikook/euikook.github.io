@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ubuntu on Notes</title><link>https://notes.harues.com/tags/ubuntu/</link><description>Recent content in Ubuntu on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 10 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://notes.harues.com/tags/ubuntu/index.xml" rel="self" type="application/rss+xml"/><item><title>How to use Hugo for starter</title><link>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</link><pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</guid><description>&lt;h2 id="installing">Installing&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ubuntu on Notes</title><link>https://notes.harues.com/tags/ubuntu/</link><description>Recent content in Ubuntu on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 10 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://notes.harues.com/tags/ubuntu/index.xml" rel="self" type="application/rss+xml"/><item><title>How to use Hugo for starter</title><link>https://notes.harues.com/21/02/10/how-to-use-hugo-for-starter/</link><pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/21/02/10/how-to-use-hugo-for-starter/</guid><description>&lt;h2 id="installing">Installing&lt;/h2>
 &lt;h3 id="archlinux">ArchLinux&lt;/h3>
 &lt;p>pacman 명령으로 설치한다.&lt;/p>
 &lt;pre>&lt;code>sudo pacman -Syu hugo
 &lt;/code>&lt;/pre>&lt;h3 id="ubuntu">Ubuntu&lt;/h3>
 &lt;p>Ubuntu 공식 패키지로 등록 되어 있으므로 apt 명령으로 설치 한다.&lt;/p>
 &lt;pre>&lt;code>sudo apt install hugo
-&lt;/code>&lt;/pre></description></item><item><title>System Level Linux DNS over TLS on Ubuntu 20.04</title><link>https://notes.harues.com/posts/system-level-linux-dns-over-tls-on-utuntu-20.04/</link><pubDate>Thu, 12 Nov 2020 12:36:20 +0900</pubDate><guid>https://notes.harues.com/posts/system-level-linux-dns-over-tls-on-utuntu-20.04/</guid><description>&lt;h1 id="system-level-linux-dns-over-tls-on-ubuntu-2004">System Level Linux DNS over TLS on Ubuntu 20.04&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title>System Level Linux DNS over TLS on Ubuntu 20.04</title><link>https://notes.harues.com/20/11/12/system-level-linux-dns-over-tls-on-ubuntu-20.04/</link><pubDate>Thu, 12 Nov 2020 12:36:20 +0900</pubDate><guid>https://notes.harues.com/20/11/12/system-level-linux-dns-over-tls-on-ubuntu-20.04/</guid><description>&lt;h1 id="system-level-linux-dns-over-tls-on-ubuntu-2004">System Level Linux DNS over TLS on Ubuntu 20.04&lt;/h1>
 &lt;h2 id="prerequisite">Prerequisite&lt;/h2>
 &lt;ul>
 &lt;li>stubby&lt;/li>
@@ -17,7 +17,7 @@
 &lt;/code>&lt;/pre>&lt;h4 id="start-and-endable-stubby">Start and endable stubby&lt;/h4>
 &lt;pre>&lt;code>sudo systemctl enable stubby
 sudo systemctl start stubby
-&lt;/code>&lt;/pre></description></item><item><title>git fetch all branches and push it to another remote</title><link>https://notes.harues.com/posts/gpg-error-on-ubuntu/</link><pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/gpg-error-on-ubuntu/</guid><description>&lt;h1 id="fix-gpg-error-on-ubuntu">Fix GPG Error on Ubuntu&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title>git fetch all branches and push it to another remote</title><link>https://notes.harues.com/20/11/12/git-fetch-all-branches-and-push-it-to-another-remote/</link><pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/11/12/git-fetch-all-branches-and-push-it-to-another-remote/</guid><description>&lt;h1 id="fix-gpg-error-on-ubuntu">Fix GPG Error on Ubuntu&lt;/h1>
 &lt;pre>&lt;code>$ sudo apt update
 ...
 W: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: https://packages.gitlab.com/gitlab/gitlab-ee/ubuntu bionic InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 3F01618A51312F3F
@@ -27,6 +27,6 @@ W: Failed to fetch https://packages.gitlab.com/runner/gitlab-runner/ubuntu/dists
 W: Some index files failed to download. They have been ignored, or old ones used instead.
 euikook@argentum:/etc/apt/sources.list.d$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3F01618A51312F3F
 Executing: /tmp/apt-key-gpghome.SpBMyBEzT0/gpg.1.sh --keyserver keyserver.ubuntu.com --recv-keys 3F01618A51312F3F
-&lt;/code>&lt;/pre></description></item><item><title>Update Ubuntu Mirror Site in sources.list</title><link>https://notes.harues.com/posts/update-ubuntu-mirror-site-in-sources-list/</link><pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/update-ubuntu-mirror-site-in-sources-list/</guid><description>&lt;h4 id="update-ubuntu-mirror--site-in-sourceslist">Update Ubuntu Mirror Site in sources.list&lt;/h4>
+&lt;/code>&lt;/pre></description></item><item><title>Update Ubuntu Mirror Site in sources.list</title><link>https://notes.harues.com/18/02/05/update-ubuntu-mirror-site-in-sources.list/</link><pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/18/02/05/update-ubuntu-mirror-site-in-sources.list/</guid><description>&lt;h4 id="update-ubuntu-mirror--site-in-sourceslist">Update Ubuntu Mirror Site in sources.list&lt;/h4>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo sed -i &lt;span style="color:#e6db74">&amp;#39;s|http://archive.ubuntu.com|http://ftp.daumkakao.com|g&amp;#39;&lt;/span> /etc/apt/sources.list
 &lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
