@@ -72,11 +72,6 @@ enableGitInfo = true
 
 [[params.menu]]
     before = false
-    label  = "Categories"
-    link   = "categories/"
-
-[[params.menu]]
-    before = false
     label  = "About"
     link   = "about/"
 
