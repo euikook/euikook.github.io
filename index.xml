@@ -317,7 +317,7 @@ sudo rm -rf /var/lib/apt/lists/*
 &lt;pre>&lt;code>docker system prune -a -f
 &lt;/code>&lt;/pre>&lt;h3 id="uninstall-snap-optional-if-you-need">Uninstall snap (Optional, if you need)&lt;/h3>
 &lt;pre>&lt;code>sudo apt-get autoremove --purge snapd
-&lt;/code>&lt;/pre></description></item><item><title/><link>https://notes.harues.com/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/archives/</guid><description/></item><item><title>Contact</title><link>https://notes.harues.com/contact/</link><pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/contact/</guid><description/></item><item><title>Run Gitlab Runner in a container</title><link>https://notes.harues.com/19/02/20/run-gitlab-runner-in-a-container/</link><pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/19/02/20/run-gitlab-runner-in-a-container/</guid><description>&lt;h1 id="run-gitlab-runner-in-a-container">Run Gitlab Runner in a container&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title>Run Gitlab Runner in a container</title><link>https://notes.harues.com/19/02/20/run-gitlab-runner-in-a-container/</link><pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/19/02/20/run-gitlab-runner-in-a-container/</guid><description>&lt;h1 id="run-gitlab-runner-in-a-container">Run Gitlab Runner in a container&lt;/h1>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://www.docker.com/">Docker&lt;/a>&lt;/li>
