@@ -18,8 +18,8 @@ enableGitInfo = true
 # [permalinks]
 #     post = "/:year/:month/:day/:slug"
 
-[permalinks]
-  posts = "/:06/:01/:02/:title/"
+# [permalinks]
+#   posts = "/:06/:01/:02/:title/"
 
 [params]
     # Tell me who you are
@@ -52,6 +52,11 @@ enableGitInfo = true
     # term = "pathname"
     # theme = "github-light"
     # crossorigin = "anonymous"
+
+
+[taxonomies]
+  tag = "tags"
+  series = "series"
 
 
 # Create custom menu entries by defining a label and a link for

@@ -37,3 +37,8 @@
 
 [widgets.tags]
     title = "Tags"
+
+
+[series]
+    other = "Series"
+    
