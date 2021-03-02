@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arch Linux on Notes</title><link>https://notes.harues.com/tags/arch-linux/</link><description>Recent content in Arch Linux on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://notes.harues.com/tags/arch-linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Auto mount removable drives to specific mounting point</title><link>https://notes.harues.com/20/11/17/auto-mount-removable-drives-to-specific-mounting-point/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/11/17/auto-mount-removable-drives-to-specific-mounting-point/</guid><description>&lt;h1 id="auto-mount-removable-drives-to-specific-mounting-point">Auto mount removable drives to specific mounting point&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arch Linux on Notes</title><link>https://notes.harues.com/tags/arch-linux/</link><description>Recent content in Arch Linux on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://notes.harues.com/tags/arch-linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Auto mount removable drives to specific mounting point</title><link>https://notes.harues.com/posts/auto-mount-removable-drives-to-specific-mounting-point/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/auto-mount-removable-drives-to-specific-mounting-point/</guid><description>&lt;h1 id="auto-mount-removable-drives-to-specific-mounting-point">Auto mount removable drives to specific mounting point&lt;/h1>
 &lt;p>Check Block identifier for disk using &lt;code>blkid&lt;/code> command.&lt;/p>
 &lt;pre>&lt;code>blkid
 &lt;/code>&lt;/pre>&lt;pre>&lt;code>blkid /dev/sda2
@@ -6,7 +6,7 @@
 &lt;/code>&lt;/pre>&lt;p>&lt;code>&amp;lt;blkid&amp;gt;&lt;/code> is &lt;code>ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3&lt;/code>&lt;/p>
 &lt;p>Unmount disk if it alrady mounted&lt;/p>
 &lt;pre>&lt;code>sudo umount /dev/sda2
-&lt;/code>&lt;/pre></description></item><item><title>Development Environment per Project</title><link>https://notes.harues.com/20/11/17/development-environment-per-project/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/11/17/development-environment-per-project/</guid><description>&lt;h1 id="development-environment-per-project">Development environment per project&lt;/h1>
+&lt;/code>&lt;/pre></description></item><item><title>Development Environment per Project</title><link>https://notes.harues.com/posts/development-environment-per-project/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/development-environment-per-project/</guid><description>&lt;h1 id="development-environment-per-project">Development environment per project&lt;/h1>
 &lt;h2 id="motivation">Motivation&lt;/h2>
 &lt;h2 id="development-environments-installed-in-project-directory">Development environments installed in project directory&lt;/h2>
 &lt;p>&lt;code>/home/$USER/test-project/.env&lt;/code>&lt;/p>
@@ -15,7 +15,7 @@
 . &lt;span style="color:#e6db74">${&lt;/span>TOP_DIR&lt;span style="color:#e6db74">}&lt;/span>/venv/bin/activate
 export LD_LIBRARY_PATH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>VIRTUAL_ENV&lt;span style="color:#e6db74">}&lt;/span>/lib
 cd &lt;span style="color:#e6db74">${&lt;/span>TOP_DIR&lt;span style="color:#e6db74">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Pacman Cheatsheet</title><link>https://notes.harues.com/20/11/17/pacman-cheatsheet/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/11/17/pacman-cheatsheet/</guid><description>&lt;h1 id="pacman-cheatsheet">Pacman Cheatsheet&lt;/h1>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Pacman Cheatsheet</title><link>https://notes.harues.com/posts/pacman-cheatsheet/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/pacman-cheatsheet/</guid><description>&lt;h1 id="pacman-cheatsheet">Pacman Cheatsheet&lt;/h1>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -51,7 +51,7 @@ cd &lt;span style="color:#e6db74">${&lt;/span>TOP_DIR&lt;span style="color:#e6db
 &lt;td>Sync package list and update available packages.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Arch Linix Installation Guide</title><link>https://notes.harues.com/20/11/12/arch-linix-installation-guide/</link><pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/20/11/12/arch-linix-installation-guide/</guid><description>&lt;h1 id="arch-linix-installation-guide">Arch Linix Installation Guide&lt;/h1>
+&lt;/table></description></item><item><title>Arch Linix Installation Guide</title><link>https://notes.harues.com/posts/arch-linux-install-guide/</link><pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/arch-linux-install-guide/</guid><description>&lt;h1 id="arch-linix-installation-guide">Arch Linix Installation Guide&lt;/h1>
 &lt;p>현재 가지고 있는 시스템 위주로 설명한다.&lt;/p>
 &lt;h2 id="부트-디스크-만들기">부트 디스크 만들기&lt;/h2>
 &lt;p>ISO 파일을 다운로드 한다. 다운로드 후 필요한 경우 gpg 명령으로 파일을 검증한다.&lt;/p>
