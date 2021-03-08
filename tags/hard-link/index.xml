@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hard Link on Notes</title><link>https://notes.harues.com/tags/hard-link/</link><description>Recent content in Hard Link on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 07 Mar 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://notes.harues.com/tags/hard-link/index.xml" rel="self" type="application/rss+xml"/><item><title>왜 디렉터리 Hard link를 만들 수 없나요?</title><link>https://notes.harues.com/posts/why-hard-link-not-allowed-for-directory/</link><pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/why-hard-link-not-allowed-for-directory/</guid><description>&lt;h4 id="why-hard-link-not-allowed-for-directory">Why Hard Link Not Allowed for Directory&lt;/h4>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hard Link on Notes</title><link>https://notes.harues.com/tags/hard-link/</link><description>Recent content in Hard Link on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 07 Mar 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://notes.harues.com/tags/hard-link/index.xml" rel="self" type="application/rss+xml"/><item><title>왜 디렉터리 Hard link를 만들 수 없나요?</title><link>https://notes.harues.com/posts/why-hard-link-not-allowed-for-directory/</link><pubDate>Wed, 07 Mar 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/why-hard-link-not-allowed-for-directory/</guid><description>&lt;h2 id="why-hard-link-not-allowed-for-directory">Why Hard Link Not Allowed for Directory&lt;/h2>
 &lt;p>왜 디렉터리 Hard link를 만들 수 없나요?&lt;/p>
-&lt;p>  디렉터리 Hard Link를 만들고 싶지만 만들어 지지 않는다.&lt;/p>
-&lt;p>예전에는 &lt;em>root&lt;/em> 권한으로 &lt;em>&lt;strong>-d&lt;/strong>&lt;/em> 옵셥을 주면 만들어 진것 같은데 _Ubuntu 16.04_에서 테스트 해보니 &lt;em>root&lt;/em> 권한으로도 디렉터리 Hard Link가 만들어 지지 않는다.&lt;/p>
+&lt;blockquote>
+&lt;p>디렉터리 Hard Link를 만들고 싶지만 만들어 지지 않는다.&lt;/p>
+&lt;/blockquote>
+&lt;p>예전에는 &lt;em>root&lt;/em> 권한으로 &lt;code>-d&lt;/code> 옵셥을 주면 디렉터리에 대한 Hard Link를 만들 수 있었던것 같은데 지금  &lt;em>Ubuntu&lt;/em> 에서 테스트 해보니 &lt;em>root&lt;/em> 권한으로도 디렉터리 Hard Link가 만들어 지지 않는다.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">mkdir a
 ln a b
 ln: a: hard link not allowed &lt;span style="color:#66d9ef">for&lt;/span> directory
-&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>왜 디렉터리에 대한 &lt;em>Hard Link&lt;/em>를 만들수 없는지 알아보자.&lt;/p></description></item></channel></rss>
