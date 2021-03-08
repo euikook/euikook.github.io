@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes</title><link>https://notes.harues.com/</link><description>Recent content on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 05 Feb 2021 09:30:36 +0900</lastBuildDate><atom:link href="https://notes.harues.com/index.xml" rel="self" type="application/rss+xml"/><item><title>How to setup auto renew certbot certificate</title><link>https://notes.harues.com/posts/how-to-setup-auto-renew-certbot-certificate/</link><pubDate>Mon, 08 Mar 2021 10:00:41 +0900</pubDate><guid>https://notes.harues.com/posts/how-to-setup-auto-renew-certbot-certificate/</guid><description>&lt;p>이 글에서는 &lt;a href="https://certbot.eff.org/">&lt;code>certbot&lt;/code>&lt;/a>을 통해 발급받은 &lt;a href="https://lencr.org">Let&amp;rsquo;s Encrypt&lt;/a> 인증서를 &lt;code>Webroot&lt;/code> 플러그인을 이용해 자동 갱신 방법에 대히여 알아본다.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes</title><link>https://notes.harues.com/</link><description>Recent content on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 05 Feb 2021 09:30:36 +0900</lastBuildDate><atom:link href="https://notes.harues.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Insync 3.x auto start with systemctl</title><link>https://notes.harues.com/posts/insync-3.x-auto-start-with-systemctl/</link><pubDate>Mon, 08 Mar 2021 21:56:31 +0900</pubDate><guid>https://notes.harues.com/posts/insync-3.x-auto-start-with-systemctl/</guid><description>&lt;p>이 글에서는 Google Drive 와 One Drive의 third-party 동기화 유틸인 &lt;a href="https://www.insynchq.com/">Insync&lt;/a>의 headless 버전을 설치 하고 자동 실행 하는 방법에 대하여 알아본다.&lt;/p>
+&lt;p>Insync가 3.x 버전으로 판올림 되면서 headless 버전이 사라지는 바람에 &lt;a href="https://notes.harues.com/posts/insync-3.x-auto-start-with-xvfb-and-systemctl">xvfb를 통해 우회 실행 하는 방법&lt;/a>에 대하여 설멍한 적이 있다.&lt;/p>
+&lt;p>하지만 Insync 3.x 대한 headless 버전이 릴리즈 되었기 때문에 이런 번거로운 작업이 필요 없어 졌다.&lt;/p>
+&lt;p>잘 돌아가는 Insync를 headless 버전으로 바꾸기 귀찮아서 미루고 있었는데 이번에 Ubuntu Box를 &lt;code>Bionic&lt;/code>에서 &lt;code>Focal&lt;/code>로 판올림 하는 김에 시간을 내서 headless 버전으로 변경 하였다.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>insync-headless&lt;/li>
+&lt;/ul>
+&lt;h3 id="insync-headless-설치">Insync headless 설치&lt;/h3>
+&lt;p>Insync의 설치 방법은 다음 페이지를 참고 한다. &lt;a href="alternative-google-drive-desktop-client-for-linux">Insync - Linux에서 Google Drive Desktop Client 사용하기&lt;/a>&lt;/p></description></item><item><title>How to setup auto renew certbot certificate</title><link>https://notes.harues.com/posts/how-to-setup-auto-renew-certbot-certificate/</link><pubDate>Mon, 08 Mar 2021 10:00:41 +0900</pubDate><guid>https://notes.harues.com/posts/how-to-setup-auto-renew-certbot-certificate/</guid><description>&lt;p>이 글에서는 &lt;a href="https://certbot.eff.org/">&lt;code>certbot&lt;/code>&lt;/a>을 통해 발급받은 &lt;a href="https://lencr.org">Let&amp;rsquo;s Encrypt&lt;/a> 인증서를 &lt;code>Webroot&lt;/code> 플러그인을 이용해 자동 갱신 방법에 대히여 알아본다.&lt;/p>
 &lt;h2 id="prerequsites">Prerequsites&lt;/h2>
 &lt;p>Webroot 디렉터리를 생성한다.&lt;/p>
 &lt;p>이미 설정되어 있는 &lt;code>root&lt;/code> 디렉터리(&lt;code>/usr/share/nginx/html&lt;/code> 등)에 &lt;code>.well-known&lt;/code> 디렉터리를 생성해도 되지만 관리의 편의를 위하여 별도의 디렉터리를 생성한다. 디렉터리 위치는 &lt;code>/var/www/certbot&lt;/code>로 한다.&lt;/p>
@@ -300,12 +309,23 @@ sudo apt dist-upgrade
 &lt;h2 id="prerequisite">Prerequisite&lt;/h2>
 &lt;p>패키지 리스트를 최신으로 업데이트한다.&lt;/p>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo apt-get update
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Insync 3.x auto start with xvfb and systemctl</title><link>https://notes.harues.com/posts/insync-3.x-auto-start-with-xvfb-and-systemctl/</link><pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/insync-3.x-auto-start-with-xvfb-and-systemctl/</guid><description>&lt;h1 id="insync-3x-auto-start-with-xvfb-and-systemctl">Insync 3.x auto start with xvfb and systemctl&lt;/h1>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Insync 3.x auto start with xvfb and systemctl</title><link>https://notes.harues.com/posts/insync-3.x-auto-start-with-xvfb-and-systemctl/</link><pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/insync-3.x-auto-start-with-xvfb-and-systemctl/</guid><description>&lt;p>이 글에서는 Google Drive 와 One Drive의 third-party 동기화 유틸인 &lt;a href="https://www.insynchq.com/">Insync&lt;/a>의 headless 버전을 설치 하고 자동 실행 하는 방법에 대하여 알아본다.&lt;/p>
+&lt;p>Insync가 3.x 버전으로 판올림 되면서 headless 버전이 없어 졌기 때문에 Gnome등의 UI로 로그인 하여야 Insyc를 설행 할 수 있다.&lt;/p>
+&lt;p>하지만 서버의 경우 자동 로그인을 실행하면 보안 상의 문제가 있으므로 자동 로그인 설정을 할 수 없다.&lt;/p>
+&lt;p>이문제를 해결 하기 위하여 xvfb와 systemctl 을 이용하여 Insync UI 버전을 자동 실행하는 방법에 다여 알아본다.&lt;/p>
+&lt;blockquote>
+&lt;p>3.x 버전의 Headless 버전이 릴리즈 되었다. 이를 이용한 자동 실행 방법은 다음 페이지를 참고한다. &lt;a href="https://notes.harues.com/posts/insync-3.x-auto-start-with-systemctl">Insync 3.x auto start with systemctl&lt;/a>&lt;/p>
+&lt;/blockquote>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
 &lt;li>insync&lt;/li>
 &lt;li>xvfb&lt;/li>
-&lt;/ul></description></item><item><title>Alt_R as Hangul on Ubuntu 18.04</title><link>https://notes.harues.com/posts/right-alt-as-hangul/</link><pubDate>Wed, 21 Oct 2020 08:35:41 +0900</pubDate><guid>https://notes.harues.com/posts/right-alt-as-hangul/</guid><description>&lt;p>&lt;img src="https://source.unsplash.com/PT_9ux0j-x4" alt="Splash">&lt;/p>
+&lt;/ul>
+&lt;h3 id="insync-설치">Insync 설치&lt;/h3>
+&lt;p>Insync의 설치 방법은 다음 페이지를 참고 한다. &lt;a href="https://notes.harues.com/posts/alternative-google-drive-desktop-client-for-linux">Insync - Linux에서 Google Drive Desktop Client 사용하기&lt;/a>&lt;/p>
+&lt;h3 id="xvfb-설치">xvfb 설치&lt;/h3>
+&lt;pre>&lt;code>sudo apt install xvfb
+&lt;/code>&lt;/pre></description></item><item><title>Alt_R as Hangul on Ubuntu 18.04</title><link>https://notes.harues.com/posts/right-alt-as-hangul/</link><pubDate>Wed, 21 Oct 2020 08:35:41 +0900</pubDate><guid>https://notes.harues.com/posts/right-alt-as-hangul/</guid><description>&lt;p>&lt;img src="https://source.unsplash.com/PT_9ux0j-x4" alt="Splash">&lt;/p>
 &lt;h1 id="alt_r-as-hangul-on-ubuntu-1804">Alt_R as Hangul on Ubuntu 18.04&lt;/h1>
 &lt;h2 id="troubles">Troubles&lt;/h2>
 &lt;ul>
@@ -395,8 +415,8 @@ ln a b
 ln: a: hard link not allowed &lt;span style="color:#66d9ef">for&lt;/span> directory
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>왜 디렉터리에 대한 &lt;em>Hard Link&lt;/em>를 만들수 없는지 알아보자.&lt;/p></description></item><item><title>Insync - Linux에서 Google Drive Desktop Client 사용하기</title><link>https://notes.harues.com/posts/alternative-google-drive-desktop-client-for-linux/</link><pubDate>Tue, 27 Feb 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/alternative-google-drive-desktop-client-for-linux/</guid><description>&lt;h4 id="an-alternativegoogle-drive-desktop-client-for-linux">An Alternative Google Drive Desktop Client for Linux&lt;/h4>
 &lt;p>Insync - Linux에서 Google Drive Desktop Client 사용하기&lt;/p>
-&lt;p>데스크탑을 Linux로 써온지도 벌써 10년 가까이 되어 간다. 처음 데스크탑을 Linux로 변경하고 불편했던 인터넷 뱅킹등의 문제는 스마트폰에서 은행 업무를 볼 수 있게 되면서 해결되었다. 그외 민원업무등 반드시 Windows가 필요한 일은 VirtualBox를 통해 해결한다.&lt;/p>
-&lt;p>그외 어플리케이션들은 Linux Alternate나 google docs 같은 웹 기반 어플리케이션으로 대체 가능하다.  하지만 데이터 백업 및 관리용으로 사용하는 Google Drive는 신뢰할 수 있는 Alternate가 없어 고민 했하던 차에 3년전 즈음에 insync라는 Application을 알게 되었다 유료지만 요즘 트렌트인 정기 결제가 아닌 one time 결제로 사용 가능하고 각 배포판용 Repository도 별도로 제공 하기때문에 설치 역시 간편하다.  headless application도 지원 하기 때문에 UI 없이 콘솔 상에서 실행도 가능하다. &lt;a href="https://www.insynchq.com">https://www.insynchq.com&lt;/a>   다른 Agent들과 비교한 자료를 원하면 아래 사이트를 참조 하기 바란다.&lt;/p>
+&lt;p>Linux를 메인 OS로 사용한지도 벌써 10년 &lt;del>가까이 되어 간다&lt;/del> 넘었다.. 처음 메인 OS를 Linux로 변경하고 불편했던 인터넷 뱅킹등의 문제는 스마트폰에서 은행 업무를 볼 수 있게 되면서 해결되었다. 그외 민원업무등 반드시 Windows가 필요한 일은 VirtualBox를 통해 해결한다.&lt;/p>
+&lt;p>그외 어플리케이션들은 Google Docs같은 웹 기반 어플리케이션으로 대체 가능하다.  하지만 데이터 백업 및 파일 관리용으로 사용하는 Google Drive는 신뢰할 수 있는 Alternate가 없어 고민 했하던 차에 2015년 즈음에 insync라는 Thrid-Party Application을 알게 되었다 유료지만 요즘 트렌트인 정기 결제(구독)가 아닌 One Time 결제로 사용 가능하고 각 배포판용 Repository도 별도로 제공 하기때문에 설치 역시 간편하다.headless application도 지원(3.x 버젼에 잠시 지원이 중단 되었다가 다시 지원하기 시작함) 하기 때문에 UI 없이 콘솔 상에서 실행도 가능하다. &lt;a href="https://www.insynchq.com">https://www.insynchq.com&lt;/a>   다른 Agent들과 비교한 자료를 원하면 아래 사이트를 참조 하기 바란다.&lt;/p>
 &lt;p>&lt;a href="https://itsfoss.com/use-google-drive-linux/">use google drive linux&lt;/a>&lt;/p></description></item><item><title>RSYNC+SSH 를 이용한 증분 백업 설정 및 Cron을 이용한 자동화</title><link>https://notes.harues.com/posts/incremental-backup-using-rsyncssh/</link><pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/incremental-backup-using-rsyncssh/</guid><description>&lt;p>RSYNC+SSH 를 이용한 증분 백업 및 Cron을 이용한 자동화&lt;/p>
 &lt;p>관리 하는 서버가 많아지고 서버에 저장되는 데이터의 양이 늘어 날 수록 백업을 어떻게 하여야 하는지 고민이 생긴다.&lt;/p>
 &lt;p>이 포스트에서는 RSYNC와 SSH를 이용하여 여러 서버의 데이터를 백업하고 이를 자동화 하는 방법에 대하여 기술 한다. 테스트를 위한 서버 구성은 다음과 같다.  &lt;/p>
