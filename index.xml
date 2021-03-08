@@ -7,7 +7,7 @@
 &lt;li>insync-headless&lt;/li>
 &lt;/ul>
 &lt;h3 id="insync-headless-설치">Insync headless 설치&lt;/h3>
-&lt;p>Insync의 설치 방법은 다음 페이지를 참고 한다. &lt;a href="alternative-google-drive-desktop-client-for-linux">Insync - Linux에서 Google Drive Desktop Client 사용하기&lt;/a>&lt;/p></description></item><item><title>How to setup auto renew certbot certificate</title><link>https://notes.harues.com/posts/how-to-setup-auto-renew-certbot-certificate/</link><pubDate>Mon, 08 Mar 2021 10:00:41 +0900</pubDate><guid>https://notes.harues.com/posts/how-to-setup-auto-renew-certbot-certificate/</guid><description>&lt;p>이 글에서는 &lt;a href="https://certbot.eff.org/">&lt;code>certbot&lt;/code>&lt;/a>을 통해 발급받은 &lt;a href="https://lencr.org">Let&amp;rsquo;s Encrypt&lt;/a> 인증서를 &lt;code>Webroot&lt;/code> 플러그인을 이용해 자동 갱신 방법에 대히여 알아본다.&lt;/p>
+&lt;p>Insync의 설치 방법은 &lt;a href="https://notes.harues.com/posts/alternative-google-drive-desktop-client-for-linux">Insync - Linux에서 Google Drive Desktop Client 사용하기&lt;/a>를 참고 한다.&lt;/p></description></item><item><title>How to setup auto renew certbot certificate</title><link>https://notes.harues.com/posts/how-to-setup-auto-renew-certbot-certificate/</link><pubDate>Mon, 08 Mar 2021 10:00:41 +0900</pubDate><guid>https://notes.harues.com/posts/how-to-setup-auto-renew-certbot-certificate/</guid><description>&lt;p>이 글에서는 &lt;a href="https://certbot.eff.org/">&lt;code>certbot&lt;/code>&lt;/a>을 통해 발급받은 &lt;a href="https://lencr.org">Let&amp;rsquo;s Encrypt&lt;/a> 인증서를 &lt;code>Webroot&lt;/code> 플러그인을 이용해 자동 갱신 방법에 대히여 알아본다.&lt;/p>
 &lt;h2 id="prerequsites">Prerequsites&lt;/h2>
 &lt;p>Webroot 디렉터리를 생성한다.&lt;/p>
 &lt;p>이미 설정되어 있는 &lt;code>root&lt;/code> 디렉터리(&lt;code>/usr/share/nginx/html&lt;/code> 등)에 &lt;code>.well-known&lt;/code> 디렉터리를 생성해도 되지만 관리의 편의를 위하여 별도의 디렉터리를 생성한다. 디렉터리 위치는 &lt;code>/var/www/certbot&lt;/code>로 한다.&lt;/p>
@@ -314,7 +314,7 @@ sudo apt dist-upgrade
 &lt;p>하지만 서버의 경우 자동 로그인을 실행하면 보안 상의 문제가 있으므로 자동 로그인 설정을 할 수 없다.&lt;/p>
 &lt;p>이문제를 해결 하기 위하여 xvfb와 systemctl 을 이용하여 Insync UI 버전을 자동 실행하는 방법에 다여 알아본다.&lt;/p>
 &lt;blockquote>
-&lt;p>3.x 버전의 Headless 버전이 릴리즈 되었다. 이를 이용한 자동 실행 방법은 다음 페이지를 참고한다. &lt;a href="https://notes.harues.com/posts/insync-3.x-auto-start-with-systemctl">Insync 3.x auto start with systemctl&lt;/a>&lt;/p>
+&lt;p>3.x 버전의 Headless 버전이 릴리즈 되었다. 이를 이용한 자동 실행 방법은 다음 &lt;a href="https://notes.harues.com/posts/insync-3.x-auto-start-with-systemctl">Insync 3.x auto start with systemctl&lt;/a>를 참고한다.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
@@ -322,7 +322,7 @@ sudo apt dist-upgrade
 &lt;li>xvfb&lt;/li>
 &lt;/ul>
 &lt;h3 id="insync-설치">Insync 설치&lt;/h3>
-&lt;p>Insync의 설치 방법은 다음 페이지를 참고 한다. &lt;a href="https://notes.harues.com/posts/alternative-google-drive-desktop-client-for-linux">Insync - Linux에서 Google Drive Desktop Client 사용하기&lt;/a>&lt;/p>
+&lt;p>Insync의 설치 방법은 &lt;a href="https://notes.harues.com/posts/alternative-google-drive-desktop-client-for-linux">Insync - Linux에서 Google Drive Desktop Client 사용하기&lt;/a>를 참고 한다.&lt;/p>
 &lt;h3 id="xvfb-설치">xvfb 설치&lt;/h3>
 &lt;pre>&lt;code>sudo apt install xvfb
 &lt;/code>&lt;/pre></description></item><item><title>Alt_R as Hangul on Ubuntu 18.04</title><link>https://notes.harues.com/posts/right-alt-as-hangul/</link><pubDate>Wed, 21 Oct 2020 08:35:41 +0900</pubDate><guid>https://notes.harues.com/posts/right-alt-as-hangul/</guid><description>&lt;p>&lt;img src="https://source.unsplash.com/PT_9ux0j-x4" alt="Splash">&lt;/p>
