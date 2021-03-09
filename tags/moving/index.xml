@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Moving on Notes</title><link>https://notes.harues.com/tags/moving/</link><description>Recent content in Moving on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 08 Mar 2021 22:34:24 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/moving/index.xml" rel="self" type="application/rss+xml"/><item><title>Insync Moving to new computer without re-syncing</title><link>https://notes.harues.com/posts/insync-moving-to-new-computer-without-re-syncing/</link><pubDate>Mon, 08 Mar 2021 22:34:24 +0900</pubDate><guid>https://notes.harues.com/posts/insync-moving-to-new-computer-without-re-syncing/</guid><description>이 글에서는 Insync을 사용중 PC를 옯기거나 OS를 재설치 하여야 하는 경우 재 동기화 없이 데이터를 옮기는 방법에 대하여 설명한다.
-Insync 종료 PC를 Apple에서 Banana로 옯기는 경우 Apple PC와 Bnana PC에서 Insync를 종료 한다. OS를 다시 설치 하는 경우 해당 PC의 Insync만 종료 한다.
-insync quite insync-headless quite Data 디렉터리 백업 또는 이동 다른 컴퓨터로 이동 Insync의 동기화 폴더를 Apple에서 Banana로 이동한다.
-리눅스의 경우 rsync로 동기화 할 수 있다. 이동 하고자 하는 Banana에 접속 하여 아래 명령을 수행한다.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Moving on Notes</title><link>https://notes.harues.com/tags/moving/</link><description>Recent content in Moving on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 08 Mar 2021 22:34:24 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/moving/index.xml" rel="self" type="application/rss+xml"/><item><title>Insync Moving to new computer without re-syncing</title><link>https://notes.harues.com/posts/insync-moving-to-new-computer-without-re-syncing/</link><pubDate>Mon, 08 Mar 2021 22:34:24 +0900</pubDate><guid>https://notes.harues.com/posts/insync-moving-to-new-computer-without-re-syncing/</guid><description>&lt;p>이 글에서는 Insync을 사용중 PC를 옯기거나 OS를 재설치 하여야 하는 경우 재 동기화 없이 데이터를 옮기는 방법에 대하여 설명한다.&lt;/p>
+&lt;h2 id="insync-종료">Insync 종료&lt;/h2>
+&lt;p>PC를 &lt;em>Apple&lt;/em>에서 &lt;em>Banana&lt;/em>로 옯기는 경우 &lt;em>Apple&lt;/em> PC와 &lt;em>Bnana&lt;/em> PC에서 &lt;em>Insync&lt;/em>를 종료 한다.
+OS를 다시 설치 하는 경우 해당 PC의 &lt;em>Insync&lt;/em>만 종료 한다.&lt;/p>
+&lt;pre>&lt;code>insync quite
+&lt;/code>&lt;/pre>&lt;pre>&lt;code>insync-headless quite
+&lt;/code>&lt;/pre>&lt;h2 id="data-디렉터리-백업-또는-이동">Data 디렉터리 백업 또는 이동&lt;/h2>
+&lt;h3 id="다른-컴퓨터로-이동">다른 컴퓨터로 이동&lt;/h3>
+&lt;p>&lt;em>Insync&lt;/em>의 동기화 폴더를 &lt;em>Apple&lt;/em>에서 &lt;em>Banana&lt;/em>로 이동한다.&lt;/p>
+&lt;p>리눅스의 경우 rsync로 동기화 할 수 있다. 이동 하고자 하는 &lt;em>Banana&lt;/em>에 접속 하여 아래 명령을 수행한다.&lt;/p>
+&lt;pre>&lt;code>/usr/bin/rsync -apvz -e &amp;quot; ssh &amp;quot; \
+--numeric-ids \
+&amp;quot;Apple:~/Insync&amp;quot; &amp;quot;~/Insync&amp;quot;
+&lt;/code>&lt;/pre>&lt;blockquote>
+&lt;p>실제 명령 입력 시 &lt;code>Apple&lt;/code>은 자신의 기존 컴퓨터의 호스트네임으로 변경한다.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&lt;em>Apple&lt;/em>과 &lt;em>Banana&lt;/em>의 동기화 디렉터리는 경로가 같아야 한다.&lt;/p>
+&lt;/blockquote></description></item></channel></rss>
