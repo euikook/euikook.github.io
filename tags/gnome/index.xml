@@ -2,13 +2,11 @@
 &lt;pre>&lt;code>gsettings set org.gnome.shell.app-switcher current-workspace-only true
 &lt;/code>&lt;/pre></description></item><item><title>Auto mount removable drives to specific mounting point</title><link>https://notes.harues.com/posts/auto-mount-removable-drives-to-specific-mounting-point/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/auto-mount-removable-drives-to-specific-mounting-point/</guid><description>&lt;h1 id="auto-mount-removable-drives-to-specific-mounting-point">Auto mount removable drives to specific mounting point&lt;/h1>
 &lt;p>Check Block identifier for disk using &lt;code>blkid&lt;/code> command.&lt;/p>
-&lt;pre>&lt;code>blkid
-&lt;/code>&lt;/pre>&lt;pre>&lt;code>blkid /dev/sda2
-/dev/sda2: UUID=&amp;quot;ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3&amp;quot; BLOCK_SIZE=&amp;quot;4096&amp;quot; TYPE=&amp;quot;ext4&amp;quot; PARTUUID=&amp;quot;39b52ccd-5972-4bb7-ba9b-279441d990df&amp;quot;
-&lt;/code>&lt;/pre>&lt;p>&lt;code>&amp;lt;blkid&amp;gt;&lt;/code> is &lt;code>ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3&lt;/code>&lt;/p>
+&lt;script type="application/javascript" src="https://gist.github.com/euikook/5bed603d4963dad2949df8136f41447e.js?file=blkid.sh">&lt;/script>
+&lt;script type="application/javascript" src="https://gist.github.com/euikook/5bed603d4963dad2949df8136f41447e.js?file=blkid.example.sh">&lt;/script>
+&lt;p>&lt;code>&amp;lt;blkid&amp;gt;&lt;/code> is &lt;code>ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3&lt;/code>&lt;/p>
 &lt;p>Unmount disk if it alrady mounted&lt;/p>
-&lt;pre>&lt;code>sudo umount /dev/sda2
-&lt;/code>&lt;/pre></description></item><item><title>Disable RALT as ISO_Level3_Shift</title><link>https://notes.harues.com/posts/disable-ralt-as-iso-level3-shift/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/disable-ralt-as-iso-level3-shift/</guid><description>&lt;h1 id="disable-kbdraltkbd--as-kbdiso_level3_shiftkbd">Disable &lt;!-- raw HTML omitted -->RALT&lt;!-- raw HTML omitted --> as &lt;!-- raw HTML omitted -->ISO_Level3_Shift&lt;!-- raw HTML omitted -->&lt;/h1>
+&lt;script type="application/javascript" src="https://gist.github.com/euikook/5bed603d4963dad2949df8136f41447e.js?file=umount.sh">&lt;/script></description></item><item><title>Disable RALT as ISO_Level3_Shift</title><link>https://notes.harues.com/posts/disable-ralt-as-iso-level3-shift/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/disable-ralt-as-iso-level3-shift/</guid><description>&lt;h1 id="disable-kbdraltkbd--as-kbdiso_level3_shiftkbd">Disable &lt;!-- raw HTML omitted -->RALT&lt;!-- raw HTML omitted --> as &lt;!-- raw HTML omitted -->ISO_Level3_Shift&lt;!-- raw HTML omitted -->&lt;/h1>
 &lt;p>그놈을 최신 버전으로 업그레이드 하면서 &lt;!-- raw HTML omitted -->Right ALT&lt;!-- raw HTML omitted --> 키가 &lt;!-- raw HTML omitted -->ISO_Level3_Shift&lt;!-- raw HTML omitted --> 로 인식 되는 경우 가 있다.&lt;/p>
 &lt;pre>&lt;code>xev
 &lt;/code>&lt;/pre>&lt;p>아래와 같이 Keycode 108 번이 &lt;!-- raw HTML omitted -->ISO_Level3_Shift&lt;!-- raw HTML omitted -->로 인식된다.&lt;/p>

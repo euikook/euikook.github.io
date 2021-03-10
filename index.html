@@ -10,7 +10,7 @@
 &#183;
 <i class="fa fa-edit"></i><time datetime="2021-03-08 22:34:24 +0900 +0900" itemprop=dateModified title="Latest Modified Date">2021-03-08</time>
 &#183;
-390
+380
 words
 &#183;
 2
@@ -27,10 +27,7 @@ minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=
 <a class=article-category-link href=https://notes.harues.com/tags/sync>sync</a></div></div></header><div class=article-entry itemprop=articleBody><p><p>이 글에서는 Insync을 사용중 PC를 옯기거나 OS를 재설치 하여야 하는 경우 재 동기화 없이 데이터를 옮기는 방법에 대하여 설명한다.</p><blockquote><p>Insync: Google Drive Syncing Application for Linux</p></blockquote><blockquote><p>Insync: 리눅스를 위한 Google Drive 동기화 어플리케이션</p></blockquote><h2 id=insync-종료>Insync 종료</h2><p>PC를 <em>Apple</em>에서 <em>Banana</em>로 옯기는 경우 <em>Apple</em> PC와 <em>Bnana</em> PC에서 <em>Insync</em>를 종료 한다.
 OS를 다시 설치 하는 경우 해당 PC의 <em>Insync</em>만 종료 한다.</p><pre><code>insync quite
 </code></pre><pre><code>insync-headless quite
-</code></pre><h2 id=data-디렉터리-백업-또는-이동>Data 디렉터리 백업 또는 이동</h2><h3 id=다른-컴퓨터로-이동>다른 컴퓨터로 이동</h3><p><em>Insync</em>의 동기화 폴더를 <em>Apple</em>에서 <em>Banana</em>로 이동한다.</p><p>리눅스의 경우 rsync로 동기화 할 수 있다. 이동 하고자 하는 <em>Banana</em>에 접속 하여 아래 명령을 수행한다.</p><pre><code>/usr/bin/rsync  -apvz  -e &quot; ssh  &quot; \
---numeric-ids \
-&quot;Apple:~/Insync&quot; &quot;~/Insync&quot; 
-</code></pre><blockquote><p>실제 명령 입력 시 <code>Apple</code>은 자신의 기존 컴퓨터의 호스트네임으로 변경한다.</p></blockquote><blockquote><p><em>Apple</em>과 <em>Banana</em>의 동기화 디렉터리는 경로가 같아야 한다.</p></blockquote></p><p class=article-more-link><a href=https://notes.harues.com/posts/insync-moving-to-new-computer-without-re-syncing/>Read more</a></p></div><footer class=article-footer><a data-url=https://notes.harues.com/posts/insync-moving-to-new-computer-without-re-syncing/ data-id=339c0fc9c7f1a386c095c35d9015b540 class=article-share-link><i class="fa fa-share"></i>Share</a>
+</code></pre><h2 id=data-디렉터리-백업-또는-이동>Data 디렉터리 백업 또는 이동</h2><h3 id=다른-컴퓨터로-이동>다른 컴퓨터로 이동</h3><p><em>Insync</em>의 동기화 폴더를 <em>Apple</em>에서 <em>Banana</em>로 이동한다.</p><p>리눅스의 경우 rsync로 동기화 할 수 있다. 이동 하고자 하는 <em>Banana</em>에 접속 하여 아래 명령을 수행한다.</p><script type=application/javascript src="https://gist.github.com/euikook/83e66588e3cf39a3316ddb46514c3fd9.js?file=rsync.data.sh"></script><blockquote><p>실제 명령 입력 시 <code>Apple</code>은 자신의 기존 컴퓨터의 호스트네임으로 변경한다.</p></blockquote><blockquote><p><em>Apple</em>과 <em>Banana</em>의 동기화 디렉터리는 경로가 같아야 한다.</p></blockquote></p><p class=article-more-link><a href=https://notes.harues.com/posts/insync-moving-to-new-computer-without-re-syncing/>Read more</a></p></div><footer class=article-footer><a data-url=https://notes.harues.com/posts/insync-moving-to-new-computer-without-re-syncing/ data-id=339c0fc9c7f1a386c095c35d9015b540 class=article-share-link><i class="fa fa-share"></i>Share</a>
 <script>(function(a){if(typeof __SHARE_BUTTON_BINDED__=='undefined'||!__SHARE_BUTTON_BINDED__)__SHARE_BUTTON_BINDED__=!0;else return;a('body').on('click',function(){a('.article-share-box.on').removeClass('on')}).on('click','.article-share-link',function(i){var d,f,c,e,g,b,h;if(i.stopPropagation(),d=a(this),f=d.attr('data-url'),c=encodeURIComponent(f),e='article-share-box-'+d.attr('data-id'),g=d.offset(),a('#'+e).length){if(b=a('#'+e),b.hasClass('on')){b.removeClass('on');return}}else h=['<div id="'+e+'" class="article-share-box">','<input class="article-share-input" value="'+f+'">','<div class="article-share-links">','<a href="https://twitter.com/intent/tweet?url='+c+'" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>','<a href="https://www.facebook.com/sharer.php?u='+c+'" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>','<a href="http://pinterest.com/pin/create/button/?url='+c+'" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>','<a href="https://plus.google.com/share?url='+c+'" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>','</div>','</div>'].join(''),b=a(h),a('body').append(b);a('.article-share-box.on').hide(),b.css({top:g.top+25,left:g.left}).addClass('on')}).on('click','.article-share-box',function(a){a.stopPropagation()}).on('click','.article-share-box-input',function(){a(this).select()}).on('click','.article-share-box-link',function(a){a.preventDefault(),a.stopPropagation(),window.open(this.href,'article-share-box-window-'+Date.now(),'width=500,height=450')})})(jQuery)</script></footer></div></article><article class="article article-type-post" itemscope itemprop=blogPost><div class=article-inner><a href=https://notes.harues.com/posts/insync-3.x-auto-start-with-systemctl/ itemprop=url><img src=https://uploads-ssl.webflow.com/5c5bbc2b7ebe99d46f9e983b/5cf14ca1fb8dd08aa53a2e58_InsyncSignIn.png class=article-banner></a><header class=article-header><a href=https://notes.harues.com/posts/insync-3.x-auto-start-with-systemctl/><h1 class=article-title itemprop=name>Insync 3.x auto start with systemctl</h1></a><div class=article-meta><div class=article-date><i class="fa fa-newspaper-o"></i><time datetime="2021-03-08 21:56:31 +0900 +0900" itemprop=datePublished title="Published Date">2021-03-08</time>
 &#183;
 <i class="fa fa-edit"></i><time datetime="2021-03-08 21:56:31 +0900 +0900" itemprop=dateModified title="Latest Modified Date">2021-03-08</time>
@@ -107,10 +104,10 @@ minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=
 &#183;
 <i class="fa fa-edit"></i><time datetime="2021-02-19 10:47:41 +0900 +0900" itemprop=dateModified title="Latest Modified Date">2021-02-19</time>
 &#183;
-778
+482
 words
 &#183;
-4
+3
 minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=article-category-link href=https://notes.harues.com/tags/linux>Linux</a>
 &#183;
 <a class=article-category-link href=https://notes.harues.com/tags/backup>Backup</a>
@@ -126,7 +123,7 @@ minute read</div><div class=article-category><i class="fa fa-tags"></i><a class=
 &#183;
 <i class="fa fa-edit"></i><time datetime="2021-02-17 14:35:59 +0900 +0900" itemprop=dateModified title="Latest Modified Date">2021-02-17</time>
 &#183;
-110
+60
 words
 &#183;
 1

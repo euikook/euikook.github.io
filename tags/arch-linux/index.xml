@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arch Linux on Notes</title><link>https://notes.harues.com/tags/arch-linux/</link><description>Recent content in Arch Linux on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://notes.harues.com/tags/arch-linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Auto mount removable drives to specific mounting point</title><link>https://notes.harues.com/posts/auto-mount-removable-drives-to-specific-mounting-point/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/auto-mount-removable-drives-to-specific-mounting-point/</guid><description>&lt;h1 id="auto-mount-removable-drives-to-specific-mounting-point">Auto mount removable drives to specific mounting point&lt;/h1>
 &lt;p>Check Block identifier for disk using &lt;code>blkid&lt;/code> command.&lt;/p>
-&lt;pre>&lt;code>blkid
-&lt;/code>&lt;/pre>&lt;pre>&lt;code>blkid /dev/sda2
-/dev/sda2: UUID=&amp;quot;ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3&amp;quot; BLOCK_SIZE=&amp;quot;4096&amp;quot; TYPE=&amp;quot;ext4&amp;quot; PARTUUID=&amp;quot;39b52ccd-5972-4bb7-ba9b-279441d990df&amp;quot;
-&lt;/code>&lt;/pre>&lt;p>&lt;code>&amp;lt;blkid&amp;gt;&lt;/code> is &lt;code>ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3&lt;/code>&lt;/p>
+&lt;script type="application/javascript" src="https://gist.github.com/euikook/5bed603d4963dad2949df8136f41447e.js?file=blkid.sh">&lt;/script>
+&lt;script type="application/javascript" src="https://gist.github.com/euikook/5bed603d4963dad2949df8136f41447e.js?file=blkid.example.sh">&lt;/script>
+&lt;p>&lt;code>&amp;lt;blkid&amp;gt;&lt;/code> is &lt;code>ef6e4eba-7ad9-4a4c-be75-3b85ba2d14a3&lt;/code>&lt;/p>
 &lt;p>Unmount disk if it alrady mounted&lt;/p>
-&lt;pre>&lt;code>sudo umount /dev/sda2
-&lt;/code>&lt;/pre></description></item><item><title>Development Environment per Project</title><link>https://notes.harues.com/posts/development-environment-per-project/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/development-environment-per-project/</guid><description>&lt;h1 id="development-environment-per-project">Development environment per project&lt;/h1>
+&lt;script type="application/javascript" src="https://gist.github.com/euikook/5bed603d4963dad2949df8136f41447e.js?file=umount.sh">&lt;/script></description></item><item><title>Development Environment per Project</title><link>https://notes.harues.com/posts/development-environment-per-project/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/development-environment-per-project/</guid><description>&lt;h1 id="development-environment-per-project">Development environment per project&lt;/h1>
 &lt;h2 id="motivation">Motivation&lt;/h2>
 &lt;h2 id="development-environments-installed-in-project-directory">Development environments installed in project directory&lt;/h2>
 &lt;p>&lt;code>/home/$USER/test-project/.env&lt;/code>&lt;/p>
