@@ -418,7 +418,11 @@ sudo rm -rf /var/lib/apt/lists/*
 &lt;li>target_port&lt;/li>
 &lt;li>user&lt;/li>
 &lt;li>server&lt;/li>
-&lt;/ul></description></item><item><title>라즈베리파이(RPi, Raspberry Pi) 기본계정 pi 변경하기</title><link>https://notes.harues.com/posts/how-to-change-default-account-username-for-rpi/</link><pubDate>Wed, 14 Mar 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/how-to-change-default-account-username-for-rpi/</guid><description>&lt;h2 id="how-to-change-default-account-username-for-rpiraspberry-pi">How to change default account username for RPi(Raspberry Pi)&lt;/h2>
+&lt;/ul></description></item><item><title>Shuffle Algorithm - Fisher-Yates</title><link>https://notes.harues.com/posts/fisher-yates-algorithm/</link><pubDate>Tue, 12 Feb 2019 22:53:35 +0900</pubDate><guid>https://notes.harues.com/posts/fisher-yates-algorithm/</guid><description>대표적인 썩기 함수인 Fisher-Yates 알고리즘에 대해서 알아보자.
+Python의 random 모듈에 구현되어 있기 때문에 굳이 별도의 함수로 구현할 필요없아 가져다 쓰기만 하면된다.
+from random import shuffle a = [x for x in range(100)] b = shuffle(a) print(b) CPython에 구현된 shuffle() 함수가 현대적인 Fisher-Yates 알고리즘의 구현이다.
+Python으로 굳이구현해 보자면 아라와 같다.
+from math import floor from random import random def shuffle(x): for i in reversed(range(1, len(x))): j = floor(random() * (i + 1)) x[i], x[j] = x[j], x[i] return x 0에서 99까지의 리스트를 썩어보자.</description></item><item><title>라즈베리파이(RPi, Raspberry Pi) 기본계정 pi 변경하기</title><link>https://notes.harues.com/posts/how-to-change-default-account-username-for-rpi/</link><pubDate>Wed, 14 Mar 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/how-to-change-default-account-username-for-rpi/</guid><description>&lt;h2 id="how-to-change-default-account-username-for-rpiraspberry-pi">How to change default account username for RPi(Raspberry Pi)&lt;/h2>
 &lt;p>Raspberry Pi 공식 이미지의 username 과 password는 다음과 같다.&lt;/p>
 &lt;blockquote>
 &lt;p>username: &lt;em>pi&lt;/em>&lt;br>
