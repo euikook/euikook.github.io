@@ -383,7 +383,12 @@ sudo rm -rf /var/lib/apt/lists/*
 공개키로 암호화한 정보는 개인키로만 복호화 할 수 있고 개인키로 암호화 한 정보는 공개키로만 복호화 할 수 있다.
 암호화와 복호화에 사용되는 키다 서로 다르기 때문에 비대칭 키 암호화라고도 한다.
 공개키 암화화 방식의 대표적인 용도는 다음과 같다.
-암호화된 통신을 원하는 두 단말 사이에 암호화를 대칭키를 전달하는 전달하는 용도로 사용된다.</description></item><item><title>Run Gitlab Runner in a container</title><link>https://notes.harues.com/posts/run-gitlab-runner-in-a-container/</link><pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/run-gitlab-runner-in-a-container/</guid><description>&lt;h1 id="run-gitlab-runner-in-a-container">Run Gitlab Runner in a container&lt;/h1>
+암호화된 통신을 원하는 두 단말 사이에 암호화를 대칭키를 전달하는 전달하는 용도로 사용된다.</description></item><item><title>Python - Set 과 List 그리고 Tuple</title><link>https://notes.harues.com/posts/python-sets-vs-list-and-tuple/</link><pubDate>Mon, 21 Oct 2019 22:34:34 +0900</pubDate><guid>https://notes.harues.com/posts/python-sets-vs-list-and-tuple/</guid><description>Set(집합) 이란? Python 내장 데이터 타입이다.
+A set object is an unordered collection of distinct hashable objects.
+해시 가능한 반복가능 하고 변경 가능하며 중복요소가 없는 데이터 유형의 정렬되지 않은(순서가 지정되지 않은) 컬렉션이다.
+일반적으로 포함테스트(a in sets), 중복제거, 교집합, 합집합, 차집합, 대칭차와 같은 수학적 계산에 사용된다.
+List, Tuple과의 차이 List, Tuple 은 순서가 있는(ordered) 컬렉션이지만 Set은 순서가 없은 컬렛션이다.
+List 와 Tuple의 차이는 가변성에 있다. List은 초기화 이후에 수정 수 있으나 Tuple은 초기화 이후에 수정할 수 없다.</description></item><item><title>Run Gitlab Runner in a container</title><link>https://notes.harues.com/posts/run-gitlab-runner-in-a-container/</link><pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/run-gitlab-runner-in-a-container/</guid><description>&lt;h1 id="run-gitlab-runner-in-a-container">Run Gitlab Runner in a container&lt;/h1>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://www.docker.com/">Docker&lt;/a>&lt;/li>
