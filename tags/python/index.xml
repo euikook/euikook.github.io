@@ -14,8 +14,10 @@
 &lt;p>임이의 값이 컬랙션에 포함되어 있는지 테스트 하는 경우 리스트에 비해 월등히 빠른 성능을 보여 준다.&lt;/p>
 &lt;blockquote>
 &lt;p>Hash로 관리 되기 때문이다.&lt;/p>
-&lt;/blockquote></description></item><item><title>Shuffle Algorithm - Fisher-Yates</title><link>https://notes.harues.com/posts/fisher-yates-algorithm/</link><pubDate>Tue, 12 Feb 2019 22:53:35 +0900</pubDate><guid>https://notes.harues.com/posts/fisher-yates-algorithm/</guid><description>대표적인 Shuffle(썩기) 알고리즘인 Fisher-Yates 알고리즘에 대해서 알아보자.
-Python의 random 모듈에 구현되어 있기 때문에 굳이 별도의 함수로 구현할 필요없아 가져다 쓰기만 하면된다.
-from random import shuffle a = [x for x in range(100)] b = shuffle(a) print(b) CPython에 구현된 shuffle() 함수가 현대적인 Fisher-Yates 알고리즘의 구현이다.
-Python으로 굳이구현해 보자면 아래와 같다.
-from math import floor from random import random def shuffle(x): for i in reversed(range(1, len(x))): j = floor(random() * (i + 1)) x[i], x[j] = x[j], x[i] return x 0에서 99까지의 리스트를 썩어보자.</description></item></channel></rss>
+&lt;/blockquote></description></item><item><title>Shuffle Algorithm - Fisher-Yates</title><link>https://notes.harues.com/posts/fisher-yates-algorithm/</link><pubDate>Tue, 12 Feb 2019 22:53:35 +0900</pubDate><guid>https://notes.harues.com/posts/fisher-yates-algorithm/</guid><description>&lt;p>대표적인 Shuffle(썩기) 알고리즘인 Fisher-Yates 알고리즘에 대해서 알아보자.&lt;/p>
+&lt;p>Python의 &lt;code>random&lt;/code> 모듈에 구현되어 있기 때문에 굳이 별도의 함수로 구현할 필요없아 가져다 쓰기만 하면된다.&lt;/p>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-python" data-lang="python">&lt;span style="color:#f92672">from&lt;/span> random &lt;span style="color:#f92672">import&lt;/span> shuffle
+a &lt;span style="color:#f92672">=&lt;/span> [x &lt;span style="color:#66d9ef">for&lt;/span> x &lt;span style="color:#f92672">in&lt;/span> range(&lt;span style="color:#ae81ff">100&lt;/span>)]
+b &lt;span style="color:#f92672">=&lt;/span> shuffle(a)
+&lt;span style="color:#66d9ef">print&lt;/span>(b)
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>CPython에 구현된 &lt;a href="https://github.com/python/cpython/blob/master/Lib/random.py#L381">&lt;code>shuffle()&lt;/code>&lt;/a> 함수가 현대적인 Fisher-Yates 알고리즘의 구현이다.&lt;/p></description></item></channel></rss>

@@ -1,5 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CA on Notes</title><link>https://notes.harues.com/tags/ca/</link><description>Recent content in CA on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 10 Mar 2020 11:00:41 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/ca/index.xml" rel="self" type="application/rss+xml"/><item><title>공개키 암호화 방식이란? (Waht is Public-Key cryptography)</title><link>https://notes.harues.com/posts/what-is-public-key-cryptography/</link><pubDate>Tue, 10 Mar 2020 11:00:41 +0900</pubDate><guid>https://notes.harues.com/posts/what-is-public-key-cryptography/</guid><description>공개키 암호화 방식 (Public-Key cryptography) 암호화와 복호화에 같은 키를 사용하는 비밀키 암호화 기법과 간리 암호화와 복호화에 사용하는 키가 서로 다른 암호화 방식을 의미한다. TLS/SSL 에 사용되는 RSA가 대표적인 공개키 암호화 방식의 대표적인 예이다.
-공개키로 암호화한 정보는 개인키로만 복호화 할 수 있고 개인키로 암호화 한 정보는 공개키로만 복호화 할 수 있다.
-암호화와 복호화에 사용되는 키다 서로 다르기 때문에 비대칭 키 암호화라고도 한다.
-공개키 암화화 방식의 대표적인 용도는 다음과 같다.
-암호화된 통신을 원하는 두 단말 사이에 암호화를 대칭키를 전달하는 전달하는 용도로 사용된다.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CA on Notes</title><link>https://notes.harues.com/tags/ca/</link><description>Recent content in CA on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 10 Mar 2020 11:00:41 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/ca/index.xml" rel="self" type="application/rss+xml"/><item><title>공개키 암호화 방식이란? (Waht is Public-Key cryptography)</title><link>https://notes.harues.com/posts/what-is-public-key-cryptography/</link><pubDate>Tue, 10 Mar 2020 11:00:41 +0900</pubDate><guid>https://notes.harues.com/posts/what-is-public-key-cryptography/</guid><description>&lt;h2 id="공개키-암호화-방식-public-key-cryptography">공개키 암호화 방식 (Public-Key cryptography)&lt;/h2>
+&lt;p>암호화와 복호화에 같은 키를 사용하는 비밀키 암호화 기법과 간리 암호화와 복호화에 사용하는 키가 서로 다른 암호화 방식을 의미한다. TLS/SSL 에 사용되는 RSA가 대표적인 공개키 암호화 방식의 대표적인 예이다.&lt;/p>
+&lt;p>공개키로 암호화한 정보는 개인키로만 복호화 할 수 있고 개인키로 암호화 한 정보는 공개키로만 복호화 할 수 있다.&lt;/p>
+&lt;p>암호화와 복호화에 사용되는 키다 서로 다르기 때문에 비대칭 키 암호화라고도 한다.&lt;/p>
+&lt;p>공개키 암화화 방식의 대표적인 용도는 다음과 같다.&lt;/p>
+&lt;ul>
+&lt;li>암호화된 통신을 원하는 두 단말 사이에 암호화를 대칭키를 전달하는 전달하는 용도로 사용된다.&lt;/li>
+&lt;li>전달하고자 하는 문서(파일 또는 정보)를 작성자가 직접 작성하였음과 해당 문서가 변조 되지 않음을 증명하는 용도로 사용된다.&lt;/li>
+&lt;/ul></description></item></channel></rss>
