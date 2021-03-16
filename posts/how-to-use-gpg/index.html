@@ -244,7 +244,7 @@ Keys 1-1 of 1 for &quot;euikook@gmail.com&quot;.  Enter number(s), N)ext, or Q)u
 gpg: key 6FE1162F829A61EE: public key &quot;euikook &lt;euikook@gmail.com&gt;&quot; imported
 gpg: Total number processed: 1
 gpg:               imported: 1
-</code></pre><h3 id=키-폐기revocation-하기>키 폐기(Revocation) 하기</h3><p>키 서버에서 키를 삭제 하기 위해서는 <a href=#gpg-%ED%8F%90%EA%B8%B0-%EC%9D%B8%EC%A6%9D%EC%84%9Crevocation-certificate-%EC%83%9D%EC%84%B1>폐기 인증서(Revocation Certificate)</a>를 먼저 만들어야 한다.</p><p>키를 폐기 한다라도 키 폐기 전에 했던 서명들은 유효하다. 마찬가지로 폐기된 개인키를 가지고 있다면 폐기전 암호화 받았던 (폐기된 공개키로) 암화화 된 메시지도 복호화 할 수 있다.</p><p><code>--import</code> 옵션으로 폐기 인증서를 가저 온다.</p><pre><code>gpg --import john.revoke.asc 
+</code></pre><h3 id=키-폐기revocation-하기>키 폐기(Revocation) 하기</h3><p>키 서버에서 키를 삭제 하기 위해서는 <a href=#gpg-%ED%8F%90%EA%B8%B0-%EC%9D%B8%EC%A6%9D%EC%84%9Crevocation-certificate-%EC%83%9D%EC%84%B1>폐기 인증서(Revocation Certificate)</a>를 먼저 만들어야 한다.</p><p>키를 폐기 한다라도 키 폐기 전에 했던 서명들은 유효하다. 마찬가지로 폐기된 개인키를 접근 가능하다면 폐기전 암호화 수신했던 (폐기된 공개키로) 암화화 된 메시지도 복호화 할 수 있다.</p><p><code>--import</code> 옵션으로 폐기 인증서를 가저 온다.</p><pre><code>gpg --import john.revoke.asc 
 </code></pre><pre><code>gpg: key B821C2E8600096BE: &quot;John Doe (ACME Inc.) &lt;john@acme.com&gt;&quot; revocation certificate imported
 gpg: Total number processed: 1
 gpg:    new key revocations: 1
