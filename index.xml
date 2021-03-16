@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes</title><link>https://notes.harues.com/</link><description>Recent content on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 05 Feb 2021 09:30:36 +0900</lastBuildDate><atom:link href="https://notes.harues.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Insync Moving to new computer without re-syncing</title><link>https://notes.harues.com/posts/insync-moving-to-new-computer-without-re-syncing/</link><pubDate>Mon, 08 Mar 2021 22:34:24 +0900</pubDate><guid>https://notes.harues.com/posts/insync-moving-to-new-computer-without-re-syncing/</guid><description>&lt;p>이 글에서는 Insync을 사용중 PC를 옯기거나 OS를 재설치 하여야 하는 경우 재 동기화 없이 데이터를 옮기는 방법에 대하여 설명한다.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes</title><link>https://notes.harues.com/</link><description>Recent content on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 05 Feb 2021 09:30:36 +0900</lastBuildDate><atom:link href="https://notes.harues.com/index.xml" rel="self" type="application/rss+xml"/><item><title>GPG 사용하기</title><link>https://notes.harues.com/posts/how-to-use-gpg/</link><pubDate>Mon, 15 Mar 2021 23:48:28 +0900</pubDate><guid>https://notes.harues.com/posts/how-to-use-gpg/</guid><description>&lt;h1 id="gpg란-">GPG란 ?&lt;/h1>
+&lt;p>GPG(GNU Privacy Cuard)는 GNU에서 제공하는 OpenPGP(RFC4880)의 오픈소스 구현이다.&lt;/p>
+&lt;p>개인간, 머신간, 개인 - 머신간에 메시지나 파일을 암호화 하거나 파일이나 메시지에 서명을 추가 하여 변조 유무를 식별할 수 있게 해주는 도구이다.&lt;/p>
+&lt;p>기본적으로 RSA와 같은 공개키 암호화 방식을 사용하여 종단간 파일이나 메시지를 암호화 하거나 서명 하는 기능을 제공하는 것이다.&lt;/p>
+&lt;p>GnuPG에 대한 자세한 내용은 &lt;a href="https://namu.wiki/w/GnuPG">나무위키/GnuPG&lt;/a> 또는 &lt;a href="https://ko.wikipedia.org/wiki/GNU_%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B2%84%EC%8B%9C_%EA%B0%80%EB%93%9C">위키페디아/GNU 프라이버시 가드&lt;/a>를 참고 한다.&lt;/p>
+&lt;p>PGP에 대한 내용은 &lt;a href="https://namu.wiki/w/PGP">나무위키/PGP&lt;/a> 또는 &lt;a href="https://ko.wikipedia.org/wiki/PGP_(%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4)">위키페디아/PGP&lt;/a>를 참고 한다.&lt;/p>
+&lt;p>이 문서에서는 GPG의 사용법에 대하여 설명 하도록 한다.&lt;/p>
+&lt;p>공개키 암호화 방식에 관한 내용은 &lt;a href="https://notes.harues.com/posts/what-is-public-key-cryptography/">공개키 암호화 방식이란?&lt;/a>을 참조한다.&lt;/p></description></item><item><title>Insync Moving to new computer without re-syncing</title><link>https://notes.harues.com/posts/insync-moving-to-new-computer-without-re-syncing/</link><pubDate>Mon, 08 Mar 2021 22:34:24 +0900</pubDate><guid>https://notes.harues.com/posts/insync-moving-to-new-computer-without-re-syncing/</guid><description>&lt;p>이 글에서는 Insync을 사용중 PC를 옯기거나 OS를 재설치 하여야 하는 경우 재 동기화 없이 데이터를 옮기는 방법에 대하여 설명한다.&lt;/p>
 &lt;blockquote>
 &lt;p>Insync: Google Drive Syncing Application for Linux&lt;/p>
 &lt;/blockquote>
@@ -383,12 +390,23 @@ sudo rm -rf /var/lib/apt/lists/*
 공개키로 암호화한 정보는 개인키로만 복호화 할 수 있고 개인키로 암호화 한 정보는 공개키로만 복호화 할 수 있다.
 암호화와 복호화에 사용되는 키다 서로 다르기 때문에 비대칭 키 암호화라고도 한다.
 공개키 암화화 방식의 대표적인 용도는 다음과 같다.
-암호화된 통신을 원하는 두 단말 사이에 암호화를 대칭키를 전달하는 전달하는 용도로 사용된다.</description></item><item><title>Python - Set 과 List 그리고 Tuple</title><link>https://notes.harues.com/posts/python-sets-vs-list-and-tuple/</link><pubDate>Mon, 21 Oct 2019 22:34:34 +0900</pubDate><guid>https://notes.harues.com/posts/python-sets-vs-list-and-tuple/</guid><description>Set(집합) 이란? Python 내장 데이터 타입이다.
-A set object is an unordered collection of distinct hashable objects.
-해시 가능한 반복가능 하고 변경 가능하며 중복요소가 없는 데이터 유형의 정렬되지 않은(순서가 지정되지 않은) 컬렉션이다.
-일반적으로 포함테스트(a in sets), 중복제거, 교집합, 합집합, 차집합, 대칭차와 같은 수학적 계산에 사용된다.
-List, Tuple과의 차이 List, Tuple 은 순서가 있는(ordered) 컬렉션이지만 Set은 순서가 없은 컬렛션이다.
-List 와 Tuple의 차이는 가변성에 있다. List은 초기화 이후에 수정 수 있으나 Tuple은 초기화 이후에 수정할 수 없다.</description></item><item><title>Run Gitlab Runner in a container</title><link>https://notes.harues.com/posts/run-gitlab-runner-in-a-container/</link><pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/run-gitlab-runner-in-a-container/</guid><description>&lt;h1 id="run-gitlab-runner-in-a-container">Run Gitlab Runner in a container&lt;/h1>
+암호화된 통신을 원하는 두 단말 사이에 암호화를 대칭키를 전달하는 전달하는 용도로 사용된다.</description></item><item><title>Python - Set 과 List 그리고 Tuple</title><link>https://notes.harues.com/posts/python-sets-vs-list-and-tuple/</link><pubDate>Mon, 21 Oct 2019 22:34:34 +0900</pubDate><guid>https://notes.harues.com/posts/python-sets-vs-list-and-tuple/</guid><description>&lt;h2 id="set집합-이란">Set(집합) 이란?&lt;/h2>
+&lt;p>Python 내장 데이터 타입이다.&lt;/p>
+&lt;blockquote>
+&lt;p>A set object is an unordered collection of distinct hashable objects.&lt;/p>
+&lt;/blockquote>
+&lt;p>해시 가능한 반복가능 하고 변경 가능하며 중복요소가 없는 데이터 유형의 정렬되지 않은(순서가 지정되지 않은) 컬렉션이다.&lt;/p>
+&lt;p>일반적으로 포함테스트(a in sets), &lt;em>중복제거&lt;/em>, &lt;em>교집합&lt;/em>, &lt;em>합집합&lt;/em>, &lt;em>차집합&lt;/em>, &lt;em>대칭차&lt;/em>와 같은 수학적 계산에 사용된다.&lt;/p>
+&lt;h2 id="list-tuple과의-차이">List, Tuple과의 차이&lt;/h2>
+&lt;p>&lt;em>List&lt;/em>, &lt;em>Tuple&lt;/em> 은 순서가 있는(ordered) 컬렉션이지만 &lt;em>Set&lt;/em>은 순서가 없은 컬렉션이다.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;em>List&lt;/em> 와 &lt;em>Tuple&lt;/em>의 차이는 가변성에 있다. List은 초기화 이후에 수정 수 있으나 &lt;em>Tuple&lt;/em>은 초기화 이후에 수정할 수 없다.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="특징">특징&lt;/h2>
+&lt;p>임이의 값이 컬랙션에 포함되어 있는지 테스트 하는 경우 리스트에 비해 월등히 빠른 성능을 보여 준다.&lt;/p>
+&lt;blockquote>
+&lt;p>Hash로 관리 되기 때문이다.&lt;/p>
+&lt;/blockquote></description></item><item><title>Run Gitlab Runner in a container</title><link>https://notes.harues.com/posts/run-gitlab-runner-in-a-container/</link><pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/run-gitlab-runner-in-a-container/</guid><description>&lt;h1 id="run-gitlab-runner-in-a-container">Run Gitlab Runner in a container&lt;/h1>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://www.docker.com/">Docker&lt;/a>&lt;/li>
