@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RSA on Notes</title><link>https://notes.harues.com/tags/rsa/</link><description>Recent content in RSA on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 15 Mar 2021 23:48:28 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/rsa/index.xml" rel="self" type="application/rss+xml"/><item><title>GPG(GnuPG) 사용하기</title><link>https://notes.harues.com/posts/how-to-use-gpg/</link><pubDate>Mon, 15 Mar 2021 23:48:28 +0900</pubDate><guid>https://notes.harues.com/posts/how-to-use-gpg/</guid><description>&lt;p>OpenPGP의 GNU 구현인 GPG(GnuPG)와 그 사용법에 대하여 알아보자.&lt;/p>
 &lt;h2 id="gpg란">GPG란?&lt;/h2>
 &lt;p>GPG(GNU Privacy Cuard)는 GNU에서 제공하는 OpenPGP(RFC4880)의 오픈소스 구현이다.&lt;/p>
-&lt;p>개인간, 머신간, 개인 - 머신간에 메시지나 파일을 암호화 하거나 파일이나 메시지에 서명을 추가 하여 변조 유무를 식별할 수 있게 해주는 도구이다.&lt;/p>
-&lt;p>기본적으로 RSA와 같은 공개 키 암호화 방식을 사용하여 종단간 파일이나 메시지를 암호화 하거나 서명 하는 기능을 제공하는 것이다.&lt;/p>
+&lt;p>개인간, 머신간 또는 개인 - 머신간에 교환되는 메시지나 파일을 암호화 하거나 서명을 추가 하여 작성자를 확인하고 변조 유무를 식별할 수 있게 해주는 도구다.&lt;/p>
+&lt;p>기본적으로 RSA와 같은 &lt;a href="https://notes.harues.com/posts/what-is-public-key-cryptography/">공개 키 암호화 방식&lt;/a>을 사용하여 종단간 파일이나 메시지를 암호화 하거나 서명 하는 기능을 제공한다.&lt;/p>
 &lt;p>GnuPG에 대한 자세한 내용은 &lt;a href="https://namu.wiki/w/GnuPG">나무위키/GnuPG&lt;/a> 또는 &lt;a href="https://ko.wikipedia.org/wiki/GNU_%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B2%84%EC%8B%9C_%EA%B0%80%EB%93%9C">위키피디아/GNU 프라이버시 가드&lt;/a>를 참고 한다.&lt;/p>
 &lt;p>PGP에 대한 내용은 &lt;a href="https://namu.wiki/w/PGP">나무위키/PGP&lt;/a> 또는 &lt;a href="https://ko.wikipedia.org/wiki/PGP_(%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4)">위키피디아/PGP&lt;/a>를 참고 한다.&lt;/p>
 &lt;p>이 문서에서는 GPG의 사용법에 대하여 설명 하도록 한다.&lt;/p>
