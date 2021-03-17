@@ -155,7 +155,7 @@ access to this certificate he can use it to make your key unusable.
 It is smart to print this certificate and store it away, just in case
 your media become unreadable.  But have some caution:  The print system of
 your machine might store the data and make it available to others!
-</code></pre><p>폐기 인증서만 있다면 누구든지 공개키를 폐기할 수 있으므로 안전한 곳에 보관 하여야 한다.</p><p>키를 폐기 하는 방법은 <a href=%ED%82%A4-%ED%8F%90%EA%B8%B0revocation-%ED%95%98%EA%B8%B0>키 폐기(Revocation) 하기</a>를 참고한다.</p><h3 id=공개-키-내보내기>공개 키 내보내기</h3><p>타인에게 공개할 공개 키를 공유 하기 위해서는 키를 내보야 한다. <code>--export</code> 옵션을 사용하여 키를 내보낸다.
+</code></pre><p>폐기 인증서만 있다면 누구든지 공개키를 폐기할 수 있으므로 안전한 곳에 보관 하여야 한다.</p><p>키를 폐기 하는 방법은 <a href=#%ED%82%A4-%ED%8F%90%EA%B8%B0revocation-%ED%95%98%EA%B8%B0>키 폐기(Revocation) 하기</a>를 참고한다.</p><h3 id=공개-키-내보내기>공개 키 내보내기</h3><p>타인에게 공개할 공개 키를 공유 하기 위해서는 키를 내보야 한다. <code>--export</code> 옵션을 사용하여 키를 내보낸다.
 기본적으로 키를 바이너리 형식으로 내보내지만 이를 공유 할 때 불편할 수 있다. <code>--armor</code> 옵션을 사용하여 키를 ASCII형식으로 출력한다.</p><pre><code>gpg --export --armor --output john.pub john@acme.com
 </code></pre><p>다른 사람들이 공개 키를 검증 하는 것을 허용 하려면 공개 키의 지문(fingerprint)도 같이 공유 한다.</p><pre><code>gpg --fingerprint john@acme.com
 </code></pre><h3 id=다른-사람의-공개-키-가져오기>다른 사람의 공개 키 가져오기</h3><p>공유 받은 공개 키를 가져온다.</p><pre><code>gpg --import john.pub
