@@ -3,9 +3,9 @@ msg=${1:-"Update posts"}
 
 ${dryrun} cd content/posts
 ${dryrun} git add .
-${dryrun} git commit -m "${msg}"
+${dryrun} git commit -S -m "${msg}"
 ${dryrun} git push
 ${dryrun} cd -
 ${dryrun} git add .
-${dryrun} git commit -m "${msg}"
+${dryrun} git commit -S -m "${msg}"
 ${dryrun} git push
