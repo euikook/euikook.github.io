@@ -7,9 +7,9 @@
 The GitHub Team&lt;/p>
 &lt;/blockquote>
 &lt;p>&lt;a href="https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/">Github Blog Token: Token authentication requirements for Git operations&lt;/a>&lt;/p>
-&lt;p>2021년 08월 13일 부터 Git 작업을 위한 인증 시 암호를 통한 인증을 지웒 하지 않는다고 한다. Git 작업을 위해서는 토큰 기반 인증을 사용하던지 SSH 키를 사용하여야 한다.&lt;/p>
+&lt;p>보안 강화를 위하여 2021년 08월 13일 부터 Git 작업을 위한 인증 시 암호를 통한 인증을 지웒 하지 않는다고 한다. 2021년 08월 13일 이후에는 Git 작업을 위해서는 토큰 기반 인증을 사용하거나 SSH 키를 통한 인증을 사용해야 한다.&lt;/p>
 &lt;blockquote>
-&lt;p>현재도 2 단계 인증을 활성화 한 사람은 암호를 통한 일증을 사용할 수 없다.&lt;/p>
+&lt;p>지금도 &lt;a href="https://help.github.com/en/github/authenticating-to-github/securing-your-account-with-two-factor-authentication-2fa">&lt;code>2 단계 인증&lt;/code>&lt;/a>을 활성화 한 사람은 암호를 통한 인증을 사용할 수 없다.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="about-authentication-to-github">About authentication to Github&lt;/h2>
 &lt;p>Github에 인증하는 방법은 다음과 같다.&lt;/p>
