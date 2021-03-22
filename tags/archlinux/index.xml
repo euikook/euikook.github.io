@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ArchLinux on Notes</title><link>https://notes.harues.com/tags/archlinux/</link><description>Recent content in ArchLinux on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 10 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://notes.harues.com/tags/archlinux/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo 시작하기</title><link>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</link><pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</guid><description>&lt;h2 id="installing">Installing&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ArchLinux on Notes</title><link>https://notes.harues.com/tags/archlinux/</link><description>Recent content in ArchLinux on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 22 Mar 2021 07:37:55 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/archlinux/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://notes.harues.com/posts/how-to-create-an-bootable-usb-stick/</link><pubDate>Mon, 22 Mar 2021 07:37:55 +0900</pubDate><guid>https://notes.harues.com/posts/how-to-create-an-bootable-usb-stick/</guid><description>&lt;h2 id="prerequisite">Prerequisite&lt;/h2>
+&lt;p>자동 마운트기능이 활성화 되어 있다면 USB을 마운트해제한다.&lt;/p>
+&lt;p>&lt;code>lsblk&lt;/code> 명령으로 블럭 디바이스를 확인한다.&lt;/p>
+&lt;pre>&lt;code>NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+sda 8:0 0 953.9G 0 disk
+├─sda1 8:1 0 512M 0 part
+└─sda2 8:2 0 953.4G 0 part /home/data
+sdc 8:32 1 14.3G 0 disk
+└─sdc1 8:33 1 14.3G 0 part /run/media/user/7AFC-CAE9
+nvme0n1 259:0 0 1.9T 0 disk
+├─nvme0n1p1 259:1 0 512M 0 part /boot
+├─nvme0n1p2 259:2 0 64G 0 part /
+└─nvme0n1p3 259:3 0 1.8T 0 part /home
+&lt;/code>&lt;/pre>&lt;p>&lt;code>sda&lt;/code>, &lt;code>sdc&lt;/code>, &lt;code>nvme0n1&lt;/code> 세개의 블럭 디바이스가 있다. 그중에 sdc가 USB 장치 이고 &lt;code>sdc1&lt;/code> 이 &lt;code>/run/media/user/7AFC-CAE9&lt;/code>에 마운트 되어 있다.&lt;/p>
+&lt;p>마운트를 해제한다.&lt;/p></description></item><item><title>Hugo 시작하기</title><link>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</link><pubDate>Wed, 10 Feb 2021 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/how-to-use-hugo-for-starter/</guid><description>&lt;h2 id="installing">Installing&lt;/h2>
 &lt;h3 id="archlinux">ArchLinux&lt;/h3>
 &lt;p>pacman 명령으로 설치한다.&lt;/p>
 &lt;pre>&lt;code>sudo pacman -Syu hugo
