@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arch Linux on Notes</title><link>https://notes.harues.com/tags/arch-linux/</link><description>Recent content in Arch Linux on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 22 Mar 2021 07:37:55 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/arch-linux/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://notes.harues.com/posts/how-to-create-an-bootable-usb-stick/</link><pubDate>Mon, 22 Mar 2021 07:37:55 +0900</pubDate><guid>https://notes.harues.com/posts/how-to-create-an-bootable-usb-stick/</guid><description>&lt;h2 id="prerequisite">Prerequisite&lt;/h2>
-&lt;p>자동 마운트기능이 활성화 되어 있다면 USB을 마운트해제한다.&lt;/p>
+&lt;p>자동 마운팅 기능이 활성화 되어 있거나 수동으로 마운팅 하여 USB저장 장치가 마운트 되어 있다면 마운트해제한다.&lt;/p>
 &lt;p>&lt;code>lsblk&lt;/code> 명령으로 블럭 디바이스를 확인한다.&lt;/p>
 &lt;pre>&lt;code>NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
 sda 8:0 0 953.9G 0 disk
@@ -12,7 +12,9 @@ nvme0n1 259:0 0 1.9T 0 disk
 ├─nvme0n1p2 259:2 0 64G 0 part /
 └─nvme0n1p3 259:3 0 1.8T 0 part /home
 &lt;/code>&lt;/pre>&lt;p>&lt;code>sda&lt;/code>, &lt;code>sdc&lt;/code>, &lt;code>nvme0n1&lt;/code> 세개의 블럭 디바이스가 있다. 그중에 sdc가 USB 장치 이고 &lt;code>sdc1&lt;/code> 이 &lt;code>/run/media/user/7AFC-CAE9&lt;/code>에 마운트 되어 있다.&lt;/p>
-&lt;p>마운트를 해제한다.&lt;/p></description></item><item><title>Auto mount removable drives to specific mounting point</title><link>https://notes.harues.com/posts/auto-mount-removable-drives-to-specific-mounting-point/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/auto-mount-removable-drives-to-specific-mounting-point/</guid><description>&lt;h1 id="auto-mount-removable-drives-to-specific-mounting-point">Auto mount removable drives to specific mounting point&lt;/h1>
+&lt;p>마운트를 해제한다.&lt;/p>
+&lt;pre>&lt;code>sudo umount /dev/sdc1
+&lt;/code>&lt;/pre></description></item><item><title>Auto mount removable drives to specific mounting point</title><link>https://notes.harues.com/posts/auto-mount-removable-drives-to-specific-mounting-point/</link><pubDate>Tue, 17 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/auto-mount-removable-drives-to-specific-mounting-point/</guid><description>&lt;h1 id="auto-mount-removable-drives-to-specific-mounting-point">Auto mount removable drives to specific mounting point&lt;/h1>
 &lt;p>Check Block identifier for disk using &lt;code>blkid&lt;/code> command.&lt;/p>
 &lt;script type="application/javascript" src="https://gist.github.com/euikook/5bed603d4963dad2949df8136f41447e.js?file=blkid.sh">&lt;/script>
 &lt;script type="application/javascript" src="https://gist.github.com/euikook/5bed603d4963dad2949df8136f41447e.js?file=blkid.example.sh">&lt;/script>

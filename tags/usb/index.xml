@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>usb on Notes</title><link>https://notes.harues.com/tags/usb/</link><description>Recent content in usb on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 22 Mar 2021 07:37:55 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/usb/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://notes.harues.com/posts/how-to-create-an-bootable-usb-stick/</link><pubDate>Mon, 22 Mar 2021 07:37:55 +0900</pubDate><guid>https://notes.harues.com/posts/how-to-create-an-bootable-usb-stick/</guid><description>&lt;h2 id="prerequisite">Prerequisite&lt;/h2>
-&lt;p>자동 마운트기능이 활성화 되어 있다면 USB을 마운트해제한다.&lt;/p>
+&lt;p>자동 마운팅 기능이 활성화 되어 있거나 수동으로 마운팅 하여 USB저장 장치가 마운트 되어 있다면 마운트해제한다.&lt;/p>
 &lt;p>&lt;code>lsblk&lt;/code> 명령으로 블럭 디바이스를 확인한다.&lt;/p>
 &lt;pre>&lt;code>NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
 sda 8:0 0 953.9G 0 disk
@@ -12,7 +12,9 @@ nvme0n1 259:0 0 1.9T 0 disk
 ├─nvme0n1p2 259:2 0 64G 0 part /
 └─nvme0n1p3 259:3 0 1.8T 0 part /home
 &lt;/code>&lt;/pre>&lt;p>&lt;code>sda&lt;/code>, &lt;code>sdc&lt;/code>, &lt;code>nvme0n1&lt;/code> 세개의 블럭 디바이스가 있다. 그중에 sdc가 USB 장치 이고 &lt;code>sdc1&lt;/code> 이 &lt;code>/run/media/user/7AFC-CAE9&lt;/code>에 마운트 되어 있다.&lt;/p>
-&lt;p>마운트를 해제한다.&lt;/p></description></item><item><title>Virtualbox에서 사용 호스트에 연결된 USB 장치가 나타나지 않을 경우</title><link>https://notes.harues.com/posts/virtualbox-no-available-usb-device/</link><pubDate>Mon, 08 Feb 2021 20:09:07 +0900</pubDate><guid>https://notes.harues.com/posts/virtualbox-no-available-usb-device/</guid><description>USB 장치를를 게스트에서 직업 접근 하려고 하는데 USB 설정 화면에서 사용 가능한 디바이스 목록에 장치가 하나도 없다.
+&lt;p>마운트를 해제한다.&lt;/p>
+&lt;pre>&lt;code>sudo umount /dev/sdc1
+&lt;/code>&lt;/pre></description></item><item><title>Virtualbox에서 사용 호스트에 연결된 USB 장치가 나타나지 않을 경우</title><link>https://notes.harues.com/posts/virtualbox-no-available-usb-device/</link><pubDate>Mon, 08 Feb 2021 20:09:07 +0900</pubDate><guid>https://notes.harues.com/posts/virtualbox-no-available-usb-device/</guid><description>USB 장치를를 게스트에서 직업 접근 하려고 하는데 USB 설정 화면에서 사용 가능한 디바이스 목록에 장치가 하나도 없다.
 아래 명령으로 vboxusers 그룹에 사용자를 추가 한다.
 sudo usermod -aG vboxusers $USER 로그아웃 후 다시 로그인 하거나 시스템을 재시작 한다.
 추가 가능한 USB 장치의 장치 목록이 뜬다.
