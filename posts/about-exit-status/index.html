@@ -1,16 +1,34 @@
 <!doctype html><html lang=en-us><head><title>Shell에서의 Exit Status에 대하여 &#183; Notes</title><meta name=generator content="Hugo 0.82.0"><meta charset=utf-8><meta name=naver-site-verification content="41a5b8e1ba0d2863aee3fedd5cb70b0b755bb992"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=author content="euikook"><meta name=description content><link rel=canonical href=https://notes.harues.com/posts/about-exit-status/><link rel=icon href=https://notes.harues.com/favicon.ico><link rel=apple-touch-icon href=https://notes.harues.com/apple-touch-icon.png><link rel=stylesheet href=https://notes.harues.com/css/style.css><link rel=stylesheet href=https://notes.harues.com/css/font-awesome.min.css><link rel=stylesheet href=https://notes.harues.com/css/monokai.css><link rel=stylesheet href=https://notes.harues.com/fancybox/jquery.fancybox.css><link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600" rel=stylesheet type=text/css><link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel=stylesheet type=text/css><meta property="og:title" content="Shell에서의 Exit Status에 대하여"><meta property="og:description" content="Exit Status에 대하여 알아보자.
 요즘은 GUI를 많이 사용하지만 지금도DOS나 UNIX계열의 시스템에서는 쉘(SHELL)을 통해 프로그램을 실하고 프로그램의 출력을 통해 프로그램이 정상적으로 실행되었는지를 판단하한다.
- 전통적으로 UNIX 계열 프로그램은 침묵은 금이라는 유닉스의 설계 철학에 따라 ls와 같이 명시적으로 정보의 출력을 요구 하는 명령이 아닌경우 아무런 출력이 없으면 정상적으로 실행 된것이다.
-  Speech is silver, but silence is gold.
- 그렇다면 프로그램에서 다른 프로그램을 실행 하였을 때 자신이 실행한 프로그램이 정상적으로 수행되었는지 어떻게 판단 할까?"><meta property="og:type" content="article"><meta property="og:url" content="https://notes.harues.com/posts/about-exit-status/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-04-01T10:09:28+09:00"><meta property="article:modified_time" content="2021-04-01T10:09:28+09:00"><meta itemprop=name content="Shell에서의 Exit Status에 대하여"><meta itemprop=description content="Exit Status에 대하여 알아보자.
+
+전통적으로 UNIX 계열 프로그램은 침묵은 금이라는 유닉스의 설계 철학에 따라 ls와 같이 명시적으로 정보의 출력을 요구 하는 명령이 아닌경우 아무런 출력이 없으면 정상적으로 실행 된것이다.
+
+
+Speech is silver, but silence is gold.
+
+그렇다면 프로그램에서 다른 프로그램을 실행 하였을 때 자신이 실행한 프로그램이 정상적으로 수행되었는지 어떻게 판단 할까?
+정답을 말하면 모든 명령은 종료될 때 Exit Status를 반환하는데 (명시적으로 지정하지 않을 경우 기본값을 반환한다.) 프로그램은 이 Exit Status를 가지고 자신의 실행한 프로그램이 정상적으로 종료 되었는지 판단 할 수 있다.
+Exit Status는 O 에서 255 사이의 값을 가지고 쉘의 경우 125 이상의 값을 사용한다."><meta property="og:type" content="article"><meta property="og:url" content="https://notes.harues.com/posts/about-exit-status/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-04-01T10:09:28+09:00"><meta property="article:modified_time" content="2021-04-01T10:09:28+09:00"><meta itemprop=name content="Shell에서의 Exit Status에 대하여"><meta itemprop=description content="Exit Status에 대하여 알아보자.
 요즘은 GUI를 많이 사용하지만 지금도DOS나 UNIX계열의 시스템에서는 쉘(SHELL)을 통해 프로그램을 실하고 프로그램의 출력을 통해 프로그램이 정상적으로 실행되었는지를 판단하한다.
- 전통적으로 UNIX 계열 프로그램은 침묵은 금이라는 유닉스의 설계 철학에 따라 ls와 같이 명시적으로 정보의 출력을 요구 하는 명령이 아닌경우 아무런 출력이 없으면 정상적으로 실행 된것이다.
-  Speech is silver, but silence is gold.
- 그렇다면 프로그램에서 다른 프로그램을 실행 하였을 때 자신이 실행한 프로그램이 정상적으로 수행되었는지 어떻게 판단 할까?"><meta itemprop=datePublished content="2021-04-01T10:09:28+09:00"><meta itemprop=dateModified content="2021-04-01T10:09:28+09:00"><meta itemprop=wordCount content="962"><meta itemprop=keywords content="Exit Status,Exit Status,Shell,Programming,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Shell에서의 Exit Status에 대하여"><meta name=twitter:description content="Exit Status에 대하여 알아보자.
+
+전통적으로 UNIX 계열 프로그램은 침묵은 금이라는 유닉스의 설계 철학에 따라 ls와 같이 명시적으로 정보의 출력을 요구 하는 명령이 아닌경우 아무런 출력이 없으면 정상적으로 실행 된것이다.
+
+
+Speech is silver, but silence is gold.
+
+그렇다면 프로그램에서 다른 프로그램을 실행 하였을 때 자신이 실행한 프로그램이 정상적으로 수행되었는지 어떻게 판단 할까?
+정답을 말하면 모든 명령은 종료될 때 Exit Status를 반환하는데 (명시적으로 지정하지 않을 경우 기본값을 반환한다.) 프로그램은 이 Exit Status를 가지고 자신의 실행한 프로그램이 정상적으로 종료 되었는지 판단 할 수 있다.
+Exit Status는 O 에서 255 사이의 값을 가지고 쉘의 경우 125 이상의 값을 사용한다."><meta itemprop=datePublished content="2021-04-01T10:09:28+09:00"><meta itemprop=dateModified content="2021-04-01T10:09:28+09:00"><meta itemprop=wordCount content="962"><meta itemprop=keywords content="Exit Status,Exit Status,Shell,Programming,"><meta name=twitter:card content="summary"><meta name=twitter:title content="Shell에서의 Exit Status에 대하여"><meta name=twitter:description content="Exit Status에 대하여 알아보자.
 요즘은 GUI를 많이 사용하지만 지금도DOS나 UNIX계열의 시스템에서는 쉘(SHELL)을 통해 프로그램을 실하고 프로그램의 출력을 통해 프로그램이 정상적으로 실행되었는지를 판단하한다.
- 전통적으로 UNIX 계열 프로그램은 침묵은 금이라는 유닉스의 설계 철학에 따라 ls와 같이 명시적으로 정보의 출력을 요구 하는 명령이 아닌경우 아무런 출력이 없으면 정상적으로 실행 된것이다.
-  Speech is silver, but silence is gold.
- 그렇다면 프로그램에서 다른 프로그램을 실행 하였을 때 자신이 실행한 프로그램이 정상적으로 수행되었는지 어떻게 판단 할까?"><link rel=preconnect href=https://www.google-analytics.com crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-XR6RLEW3M1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-XR6RLEW3M1')</script><script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js></script></head><body><div class=container><div id=container><header id=header><div id=header-main class=header-inner><div class=outer><a href=https://notes.harues.com/ id=logo><i class=logo style=background-image:url(https://notes.harues.com/images/logo.png)></i>
+
+전통적으로 UNIX 계열 프로그램은 침묵은 금이라는 유닉스의 설계 철학에 따라 ls와 같이 명시적으로 정보의 출력을 요구 하는 명령이 아닌경우 아무런 출력이 없으면 정상적으로 실행 된것이다.
+
+
+Speech is silver, but silence is gold.
+
+그렇다면 프로그램에서 다른 프로그램을 실행 하였을 때 자신이 실행한 프로그램이 정상적으로 수행되었는지 어떻게 판단 할까?
+정답을 말하면 모든 명령은 종료될 때 Exit Status를 반환하는데 (명시적으로 지정하지 않을 경우 기본값을 반환한다.) 프로그램은 이 Exit Status를 가지고 자신의 실행한 프로그램이 정상적으로 종료 되었는지 판단 할 수 있다.
+Exit Status는 O 에서 255 사이의 값을 가지고 쉘의 경우 125 이상의 값을 사용한다."><link rel=preconnect href=https://www.google-analytics.com crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-XR6RLEW3M1"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-XR6RLEW3M1')</script><script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js></script></head><body><div class=container><div id=container><header id=header><div id=header-main class=header-inner><div class=outer><a href=https://notes.harues.com/ id=logo><i class=logo style=background-image:url(https://notes.harues.com/images/logo.png)></i>
 <span class=site-title>Notes</span></a><nav id=main-nav><a class=main-nav-link href=https://notes.harues.com/>Home</a>
 <a class=main-nav-link href=https://notes.harues.com/tags/>Tags</a>
 <a class=main-nav-link href=https://notes.harues.com/about/>About</a></nav><nav id=sub-nav><div class=profile id=profile-nav><a id=profile-anchor href=javascript:;><img class=avatar src=https://notes.harues.com/images/logo.png><i class="fa fa-caret-down"></i></a></div></nav><div id=search-form-wrap><form action=//google.com/search method=get accept-charset=utf-8 class=search-form><input type=search name=q class=search-form-input placeholder=Search>
