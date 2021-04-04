@@ -1,15 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bash on Notes</title><link>https://notes.harues.com/tags/bash/</link><description>Recent content in Bash on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 02 Apr 2021 11:48:20 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/bash/index.xml" rel="self" type="application/rss+xml"/><item><title>어떤 SHELL을 사용하고 있는지 확인해보자.</title><link>https://notes.harues.com/posts/which-shell-is-used/</link><pubDate>Fri, 02 Apr 2021 11:48:20 +0900</pubDate><guid>https://notes.harues.com/posts/which-shell-is-used/</guid><description>&lt;h2 id="shell">&lt;code>$SHELL&lt;/code>&lt;/h2>
-&lt;p>&lt;code>/etc/password&lt;/code> 파일에 정의된 사용자에 할당된 SHELL 출력한다.&lt;/p>
-&lt;pre>&lt;code>echo $SHELL
-&lt;/code>&lt;/pre>&lt;p>하지만 현재 실행 중인 SHELL 정보를 출력하지 않는다.&lt;/p>
-&lt;pre>&lt;code>$ cat /etc/passwd | grep $USER
-euikook:x:1000:1000::/home/euikook:/usr/bin/zsh
-&lt;/code>&lt;/pre>&lt;p>&lt;code>cat&lt;/code> 명령으로 &lt;code>/etc/passwd&lt;/code> 파일을 확인 결과 /usr/bin/zsh 가 쉘로 할당되어 있다.&lt;/p>
-&lt;p>아래와 같이 &lt;code>bash&lt;/code>로 쉘을 변경 후 &lt;code>$SHELL&lt;/code> 과 &lt;code>$0&lt;/code> 정보를 출력 해보자.&lt;/p>
-&lt;pre>&lt;code>$ bash
-$ echo echo User SHELL is $SHELL, Current SHELL is $0
-User SHELL is /usr/bin/zsh, Current SHELL is bash
-&lt;/code>&lt;/pre></description></item><item><title>쉘에서의 큰따옴표와 작은따옴표(인용부호, Quoting) 그리고 백슬래쉬(Baskslash)</title><link>https://notes.harues.com/posts/quoting-in-shell/</link><pubDate>Mon, 23 Mar 2020 23:48:20 +0900</pubDate><guid>https://notes.harues.com/posts/quoting-in-shell/</guid><description>&lt;p>쉘에서 사용되는 세가지 인용법에 대하여 알아보자.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bash on Notes</title><link>https://notes.harues.com/tags/bash/</link><description>Recent content in Bash on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 23 Mar 2020 23:48:20 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/bash/index.xml" rel="self" type="application/rss+xml"/><item><title>쉘에서의 큰따옴표와 작은따옴표(인용부호, Quoting) 그리고 백슬래쉬(Baskslash)</title><link>https://notes.harues.com/posts/quoting-in-shell/</link><pubDate>Mon, 23 Mar 2020 23:48:20 +0900</pubDate><guid>https://notes.harues.com/posts/quoting-in-shell/</guid><description>&lt;p>쉘에서 사용되는 세가지 인용법에 대하여 알아보자.&lt;/p>
 &lt;h2 id="shell에서-인용quoting-이란">SHELL에서 &lt;em>인용(Quoting)&lt;/em> 이란?&lt;/h2>
 &lt;p>쉘에서 &lt;em>인용(Quoting)&lt;/em> 은 특정 문자나 단어가 가지는 특별한 의미(또는 기능)를 제거 하는데 사용된다. 예를 들어 &lt;em>빈칸(&lt;code>white space&lt;/code>)&lt;/em> 은 쉘에서 인자를 구분하는데 쓰이지만 &lt;em>Quoting&lt;/em> 된 &lt;em>빈칸(&lt;code>&amp;lt;whitespace&amp;gt;&lt;/code>)&lt;/em> 매개변수를 구분하는 기능이 무시된다.&lt;/p>
 &lt;p>쉘에서 &lt;em>Quoting&lt;/em> 메커니즘은 세가지가 있다.&lt;/p>

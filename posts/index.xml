@@ -1,15 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Notes</title><link>https://notes.harues.com/posts/</link><description>Recent content in Posts on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 02 Apr 2021 11:48:20 +0900</lastBuildDate><atom:link href="https://notes.harues.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>어떤 SHELL을 사용하고 있는지 확인해보자.</title><link>https://notes.harues.com/posts/which-shell-is-used/</link><pubDate>Fri, 02 Apr 2021 11:48:20 +0900</pubDate><guid>https://notes.harues.com/posts/which-shell-is-used/</guid><description>&lt;h2 id="shell">&lt;code>$SHELL&lt;/code>&lt;/h2>
-&lt;p>&lt;code>/etc/password&lt;/code> 파일에 정의된 사용자에 할당된 SHELL 출력한다.&lt;/p>
-&lt;pre>&lt;code>echo $SHELL
-&lt;/code>&lt;/pre>&lt;p>하지만 현재 실행 중인 SHELL 정보를 출력하지 않는다.&lt;/p>
-&lt;pre>&lt;code>$ cat /etc/passwd | grep $USER
-euikook:x:1000:1000::/home/euikook:/usr/bin/zsh
-&lt;/code>&lt;/pre>&lt;p>&lt;code>cat&lt;/code> 명령으로 &lt;code>/etc/passwd&lt;/code> 파일을 확인 결과 /usr/bin/zsh 가 쉘로 할당되어 있다.&lt;/p>
-&lt;p>아래와 같이 &lt;code>bash&lt;/code>로 쉘을 변경 후 &lt;code>$SHELL&lt;/code> 과 &lt;code>$0&lt;/code> 정보를 출력 해보자.&lt;/p>
-&lt;pre>&lt;code>$ bash
-$ echo echo User SHELL is $SHELL, Current SHELL is $0
-User SHELL is /usr/bin/zsh, Current SHELL is bash
-&lt;/code>&lt;/pre></description></item><item><title>Shell에서의 Exit Status에 대하여</title><link>https://notes.harues.com/posts/about-exit-status/</link><pubDate>Thu, 01 Apr 2021 10:09:28 +0900</pubDate><guid>https://notes.harues.com/posts/about-exit-status/</guid><description>&lt;p>&lt;em>Exit Status&lt;/em>에 대하여 알아보자.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Notes</title><link>https://notes.harues.com/posts/</link><description>Recent content in Posts on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 01 Apr 2021 10:09:28 +0900</lastBuildDate><atom:link href="https://notes.harues.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Shell에서의 Exit Status에 대하여</title><link>https://notes.harues.com/posts/about-exit-status/</link><pubDate>Thu, 01 Apr 2021 10:09:28 +0900</pubDate><guid>https://notes.harues.com/posts/about-exit-status/</guid><description>&lt;p>&lt;em>Exit Status&lt;/em>에 대하여 알아보자.&lt;/p>
 &lt;p>요즘은 GUI를 많이 사용하지만 지금도DOS나 UNIX계열의 시스템에서는 쉘(SHELL)을 통해 프로그램을 실하고 프로그램의 출력을 통해 프로그램이 정상적으로 실행되었는지를 판단하한다.&lt;/p>
 &lt;blockquote>
 &lt;p>전통적으로 UNIX 계열 프로그램은 &lt;em>침묵은 금&lt;/em>이라는 유닉스의 설계 철학에 따라 &lt;code>ls&lt;/code>와 같이 명시적으로 정보의 출력을 요구 하는 명령이 아닌경우 아무런 출력이 없으면 정상적으로 실행 된것이다.&lt;/p>
