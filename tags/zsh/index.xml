@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>zsh on Notes</title><link>https://notes.harues.com/tags/zsh/</link><description>Recent content in zsh on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 14 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://notes.harues.com/tags/zsh/index.xml" rel="self" type="application/rss+xml"/><item><title>Let use zsh</title><link>https://notes.harues.com/posts/let-use-zsh/</link><pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/let-use-zsh/</guid><description>&lt;h1 id="let-use-zsh">Let use zsh&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>zsh on Notes</title><link>https://notes.harues.com/tags/zsh/</link><description>Recent content in zsh on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 02 Apr 2021 11:48:20 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/zsh/index.xml" rel="self" type="application/rss+xml"/><item><title>어떤 SHELL을 사용하고 있는지 확인해보자.</title><link>https://notes.harues.com/posts/which-shell-is-used/</link><pubDate>Fri, 02 Apr 2021 11:48:20 +0900</pubDate><guid>https://notes.harues.com/posts/which-shell-is-used/</guid><description>&lt;h2 id="shell">&lt;code>$SHELL&lt;/code>&lt;/h2>
+&lt;p>&lt;code>/etc/password&lt;/code> 파일에 정의된 사용자에 할당된 SHELL 출력한다.&lt;/p>
+&lt;pre>&lt;code>echo $SHELL
+&lt;/code>&lt;/pre>&lt;p>하지만 현재 실행 중인 SHELL 정보를 출력하지 않는다.&lt;/p>
+&lt;pre>&lt;code>$ cat /etc/passwd | grep $USER
+euikook:x:1000:1000::/home/euikook:/usr/bin/zsh
+&lt;/code>&lt;/pre>&lt;p>&lt;code>cat&lt;/code> 명령으로 &lt;code>/etc/passwd&lt;/code> 파일을 확인 결과 /usr/bin/zsh 가 쉘로 할당되어 있다.&lt;/p>
+&lt;p>아래와 같이 &lt;code>bash&lt;/code>로 쉘을 변경 후 &lt;code>$SHELL&lt;/code> 과 &lt;code>$0&lt;/code> 정보를 출력 해보자.&lt;/p>
+&lt;pre>&lt;code>$ bash
+$ echo echo User SHELL is $SHELL, Current SHELL is $0
+User SHELL is /usr/bin/zsh, Current SHELL is bash
+&lt;/code>&lt;/pre></description></item><item><title>Let use zsh</title><link>https://notes.harues.com/posts/let-use-zsh/</link><pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/let-use-zsh/</guid><description>&lt;h1 id="let-use-zsh">Let use zsh&lt;/h1>
 &lt;h2 id="zshrc">.zshrc&lt;/h2>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-zsh" data-lang="zsh">ZSH&lt;span style="color:#f92672">=&lt;/span>/usr/share/oh-my-zsh/
 ZSH_THEME&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;agnoster&amp;#34;&lt;/span>
@@ -24,4 +35,28 @@ prompt_segment black default &lt;span style="color:#e6db74">${&lt;/span>CONTEXT&
 &lt;span style="color:#f92672">[[&lt;/span> -s &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$HOME&lt;span style="color:#e6db74">/.rvm/scripts/rvm&amp;#34;&lt;/span> &lt;span style="color:#f92672">]]&lt;/span> &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> source &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$HOME&lt;span style="color:#e6db74">/.rvm/scripts/rvm&amp;#34;&lt;/span> &lt;span style="color:#75715e"># Load RVM into a shell session *as a function*&lt;/span>
 &lt;span style="color:#75715e"># Add RVM to PATH for scripting. Make sure this is the last PATH variable change.&lt;/span>
 export PATH&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>$PATH&lt;span style="color:#e6db74">:&lt;/span>$HOME&lt;span style="color:#e6db74">/.rvm/bin&amp;#34;&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>쉘에서의 큰따옴표와 작은따옴표(인용부호, Quoting) 그리고 백슬래쉬(Baskslash)</title><link>https://notes.harues.com/posts/quoting-in-shell/</link><pubDate>Mon, 23 Mar 2020 23:48:20 +0900</pubDate><guid>https://notes.harues.com/posts/quoting-in-shell/</guid><description>&lt;p>쉘에서 사용되는 세가지 인용법에 대하여 알아보자.&lt;/p>
+&lt;h2 id="shell에서-인용quoting-이란">SHELL에서 &lt;em>인용(Quoting)&lt;/em> 이란?&lt;/h2>
+&lt;p>쉘에서 &lt;em>인용(Quoting)&lt;/em> 은 특정 문자나 단어가 가지는 특별한 의미(또는 기능)를 제거 하는데 사용된다. 예를 들어 &lt;em>빈칸(&lt;code>white space&lt;/code>)&lt;/em> 은 쉘에서 인자를 구분하는데 쓰이지만 &lt;em>Quoting&lt;/em> 된 &lt;em>빈칸(&lt;code>&amp;lt;whitespace&amp;gt;&lt;/code>)&lt;/em> 매개변수를 구분하는 기능이 무시된다.&lt;/p>
+&lt;p>쉘에서 &lt;em>Quoting&lt;/em> 메커니즘은 세가지가 있다.&lt;/p>
+&lt;ul>
+&lt;li>이스케이프 문자(Escape Character): &lt;code>Hello\ World&lt;/code>&lt;/li>
+&lt;li>작은따옴표(Single Quotes, &lt;code>'&lt;/code>): &lt;code>'Hello World'&lt;/code>&lt;/li>
+&lt;li>큰따옴표(Double Quotes, &lt;code>&amp;quot;&lt;/code>): &lt;code>&amp;quot;Hello World&amp;quot;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>Hello\ World&lt;/code>, &lt;code>'Hello World'&lt;/code> &lt;code>&amp;quot;Hello World&amp;quot;&lt;/code> 이 세가지 모두 하나의 매개변수로 취급 한다.&lt;/p>
+&lt;p>쉘에서 아래 명령을 실행해 보자. 다음 명령은 매개변수의 갯수를 나타내는 변수 &lt;code>$#&lt;/code> 를 출력한다.&lt;/p>
+&lt;pre>&lt;code>sh -c 'echo $#' Hello World
+sh -c 'echo $#' Hello\ World
+sh -c 'echo $#' 'Hello World'
+sh -c 'echo $#' &amp;quot;Hello World&amp;quot;
+&lt;/code>&lt;/pre>&lt;p>결과를 보자.&lt;/p>
+&lt;pre>&lt;code>$ sh -c 'echo $#' echo Hello World
+1
+$ sh -c 'echo $#' echo Hello\ World
+0
+$ sh -c 'echo $#' echo 'Hello World'
+0
+$ sh -c 'echo $#' echo &amp;quot;Hello World&amp;quot;
+0
+&lt;/code>&lt;/pre></description></item></channel></rss>

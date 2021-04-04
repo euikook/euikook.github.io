@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Single Quotes on Notes</title><link>https://notes.harues.com/tags/single-quotes/</link><description>Recent content in Single Quotes on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 23 Mar 2020 23:48:20 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/single-quotes/index.xml" rel="self" type="application/rss+xml"/><item><title>쉘에서의 큰따옴표와 작은따옴표(인용부호, Quoting) 그리고 백슬래쉬(Baskslash)</title><link>https://notes.harues.com/posts/quoting-in-shell/</link><pubDate>Mon, 23 Mar 2020 23:48:20 +0900</pubDate><guid>https://notes.harues.com/posts/quoting-in-shell/</guid><description>&lt;p>쉘에서 사용되는 세가지 인용법에 대하여 알아보자.&lt;/p>
+&lt;h2 id="shell에서-인용quoting-이란">SHELL에서 &lt;em>인용(Quoting)&lt;/em> 이란?&lt;/h2>
+&lt;p>쉘에서 &lt;em>인용(Quoting)&lt;/em> 은 특정 문자나 단어가 가지는 특별한 의미(또는 기능)를 제거 하는데 사용된다. 예를 들어 &lt;em>빈칸(&lt;code>white space&lt;/code>)&lt;/em> 은 쉘에서 인자를 구분하는데 쓰이지만 &lt;em>Quoting&lt;/em> 된 &lt;em>빈칸(&lt;code>&amp;lt;whitespace&amp;gt;&lt;/code>)&lt;/em> 매개변수를 구분하는 기능이 무시된다.&lt;/p>
+&lt;p>쉘에서 &lt;em>Quoting&lt;/em> 메커니즘은 세가지가 있다.&lt;/p>
+&lt;ul>
+&lt;li>이스케이프 문자(Escape Character): &lt;code>Hello\ World&lt;/code>&lt;/li>
+&lt;li>작은따옴표(Single Quotes, &lt;code>'&lt;/code>): &lt;code>'Hello World'&lt;/code>&lt;/li>
+&lt;li>큰따옴표(Double Quotes, &lt;code>&amp;quot;&lt;/code>): &lt;code>&amp;quot;Hello World&amp;quot;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;code>Hello\ World&lt;/code>, &lt;code>'Hello World'&lt;/code> &lt;code>&amp;quot;Hello World&amp;quot;&lt;/code> 이 세가지 모두 하나의 매개변수로 취급 한다.&lt;/p>
+&lt;p>쉘에서 아래 명령을 실행해 보자. 다음 명령은 매개변수의 갯수를 나타내는 변수 &lt;code>$#&lt;/code> 를 출력한다.&lt;/p>
+&lt;pre>&lt;code>sh -c 'echo $#' Hello World
+sh -c 'echo $#' Hello\ World
+sh -c 'echo $#' 'Hello World'
+sh -c 'echo $#' &amp;quot;Hello World&amp;quot;
+&lt;/code>&lt;/pre>&lt;p>결과를 보자.&lt;/p>
+&lt;pre>&lt;code>$ sh -c 'echo $#' echo Hello World
+1
+$ sh -c 'echo $#' echo Hello\ World
+0
+$ sh -c 'echo $#' echo 'Hello World'
+0
+$ sh -c 'echo $#' echo &amp;quot;Hello World&amp;quot;
+0
+&lt;/code>&lt;/pre></description></item></channel></rss>
