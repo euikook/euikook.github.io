@@ -12,7 +12,6 @@ theme = "hugo-icarus"
 # Comment the themesDir option if you use this theme in production
 # themesDir = "../.."
 
-
 enableGitInfo = true
 
 # [permalinks]
@@ -127,8 +126,11 @@ enableGitInfo = true
     tag_cloud = true
 
 [frontmatter]
-date = ["date","lastmod"]
-lastmod = [":git", "lastmod", "date"]
-publishDate = ["publishDate", "date"]
-expiryDate = ["expiryDate"]
+  date = ["date","lastmod"]
+  lastmod = [":git", "lastmod", "date"]
+  publishDate = ["publishDate", "date"]
+  expiryDate = ["expiryDate"]
 
+
+[params.adsense]
+  id = "ca-pub-1494649960951277"
