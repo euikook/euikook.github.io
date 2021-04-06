@@ -2186,3 +2186,7 @@ ul {
 .article-entry blockquote p {
   margin: 0 0;
 }
+
+.article-date {
+  vertical-align: middle;
+}
