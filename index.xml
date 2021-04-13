@@ -14,7 +14,7 @@
 &lt;h2 id="mmcmicrosoft-management-console를-이용하여-설치-하기">MMC(Microsoft Management Console)를 이용하여 설치 하기&lt;/h2>
 &lt;p>&lt;code>mmc&lt;/code>를 입력 하고 &lt;!-- raw HTML omitted -->Enter&lt;!-- raw HTML omitted --> 키를 누른다.&lt;/p>
 &lt;p>&lt;code>시작&lt;/code> 에서 &lt;code>실행&lt;/code>을 검색하여 실행한다.&lt;/p>
-&lt;p>&lt;img src="https://notes.harues.com/images/inst-ca-cert/win-mmc/win-inst-ca-mmc-000.png" alt="시작 > 실행">&lt;/p></description></item><item><title/><link>https://notes.harues.com/posts/how-to-create-an-bootable-usb-stick/</link><pubDate>Mon, 22 Mar 2021 07:37:55 +0900</pubDate><guid>https://notes.harues.com/posts/how-to-create-an-bootable-usb-stick/</guid><description>&lt;h2 id="prerequisite">Prerequisite&lt;/h2>
+&lt;p>&lt;img src="https://notes.harues.com/images/inst-ca-cert/win-mmc/win-inst-ca-mmc-000.png" alt="시작 > 실행">&lt;/p></description></item><item><title>리눅스에서 USB 설치 미디어 만들기</title><link>https://notes.harues.com/posts/how-to-create-an-bootable-usb-stick/</link><pubDate>Mon, 22 Mar 2021 07:37:55 +0900</pubDate><guid>https://notes.harues.com/posts/how-to-create-an-bootable-usb-stick/</guid><description>&lt;h2 id="prerequisite">Prerequisite&lt;/h2>
 &lt;p>자동 마운팅 기능이 활성화 되어 있거나 수동으로 마운팅 하여 USB저장 장치가 마운트 되어 있다면 마운트해제한다.&lt;/p>
 &lt;p>&lt;code>lsblk&lt;/code> 명령으로 블럭 디바이스를 확인한다.&lt;/p>
 &lt;pre>&lt;code>NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
