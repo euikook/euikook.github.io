@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OMG on Notes</title><link>https://notes.harues.com/tags/omg/</link><description>Recent content in OMG on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 08 Mar 2021 21:56:31 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/omg/index.xml" rel="self" type="application/rss+xml"/><item><title>Insync 3.x auto start with systemctl</title><link>https://notes.harues.com/posts/insync-3.x-auto-start-with-systemctl/</link><pubDate>Mon, 08 Mar 2021 21:56:31 +0900</pubDate><guid>https://notes.harues.com/posts/insync-3.x-auto-start-with-systemctl/</guid><description>&lt;blockquote>
+&lt;p>Desktop 라이센스로 같이 사용할 수 있을 줄 알았는데. &lt;a href="https://www.insynchq.com/pricing/USD?qty=1&amp;amp;tab=server">서버용 라이센스를 별도로 구매 해야 된다.&lt;/a> &lt;del>WTF&lt;/del> 그것도 &lt;strong>일년에 39.99 달러&lt;/strong>, 거기다 나처럼 Google Workspace를 사용하여 gmail.com 이 아닌 커스텀 도메인 을 사용하는 사람은 &lt;strong>일년에 159.99&lt;/strong> 달러다. &lt;del>돈이 썩어 나는구나.&lt;/del> 다음글을 참고 하여 Insync Desktop 버젼을 자동실행 하는 방법을 사용하자. &lt;a href="insync-3.x-auto-start-with-xvfb-and-systemctl">Insync 3.x auto start with xvfb and systemctl&lt;/a>. 굳이 연간 39.99 달러나 159.99 달러를 내면서 headless 버젼을 사용하고 싶으신 분은 다음글을 참고 하기 바란다.&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>그냥 GoodSync로 갈아 타 버릴까?&lt;/p>
+&lt;/blockquote>
+&lt;p>이 글에서는 Google Drive 와 One Drive의 third-party 동기화 유틸인 &lt;a href="https://www.insynchq.com/">Insync&lt;/a>의 headless 버전을 설치 하고 자동 실행 하는 방법에 대하여 알아본다.&lt;/p>
+&lt;blockquote>
+&lt;p>Insync: Google Drive Syncing Application for Linux&lt;/p>
+&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Insync: 리눅스를 위한 Google Drive 동기화 어플리케이션&lt;/p>
+&lt;/blockquote>
+&lt;p>Insync가 3.x 버전으로 판올림 되면서 headless 버전이 사라지는 바람에 &lt;a href="https://notes.harues.com/posts/insync-3.x-auto-start-with-xvfb-and-systemctl">xvfb를 통해 우회 실행 하는 방법&lt;/a>에 대하여 설멍한 적이 있다.&lt;/p>
+&lt;p>하지만 Insync 3.x 대한 headless 버전이 릴리즈 되었기 때문에 이런 번거로운 작업이 필요 없어 졌다.&lt;/p>
+&lt;p>잘 돌아가는 Insync를 headless 버전으로 바꾸기 귀찮아서 미루고 있었는데 이번에 Ubuntu Box를 &lt;code>Bionic&lt;/code>에서 &lt;code>Focal&lt;/code>로 판올림 하는 김에 시간을 내서 headless 버전으로 변경 하였다.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ul>
+&lt;li>insync-headless&lt;/li>
+&lt;/ul>
+&lt;h3 id="insync-headless-설치">Insync headless 설치&lt;/h3>
+&lt;p>Insync의 설치 방법은 &lt;a href="https://notes.harues.com/posts/alternative-google-drive-desktop-client-for-linux">Insync - Linux에서 Google Drive Desktop Client 사용하기&lt;/a>를 참고 한다.&lt;/p></description></item></channel></rss>
