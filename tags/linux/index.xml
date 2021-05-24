@@ -347,7 +347,7 @@ sudo rm -rf /var/lib/apt/lists/*
 &lt;li>&lt;!-- raw HTML omitted -->Alt_R&lt;!-- raw HTML omitted --> 키를 단축키로 사용하는 프로그램(Chrome)등에서는 동작이 안됨&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;!-- raw HTML omitted -->Ctrl_R&lt;!-- raw HTML omitted -->은 Hanja 키로 매핑 시키고 싶이 않음.&lt;/li>
+&lt;li>&lt;!-- raw HTML omitted -->Ctrl_R&lt;!-- raw HTML omitted -->은 Hanja 키로 매핑 시키고 싶지 않음.&lt;/li>
 &lt;/ul></description></item><item><title>Run Gitlab Runner in a container</title><link>https://notes.harues.com/posts/run-gitlab-runner-in-a-container/</link><pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/run-gitlab-runner-in-a-container/</guid><description>&lt;h1 id="run-gitlab-runner-in-a-container">Run Gitlab Runner in a container&lt;/h1>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>

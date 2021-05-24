@@ -468,7 +468,7 @@ sudo rm -rf /var/lib/apt/lists/*
 &lt;li>&lt;!-- raw HTML omitted -->Alt_R&lt;!-- raw HTML omitted --> 키를 단축키로 사용하는 프로그램(Chrome)등에서는 동작이 안됨&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;!-- raw HTML omitted -->Ctrl_R&lt;!-- raw HTML omitted -->은 Hanja 키로 매핑 시키고 싶이 않음.&lt;/li>
+&lt;li>&lt;!-- raw HTML omitted -->Ctrl_R&lt;!-- raw HTML omitted -->은 Hanja 키로 매핑 시키고 싶지 않음.&lt;/li>
 &lt;/ul></description></item><item><title>쉘에서의 큰따옴표와 작은따옴표(인용부호, Quoting) 그리고 백슬래쉬(Baskslash)</title><link>https://notes.harues.com/posts/quoting-in-shell/</link><pubDate>Mon, 23 Mar 2020 23:48:20 +0900</pubDate><guid>https://notes.harues.com/posts/quoting-in-shell/</guid><description>&lt;p>쉘에서 사용되는 세가지 인용법에 대하여 알아보자.&lt;/p>
 &lt;h2 id="shell에서-인용quoting-이란">SHELL에서 &lt;em>인용(Quoting)&lt;/em> 이란?&lt;/h2>
 &lt;p>쉘에서 &lt;em>인용(Quoting)&lt;/em> 은 특정 문자나 단어가 가지는 특별한 의미(또는 기능)를 제거 하는데 사용된다. 예를 들어 &lt;em>빈칸(&lt;code>white space&lt;/code>)&lt;/em> 은 쉘에서 인자를 구분하는데 쓰이지만 &lt;em>Quoting&lt;/em> 된 &lt;em>빈칸(&lt;code>&amp;lt;whitespace&amp;gt;&lt;/code>)&lt;/em> 매개변수를 구분하는 기능이 무시된다.&lt;/p>

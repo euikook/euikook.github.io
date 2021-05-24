@@ -60,7 +60,7 @@ Executing: /tmp/apt-key-gpghome.SpBMyBEzT0/gpg.1.sh --keyserver keyserver.ubuntu
 &lt;li>&lt;!-- raw HTML omitted -->Alt_R&lt;!-- raw HTML omitted --> 키를 단축키로 사용하는 프로그램(Chrome)등에서는 동작이 안됨&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;!-- raw HTML omitted -->Ctrl_R&lt;!-- raw HTML omitted -->은 Hanja 키로 매핑 시키고 싶이 않음.&lt;/li>
+&lt;li>&lt;!-- raw HTML omitted -->Ctrl_R&lt;!-- raw HTML omitted -->은 Hanja 키로 매핑 시키고 싶지 않음.&lt;/li>
 &lt;/ul></description></item><item><title>Update Ubuntu Mirror Site in sources.list</title><link>https://notes.harues.com/posts/update-ubuntu-mirror-site-in-sources-list/</link><pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/update-ubuntu-mirror-site-in-sources-list/</guid><description>&lt;h4 id="update-ubuntu-mirror--site-in-sourceslist">Update Ubuntu Mirror Site in sources.list&lt;/h4>
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">sudo sed -i &lt;span style="color:#e6db74">&amp;#39;s|http://archive.ubuntu.com|http://ftp.daumkakao.com|g&amp;#39;&lt;/span> /etc/apt/sources.list
 &lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
