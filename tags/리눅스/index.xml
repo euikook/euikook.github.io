@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>리눅스 on Notes</title><link>https://notes.harues.com/tags/%EB%A6%AC%EB%88%85%EC%8A%A4/</link><description>Recent content in 리눅스 on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 23 May 2021 22:34:39 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/%EB%A6%AC%EB%88%85%EC%8A%A4/index.xml" rel="self" type="application/rss+xml"/><item><title>fcitx5 한글 입력기 사용하기</title><link>https://notes.harues.com/posts/hangul-input-using-fcitx5/</link><pubDate>Sun, 23 May 2021 22:34:39 +0900</pubDate><guid>https://notes.harues.com/posts/hangul-input-using-fcitx5/</guid><description>Gnome 기본 IM(Input Method)인 IBus 입력기에 문제가 있어 fcitx5로 입력기를 변경 했다.
+Arch Linux pacman -S fcitx5 fcitx5-hangul fcitx5-gtk fcitx5-qt fcitx5-configtool /etc/environment
+GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS=@im=fcitx 시스템을 재시작 하면 fcitx가 자동 실행된다.
+한글 입력 모드에서 태극 회오리 아이콘이 작업 표시줄에 표시된다. 변경 하려면 다음과 같이 실행한다.
+sudo rm -f /usr/share/icons/hicolor/64x64/apps/fcitx-hangul.png sudo wget https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/24x24/actions/fcitx-hangul.svg -O /usr/share/icons/hicolor/64x64/apps/fcitx-hangul.png Ubuntu sudo apt update sudo apt install fcitx-hangul 설정 매뉴를 실행한 후 우측 설정 메뉴에서 Region &amp;amp; Language 을 선택한다.</description></item><item><title>리눅스에서 한/영 전환키 사용하기</title><link>https://notes.harues.com/posts/right-alt-as-hangul/</link><pubDate>Wed, 21 Oct 2020 08:35:41 +0900</pubDate><guid>https://notes.harues.com/posts/right-alt-as-hangul/</guid><description>&lt;h2 id="문제점">문제점&lt;/h2>
+&lt;ul>
+&lt;li>영문 키보드 구입&lt;/li>
+&lt;li>오른쪽 Alt&lt;!-- raw HTML omitted --> 키 (&lt;!-- raw HTML omitted -->Alt_R&lt;!-- raw HTML omitted -->)을 한글 키로 사용 하고 싶음.&lt;/li>
+&lt;li>IBus 등에서 한/영 변환을 &lt;!-- raw HTML omitted -->Alt_R&lt;!-- raw HTML omitted --> 키로 등록
+&lt;ul>
+&lt;li>다른 프로그램에서는 잘 동작.&lt;/li>
+&lt;li>&lt;!-- raw HTML omitted -->Alt_R&lt;!-- raw HTML omitted --> 키를 단축키로 사용하는 프로그램(Chrome)등에서는 동작이 안됨&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;!-- raw HTML omitted -->Ctrl_R&lt;!-- raw HTML omitted -->은 Hanja 키로 매핑 시키고 싶이 않음.&lt;/li>
+&lt;/ul></description></item></channel></rss>

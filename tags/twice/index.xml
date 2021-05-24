@@ -2,4 +2,4 @@
 Terminator Terminal Emulator 터미털 에뮬레이터의 화면 분할 기능을 제공하는 Terminator Terminal Emulator를 사용한다.
 무엇 보다 손에 익었고 화면 분할 기능을 제공하는 터미널 에뮬레이터에는 없는 그룹 브로드캐스트 기능을 제공하기 때문에 터미널을 여러 개 열어 놓고 그룹별로 다른 입력을 해야 하는 테스트에 적합하다.
 문제점 얼마전 아래 위의 그림 처럼 부터 화면 분할 상태에서 브로드캐스트 기능을 키면 수신받는 터미널에서 문자가 2번 입력되는 문제가 발생한다.
-iBus 와 D-Bus 충돌 문제인것 같다.</description></item></channel></rss>
+IBus 입력기와 D-Bus 충돌 문제인것 같다.</description></item></channel></rss>

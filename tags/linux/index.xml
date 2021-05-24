@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Notes</title><link>https://notes.harues.com/tags/linux/</link><description>Recent content in Linux on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 08 Mar 2021 22:34:24 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Insync Moving to new computer without re-syncing</title><link>https://notes.harues.com/posts/insync-moving-to-new-computer-without-re-syncing/</link><pubDate>Mon, 08 Mar 2021 22:34:24 +0900</pubDate><guid>https://notes.harues.com/posts/insync-moving-to-new-computer-without-re-syncing/</guid><description>&lt;p>이 글에서는 Insync을 사용중 PC를 옯기거나 OS를 재설치 하여야 하는 경우 재 동기화 없이 데이터를 옮기는 방법에 대하여 설명한다.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Notes</title><link>https://notes.harues.com/tags/linux/</link><description>Recent content in Linux on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 23 May 2021 22:34:39 +0900</lastBuildDate><atom:link href="https://notes.harues.com/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>fcitx5 한글 입력기 사용하기</title><link>https://notes.harues.com/posts/hangul-input-using-fcitx5/</link><pubDate>Sun, 23 May 2021 22:34:39 +0900</pubDate><guid>https://notes.harues.com/posts/hangul-input-using-fcitx5/</guid><description>Gnome 기본 IM(Input Method)인 IBus 입력기에 문제가 있어 fcitx5로 입력기를 변경 했다.
+Arch Linux pacman -S fcitx5 fcitx5-hangul fcitx5-gtk fcitx5-qt fcitx5-configtool /etc/environment
+GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS=@im=fcitx 시스템을 재시작 하면 fcitx가 자동 실행된다.
+한글 입력 모드에서 태극 회오리 아이콘이 작업 표시줄에 표시된다. 변경 하려면 다음과 같이 실행한다.
+sudo rm -f /usr/share/icons/hicolor/64x64/apps/fcitx-hangul.png sudo wget https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-icon-theme/master/Papirus/24x24/actions/fcitx-hangul.svg -O /usr/share/icons/hicolor/64x64/apps/fcitx-hangul.png Ubuntu sudo apt update sudo apt install fcitx-hangul 설정 매뉴를 실행한 후 우측 설정 메뉴에서 Region &amp;amp; Language 을 선택한다.</description></item><item><title>Insync Moving to new computer without re-syncing</title><link>https://notes.harues.com/posts/insync-moving-to-new-computer-without-re-syncing/</link><pubDate>Mon, 08 Mar 2021 22:34:24 +0900</pubDate><guid>https://notes.harues.com/posts/insync-moving-to-new-computer-without-re-syncing/</guid><description>&lt;p>이 글에서는 Insync을 사용중 PC를 옯기거나 OS를 재설치 하여야 하는 경우 재 동기화 없이 데이터를 옮기는 방법에 대하여 설명한다.&lt;/p>
 &lt;blockquote>
 &lt;p>Insync: Google Drive Syncing Application for Linux&lt;/p>
 &lt;/blockquote>
@@ -61,7 +65,7 @@ OS를 다시 설치 하는 경우 해당 PC의 &lt;em>Insync&lt;/em>만 종료 �
 Terminator Terminal Emulator 터미털 에뮬레이터의 화면 분할 기능을 제공하는 Terminator Terminal Emulator를 사용한다.
 무엇 보다 손에 익었고 화면 분할 기능을 제공하는 터미널 에뮬레이터에는 없는 그룹 브로드캐스트 기능을 제공하기 때문에 터미널을 여러 개 열어 놓고 그룹별로 다른 입력을 해야 하는 테스트에 적합하다.
 문제점 얼마전 아래 위의 그림 처럼 부터 화면 분할 상태에서 브로드캐스트 기능을 키면 수신받는 터미널에서 문자가 2번 입력되는 문제가 발생한다.
-iBus 와 D-Bus 충돌 문제인것 같다.</description></item><item><title>How to set application switching on current workspace only</title><link>https://notes.harues.com/posts/gnome-application-switching-on-current-workspace-only/</link><pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/gnome-application-switching-on-current-workspace-only/</guid><description>&lt;h1 id="how-to-set-application-switching-on-current-workspace-only">How to set application switching on current workspace only&lt;/h1>
+IBus 입력기와 D-Bus 충돌 문제인것 같다.</description></item><item><title>How to set application switching on current workspace only</title><link>https://notes.harues.com/posts/gnome-application-switching-on-current-workspace-only/</link><pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/gnome-application-switching-on-current-workspace-only/</guid><description>&lt;h1 id="how-to-set-application-switching-on-current-workspace-only">How to set application switching on current workspace only&lt;/h1>
 &lt;pre>&lt;code>gsettings set org.gnome.shell.app-switcher current-workspace-only true
 &lt;/code>&lt;/pre></description></item><item><title>Petalinux error on ArchLinux</title><link>https://notes.harues.com/posts/petalinux-error/</link><pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/petalinux-error/</guid><description>&lt;h2 id="errors">Errors&lt;/h2>
 &lt;pre>&lt;code>petalinux-config -c rootfs
@@ -321,9 +325,16 @@ sudo apt dist-upgrade
 &lt;p>Insync의 설치 방법은 &lt;a href="https://notes.harues.com/posts/alternative-google-drive-desktop-client-for-linux">Insync - Linux에서 Google Drive Desktop Client 사용하기&lt;/a>를 참고 한다.&lt;/p>
 &lt;h3 id="xvfb-설치">xvfb 설치&lt;/h3>
 &lt;pre>&lt;code>sudo apt install xvfb
-&lt;/code>&lt;/pre></description></item><item><title>Alt_R as Hangul on Ubuntu</title><link>https://notes.harues.com/posts/right-alt-as-hangul/</link><pubDate>Wed, 21 Oct 2020 08:35:41 +0900</pubDate><guid>https://notes.harues.com/posts/right-alt-as-hangul/</guid><description>&lt;p>&lt;img src="https://source.unsplash.com/PT_9ux0j-x4" alt="Splash">&lt;/p>
-&lt;h1 id="alt_r-as-hangul-on-ubuntu-1804">Alt_R as Hangul on Ubuntu 18.04&lt;/h1>
-&lt;h2 id="troubles">Troubles&lt;/h2>
+&lt;/code>&lt;/pre></description></item><item><title>Shrink dynamically extended VirtualBox image for export appliance</title><link>https://notes.harues.com/posts/shrink-dynamically-allocated-virtualbox-disk-image-en/</link><pubDate>Wed, 21 Oct 2020 08:35:41 +0900</pubDate><guid>https://notes.harues.com/posts/shrink-dynamically-allocated-virtualbox-disk-image-en/</guid><description>&lt;h1 id="shrink-dynamically-extended-virtualbox-image-for-export-appliance">Shrink dynamically extended VirtualBox image for export appliance&lt;/h1>
+&lt;h2 id="cleanup-your-system-system">Cleanup your system System&lt;/h2>
+&lt;h3 id="cleanup-apt-cache">Cleanup APT cache&lt;/h3>
+&lt;pre>&lt;code>sudo apt-get clean
+sudo rm -rf /var/lib/apt/lists/*
+&lt;/code>&lt;/pre>&lt;h3 id="cleanup-docker-cache-optional-if-you-need">Cleanup docker cache (Optional, if you need)&lt;/h3>
+&lt;pre>&lt;code>docker system prune -a -f
+&lt;/code>&lt;/pre>&lt;h3 id="uninstall-snap-optional-if-you-need">Uninstall snap (Optional, if you need)&lt;/h3>
+&lt;pre>&lt;code>sudo apt-get autoremove --purge snapd
+&lt;/code>&lt;/pre></description></item><item><title>리눅스에서 한/영 전환키 사용하기</title><link>https://notes.harues.com/posts/right-alt-as-hangul/</link><pubDate>Wed, 21 Oct 2020 08:35:41 +0900</pubDate><guid>https://notes.harues.com/posts/right-alt-as-hangul/</guid><description>&lt;h2 id="문제점">문제점&lt;/h2>
 &lt;ul>
 &lt;li>영문 키보드 구입&lt;/li>
 &lt;li>오른쪽 Alt&lt;!-- raw HTML omitted --> 키 (&lt;!-- raw HTML omitted -->Alt_R&lt;!-- raw HTML omitted -->)을 한글 키로 사용 하고 싶음.&lt;/li>
@@ -334,16 +345,7 @@ sudo apt dist-upgrade
 &lt;/ul>
 &lt;/li>
 &lt;li>&lt;!-- raw HTML omitted -->Ctrl_R&lt;!-- raw HTML omitted -->은 Hanja 키로 매핑 시키고 싶이 않음.&lt;/li>
-&lt;/ul></description></item><item><title>Shrink dynamically extended VirtualBox image for export appliance</title><link>https://notes.harues.com/posts/shrink-dynamically-allocated-virtualbox-disk-image-en/</link><pubDate>Wed, 21 Oct 2020 08:35:41 +0900</pubDate><guid>https://notes.harues.com/posts/shrink-dynamically-allocated-virtualbox-disk-image-en/</guid><description>&lt;h1 id="shrink-dynamically-extended-virtualbox-image-for-export-appliance">Shrink dynamically extended VirtualBox image for export appliance&lt;/h1>
-&lt;h2 id="cleanup-your-system-system">Cleanup your system System&lt;/h2>
-&lt;h3 id="cleanup-apt-cache">Cleanup APT cache&lt;/h3>
-&lt;pre>&lt;code>sudo apt-get clean
-sudo rm -rf /var/lib/apt/lists/*
-&lt;/code>&lt;/pre>&lt;h3 id="cleanup-docker-cache-optional-if-you-need">Cleanup docker cache (Optional, if you need)&lt;/h3>
-&lt;pre>&lt;code>docker system prune -a -f
-&lt;/code>&lt;/pre>&lt;h3 id="uninstall-snap-optional-if-you-need">Uninstall snap (Optional, if you need)&lt;/h3>
-&lt;pre>&lt;code>sudo apt-get autoremove --purge snapd
-&lt;/code>&lt;/pre></description></item><item><title>Run Gitlab Runner in a container</title><link>https://notes.harues.com/posts/run-gitlab-runner-in-a-container/</link><pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/run-gitlab-runner-in-a-container/</guid><description>&lt;h1 id="run-gitlab-runner-in-a-container">Run Gitlab Runner in a container&lt;/h1>
+&lt;/ul></description></item><item><title>Run Gitlab Runner in a container</title><link>https://notes.harues.com/posts/run-gitlab-runner-in-a-container/</link><pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate><guid>https://notes.harues.com/posts/run-gitlab-runner-in-a-container/</guid><description>&lt;h1 id="run-gitlab-runner-in-a-container">Run Gitlab Runner in a container&lt;/h1>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://www.docker.com/">Docker&lt;/a>&lt;/li>
