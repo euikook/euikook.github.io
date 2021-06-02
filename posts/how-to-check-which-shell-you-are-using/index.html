@@ -1,0 +1,263 @@
+<!doctype html><html lang=en-us><head><title>어떤 SHELL을 사용하고 있는지 확인해보자. &#183; Notes</title><meta name=generator content="Hugo 0.83.1"><meta charset=utf-8><meta name=naver-site-verification content="41a5b8e1ba0d2863aee3fedd5cb70b0b755bb992"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=author content="euikook"><meta name=description content><link rel=canonical href=https://notes.harues.com/posts/how-to-check-which-shell-you-are-using/><link rel=icon href=https://notes.harues.com/favicon.ico><link rel=apple-touch-icon href=https://notes.harues.com/apple-touch-icon.png><link rel=stylesheet href=https://notes.harues.com/css/style.css><link rel=stylesheet href=https://notes.harues.com/css/font-awesome.min.css><link rel=stylesheet href=https://notes.harues.com/css/monokai.css><link rel=stylesheet href=https://notes.harues.com/fancybox/jquery.fancybox.css><link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600" rel=stylesheet type=text/css><link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel=stylesheet type=text/css><meta property="og:title" content="어떤 SHELL을 사용하고 있는지 확인해보자."><meta property="og:description" content="어러 쉘이 있다. sh(Bourne Shell)을 기반으로 하는 Bash(Bourne-again shell), zsh(Z shell) 등은 문법이 거의 똑같지만 완전히 같지는 않다.
+쉘스크립트를 만들어 실행 하는 경우 #! 지시자로 사용할 쉘을 지정할 수 있기 때문에 크게 문제가 없지만 source 명령이나 dot(.) 명령으로 현재 환경(Current Environment Context)에서 스크립트를 실행하는 경우 사용중인 쉘의 종류에 따라 문법이 달라 문제가 발생 할 수 있다. 주의해서 처리 하도록 하자.
+기본쉘을 Zsh 사용하기 시작하면서 겪은 문제다. 보통 리눅스에서 기본쉘은 Bash 이기 때문에 거의 모든 프로그램들이 Bash 위주로 구현되어 있기 때문에 발생 하는 문제이다.
+대부분 다음과 같은 문제이다.
+실행 스크립트의 파일 이름을 알고 싶을때 Bash에서는 $BASH_SOURCE를 사용한다. 하지만 이 변수는 Bash 에서만 지원됨으로 Zsh에서는 $0 변수를 사용해야 된다. Bash에서도 $0변수를 지원하지만 Bash에서 $0 변수를 사용하면 쉘의 정보((bash)가 표시된다.
+
+쉘스크립트에서 $0 는 실행파일의 이름을 나타내는 변수 이다. Bash에서 $0 변수는 쉘이 시작할 때만 초기화 되지만 dot 명령은 새로운 쉘을 시작하는 것이 아니라 현재 쉘의 컨텍스트에서 실행 하는 것이므로 쉘에서 echo $0 를 실행한것과 같은 결과(즉, bash)가 출력된다. 그런데 Zsh 에서는 $0가 스크립트 이름으로 세팅된다.
+
+
+구글링을 해보면 Zsh에서 Bash의 $BASH_SOURCE 와 가장 가까운 결과를 내는것은 ${(%):-%x} 라고 한다. 하지만 $0도 같은 결과는 내기 때문에 그냥 사용하기로 한다.
+
+다음은 ./env 파일의 내용이다.
+echo \$BASH_SOURCE = $BASH_SOURCE
+echo \$0 = $0
+각 SHELL에서 실행 해 보자
+. ./env
+다음과 같은 출력을 얻을 수 있다.
+bash
+$BASH_SOURCE = ./env
+$0 = bash
+zsh
+$BASH_SOURCE =
+$0 = ./env
+따라서 실행 되는 스크립트의 이름 알기 위해서는 다음과 같이 쉘에 따라 다른 방식을 정용하여야 한다.
+SH_NAME=$(basename $(readlink /proc/$$/exe))
+
+case ${SH_NAME} in
+	&#34;zsh&#34;) SELF=$(realpath $0) ;;
+	&#34;bash&#34;) SELF=$(realpath ${BASH_SOURCE[0]}) ;;
+	*) echo &#34;Unknown SHELL $SH_NAME&#34; && exit 0 ;;
+esac
+
+echo $SELF
+Bash 또는 Zsh 만 사용한다면 다음과 같이 사용해도 같은 결과를 얻을 수 있다.
+SELF=$(realpath ${BASH_SOURCE[0]:-$0})
+echo $SELF
+아래와 같이 env 파일을 만들고 dot command로 실행해보자
+SELF=${BASH_SOURCE[0]:-$_}
+echo $(basename $SELF) is located at $(realpath $SELF)
+env 파일 실행
+. ./env
+Bash, Zsh 둘다 같은 결과를 얻을 수 있다.
+env is located at /home/euikook/src/env
+$SHELL
+/etc/password 파일에 정의된 사용자에 할당된 SHELL 출력한다.
+echo $SHELL
+Cons
+지정된 쉘 정보를 표시 하지만 현재 사용중인 SHELL 정보를 출력하지 않는다.
+$ cat /etc/passwd | grep $USER
+john:x:1000:1000::/home/john:/usr/bin/zsh
+cat 명령으로 /etc/passwd 파일을 확인 결과 /usr/bin/zsh 가 쉘로 할당되어 있다.
+아래와 같이 bash로 쉘을 변경 후 $SHELL 과 $0 정보를 출력 해보자.
+$ bash
+$ echo echo User SHELL is $SHELL, Current SHELL is $0
+User SHELL is /usr/bin/zsh, Current SHELL is bash
+"><meta property="og:type" content="article"><meta property="og:url" content="https://notes.harues.com/posts/how-to-check-which-shell-you-are-using/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-04-02T11:48:20+09:00"><meta property="article:modified_time" content="2021-04-02T11:48:20+09:00"><meta itemprop=name content="어떤 SHELL을 사용하고 있는지 확인해보자."><meta itemprop=description content="어러 쉘이 있다. sh(Bourne Shell)을 기반으로 하는 Bash(Bourne-again shell), zsh(Z shell) 등은 문법이 거의 똑같지만 완전히 같지는 않다.
+쉘스크립트를 만들어 실행 하는 경우 #! 지시자로 사용할 쉘을 지정할 수 있기 때문에 크게 문제가 없지만 source 명령이나 dot(.) 명령으로 현재 환경(Current Environment Context)에서 스크립트를 실행하는 경우 사용중인 쉘의 종류에 따라 문법이 달라 문제가 발생 할 수 있다. 주의해서 처리 하도록 하자.
+기본쉘을 Zsh 사용하기 시작하면서 겪은 문제다. 보통 리눅스에서 기본쉘은 Bash 이기 때문에 거의 모든 프로그램들이 Bash 위주로 구현되어 있기 때문에 발생 하는 문제이다.
+대부분 다음과 같은 문제이다.
+실행 스크립트의 파일 이름을 알고 싶을때 Bash에서는 $BASH_SOURCE를 사용한다. 하지만 이 변수는 Bash 에서만 지원됨으로 Zsh에서는 $0 변수를 사용해야 된다. Bash에서도 $0변수를 지원하지만 Bash에서 $0 변수를 사용하면 쉘의 정보((bash)가 표시된다.
+
+쉘스크립트에서 $0 는 실행파일의 이름을 나타내는 변수 이다. Bash에서 $0 변수는 쉘이 시작할 때만 초기화 되지만 dot 명령은 새로운 쉘을 시작하는 것이 아니라 현재 쉘의 컨텍스트에서 실행 하는 것이므로 쉘에서 echo $0 를 실행한것과 같은 결과(즉, bash)가 출력된다. 그런데 Zsh 에서는 $0가 스크립트 이름으로 세팅된다.
+
+
+구글링을 해보면 Zsh에서 Bash의 $BASH_SOURCE 와 가장 가까운 결과를 내는것은 ${(%):-%x} 라고 한다. 하지만 $0도 같은 결과는 내기 때문에 그냥 사용하기로 한다.
+
+다음은 ./env 파일의 내용이다.
+echo \$BASH_SOURCE = $BASH_SOURCE
+echo \$0 = $0
+각 SHELL에서 실행 해 보자
+. ./env
+다음과 같은 출력을 얻을 수 있다.
+bash
+$BASH_SOURCE = ./env
+$0 = bash
+zsh
+$BASH_SOURCE =
+$0 = ./env
+따라서 실행 되는 스크립트의 이름 알기 위해서는 다음과 같이 쉘에 따라 다른 방식을 정용하여야 한다.
+SH_NAME=$(basename $(readlink /proc/$$/exe))
+
+case ${SH_NAME} in
+	&#34;zsh&#34;) SELF=$(realpath $0) ;;
+	&#34;bash&#34;) SELF=$(realpath ${BASH_SOURCE[0]}) ;;
+	*) echo &#34;Unknown SHELL $SH_NAME&#34; && exit 0 ;;
+esac
+
+echo $SELF
+Bash 또는 Zsh 만 사용한다면 다음과 같이 사용해도 같은 결과를 얻을 수 있다.
+SELF=$(realpath ${BASH_SOURCE[0]:-$0})
+echo $SELF
+아래와 같이 env 파일을 만들고 dot command로 실행해보자
+SELF=${BASH_SOURCE[0]:-$_}
+echo $(basename $SELF) is located at $(realpath $SELF)
+env 파일 실행
+. ./env
+Bash, Zsh 둘다 같은 결과를 얻을 수 있다.
+env is located at /home/euikook/src/env
+$SHELL
+/etc/password 파일에 정의된 사용자에 할당된 SHELL 출력한다.
+echo $SHELL
+Cons
+지정된 쉘 정보를 표시 하지만 현재 사용중인 SHELL 정보를 출력하지 않는다.
+$ cat /etc/passwd | grep $USER
+john:x:1000:1000::/home/john:/usr/bin/zsh
+cat 명령으로 /etc/passwd 파일을 확인 결과 /usr/bin/zsh 가 쉘로 할당되어 있다.
+아래와 같이 bash로 쉘을 변경 후 $SHELL 과 $0 정보를 출력 해보자.
+$ bash
+$ echo echo User SHELL is $SHELL, Current SHELL is $0
+User SHELL is /usr/bin/zsh, Current SHELL is bash
+"><meta itemprop=datePublished content="2021-04-02T11:48:20+09:00"><meta itemprop=dateModified content="2021-04-02T11:48:20+09:00"><meta itemprop=wordCount content="697"><meta itemprop=keywords content="SHELL,bash,zsh,shell script,source,source command,dot,dot command,BASH_SOURCE,"><meta name=twitter:card content="summary"><meta name=twitter:title content="어떤 SHELL을 사용하고 있는지 확인해보자."><meta name=twitter:description content="어러 쉘이 있다. sh(Bourne Shell)을 기반으로 하는 Bash(Bourne-again shell), zsh(Z shell) 등은 문법이 거의 똑같지만 완전히 같지는 않다.
+쉘스크립트를 만들어 실행 하는 경우 #! 지시자로 사용할 쉘을 지정할 수 있기 때문에 크게 문제가 없지만 source 명령이나 dot(.) 명령으로 현재 환경(Current Environment Context)에서 스크립트를 실행하는 경우 사용중인 쉘의 종류에 따라 문법이 달라 문제가 발생 할 수 있다. 주의해서 처리 하도록 하자.
+기본쉘을 Zsh 사용하기 시작하면서 겪은 문제다. 보통 리눅스에서 기본쉘은 Bash 이기 때문에 거의 모든 프로그램들이 Bash 위주로 구현되어 있기 때문에 발생 하는 문제이다.
+대부분 다음과 같은 문제이다.
+실행 스크립트의 파일 이름을 알고 싶을때 Bash에서는 $BASH_SOURCE를 사용한다. 하지만 이 변수는 Bash 에서만 지원됨으로 Zsh에서는 $0 변수를 사용해야 된다. Bash에서도 $0변수를 지원하지만 Bash에서 $0 변수를 사용하면 쉘의 정보((bash)가 표시된다.
+
+쉘스크립트에서 $0 는 실행파일의 이름을 나타내는 변수 이다. Bash에서 $0 변수는 쉘이 시작할 때만 초기화 되지만 dot 명령은 새로운 쉘을 시작하는 것이 아니라 현재 쉘의 컨텍스트에서 실행 하는 것이므로 쉘에서 echo $0 를 실행한것과 같은 결과(즉, bash)가 출력된다. 그런데 Zsh 에서는 $0가 스크립트 이름으로 세팅된다.
+
+
+구글링을 해보면 Zsh에서 Bash의 $BASH_SOURCE 와 가장 가까운 결과를 내는것은 ${(%):-%x} 라고 한다. 하지만 $0도 같은 결과는 내기 때문에 그냥 사용하기로 한다.
+
+다음은 ./env 파일의 내용이다.
+echo \$BASH_SOURCE = $BASH_SOURCE
+echo \$0 = $0
+각 SHELL에서 실행 해 보자
+. ./env
+다음과 같은 출력을 얻을 수 있다.
+bash
+$BASH_SOURCE = ./env
+$0 = bash
+zsh
+$BASH_SOURCE =
+$0 = ./env
+따라서 실행 되는 스크립트의 이름 알기 위해서는 다음과 같이 쉘에 따라 다른 방식을 정용하여야 한다.
+SH_NAME=$(basename $(readlink /proc/$$/exe))
+
+case ${SH_NAME} in
+	&#34;zsh&#34;) SELF=$(realpath $0) ;;
+	&#34;bash&#34;) SELF=$(realpath ${BASH_SOURCE[0]}) ;;
+	*) echo &#34;Unknown SHELL $SH_NAME&#34; && exit 0 ;;
+esac
+
+echo $SELF
+Bash 또는 Zsh 만 사용한다면 다음과 같이 사용해도 같은 결과를 얻을 수 있다.
+SELF=$(realpath ${BASH_SOURCE[0]:-$0})
+echo $SELF
+아래와 같이 env 파일을 만들고 dot command로 실행해보자
+SELF=${BASH_SOURCE[0]:-$_}
+echo $(basename $SELF) is located at $(realpath $SELF)
+env 파일 실행
+. ./env
+Bash, Zsh 둘다 같은 결과를 얻을 수 있다.
+env is located at /home/euikook/src/env
+$SHELL
+/etc/password 파일에 정의된 사용자에 할당된 SHELL 출력한다.
+echo $SHELL
+Cons
+지정된 쉘 정보를 표시 하지만 현재 사용중인 SHELL 정보를 출력하지 않는다.
+$ cat /etc/passwd | grep $USER
+john:x:1000:1000::/home/john:/usr/bin/zsh
+cat 명령으로 /etc/passwd 파일을 확인 결과 /usr/bin/zsh 가 쉘로 할당되어 있다.
+아래와 같이 bash로 쉘을 변경 후 $SHELL 과 $0 정보를 출력 해보자.
+$ bash
+$ echo echo User SHELL is $SHELL, Current SHELL is $0
+User SHELL is /usr/bin/zsh, Current SHELL is bash
+"><script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js></script></head><body><div class=container><div id=container><header id=header><div id=header-main class=header-inner><div class=outer><a href=https://notes.harues.com/ id=logo><i class=logo style=background-image:url(https://notes.harues.com/images/logo.png)></i>
+<span class=site-title>Notes</span></a><nav id=main-nav><a class=main-nav-link href=https://notes.harues.com/>Home</a>
+<a class=main-nav-link href=https://notes.harues.com/tags/>Tags</a>
+<a class=main-nav-link href=https://notes.harues.com/about/>About</a></nav><nav id=sub-nav><div class=profile id=profile-nav><a id=profile-anchor href=javascript:;><img class=avatar src=https://notes.harues.com/images/logo.png><i class="fa fa-caret-down"></i></a></div></nav><div id=search-form-wrap><form action=//google.com/search method=get accept-charset=utf-8 class=search-form><input type=search name=q class=search-form-input placeholder=Search>
+<button type=submit class=search-form-submit></button>
+<input type=hidden name=sitesearch value=https://notes.harues.com/></form></div></div></div><div id=main-nav-mobile class="header-sub header-inner"><table class="menu outer"><tbody><tr><td><a class=main-nav-link href=https://notes.harues.com/>Home</a></td><td><a class=main-nav-link href=https://notes.harues.com/tags/>Tags</a></td><td><a class=main-nav-link href=https://notes.harues.com/about/>About</a></td><td><form action=//google.com/search method=get accept-charset=utf-8 class=search-form><input type=search name=q class=search-form-input placeholder=Search>
+<input type=hidden name=sitesearch value=https://notes.harues.com/></form></td></tr></tbody></table></div></header><div class=outer><aside id=profile><div class="inner profile-inner"><div class="base-info profile-block"><img id=avatar src="https://www.gravatar.com/avatar/2da42dd6fc4788203d3847ce0aa64cbb?s=100&d=identicon"><h2 id=name>euikook</h2><h3 id=title>Blogger - Programmer</h3><span id=location><i class="fa fa-map-marker"></i>Earth</span>
+<a id=follow href=https://github.com/euikook>Follow</a></div><div class="article-info profile-block"><div class=article-info-block>67
+<span>Posts</span></div><div class=article-info-block>230
+<span>Tags</span></div></div><div class="profile-block social-links"><table><tr><td><a href=//github.com/euikook target=_blank title=GitHub><i class="fa fa-github"></i></a></td><td><a href=//gitlab.com/euikook target=_blank title=GitLab><i class="fa fa-gitlab"></i></a></td><td><a href=https://notes.harues.com/index.xml target=_blank title=RSS><i class="fa fa-rss"></i></a></td></tr></table></div></div><div><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><ins class=adsbygoogle style=display:block data-ad-client=ca-pub-1494649960951277 data-ad-slot=4608074013 data-ad-format=auto data-full-width-responsive=true></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script></div></aside><section id=main><article id=page-undefined class="article article-type-page" itemscope itemprop=blogPost><div class=article-inner><img src=https://notes.harues.com/images/echo-shell.png class=article-banner><header class=article-header><a href=https://notes.harues.com/posts/how-to-check-which-shell-you-are-using/><h1 class=article-title itemprop=name>어떤 SHELL을 사용하고 있는지 확인해보자.</h1></a><div class=article-meta><div class=article-date><i class="fa fa-newspaper-o"></i>
+<time datetime="2021-04-02 11:48:20 +0900 +0900" itemprop=datePublished title="Published Date">2021-04-02</time>
+&#183;
+<i class="fa fa-edit"></i>
+<time datetime="2021-04-02 11:48:20 +0900 +0900" itemprop=dateModified title="Latest Modified Date">2021-04-02</time>
+&#183;
+697
+words
+&#183;
+4
+minute read
+&#183;
+<a rel=license href=http://creativecommons.org/licenses/by/4.0/ style=vertical-align:middle><img alt="크리에이티브 커먼즈 라이선스" style=border-width:0 src=https://i.creativecommons.org/l/by/4.0/80x15.png></a></div><div class=article-category><i class="fa fa-tags"></i>
+<a class=article-category-link href=https://notes.harues.com/tags/shell>SHELL</a>
+&#183;
+<a class=article-category-link href=https://notes.harues.com/tags/bash>bash</a>
+&#183;
+<a class=article-category-link href=https://notes.harues.com/tags/zsh>zsh</a>
+&#183;
+<a class=article-category-link href=https://notes.harues.com/tags/shell-script>shell script</a>
+&#183;
+<a class=article-category-link href=https://notes.harues.com/tags/source>source</a>
+&#183;
+<a class=article-category-link href=https://notes.harues.com/tags/source-command>source command</a>
+&#183;
+<a class=article-category-link href=https://notes.harues.com/tags/dot>dot</a>
+&#183;
+<a class=article-category-link href=https://notes.harues.com/tags/dot-command>dot command</a>
+&#183;
+<a class=article-category-link href=https://notes.harues.com/tags/bash_source>BASH_SOURCE</a></div></div></header><div class=article-entry itemprop=articleBody><p>어러 쉘이 있다. sh(Bourne Shell)을 기반으로 하는 Bash(Bourne-again shell), zsh(Z shell) 등은 문법이 거의 똑같지만 완전히 같지는 않다.
+쉘스크립트를 만들어 실행 하는 경우 <code>#!</code> 지시자로 사용할 쉘을 지정할 수 있기 때문에 크게 문제가 없지만 <code>source</code> 명령이나 <code>dot</code>(<code>.</code>) 명령으로 현재 환경(Current Environment Context)에서 스크립트를 실행하는 경우 사용중인 쉘의 종류에 따라 문법이 달라 문제가 발생 할 수 있다. <strong>주의해서 처리 하도록 하자.</strong></p><p>기본쉘을 Zsh 사용하기 시작하면서 겪은 문제다. 보통 리눅스에서 기본쉘은 Bash 이기 때문에 거의 모든 프로그램들이 Bash 위주로 구현되어 있기 때문에 발생 하는 문제이다.</p><p>대부분 다음과 같은 문제이다.</p><p>실행 스크립트의 파일 이름을 알고 싶을때 Bash에서는 <code>$BASH_SOURCE</code>를 사용한다. 하지만 이 변수는 <em>Bash</em> 에서만 지원됨으로 Zsh에서는 <code>$0</code> 변수를 사용해야 된다. Bash에서도 <code>$0</code>변수를 지원하지만 Bash에서 <code>$0</code> 변수를 사용하면 쉘의 정보((<code>bash</code>)가 표시된다.</p><blockquote><p>쉘스크립트에서 <code>$0</code> 는 실행파일의 이름을 나타내는 변수 이다. Bash에서 <code>$0</code> 변수는 쉘이 시작할 때만 초기화 되지만 <code>dot</code> 명령은 새로운 쉘을 시작하는 것이 아니라 현재 쉘의 컨텍스트에서 실행 하는 것이므로 쉘에서 <code>echo $0</code> 를 실행한것과 같은 결과(즉, <code>bash</code>)가 출력된다. 그런데 <em>Zsh</em> 에서는 <code>$0</code>가 스크립트 이름으로 세팅된다.</p></blockquote><blockquote><p>구글링을 해보면 <a href=https://stackoverflow.com/questions/9901210/bash-source0-equivalent-in-zsh#answer-28336473><em>Zsh</em>에서 <em>Bash</em>의 <code>$BASH_SOURCE</code> 와 가장 가까운 결과를 내는것은 <code>${(%):-%x}</code> 라고 한다</a>. 하지만 <code>$0</code>도 같은 결과는 내기 때문에 그냥 사용하기로 한다.</p></blockquote><p>다음은 <code>./env</code> 파일의 내용이다.</p><pre><code>echo \$BASH_SOURCE = $BASH_SOURCE
+echo \$0 = $0
+</code></pre><p>각 SHELL에서 실행 해 보자</p><pre><code>. ./env
+</code></pre><p>다음과 같은 출력을 얻을 수 있다.</p><p><code>bash</code></p><pre><code>$BASH_SOURCE = ./env
+$0 = bash
+</code></pre><p><code>zsh</code></p><pre><code>$BASH_SOURCE =
+$0 = ./env
+</code></pre><p>따라서 실행 되는 스크립트의 이름 알기 위해서는 다음과 같이 쉘에 따라 다른 방식을 정용하여야 한다.</p><pre><code>SH_NAME=$(basename $(readlink /proc/$$/exe))
+
+case ${SH_NAME} in
+	&quot;zsh&quot;) SELF=$(realpath $0) ;;
+	&quot;bash&quot;) SELF=$(realpath ${BASH_SOURCE[0]}) ;;
+	*) echo &quot;Unknown SHELL $SH_NAME&quot; &amp;&amp; exit 0 ;;
+esac
+
+echo $SELF
+</code></pre><p>Bash 또는 Zsh 만 사용한다면 다음과 같이 사용해도 같은 결과를 얻을 수 있다.</p><pre><code>SELF=$(realpath ${BASH_SOURCE[0]:-$0})
+echo $SELF
+</code></pre><p>아래와 같이 env 파일을 만들고 <code>dot command</code>로 실행해보자</p><pre><code>SELF=${BASH_SOURCE[0]:-$_}
+echo $(basename $SELF) is located at $(realpath $SELF)
+</code></pre><p><code>env</code> 파일 실행</p><pre><code>. ./env
+</code></pre><p><em>Bash</em>, <em>Zsh</em> 둘다 같은 결과를 얻을 수 있다.</p><pre><code>env is located at /home/euikook/src/env
+</code></pre><h2 id=shell><code>$SHELL</code></h2><p><code>/etc/password</code> 파일에 정의된 사용자에 할당된 SHELL 출력한다.</p><pre><code>echo $SHELL
+</code></pre><h3 id=cons>Cons</h3><p>지정된 쉘 정보를 표시 하지만 현재 사용중인 SHELL 정보를 출력하지 않는다.</p><pre><code>$ cat /etc/passwd | grep $USER
+john:x:1000:1000::/home/john:/usr/bin/zsh
+</code></pre><p><code>cat</code> 명령으로 <code>/etc/passwd</code> 파일을 확인 결과 /usr/bin/zsh 가 쉘로 할당되어 있다.</p><p>아래와 같이 <code>bash</code>로 쉘을 변경 후 <code>$SHELL</code> 과 <code>$0</code> 정보를 출력 해보자.</p><pre><code>$ bash
+$ echo echo User SHELL is $SHELL, Current SHELL is $0
+User SHELL is /usr/bin/zsh, Current SHELL is bash
+</code></pre><h2 id=0><code>$0</code></h2><p>쉘스크립트에서는 <code>$0</code>는 입력된 라인의 첫번째 단어를 나타낸지만 SHELL 상에서는 현재 SHELL의 이름을 표시한다.</p><pre><code>echo $0
+</code></pre><p>BASH 의 경우</p><pre><code>bash
+</code></pre><p>ZSH의 경우</p><pre><code>/usr/bin/zsh
+</code></pre><h3 id=cons-1>Cons</h3><p>쉘스크립트에서는 사용할 수 없다.</p><p>아래와 같은 스크립트를 만들고 실행해 보자.</p><p><code>print-shell.sh</code></p><pre><code>#!/usr/bin/env bash
+echo $0
+</code></pre><p>아래와 같이 스크립트의 첫번째 인자인 <code>./print-shell</code> 이 출력된다.</p><pre><code>$ ./print-shell
+./print-shell.sh
+</code></pre><h2 id=procexe><code>/proc/$$/exe</code></h2><p>현재 프로세서의 <code>PID</code>를 나타내는 <code>$$</code> 변수를 이용한 방법이다.</p><p>리눅스에서는 각 프로세서의 정보가 <code>/proc/&lt;pid>/</code> 디렉터리에 있으며 <code>/proc/&lt;pid>/exe</code>는 원본 실행 파일의 심볼릭 링크를 나타낸다.
+따라서 쉘 스크립트 상에서 아래 명령을 실행 하면 현재 실행 중인 쉘의 정보를 확일 할 수 있다.</p><pre><code>readlink /proc/$$/exe
+</code></pre><h3 id=cons-2>Cons</h3><p>가장 안정적으로 SHELL 정보를 가져올 수 있지만 리눅스에서만 사용할 수 있다.</p><h2 id=ps-command><code>ps</code> Command</h2><p><code>ps</code> 명령을 활용하는 방법이 있다.</p><pre><code>sh -c 'ps -p $$ -o ppid=' | xargs ps -o comm= -p
+</code></pre><pre><code>sh -c 'ps -p $$ -o ppid=' | xargs -I'{}' readlink -f '/proc/{}/exe'
+</code></pre><h2 id=sh--c-command-vs-command>sh -c &lsquo;COMMAND&rsquo; vs COMMAND</h2><p><code>sh -c 'COMMAND'</code>와 COMMAND의 차이는 주어진 명령을 수행하기 위해 프로세서가 분기 될 때 전자의 경우 별도의 SHELL 프로세서에서 분기 되는 반면 후자의 경우에는 메인 SHELL 스크립트에서 분기 되는 것이다.</p><p>예를 들어 <code>ps -p $$</code> 명령을 가각 실행 해 보자.</p><p><code>sh -c 'ps -p $$'</code> 의 결과</p><pre><code>$ $ sh -c 'ps -p $$'
+    PID TTY          TIME CMD
+1710512 pts/2    00:00:00 ps
+</code></pre><p>PID <code>1710512</code>에 대한 COMMAND가 <code>ps</code> 인것을 확인 할 수 있다.</p><p>ps 명령을 실행하기 위해 새로운 프로세서를 생성 하고 생성된 프로세서에서 <code>ps $$</code> 명령을 수행 하여 <code>$$</code> 변수가 생성된 프로세서의 PID로 대치 된 것을 알 수 있다.</p><p><code>ps -p $$</code>의 결과</p><pre><code>$ ps -p $$
+    PID TTY          TIME CMD
+1710370 pts/2    00:00:00 bash
+</code></pre><p>현재 자신의 PID <code>1709311</code>에 대한 COMMAND <code>bash</code> 인 것을 확인 할 수 있다.</p><p>반면 <code>ps -p $$</code> 은 메인 쉘에서 분기 하여 실행 되었으며 ps 명령이 수행 되기 전에 <code>$$</code> 변수가 메인 SHELL의 PID로 대치 된 것을 알 수 있다.</p><h2 id=references>References</h2><ul><li><a href=https://linux.die.net/man/1/sh>sh(1): GNU Bourne-Again SHell - Linux Man Page</a></li><li><a href=https://man7.org/linux/man-pages/man1/sh.1p.html>sh(1p) - Linux manual page</a></li></ul></div><script async src=https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><ins class=adsbygoogle style=display:block;text-align:center data-ad-layout=in-article data-ad-format=fluid data-ad-client=ca-pub-1494649960951277 data-ad-slot=1733115775></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({})</script><footer class=article-footer><div><p style=text-align:right><a rel=license href=http://creativecommons.org/licenses/by/4.0/><img alt="크리에이티브 커먼즈 라이선스" style=border-width:0 src=https://i.creativecommons.org/l/by/4.0/88x31.png></a><br>이 저작물은 <a rel=license href=http://creativecommons.org/licenses/by/4.0/>크리에이티브 커먼즈 저작자표시 4.0 국제 라이선스
+</a>에 따라 이용할 수 있습니다.</p><div><a data-url=https://notes.harues.com/posts/how-to-check-which-shell-you-are-using/ data-id=93e958cb17bfa8c9cbe2b41f691b6756 class=article-share-link><i class="fa fa-share"></i>
+Share</a>
+<script>(function(a){if(typeof __SHARE_BUTTON_BINDED__=='undefined'||!__SHARE_BUTTON_BINDED__)__SHARE_BUTTON_BINDED__=!0;else return;a('body').on('click',function(){a('.article-share-box.on').removeClass('on')}).on('click','.article-share-link',function(i){var d,f,c,e,g,b,h;if(i.stopPropagation(),d=a(this),f=d.attr('data-url'),c=encodeURIComponent(f),e='article-share-box-'+d.attr('data-id'),g=d.offset(),a('#'+e).length){if(b=a('#'+e),b.hasClass('on')){b.removeClass('on');return}}else h=['<div id="'+e+'" class="article-share-box">','<input class="article-share-input" value="'+f+'">','<div class="article-share-links">','<a href="https://twitter.com/intent/tweet?url='+c+'" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>','<a href="https://www.facebook.com/sharer.php?u='+c+'" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>','<a href="http://pinterest.com/pin/create/button/?url='+c+'" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>','<a href="https://plus.google.com/share?url='+c+'" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>','</div>','</div>'].join(''),b=a(h),a('body').append(b);a('.article-share-box.on').hide(),b.css({top:g.top+25,left:g.left}).addClass('on')}).on('click','.article-share-box',function(a){a.stopPropagation()}).on('click','.article-share-box-input',function(){a(this).select()}).on('click','.article-share-box-link',function(a){a.preventDefault(),a.stopPropagation(),window.open(this.href,'article-share-box-window-'+Date.now(),'width=500,height=450')})})(jQuery)</script></footer><script src=https://utteranc.es/client.js repo=euikook/wiki.notes issue-term=pathname theme=github-light crossorigin=anonymous async></script></div><nav id=article-nav><a href=https://notes.harues.com/posts/about-exit-status/ id=article-nav-older class=article-nav-link-wrap><strong class=article-nav-caption>Older</strong><div class=article-nav-title>Shell에서의 Exit Status에 대하여</div></a><a href=https://notes.harues.com/posts/hangul-input-using-fcitx/ id=article-nav-newer class=article-nav-link-wrap><strong class=article-nav-caption>Newer</strong><div class=article-nav-title>fcitx 한글 입력기 사용하기</div></a></nav></article></section><aside id=sidebar><div class=widget-wrap><h3 class=widget-title>Recents</h3><div class=widget><ul id=recent-post><li><div class=item-thumbnail><a href=https://notes.harues.com/posts/about-moving-average/ class=thumbnail><span style=background-image:url(https://notes.harues.com/images/moving-average/all.svg) alt="어떤 SHELL을 사용하고 있는지 확인해보자." class=thumbnail-image></span></a></div><div class=item-inner><p class=item-title><a href=https://notes.harues.com/posts/about-moving-average/ class=title>이동평균에 대하여 (feat. Python)</a></p><p class=item-date><time datetime="2021-05-31 23:20:21 +0000 UTC" itemprop=dateModified>2021-05-31</time></p></div></li><li><div class=item-thumbnail><a href=https://notes.harues.com/posts/average-and-average-filter/ class=thumbnail><span style=background-image:url(https://notes.harues.com/images/average-banner.jpg) alt="어떤 SHELL을 사용하고 있는지 확인해보자." class=thumbnail-image></span></a></div><div class=item-inner><p class=item-title><a href=https://notes.harues.com/posts/average-and-average-filter/ class=title>평균과 평균필터(Feat. Python)</a></p><p class=item-date><time datetime="2021-05-31 22:20:21 +0000 UTC" itemprop=dateModified>2021-05-31</time></p></div></li><li><div class=item-thumbnail><a href=https://notes.harues.com/posts/right-alt-as-hangul/ class=thumbnail><span style=background-image:url(https://source.unsplash.com/G_EL_XLKBcc) alt="어떤 SHELL을 사용하고 있는지 확인해보자." class=thumbnail-image></span></a></div><div class=item-inner><p class=item-category><a class=article-category-link href=https://notes.harues.com/categories/howto>HowTo</a></p><p class=item-title><a href=https://notes.harues.com/posts/right-alt-as-hangul/ class=title>리눅스에서 한/영 전환키 사용하기</a></p><p class=item-date><time datetime="2021-05-23 23:37:41 +0900 +0900" itemprop=dateModified>2021-05-23</time></p></div></li><li><div class=item-thumbnail><a href=https://notes.harues.com/posts/hangul-input-using-fcitx/ class=thumbnail><span style=background-image:url(https://source.unsplash.com/PT_9ux0j-x4) alt="어떤 SHELL을 사용하고 있는지 확인해보자." class=thumbnail-image></span></a></div><div class=item-inner><p class=item-title><a href=https://notes.harues.com/posts/hangul-input-using-fcitx/ class=title>fcitx 한글 입력기 사용하기</a></p><p class=item-date><time datetime="2021-05-23 22:34:39 +0900 +0900" itemprop=dateModified>2021-05-23</time></p></div></li><li><div class=item-thumbnail><a href=https://notes.harues.com/posts/insync-3.x-auto-start-with-xvfb-and-systemctl/ class=thumbnail><span style=background-image:url(https://uploads-ssl.webflow.com/5c5bbc2b7ebe99d46f9e983b/5cf14ca1fb8dd08aa53a2e58_InsyncSignIn.png) alt="어떤 SHELL을 사용하고 있는지 확인해보자." class=thumbnail-image></span></a></div><div class=item-inner><p class=item-title><a href=https://notes.harues.com/posts/insync-3.x-auto-start-with-xvfb-and-systemctl/ class=title>Insync 3.x auto start with xvfb and systemctl</a></p><p class=item-date><time datetime="2021-05-13 22:05:32 +0900 +0900" itemprop=dateModified>2021-05-13</time></p></div></li></ul></div></div><div class=widget-wrap><h3 class=widget-title>Tags</h3><ul class=term-cloud style="padding:5px 15px"><li class=term-items><a href=/tags/18.04 style=font-size:1.2747538763704505rem>18.04</a></li><li class=term-items><a href=/tags/20.04 style=font-size:1.4354745909749405rem>20.04</a></li><li class=term-items><a href=/tags/about style=font-size:1.2747538763704505rem>about</a></li><li class=term-items><a href=/tags/actions style=font-size:1rem>actions</a></li><li class=term-items><a href=/tags/algorithm style=font-size:1.2747538763704505rem>algorithm</a></li><li class=term-items><a href=/tags/alt_r style=font-size:1rem>alt_r</a></li><li class=term-items><a href=/tags/apache style=font-size:1rem>apache</a></li><li class=term-items><a href=/tags/arch style=font-size:1.6379587447237578rem>arch</a></li><li class=term-items><a href=/tags/arch-linux style=font-size:1.7713316471829903rem>arch-linux</a></li><li class=term-items><a href=/tags/archlinux style=font-size:1.4354745909749405rem>archlinux</a></li><li class=term-items><a href=/tags/arithmetic style=font-size:1rem>arithmetic</a></li><li class=term-items><a href=/tags/arithmetic-mean style=font-size:1rem>arithmetic-mean</a></li><li class=term-items><a href=/tags/arm style=font-size:1rem>arm</a></li><li class=term-items><a href=/tags/auto-mounting style=font-size:1rem>auto-mounting</a></li><li class=term-items><a href=/tags/autossh style=font-size:1rem>autossh</a></li><li class=term-items><a href=/tags/autostart style=font-size:1.2747538763704505rem>autostart</a></li><li class=term-items><a href=/tags/average style=font-size:1rem>average</a></li><li class=term-items><a href=/tags/average-filter style=font-size:1rem>average-filter</a></li><li class=term-items><a href=/tags/backslash style=font-size:1rem>backslash</a></li><li class=term-items><a href=/tags/backup style=font-size:1rem>backup</a></li><li class=term-items><a href=/tags/bash style=font-size:1.549507752740901rem>bash</a></li><li class=term-items><a href=/tags/bash_source style=font-size:1rem>bash_source</a></li><li class=term-items><a href=/tags/batch-expression style=font-size:1rem>batch-expression</a></li><li class=term-items><a href=/tags/blog style=font-size:1.2747538763704505rem>blog</a></li><li class=term-items><a href=/tags/bootable style=font-size:1rem>bootable</a></li><li class=term-items><a href=/tags/bridge style=font-size:1rem>bridge</a></li><li class=term-items><a href=/tags/broadcast style=font-size:1rem>broadcast</a></li><li class=term-items><a href=/tags/ca style=font-size:1.2747538763704505rem>ca</a></li><li class=term-items><a href=/tags/cd style=font-size:1.4354745909749405rem>cd</a></li><li class=term-items><a href=/tags/certbot style=font-size:1.2747538763704505rem>certbot</a></li><li class=term-items><a href=/tags/certificate style=font-size:1rem>certificate</a></li><li class=term-items><a href=/tags/cheat style=font-size:1rem>cheat</a></li><li class=term-items><a href=/tags/ci style=font-size:1.4354745909749405rem>ci</a></li><li class=term-items><a href=/tags/cicd style=font-size:1.4354745909749405rem>cicd</a></li><li class=term-items><a href=/tags/client style=font-size:1rem>client</a></li><li class=term-items><a href=/tags/comment style=font-size:1rem>comment</a></li><li class=term-items><a href=/tags/compose style=font-size:1.2747538763704505rem>compose</a></li><li class=term-items><a href=/tags/config style=font-size:1rem>config</a></li><li class=term-items><a href=/tags/container style=font-size:1.2747538763704505rem>container</a></li><li class=term-items><a href=/tags/cron style=font-size:1.2747538763704505rem>cron</a></li><li class=term-items><a href=/tags/cross-platform style=font-size:1rem>cross-platform</a></li><li class=term-items><a href=/tags/cryptography style=font-size:1.2747538763704505rem>cryptography</a></li><li class=term-items><a href=/tags/dbus style=font-size:1rem>dbus</a></li><li class=term-items><a href=/tags/devel style=font-size:1rem>devel</a></li><li class=term-items><a href=/tags/development style=font-size:1rem>development</a></li><li class=term-items><a href=/tags/dns style=font-size:1.2747538763704505rem>dns</a></li><li class=term-items><a href=/tags/dns-over-tls style=font-size:1.2747538763704505rem>dns-over-tls</a></li><li class=term-items><a href=/tags/dnssec style=font-size:1.2747538763704505rem>dnssec</a></li><li class=term-items><a href=/tags/docker style=font-size:1.4354745909749405rem>docker</a></li><li class=term-items><a href=/tags/docker-compose style=font-size:1.2747538763704505rem>docker-compose</a></li><li class=term-items><a href=/tags/dot style=font-size:1rem>dot</a></li><li class=term-items><a href=/tags/dot-command style=font-size:1rem>dot-command</a></li><li class=term-items><a href=/tags/double-quotes style=font-size:1rem>double-quotes</a></li><li class=term-items><a href=/tags/environment style=font-size:1rem>environment</a></li><li class=term-items><a href=/tags/environment-variables style=font-size:1rem>environment-variables</a></li><li class=term-items><a href=/tags/error style=font-size:1rem>error</a></li><li class=term-items><a href=/tags/euikook style=font-size:1.2747538763704505rem>euikook</a></li><li class=term-items><a href=/tags/exit-status style=font-size:1rem>exit-status</a></li><li class=term-items><a href=/tags/export style=font-size:1.2747538763704505rem>export</a></li><li class=term-items><a href=/tags/fcitx style=font-size:1rem>fcitx</a></li><li class=term-items><a href=/tags/fcitx5 style=font-size:1rem>fcitx5</a></li><li class=term-items><a href=/tags/fisher-yates style=font-size:1rem>fisher-yates</a></li><li class=term-items><a href=/tags/focal style=font-size:1.2747538763704505rem>focal</a></li><li class=term-items><a href=/tags/g-suite style=font-size:1rem>g-suite</a></li><li class=term-items><a href=/tags/gcc style=font-size:1rem>gcc</a></li><li class=term-items><a href=/tags/git style=font-size:1.710228467345391rem>git</a></li><li class=term-items><a href=/tags/github style=font-size:1.549507752740901rem>github</a></li><li class=term-items><a href=/tags/github-actions style=font-size:1rem>github-actions</a></li><li class=term-items><a href=/tags/github-page style=font-size:1rem>github-page</a></li><li class=term-items><a href=/tags/github.com style=font-size:1rem>github.com</a></li><li class=term-items><a href=/tags/gitlab style=font-size:1rem>gitlab</a></li><li class=term-items><a href=/tags/gnome style=font-size:1.549507752740901rem>gnome</a></li><li class=term-items><a href=/tags/gnupg style=font-size:1rem>gnupg</a></li><li class=term-items><a href=/tags/gollum style=font-size:1rem>gollum</a></li><li class=term-items><a href=/tags/google style=font-size:1rem>google</a></li><li class=term-items><a href=/tags/google-drive style=font-size:1rem>google-drive</a></li><li class=term-items><a href=/tags/gpg style=font-size:1.4354745909749405rem>gpg</a></li><li class=term-items><a href=/tags/gpg-signed-commit style=font-size:1rem>gpg-signed-commit</a></li><li class=term-items><a href=/tags/hangul style=font-size:1.2747538763704505rem>hangul</a></li><li class=term-items><a href=/tags/hard-link style=font-size:1rem>hard-link</a></li><li class=term-items><a href=/tags/history style=font-size:1rem>history</a></li><li class=term-items><a href=/tags/hostonly style=font-size:1rem>hostonly</a></li><li class=term-items><a href=/tags/howto style=font-size:1rem>howto</a></li><li class=term-items><a href=/tags/hugo style=font-size:1.6379587447237578rem>hugo</a></li><li class=term-items><a href=/tags/im style=font-size:1rem>im</a></li><li class=term-items><a href=/tags/incremental-backup style=font-size:1rem>incremental-backup</a></li><li class=term-items><a href=/tags/input-method style=font-size:1rem>input-method</a></li><li class=term-items><a href=/tags/insync style=font-size:1.6379587447237578rem>insync</a></li><li class=term-items><a href=/tags/internal style=font-size:1rem>internal</a></li><li class=term-items><a href=/tags/iso style=font-size:1rem>iso</a></li><li class=term-items><a href=/tags/iso_level3_shift style=font-size:1rem>iso_level3_shift</a></li><li class=term-items><a href=/tags/issues style=font-size:1rem>issues</a></li><li class=term-items><a href=/tags/jqcloud style=font-size:1rem>jqcloud</a></li><li class=term-items><a href=/tags/k8s style=font-size:1rem>k8s</a></li><li class=term-items><a href=/tags/kbd style=font-size:1rem>kbd</a></li><li class=term-items><a href=/tags/key style=font-size:1rem>key</a></li><li class=term-items><a href=/tags/key-pair style=font-size:1rem>key-pair</a></li><li class=term-items><a href=/tags/keypair style=font-size:1.2747538763704505rem>keypair</a></li><li class=term-items><a href=/tags/kubernetes style=font-size:1rem>kubernetes</a></li><li class=term-items><a href=/tags/kvm style=font-size:1rem>kvm</a></li><li class=term-items><a href=/tags/ld_library_path style=font-size:1rem>ld_library_path</a></li><li class=term-items><a href=/tags/ldap style=font-size:1rem>ldap</a></li><li class=term-items><a href=/tags/lencr style=font-size:1rem>lencr</a></li><li class=term-items><a href=/tags/lets-encrypt style=font-size:1.2747538763704505rem>lets-encrypt</a></li><li class=term-items><a href=/tags/library_path style=font-size:1rem>library_path</a></li><li class=term-items><a href=/tags/license style=font-size:1rem>license</a></li><li class=term-items><a href=/tags/linux style=font-size:2.490887275566753rem>linux</a></li><li class=term-items><a href=/tags/list style=font-size:1rem>list</a></li><li class=term-items><a href=/tags/ln style=font-size:1rem>ln</a></li><li class=term-items><a href=/tags/localforward style=font-size:1rem>localforward</a></li><li class=term-items><a href=/tags/ma style=font-size:1rem>ma</a></li><li class=term-items><a href=/tags/mac style=font-size:1rem>mac</a></li><li class=term-items><a href=/tags/mean style=font-size:1rem>mean</a></li><li class=term-items><a href=/tags/mini-howto style=font-size:1rem>mini-howto</a></li><li class=term-items><a href=/tags/mirror style=font-size:1rem>mirror</a></li><li class=term-items><a href=/tags/mit style=font-size:1rem>mit</a></li><li class=term-items><a href=/tags/mount style=font-size:1rem>mount</a></li><li class=term-items><a href=/tags/move style=font-size:1rem>move</a></li><li class=term-items><a href=/tags/moving style=font-size:1rem>moving</a></li><li class=term-items><a href=/tags/moving-average style=font-size:1rem>moving-average</a></li><li class=term-items><a href=/tags/nat style=font-size:1rem>nat</a></li><li class=term-items><a href=/tags/nginx style=font-size:1rem>nginx</a></li><li class=term-items><a href=/tags/nic style=font-size:1rem>nic</a></li><li class=term-items><a href=/tags/nodeport style=font-size:1rem>nodeport</a></li><li class=term-items><a href=/tags/omg style=font-size:1rem>omg</a></li><li class=term-items><a href=/tags/openpgp style=font-size:1.2747538763704505rem>openpgp</a></li><li class=term-items><a href=/tags/openssh style=font-size:1.2747538763704505rem>openssh</a></li><li class=term-items><a href=/tags/override style=font-size:1.4354745909749405rem>override</a></li><li class=term-items><a href=/tags/overriding style=font-size:1.4354745909749405rem>overriding</a></li><li class=term-items><a href=/tags/pacman style=font-size:1rem>pacman</a></li><li class=term-items><a href=/tags/pandas style=font-size:1rem>pandas</a></li><li class=term-items><a href=/tags/password style=font-size:1rem>password</a></li><li class=term-items><a href=/tags/pat style=font-size:1rem>pat</a></li><li class=term-items><a href=/tags/persistent style=font-size:1rem>persistent</a></li><li class=term-items><a href=/tags/personal-access-token style=font-size:1rem>personal-access-token</a></li><li class=term-items><a href=/tags/petalinux style=font-size:1rem>petalinux</a></li><li class=term-items><a href=/tags/pgp style=font-size:1.2747538763704505rem>pgp</a></li><li class=term-items><a href=/tags/private style=font-size:1rem>private</a></li><li class=term-items><a href=/tags/private-key style=font-size:1rem>private-key</a></li><li class=term-items><a href=/tags/programming style=font-size:1rem>programming</a></li><li class=term-items><a href=/tags/public-key style=font-size:1rem>public-key</a></li><li class=term-items><a href=/tags/putty style=font-size:1rem>putty</a></li><li class=term-items><a href=/tags/puttygen style=font-size:1rem>puttygen</a></li><li class=term-items><a href=/tags/python style=font-size:1.4354745909749405rem>python</a></li><li class=term-items><a href=/tags/quoting style=font-size:1rem>quoting</a></li><li class=term-items><a href=/tags/ralt style=font-size:1.2747538763704505rem>ralt</a></li><li class=term-items><a href=/tags/raspberry-pi style=font-size:1rem>raspberry-pi</a></li><li class=term-items><a href=/tags/raspian style=font-size:1rem>raspian</a></li><li class=term-items><a href=/tags/re-syncing style=font-size:1rem>re-syncing</a></li><li class=term-items><a href=/tags/recursive style=font-size:1rem>recursive</a></li><li class=term-items><a href=/tags/recursive-expression style=font-size:1rem>recursive-expression</a></li><li class=term-items><a href=/tags/remoteforward style=font-size:1rem>remoteforward</a></li><li class=term-items><a href=/tags/removable style=font-size:1rem>removable</a></li><li class=term-items><a href=/tags/right-alt style=font-size:1rem>right-alt</a></li><li class=term-items><a href=/tags/root-ca style=font-size:1rem>root-ca</a></li><li class=term-items><a href=/tags/rpi style=font-size:1rem>rpi</a></li><li class=term-items><a href=/tags/rsa style=font-size:1.2747538763704505rem>rsa</a></li><li class=term-items><a href=/tags/rsync style=font-size:1rem>rsync</a></li><li class=term-items><a href=/tags/ruby style=font-size:1rem>ruby</a></li><li class=term-items><a href=/tags/screen style=font-size:1rem>screen</a></li><li class=term-items><a href=/tags/set style=font-size:1rem>set</a></li><li class=term-items><a href=/tags/sheet-cheatsheet style=font-size:1rem>sheet-cheatsheet</a></li><li class=term-items><a href=/tags/shell style=font-size:1.8242616291113511rem>shell</a></li><li class=term-items><a href=/tags/shell-command style=font-size:1.4354745909749405rem>shell-command</a></li><li class=term-items><a href=/tags/shell-script style=font-size:1rem>shell-script</a></li><li class=term-items><a href=/tags/shrink style=font-size:1.2747538763704505rem>shrink</a></li><li class=term-items><a href=/tags/shuffle style=font-size:1rem>shuffle</a></li><li class=term-items><a href=/tags/signing style=font-size:1.2747538763704505rem>signing</a></li><li class=term-items><a href=/tags/single-quotes style=font-size:1rem>single-quotes</a></li><li class=term-items><a href=/tags/software-kvm style=font-size:1rem>software-kvm</a></li><li class=term-items><a href=/tags/source style=font-size:1rem>source</a></li><li class=term-items><a href=/tags/source-command style=font-size:1rem>source-command</a></li><li class=term-items><a href=/tags/ssh style=font-size:1.7713316471829903rem>ssh</a></li><li class=term-items><a href=/tags/ssh-client style=font-size:1rem>ssh-client</a></li><li class=term-items><a href=/tags/ssl style=font-size:1.4354745909749405rem>ssl</a></li><li class=term-items><a href=/tags/static-site-generator style=font-size:1rem>static-site-generator</a></li><li class=term-items><a href=/tags/symblic-link style=font-size:1rem>symblic-link</a></li><li class=term-items><a href=/tags/symless style=font-size:1rem>symless</a></li><li class=term-items><a href=/tags/sync style=font-size:1rem>sync</a></li><li class=term-items><a href=/tags/synergy style=font-size:1rem>synergy</a></li><li class=term-items><a href=/tags/systemctl style=font-size:1.2747538763704505rem>systemctl</a></li><li class=term-items><a href=/tags/tag-cloud style=font-size:1.2747538763704505rem>tag-cloud</a></li><li class=term-items><a href=/tags/tags style=font-size:1.2747538763704505rem>tags</a></li><li class=term-items><a href=/tags/terminator style=font-size:1rem>terminator</a></li><li class=term-items><a href=/tags/tls style=font-size:1.6379587447237578rem>tls</a></li><li class=term-items><a href=/tags/tmux style=font-size:1rem>tmux</a></li><li class=term-items><a href=/tags/tr style=font-size:1rem>tr</a></li><li class=term-items><a href=/tags/tunneling style=font-size:1rem>tunneling</a></li><li class=term-items><a href=/tags/tuple style=font-size:1rem>tuple</a></li><li class=term-items><a href=/tags/twice style=font-size:1rem>twice</a></li><li class=term-items><a href=/tags/ubuntu style=font-size:1.7713316471829903rem>ubuntu</a></li><li class=term-items><a href=/tags/ubuntu-20.04 style=font-size:1rem>ubuntu-20.04</a></li><li class=term-items><a href=/tags/usb style=font-size:1.4354745909749405rem>usb</a></li><li class=term-items><a href=/tags/usb-stick style=font-size:1rem>usb-stick</a></li><li class=term-items><a href=/tags/user.email style=font-size:1.4354745909749405rem>user.email</a></li><li class=term-items><a href=/tags/user.name style=font-size:1.4354745909749405rem>user.name</a></li><li class=term-items><a href=/tags/usermod style=font-size:1rem>usermod</a></li><li class=term-items><a href=/tags/username style=font-size:1rem>username</a></li><li class=term-items><a href=/tags/utterances style=font-size:1rem>utterances</a></li><li class=term-items><a href=/tags/vdi style=font-size:1.2747538763704505rem>vdi</a></li><li class=term-items><a href=/tags/virtualbox style=font-size:1.549507752740901rem>virtualbox</a></li><li class=term-items><a href=/tags/webroot style=font-size:1rem>webroot</a></li><li class=term-items><a href=/tags/wiki style=font-size:1rem>wiki</a></li><li class=term-items><a href=/tags/windows style=font-size:1.2747538763704505rem>windows</a></li><li class=term-items><a href=/tags/workspace style=font-size:1rem>workspace</a></li><li class=term-items><a href=/tags/wtf style=font-size:1rem>wtf</a></li><li class=term-items><a href=/tags/xilinx style=font-size:1rem>xilinx</a></li><li class=term-items><a href=/tags/xvfb style=font-size:1rem>xvfb</a></li><li class=term-items><a href=/tags/zsh style=font-size:1.4354745909749405rem>zsh</a></li><li class=term-items><a href=/tags/%EA%B0%80%EC%A4%91%EC%9D%B4%EB%8F%99%ED%8F%89%EA%B7%A0 style=font-size:1rem>가중이동평균</a></li><li class=term-items><a href=/tags/%EA%B0%9C%EC%9D%B8%ED%82%A4 style=font-size:1rem>개인키</a></li><li class=term-items><a href=/tags/%EA%B3%84%EC%A0%95 style=font-size:1rem>계정</a></li><li class=term-items><a href=/tags/%EA%B3%B5%EA%B0%9C%ED%82%A4 style=font-size:1.2747538763704505rem>공개키</a></li><li class=term-items><a href=/tags/%EB%82%B4%EB%B3%B4%EB%82%B4%EA%B8%B0 style=font-size:1rem>내보내기</a></li><li class=term-items><a href=/tags/%EB%88%84%EC%A0%81%EC%9D%B4%EB%8F%99%ED%8F%89%EA%B7%A0 style=font-size:1rem>누적이동평균</a></li><li class=term-items><a href=/tags/%EB%8B%A8%EC%88%9C%EC%9D%B4%EB%8F%99%ED%8F%89%EA%B7%A0 style=font-size:1rem>단순이동평균</a></li><li class=term-items><a href=/tags/%EB%8F%99%EC%A0%81%ED%95%A0%EB%8B%B9 style=font-size:1rem>동적할당</a></li><li class=term-items><a href=/tags/%EB%9D%BC%EC%A6%88%EB%B2%A0%EB%A6%AC%ED%8C%8C%EC%9D%B4 style=font-size:1rem>라즈베리파이</a></li><li class=term-items><a href=/tags/%EB%A6%AC%EB%88%85%EC%8A%A4 style=font-size:1.2747538763704505rem>리눅스</a></li><li class=term-items><a href=/tags/%EB%B0%B0%EC%B9%98%EC%8B%9D style=font-size:1rem>배치식</a></li><li class=term-items><a href=/tags/%EB%B0%B1%EC%8A%AC%EB%9E%98%EC%89%AC style=font-size:1rem>백슬래쉬</a></li><li class=term-items><a href=/tags/%EC%82%AC%EC%9A%A9%EB%B2%95 style=font-size:1rem>사용법</a></li><li class=term-items><a href=/tags/%EC%9D%B4%EB%8F%99%ED%8F%89%EA%B7%A0 style=font-size:1rem>이동평균</a></li><li class=term-items><a href=/tags/%EC%9E%85%EB%A0%A5%EA%B8%B0 style=font-size:1rem>입력기</a></li><li class=term-items><a href=/tags/%EC%9E%91%EC%9D%80%EB%94%B0%EC%98%B4%ED%91%9C style=font-size:1rem>작은따옴표</a></li><li class=term-items><a href=/tags/%EC%9E%AC%EA%B7%80%EC%8B%9D style=font-size:1rem>재귀식</a></li><li class=term-items><a href=/tags/%EC%A7%80%EC%88%98%EC%9D%B4%EB%8F%99%ED%8F%89%EA%B7%A0 style=font-size:1rem>지수이동평균</a></li><li class=term-items><a href=/tags/%ED%81%B0%EB%94%B0%EC%98%B4%ED%91%9C style=font-size:1rem>큰따옴표</a></li><li class=term-items><a href=/tags/%ED%95%9C%EA%B8%80 style=font-size:1rem>한글</a></li><li class=term-items><a href=/tags/%ED%95%9C%EC%98%81 style=font-size:1rem>한영</a></li></ul></div><div id=toTop class="fa fa-angle-up"></div></aside></div></div><footer id=footer><div class=outer><div id=footer-info class=inner>&copy; 2021
+Powered by <a href=//gohugo.io>Hugo</a> · Theme by <a href=https://github.com/ppoffice>PPOffice</a> · Modified by <a href=https://github.com/euikook/hugo-icarus>euikook</a></div></div></footer><script async src="https://www.googletagmanager.com/gtag/js?id=G-XR6RLEW3M1"></script><script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-XR6RLEW3M1',{anonymize_ip:!1})}</script><script src=https://notes.harues.com/fancybox/jquery.fancybox.pack.js></script><script src=https://notes.harues.com/js/script.js></script><script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js></script><script>hljs.initHighlightingOnLoad()</script><script type=text/x-mathjax-config> 
+    MathJax.Hub.Config({ TeX: { equationNumbers: { autoNumber: "AMS" } } }); 
+  </script><script type=text/x-mathjax-config>
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        processEscapes: true
+      }
+    });
+  </script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type=text/javascript></script></body></html>
