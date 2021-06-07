@@ -1,25 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MA on Notes</title><link>https://notes.harues.com/tags/ma/</link><description>Recent content in MA on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 31 May 2021 23:20:21 +0000</lastBuildDate><atom:link href="https://notes.harues.com/tags/ma/index.xml" rel="self" type="application/rss+xml"/><item><title>이동평균에 대하여 (feat. Python)</title><link>https://notes.harues.com/posts/about-moving-average/</link><pubDate>Mon, 31 May 2021 23:20:21 +0000</pubDate><guid>https://notes.harues.com/posts/about-moving-average/</guid><description>&lt;p>이전에 &lt;a href="https://notes.harues.com/posts/average-and-average-filter">평균에 대한 글&lt;/a>을 쓴적이 있다. 그 다음 편으로 예정 되어 있던 이동 평균에 대한 알아보자.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MA on Notes</title><link>https://notes.harues.com/tags/ma/</link><description>Recent content in MA on Notes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 31 May 2021 23:20:21 +0000</lastBuildDate><atom:link href="https://notes.harues.com/tags/ma/index.xml" rel="self" type="application/rss+xml"/><item><title>이동평균에 대하여 (feat. Python)</title><link>https://notes.harues.com/posts/about-moving-average/</link><pubDate>Mon, 31 May 2021 23:20:21 +0000</pubDate><guid>https://notes.harues.com/posts/about-moving-average/</guid><description>&lt;p>이전에 &lt;a href="https://notes.harues.com/posts/average-and-average-filter">평균에 대한 글&lt;/a>을 쓴 적이 있다. 그 다음 편으로 예정 되어 있던 이동 평균에 대한 알아보자.&lt;/p>
 &lt;h2 id="이동평균">이동평균&lt;/h2>
 &lt;p>통계에서 이동평균은 전체 데이터 집합의 여러 하위 집합에 대한 일련의 평균을 만들어 데이터 요소를 분석하는데 사용되는 계산이다. 금융에서 이동평균은 분석에 일반적으로 사용되는 주식 차트 이다.&lt;/p>
 &lt;ul>
-&lt;li>
-&lt;p>이동평균은 기술분석에서 일반적으로 사용되는 주식 지표이다.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>주식의 이동 평균을 계산하는 이유는 지속적으로 업데이트되는 평균가적을 생성하여 지정된 기간동안의 가격 데이터를 평활화 하기 위해서이다.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>단순 이동평균은 과거의 특정 일수 동안 주저진 가격 세트의 산술 평균이다. 예를들어 15, 30, 100일 또는 200일이 될 수 있다.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>결과값이 지연되어 나타나는 경향이 있다.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>이동평균의 기간이 길어질 수록 지연이 커진다.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>최근값에 더 많은 가중치를 두려면 가중이동 평균이나 지수이동평균을 사용해야한다.&lt;/p>
-&lt;/li>
+&lt;li>이동평균은 기술분석에서 일반적으로 사용되는 주식 지표이다.&lt;/li>
+&lt;li>주식의 이동 평균을 계산하는 이유는 지속적으로 업데이트되는 평균가적을 생성하여 지정된 기간동안의 가격 데이터를 평활화 하기 위해서이다.&lt;/li>
+&lt;li>단순 이동평균은 과거의 특정 일수 동안 주저진 가격 세트의 산술 평균이다. 예를들어 15, 30, 100일 또는 200일이 될 수 있다.&lt;/li>
+&lt;li>결과값이 지연되어 나타나는 경향이 있다.&lt;/li>
+&lt;li>이동평균의 기간이 길어질 수록 지연이 커진다.&lt;/li>
+&lt;li>최근값에 더 많은 가중치를 두려면 가중이동 평균이나 지수이동평균을 사용해야한다.&lt;/li>
 &lt;/ul>
-&lt;p>지난번에 &lt;a href="https://notes.harues.com/posts/average-and-average-filter">평균과 평균 필터&lt;/a>에 대하여 알아 보았다. 평균 필터는 전체 값중 중간 값을 알수 있기 때문에 유용하지만 전체 샘플의 수가 많으면 최근 값이 평균값에 미치는 영향이 작어 지기때문에 현재의 변화 상태를 나타내기에는 어려움이 있다.&lt;/p>
+&lt;p>지난번 알아 보았던 &lt;a href="https://notes.harues.com/posts/average-and-average-filter">평균과 평균 필터&lt;/a>는 전체 값중 중간 값을 알수 있기 때문에 유용하지만 전체 샘플의 수가 많으면 최근 값이 평균값에 미치는 영향이 작아 지기때문에 누적 데이터가 많아 질수록 현재의 변화 상태를 반영하지 문하는 문제가 있다.&lt;/p>
 &lt;p>이 포스트에서 사용된 Raw 데이터는 &lt;a href="https://www.kaggle.com/mczielinski/bitcoin-historical-data">Bitcoin data at 1-min intervals from select exchanges, Jan 2012 to March 2021&lt;/a>에서 다운 받은 데이터 중 최근 365일 데이터를 사용하였다.&lt;/p></description></item></channel></rss>
