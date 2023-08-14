@@ -85,7 +85,7 @@ paginatePath = "page"
 # Define all supported taxonomies (add series to the default)
 [taxonomies]
     tags = "tags"
-    categories = "categories"
+    #categories = "categories"
     series = "series"
 
 
