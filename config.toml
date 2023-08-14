@@ -1,136 +1,180 @@
-baseurl = "https://notes.harues.com/"
-languageCode = "en-us"
+# Set base URL for site - should end with a trailing slash
+baseUrl = "https://notes.harues.com/"
+
+theme = "slick"
+
+# Site title (not shown if commented out or set to false)
+# (If you disable this, add some link on the index page inside menu.main,
+#  otherwise your visitors will get confused and lost...)
 title = "Notes"
-# Enable comments by entering your Disqus shortname
-disqusShortname = ""
-# Enable Google Analytics by entering your tracking code
-googleAnalytics = "G-XR6RLEW3M1"
-# Define the number of posts per page
+
+languageCode = "en"
+defaultContentLanguage = "en"
+
+# Will appear below the footer links with a © sign and the current year
+copyright = "euikook — All rights reserved."
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true               # Allow html (needed for some shortcodes)
+    [markup.highlight]
+        codeFences = true               # Enable highlighting inside codefences
+        guessSyntax = true              # Highlight code without language tag
+        noClasses = false               # Use the theme's style sheet
+
+canonifyURLs = true
+
+# Configure pagination
 paginate = 10
-footnotereturnlinkcontents = "↩"
-theme = "hugo-icarus"
-# Comment the themesDir option if you use this theme in production
-# themesDir = "../.."
-
-enableGitInfo = true
-
-# [permalinks]
-#     post = "/:year/:month/:day/:slug"
-
-# [permalinks]
-#   posts = "/:06/:01/:02/:title/"
+paginatePath = "page"
 
 [params]
-    # Tell me who you are
-    author = "euikook"
-    description = "Miscellaneous Notes"
-    bio = "Blogger - Programmer"
-    location = "Earth"
-    copyright  = "Powered by [Hugo](//gohugo.io) &middot; Theme by [PPOffice](https://github.com/ppoffice) &middot; Modified by [euikook](https://github.com/euikook/hugo-icarus)"
-    avatar = "/images/logo.png"
-    # Enter your email address to display your Gravatar icon in the profile. If not set the theme
-    # will fallback to the avatar.
-    gravatar = "euikook@gmail.com"
-    logo = "/images/logo.png"
-    disable_mathjax = false # set to true to disable MathJax
+    # Site subtitle (not shown if commented out or set to false)
+    subtitle = "Miscellaneous Notes"
 
-    # define which types of pages should be shown. By default the type with the most regular pages
-    mainSections = ["posts"]
+    # Site description
+    description = "Notes by euikook."
 
-    # Format dates with Go's time formatting
-    date_format = "2006-01-02"
+    # Favicon file (relative to baseURL - place below static or assets folder)
+    favicon = "favicon.png"
+    # Custom css file (relative to baseURL - place below static or assets folder)
+    css = "custom.css"
 
-    # Add custom assets with their paths relative to the static folder
-	custom_css = []
-	custom_js  = []
+    # Define formatting of dates
+    # (optional, falls back to RFC822 format if not set)
+    # For reference to date and time formatting, see:
+    # https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
+    # Make sure to set showMetaDates to true to see any dates
+    dateFmt = "Mon, 02 Jan 2006 15:04:05 MST"
 
-    use_jqcloud = false
+    # Customize the text of the 404 page here
+    errorPageText = "There's nothing to see here, please move along!"
 
-[params.utterances]
-    repo = "euikook/wiki.notes"
-    # term = "pathname"
-    # theme = "github-light"
-    # crossorigin = "anonymous"
+    # Header with title/subtitle can be disabled here.
+    # (If you disable this, add some link on the index page inside menu.main,
+    #  otherwise your visitors will get confused and lost...)
+    showNavHeader = true
+
+    # If false the RSS link in footer is not shown
+    showRssLink = true
+
+    # Decide if only summaries are shown on the main page or the full content
+    showFullContent = true
+
+    # If false no pagination is shown when there is nothing to paginate
+    showEmptyPagination = true
+
+    # If false the title, dates and taxonomy are not shown on single view
+    showMeta = true
+
+    # If false the dates for the posts are not shown
+    showMetaDates = true
+
+    # If false the taxonomy links for the posts are not shown
+    showMetaLinks = true
+
+    # Uses Hugo internal templates if set
+    opengraph = false
+    schema = false
+    twitter_cards = false
 
 
+# Define all supported taxonomies (add series to the default)
 [taxonomies]
-  tag = "tags"
-  series = "series"
+    tags = "tags"
+    categories = "categories"
+    series = "series"
 
 
-# Create custom menu entries by defining a label and a link for
-# them. Since you can also link posts, you've the option the
-# place the links before or after them.
-#
-# E.g.: "Home" appears before all linked posts in the menu
-# and "Tags" / "Categories" after them.
-[[params.menu]]
-    before = true
-    label  = "Home"
-    link   = "/"
-
-[[params.menu]]
-    before = false
-    label  = "Tags"
-    link   = "tags/"
-
-[[params.menu]]
-    before = false
-    label  = "About"
-    link   = "about/"
+[author]
+    name = "euikook"
+    email = "euikook@gmail.com"
 
 
-# Enter a link for the follow button on the left
-[params.profile]
-    follow_button = "https://github.com/euikook"
+[services.rss]
+    # limit the length of the rss feed (default: unlimited)
+    limit = 0
 
 
-[social]
-# Add your social network accounts to the profile section on the left
-# by entering your username. The links to your account will be
-# created automatically.
-    github          = "euikook"
-    gitlab          = "euikook"
-    bitbucket       = ""
-    jsfiddle        = ""
-    codepen         = ""
-    foursquare      = ""
-    dribbble        = ""
-    deviantart      = ""
-    behance         = ""
-    flickr          = ""
-    instagram       = ""
-    youtube         = ""
-    vimeo           = ""
-    vine            = ""
-    medium          = ""
-    wordpress       = ""
-    tumblr          = ""
-    xing            = ""
-    linkedin        = ""
-    slideshare      = ""
-    stackoverflow   = ""
-    reddit          = ""
-    pinterest       = ""
-    googleplus      = ""
-    facebook        = ""
-    facebook_admin  = ""
-    twitter_domain  = ""
-    twitter         = ""
+[menu]
 
-# Enable and disable widgets for the right sidebar
-[params.widgets]
-    recent_articles = true
-    categories = false
-    tags = false
-    tag_cloud = true
+    # Configure main menu entries (header)
+    # Currently set to list all taxonomies and posts
+    [[menu.main]]
+        identifier = "post"
+        name = "Posts"
+        title = "All posts"
+        url = "/posts/"
+        weight = 1
 
-[frontmatter]
-  date = ["date","lastmod"]
-  lastmod = [":git", "lastmod", "date"]
-  publishDate = ["publishDate", "date"]
-  expiryDate = ["expiryDate"]
+    [[menu.main]]
+        identifier = "categories"
+        name = "Categories"
+        title = "All categories"
+        url = "/categories/"
+        weight = 2
+
+    [[menu.main]]
+        identifier = "tags"
+        name = "Tags"
+        title = "All tags"
+        url = "/tags/"
+        weight = 2
+
+    [[menu.main]]
+        identifier = "series"
+        name = "Series"
+        title = "All series"
+        url = "/series/"
+        weight = 2
 
 
-[params.adsense]
-  id = "ca-pub-1494649960951277"
+    # Define the entries for post metadata
+    # Identifiers should match with the taxonomy entries
+    [[menu.meta]]
+        identifier = "categories"
+        name = "Categories"
+        weight = 1
+    [[menu.meta]]
+        identifier = "series"
+        name = "Series"
+        weight = 2
+    [[menu.meta]]
+        identifier = "tags"
+        name = "Tags"
+        weight = 3
+
+
+    # Add some footer links to your likings
+    [[menu.footer]]
+        name = "GitHub"
+        title = "Github"
+        url = "https://github.com/euikook"
+        weight = 1
+
+    #[[menu.footer]]
+    #    name = "Slick"
+    #    title = "Theme page on gohugo.io"
+    #    url = "https://themes.gohugo.io/slick"
+    #    weight = 2
+
+    #[[menu.footer]]
+    #    name = "Toor"
+    #    title = "Some website, using this theme"
+    #    url = "https://www.toor.su"
+    #    weight = 3
+
+
+# Enable generation of robots.txt
+enableRobotsTXT = true
+
+# Configure sitemap
+[sitemap]
+  # Values are 'always', 'hourly', 'daily',' weekly', 'monthly', 'yearly',
+  # and 'never'. Set to empty string to omit inclusion
+  changefreq = "daily"
+  # Adjust filename of sitemap. (default: sitemap.xml)
+  filename = "sitemap.xml"
+  # Values range from 0.0 to 1.0. Set to -1 to omit inclusion
+  priority =  -1
