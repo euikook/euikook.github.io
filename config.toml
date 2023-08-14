@@ -178,3 +178,9 @@ enableRobotsTXT = true
   filename = "sitemap.xml"
   # Values range from 0.0 to 1.0. Set to -1 to omit inclusion
   priority =  -1
+
+
+googleAnalytics = "G-XR6RLEW3M1"
+
+[params.adsense]
+  id = "ca-pub-1494649960951277"
