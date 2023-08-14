@@ -4,3 +4,6 @@
 [submodule "themes/icarus"]
 	path = themes/hugo-icarus
 	url = https://github.com/euikook/hugo-icarus.git
+[submodule "themes/slick"]
+	path = themes/slick
+	url = https://github.com/euikook/slick.git

@@ -1,0 +1,136 @@
+baseurl = "https://notes.harues.com/"
+languageCode = "en-us"
+title = "Notes"
+# Enable comments by entering your Disqus shortname
+disqusShortname = ""
+# Enable Google Analytics by entering your tracking code
+googleAnalytics = "G-XR6RLEW3M1"
+# Define the number of posts per page
+paginate = 10
+footnotereturnlinkcontents = "↩"
+theme = "hugo-icarus"
+# Comment the themesDir option if you use this theme in production
+# themesDir = "../.."
+
+enableGitInfo = true
+
+# [permalinks]
+#     post = "/:year/:month/:day/:slug"
+
+# [permalinks]
+#   posts = "/:06/:01/:02/:title/"
+
+[params]
+    # Tell me who you are
+    author = "euikook"
+    description = "Miscellaneous Notes"
+    bio = "Blogger - Programmer"
+    location = "Earth"
+    copyright  = "Powered by [Hugo](//gohugo.io) &middot; Theme by [PPOffice](https://github.com/ppoffice) &middot; Modified by [euikook](https://github.com/euikook/hugo-icarus)"
+    avatar = "/images/logo.png"
+    # Enter your email address to display your Gravatar icon in the profile. If not set the theme
+    # will fallback to the avatar.
+    gravatar = "euikook@gmail.com"
+    logo = "/images/logo.png"
+    disable_mathjax = false # set to true to disable MathJax
+
+    # define which types of pages should be shown. By default the type with the most regular pages
+    mainSections = ["posts"]
+
+    # Format dates with Go's time formatting
+    date_format = "2006-01-02"
+
+    # Add custom assets with their paths relative to the static folder
+	custom_css = []
+	custom_js  = []
+
+    use_jqcloud = false
+
+[params.utterances]
+    repo = "euikook/wiki.notes"
+    # term = "pathname"
+    # theme = "github-light"
+    # crossorigin = "anonymous"
+
+
+[taxonomies]
+  tag = "tags"
+  series = "series"
+
+
+# Create custom menu entries by defining a label and a link for
+# them. Since you can also link posts, you've the option the
+# place the links before or after them.
+#
+# E.g.: "Home" appears before all linked posts in the menu
+# and "Tags" / "Categories" after them.
+[[params.menu]]
+    before = true
+    label  = "Home"
+    link   = "/"
+
+[[params.menu]]
+    before = false
+    label  = "Tags"
+    link   = "tags/"
+
+[[params.menu]]
+    before = false
+    label  = "About"
+    link   = "about/"
+
+
+# Enter a link for the follow button on the left
+[params.profile]
+    follow_button = "https://github.com/euikook"
+
+
+[social]
+# Add your social network accounts to the profile section on the left
+# by entering your username. The links to your account will be
+# created automatically.
+    github          = "euikook"
+    gitlab          = "euikook"
+    bitbucket       = ""
+    jsfiddle        = ""
+    codepen         = ""
+    foursquare      = ""
+    dribbble        = ""
+    deviantart      = ""
+    behance         = ""
+    flickr          = ""
+    instagram       = ""
+    youtube         = ""
+    vimeo           = ""
+    vine            = ""
+    medium          = ""
+    wordpress       = ""
+    tumblr          = ""
+    xing            = ""
+    linkedin        = ""
+    slideshare      = ""
+    stackoverflow   = ""
+    reddit          = ""
+    pinterest       = ""
+    googleplus      = ""
+    facebook        = ""
+    facebook_admin  = ""
+    twitter_domain  = ""
+    twitter         = ""
+
+# Enable and disable widgets for the right sidebar
+[params.widgets]
+    recent_articles = true
+    categories = false
+    tags = false
+    tag_cloud = true
+
+[frontmatter]
+  date = ["date","lastmod"]
+  lastmod = [":git", "lastmod", "date"]
+  publishDate = ["publishDate", "date"]
+  expiryDate = ["expiryDate"]
+
+
+[params.adsense]
+  id = "ca-pub-1494649960951277"
