@@ -85,7 +85,7 @@ paginatePath = "page"
 # Define all supported taxonomies (add series to the default)
 [taxonomies]
     tags = "tags"
-    #categories = "categories"
+    categories = "categories"
     series = "series"
 
 
@@ -110,12 +110,12 @@ paginatePath = "page"
         url = "/posts/"
         weight = 1
 
-    [[menu.main]]
-        identifier = "categories"
-        name = "Categories"
-        title = "All categories"
-        url = "/categories/"
-        weight = 2
+    #[[menu.main]]
+    #    identifier = "categories"
+    #    name = "Categories"
+    #    title = "All categories"
+    #    url = "/categories/"
+    #    weight = 2
 
     [[menu.main]]
         identifier = "tags"
