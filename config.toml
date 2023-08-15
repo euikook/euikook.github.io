@@ -31,6 +31,7 @@ canonifyURLs = true
 paginate = 10
 paginatePath = "page"
 
+
 [params]
     # Site subtitle (not shown if commented out or set to false)
     subtitle = "Miscellaneous Notes"
@@ -80,6 +81,8 @@ paginatePath = "page"
     opengraph = false
     schema = false
     twitter_cards = false
+
+    katex = true
 
 
 # Define all supported taxonomies (add series to the default)
