@@ -187,3 +187,11 @@ enableRobotsTXT = true
 
 [params.adsense]
   id = "ca-pub-1494649960951277"
+
+
+[params.utterances]
+    repo = "euikook/wiki.notes"
+    term = "pathname"
+    theme = "github-light"
+    crossorigin = "anonymous"
+
