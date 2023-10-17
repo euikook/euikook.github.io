@@ -1,5 +1,27 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
 .utterances {    
     max-width: 100% !important;
     margin-top: 12px;
     border: 1px dashed #4d4d4c;
+}
+
+.post-meta {
+    font-size: .8em;
+    margin: 0 0 .5em;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+}
+
+.post-title {
+    display: inline-block;
+}
+.post-author {
+    border: none;
+    color: #686868;
+    display: inline-block;
+    font-size: 0.8em;
+    font-style: italic;
+    font-weight: 600;
+    margin: 0 5px;
 }
