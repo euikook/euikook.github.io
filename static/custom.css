@@ -18,6 +18,7 @@ body {
 .post-title {
     display: inline-block;
 }
+
 .post-author {
     border: none;
     color: #686868;
@@ -27,4 +28,3 @@ body {
     font-weight: 600;
     margin: 0 5px;
 }
->>>>>>> 6e7463d (Update Themes)
