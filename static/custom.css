@@ -7,6 +7,8 @@ body {
     border: 1px dashed #4d4d4c;
 }
 
+.katex-display { overflow: auto hidden }
+
 .post-meta {
     font-size: .8em;
     margin: 0 0 .5em;
@@ -16,6 +18,7 @@ body {
 .post-title {
     display: inline-block;
 }
+
 .post-author {
     border: none;
     color: #686868;
