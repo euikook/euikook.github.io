@@ -28,3 +28,18 @@ body {
     font-weight: 600;
     margin: 0 5px;
 }
+
+.post-content a {
+    color: #4d4d4c;
+    text-decoration: underline !important;
+}
+
+.post-content a:visited {
+    color: #4d4d4c;
+    text-decoration: underline !important;
+}
+
+.post-content a:hover {
+    color: #007ce3;
+    text-decoration: underline !important;
+}

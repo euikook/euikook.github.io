@@ -14,7 +14,7 @@ defaultContentLanguage = "en"
 googleAnalytics = "G-XR6RLEW3M1"
 
 # Will appear below the footer links with a © sign and the current year
-copyright = "euikook — All rights reserved."
+copyright = "All rights reserved."
 
 [markup]
     [markup.goldmark]
@@ -95,6 +95,7 @@ paginatePath = "page"
 [author]
     name = "euikook"
     email = "euikook@gmail.com"
+    bio = "/about"
 
 
 [services.rss]
