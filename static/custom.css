@@ -1,13 +1,16 @@
 body {
     font-family: 'Noto Sans KR', sans-serif;
 }
+
 .utterances {    
     max-width: 100% !important;
     margin-top: 12px;
     border: 1px dashed #4d4d4c;
 }
 
-.katex-display { overflow: auto hidden }
+.katex-display { 
+    overflow: auto hidden;
+}
 
 .post-meta {
     font-size: .8em;
