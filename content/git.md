@@ -15,9 +15,9 @@ banner: https://source.unsplash.com/46juD4zY1XA
 alias git='git -c "user.name=euikook" -c "user.email=euikook@gmail.com"'
 ```
 
-### Harues.com
+### oneuon.com
 ```
-alias git='git -c "user.name=euikook" -c "user.email=euikook@harues.com"'
+alias git='git -c "user.name=euikook" -c "user.email=euikook@oneuon.com"'
 ```
 
 ## Workspace
