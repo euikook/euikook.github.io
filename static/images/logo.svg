@@ -1,0 +1,22 @@
+<!-- sample rectangle -->
+<svg width="220" height="100" xmlns="http://www.w3.org/2000/svg">
+  <text x="0" y="85" 
+    fill="#ED6E46" font-weight="bold" font-size="100" font-family="'Fira Sans', sans-serif">
+    O
+  </text>
+  <text x="70" y="85" 
+    fill="#ED6E46" font-weight="bold" font-size="100" font-family="'Fira Sans', sans-serif">
+    Ν  
+  </text>
+
+  <text 
+    x="135" y="85" 
+    fill="#0" font-weight="bold" font-size="100" font-family="'Fira Sans', sans-serif">
+    Ι  
+  </text>
+
+  <text x="155" y="85" 
+    fill="#0" font-weight="bold" font-size="100" font-family="'Fira Sans', sans-serif">
+    Γ  
+  </text>
+</svg>

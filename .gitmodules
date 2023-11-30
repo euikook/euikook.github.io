@@ -1,12 +1,12 @@
 [submodule "content/posts"]
 	path = content/posts
-	url = https://github.com/euikook/notes.git
+	url = git@github.com:euikook/notes.git
 [submodule "themes/icarus"]
 	path = themes/hugo-icarus
-	url = https://github.com/euikook/hugo-icarus.git
+	url = git@github.com:euikook/hugo-icarus.git
 [submodule "themes/slick"]
 	path = themes/slick
-	url = https://github.com/euikook/slick.git
+	url = git@github.com:euikook/slick.git
 [submodule "themes/minimo"]
 	path = themes/minimo
-	url = https://github.com/euikook/minimo
+	url = git@github.com:euikook/minimo

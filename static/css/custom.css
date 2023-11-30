@@ -134,3 +134,35 @@ body {
     opacity: 0.01;
   }
   
+
+  @media screen and (max-width: 800px) {
+    img[src$='.svg'] { 
+        width: 98vw; 
+    }
+}
+
+@media screen and (min-width: 801px) {
+    img[src$='.svg'] { 
+        width: 98vw; 
+        max-width: 98%;
+    }
+}
+
+img[src$='#center']
+{
+    display: inline-block;
+    align-content: center;
+    margin: 0.7rem auto;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.widget-about .logo {
+  max-width: none;
+}
+
+.logo-img {
+  max-width: 96%;
+}

@@ -1,198 +1,167 @@
-# Set base URL for site - should end with a trailing slash
-baseUrl = "https://notes.oneuon.com/"
-
-theme = "slick"
-
-# Site title (not shown if commented out or set to false)
-# (If you disable this, add some link on the index page inside menu.main,
-#  otherwise your visitors will get confused and lost...)
+baseURL = "http://notes.oneuon.com"
 title = "Notes"
+# for smart copyright line, leave this blank and check [params.copyright]
+copyright = ""
 
-languageCode = "en"
-defaultContentLanguage = "en"
+theme = "minimo"
 
+disqusShortname = ""
 googleAnalytics = "G-XR6RLEW3M1"
 
-# Will appear below the footer links with a © sign and the current year
-copyright = "All rights reserved."
+Paginate = 5
+preserveTaxonomyNames = true
 
-[markup]
-    [markup.goldmark]
-        [markup.goldmark.renderer]
-            unsafe = true               # Allow html (needed for some shortcodes)
-    [markup.highlight]
-        codeFences = true               # Enable highlighting inside codefences
-        guessSyntax = true              # Highlight code without language tag
-        noClasses = false               # Use the theme's style sheet
+enableRobotsTXT = true # generate robots.txt
 
-canonifyURLs = true
+# Syntax Highlighting ( https://gohugo.io/content-management/syntax-highlighting/ )
+pygmentsCodefences = true
 
-# Configure pagination
-paginate = 10
-paginatePath = "page"
+enableEmoji = true
 
+# Missing translations will default to this content language
+defaultContentLanguage = "en"
 
 [params]
-    # Site subtitle (not shown if commented out or set to false)
-    subtitle = "Miscellaneous Notes"
+adsense = "ca-pub-149464996095127"
 
-    # Site description
-    description = "Notes by euikook."
+[params.info]
+description = "Miscellaneous Notes"
+title404 = "Nothing's here!"
 
-    # Favicon file (relative to baseURL - place below static or assets folder)
-    favicon = "favicon.png"
-    # Custom css file (relative to baseURL - place below static or assets folder)
-    css = "custom.css"
+[params.assets]
+favicon = "favicon.ico"
+customCSS = ["css/custom.css"]
+customJS = ["js/custom.js"]
+gopher = "" # used in 404 template ( Generator: https://gopherize.me )
 
-    # Define formatting of dates
-    # (optional, falls back to RFC822 format if not set)
-    # For reference to date and time formatting, see:
-    # https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
-    # Make sure to set showMetaDates to true to see any dates
-    dateFmt = "Mon, 02 Jan 2006"
+[params.copyright]
+prefix = ""
+holder = "euikook"
+startYear = "2017"
+suffix = ""
 
-    # Customize the text of the 404 page here
-    errorPageText = "There's nothing to see here, please move along!"
+[params.settings]
+# date & time format: https://golang.org/pkg/time/
+dateFormat = "2006, Jan 02"
+listDateFormat = "2006, Jan 02"
+archiveDateFormat = "Jan 02"
+hideEntryNavigation = ["pages"] # boolean / array of sections
+hideEntryMeta = ["pages"] # boolean / array of sections
+showReadingTime = true
+showLastmod = true
+taxonomyCloudShuffle = true
+accentColor = "#ffcd00"
+hideMainMenu = false
 
-    # Header with title/subtitle can be disabled here.
-    # (If you disable this, add some link on the index page inside menu.main,
-    #  otherwise your visitors will get confused and lost...)
-    showNavHeader = true
+[params.sidebar]
+enable = true
 
-    # If false the RSS link in footer is not shown
-    showRssLink = true
+[params.widgets]
+header = ["breadcrumbs"]
+homepage = ["recent_posts"]
+sidebar = ["about", "search", "sidebar_menu", "taxonomy_cloud"]
+footer = ["social_menu"]
 
-    # Decide if only summaries are shown on the main page or the full content
-    showFullContent = true
+[params.opengraph.facebook]
+admins = [] # array of Facebook IDs
+appID = ""
+pageID = ""
 
-    # If false no pagination is shown when there is nothing to paginate
-    showEmptyPagination = true
+[params.opengraph.twitter]
+page = "" # Twitter page username
 
-    # If false the title, dates and taxonomy are not shown on single view
-    showMeta = true
+[params.seo]
+# Title Separator: - – — · • * ⋆ | ~ « » < >
+titleSeparator = "•"
 
-    # If false the dates for the posts are not shown
-    showMetaDates = true
+[params.social]
+# codepen = "MunifTanjim"
+# email = "euikook@gmail.com"
+# facebook = "MunifTanjim"
+github = "euikook"
+gitlab = "euikook"
+# instagram = "MunifTanjim"
+# linkedin = "muniftanjim"
+# twitter = "MunifTanjim"
+# telegram = "MunifTanjim"
+# google_scholar = "qc6CJjYAAAAJ"
+# youtube = "UCT-U0rNerYxItGcuoPX-WYA"
 
-    # If false the taxonomy links for the posts are not shown
-    showMetaLinks = true
+[params.comments]
+enable = true
 
-    # Uses Hugo internal templates if set
-    opengraph = false
-    schema = false
-    twitter_cards = false
+# Isso: https://posativ.org/isso/
+[params.comments.isso]
+enable = false
+scriptSrc = "" # "https://isso.example.com/js/embed.min.js"
+dataAttrs = "" # "data-isso='https://isso.example.com' data-isso-require-author='true'"
 
-    katex = true
+[params.comments.staticman]
+enable = false
+apiEndpoint = "https://api.staticman.net/v2/entry"
+maxDepth = 2
+username = "euikook"
+repository = "euikook"
 
+# Utterances: https://utteranc.es
+[params.comments.utterances]
+enable = true
+issueTerm = "pathname" # pathname / url / title / og:title / <string>
+label = ""
+theme = "github-light"
 
-# Define all supported taxonomies (add series to the default)
+[params.comments.utterances.github]
+username = "euikook"
+repository = "wiki.notes"
+
+[params.search]
+client = "fuse" # algolia / fuse / lunr
+
+[params.search.algolia]
+appId = ""
+indexName = ""
+searchApiKey = ""
+
 [taxonomies]
-    tags = "tags"
-    categories = "categories"
-    series = "series"
+author = "authors"
+category = "categories"
+series = "series"
+tag = "tags"
+
+[permalinks]
+pages = "/:slug/"
+
+[[menu.main]]
+name = "Repo"
+weight = -10
+identifier = "repository"
+url = "https://github.com/euikook"
+
+[[menu.main]]
+name = 'Tags'
+pageref = '/tags'
+weight = 1
+
+[[menu.main]]
+name = 'Series'
+pageref = '/series'
+weight = 1
 
 
-[author]
-    name = "euikook"
-    email = "euikook@gmail.com"
-    bio = "/about"
+[[menu.sidebar]]
+name = 'Categories'
+pageref = '/categories'
+weight = 1
 
+[[menu.sidebar]]
+name = 'Tags'
+pageref = '/tags'
+weight = 1
 
-[services.rss]
-    # limit the length of the rss feed (default: unlimited)
-    limit = 0
+[[menu.sidebar]]
+name = 'Series'
+pageref = '/series'
+weight = 1
 
-
-[menu]
-
-    # Configure main menu entries (header)
-    # Currently set to list all taxonomies and posts
-    [[menu.main]]
-        identifier = "post"
-        name = "Posts"
-        title = "All posts"
-        url = "/posts/"
-        weight = 1
-
-    #[[menu.main]]
-    #    identifier = "categories"
-    #    name = "Categories"
-    #    title = "All categories"
-    #    url = "/categories/"
-    #    weight = 2
-
-    [[menu.main]]
-        identifier = "tags"
-        name = "Tags"
-        title = "All tags"
-        url = "/tags/"
-        weight = 2
-
-    [[menu.main]]
-        identifier = "series"
-        name = "Series"
-        title = "All series"
-        url = "/series/"
-        weight = 2
-
-
-    # Define the entries for post metadata
-    # Identifiers should match with the taxonomy entries
-    [[menu.meta]]
-        identifier = "categories"
-        name = "Categories"
-        weight = 1
-    [[menu.meta]]
-        identifier = "series"
-        name = "Series"
-        weight = 2
-    [[menu.meta]]
-        identifier = "tags"
-        name = "Tags"
-        weight = 3
-
-
-    # Add some footer links to your likings
-    [[menu.footer]]
-        name = "GitHub"
-        title = "Github"
-        url = "https://github.com/euikook"
-        weight = 1
-
-    #[[menu.footer]]
-    #    name = "Slick"
-    #    title = "Theme page on gohugo.io"
-    #    url = "https://themes.gohugo.io/slick"
-    #    weight = 2
-
-    #[[menu.footer]]
-    #    name = "Toor"
-    #    title = "Some website, using this theme"
-    #    url = "https://www.toor.su"
-    #    weight = 3
-
-
-# Enable generation of robots.txt
-enableRobotsTXT = true
-
-# Configure sitemap
-[sitemap]
-  # Values are 'always', 'hourly', 'daily',' weekly', 'monthly', 'yearly',
-  # and 'never'. Set to empty string to omit inclusion
-  changefreq = "daily"
-  # Adjust filename of sitemap. (default: sitemap.xml)
-  filename = "sitemap.xml"
-  # Values range from 0.0 to 1.0. Set to -1 to omit inclusion
-  priority =  -1
-
-
-[params.adsense]
-  id = "ca-pub-1494649960951277"
-
-
-[params.utterances]
-    repo = "euikook/wiki.notes"
-    term = "pathname"
-    theme = "github-light"
-    crossorigin = "anonymous"
-
+[blackfriday]
+hrefTargetBlank = true
