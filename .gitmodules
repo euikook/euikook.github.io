@@ -7,3 +7,6 @@
 [submodule "themes/slick"]
 	path = themes/slick
 	url = https://github.com/euikook/slick.git
+[submodule "themes/minimo"]
+	path = themes/minimo
+	url = https://github.com/euikook/minimo
