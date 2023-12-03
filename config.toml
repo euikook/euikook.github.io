@@ -1,5 +1,5 @@
 baseURL = "http://notes.oneuon.com"
-title = "Notes"
+title = "Miscellaneous Notes"
 # for smart copyright line, leave this blank and check [params.copyright]
 copyright = ""
 
@@ -25,7 +25,7 @@ defaultContentLanguage = "en"
 adsense = "ca-pub-149464996095127"
 
 [params.info]
-description = "Miscellaneous Notes"
+description = ""
 title404 = "Nothing's here!"
 
 [params.assets]
