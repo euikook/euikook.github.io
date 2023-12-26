@@ -78,8 +78,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+
       - name: Sync Mirror Repository
         id: sync
         run: |
+          pwd
+          ls
           git remote add mirror git@github.com:oneuon/oneuon.github.io
           git push mirror master
