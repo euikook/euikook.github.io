@@ -83,5 +83,5 @@ jobs:
         run: |
           pwd
           ls -l
-          git remote add mirror git@github.com:oneuon/oneuon.github.io
-          git push mirror master
+          ls -l ..
+          ls -l ../..
