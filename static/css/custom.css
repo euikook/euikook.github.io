@@ -13,8 +13,8 @@ body {
 }
 
 .post-meta {
-    font-size: .8em;
-    margin: 0 0 .5em;
+    font-size: 1.15rem;
+    margin: 0 0 .5rem;
     /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 }
 
@@ -31,22 +31,6 @@ body {
     font-weight: 600;
     margin: 0 5px;
 }
-
-.post-content a {
-    color: #4d4d4c;
-    text-decoration: underline !important;
-}
-
-.post-content a:visited {
-    color: #4d4d4c;
-    text-decoration: underline !important;
-}
-
-.post-content a:hover {
-    color: #007ce3;
-    text-decoration: underline !important;
-}
-
 
 
 .highlight-wrapper {
@@ -165,4 +149,13 @@ img[src$='#center']
 
 .logo-img {
   max-width: 96%;
+}
+
+.inline-svg {
+  display: inline-block;
+  height: 1.15rem;
+  width: 1.15rem;
+  top: 0.15rem;
+  position: relative;
+  vertical-align: -0.125rem;
 }
