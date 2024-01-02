@@ -159,3 +159,9 @@ img[src$='#center']
   position: relative;
   vertical-align: -0.125rem;
 }
+
+
+.post-meta-label {
+  display:inline-block;
+  padding-left: 4px;
+}

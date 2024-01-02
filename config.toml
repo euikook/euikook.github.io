@@ -107,12 +107,12 @@ paginatePath = "page"
 
     # Configure main menu entries (header)
     # Currently set to list all taxonomies and posts
-    [[menu.main]]
-        identifier = "post"
-        name = "Posts"
-        title = "All posts"
-        url = "/posts/"
-        weight = 1
+    # [[menu.main]]
+    #     identifier = "post"
+    #     name = "Posts"
+    #     title = "All posts"
+    #     url = "/posts/"
+    #     weight = 1
 
     #[[menu.main]]
     #    identifier = "categories"
