@@ -165,3 +165,12 @@ img[src$='#center']
   display:inline-block;
   padding-left: 8px;
 }
+
+.post-list ul {
+  list-style:none;
+  padding-left:8px;
+}
+
+.post-list li {
+  text-decoration: none;;
+}
