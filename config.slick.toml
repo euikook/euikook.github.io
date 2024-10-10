@@ -42,7 +42,7 @@ paginatePath = "page"
     # Favicon file (relative to baseURL - place below static or assets folder)
     favicon = "favicon.png"
     # Custom css file (relative to baseURL - place below static or assets folder)
-    css = "custom.css"
+    css = "css/custom.css"
 
     # Define formatting of dates
     # (optional, falls back to RFC822 format if not set)
@@ -107,12 +107,12 @@ paginatePath = "page"
 
     # Configure main menu entries (header)
     # Currently set to list all taxonomies and posts
-    [[menu.main]]
-        identifier = "post"
-        name = "Posts"
-        title = "All posts"
-        url = "/posts/"
-        weight = 1
+    # [[menu.main]]
+    #     identifier = "post"
+    #     name = "Posts"
+    #     title = "All posts"
+    #     url = "/posts/"
+    #     weight = 1
 
     #[[menu.main]]
     #    identifier = "categories"

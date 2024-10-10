@@ -1,12 +1,12 @@
 # Set base URL for site - should end with a trailing slash
 baseUrl = "https://notes.oneuon.com/"
 
-theme = "slick"
+theme = "mainroad"
 
 # Site title (not shown if commented out or set to false)
 # (If you disable this, add some link on the index page inside menu.main,
 #  otherwise your visitors will get confused and lost...)
-title = "Notes"
+title = "ONEUON"
 
 languageCode = "en"
 defaultContentLanguage = "en"
@@ -15,6 +15,14 @@ googleAnalytics = "G-XR6RLEW3M1"
 
 # Will appear below the footer links with a © sign and the current year
 copyright = "All rights reserved."
+
+
+[Author]
+  name = "euikook"
+  bio = "경력 20년 이상의 소프트웨어 개발자 입니다. 임베디드 시스템, 풀스택, 리눅스 시스템 프로그래밍, 윈도우즈 프로그래밍, 클라우드, 서버리스.."
+  avatar = "images/avatar.png"
+  email = "euikook@gmail.com"
+
 
 [markup]
     [markup.goldmark]
@@ -32,7 +40,11 @@ paginate = 10
 paginatePath = "page"
 
 
-[params]
+[Params]
+    readmore = true # Show "Read more" button in list if true
+    authorbox = true
+    pager = true
+
     # Site subtitle (not shown if commented out or set to false)
     subtitle = "Miscellaneous Notes"
 
@@ -84,18 +96,16 @@ paginatePath = "page"
 
     katex = true
 
+[Params.logo]
+  subtitle = "Just another site" # Logo subtitle
+
 
 # Define all supported taxonomies (add series to the default)
-[taxonomies]
+[Taxonomies]
     tags = "tags"
     categories = "categories"
     series = "series"
 
-
-[author]
-    name = "euikook"
-    email = "euikook@gmail.com"
-    bio = "/about"
 
 
 [services.rss]
@@ -103,73 +113,28 @@ paginatePath = "page"
     limit = 0
 
 
-[menu]
-
-    # Configure main menu entries (header)
-    # Currently set to list all taxonomies and posts
-    # [[menu.main]]
-    #     identifier = "post"
-    #     name = "Posts"
-    #     title = "All posts"
-    #     url = "/posts/"
-    #     weight = 1
-
-    #[[menu.main]]
-    #    identifier = "categories"
-    #    name = "Categories"
-    #    title = "All categories"
-    #    url = "/categories/"
-    #    weight = 2
-
-    [[menu.main]]
-        identifier = "tags"
-        name = "Tags"
-        title = "All tags"
-        url = "/tags/"
-        weight = 2
-
-    [[menu.main]]
-        identifier = "series"
-        name = "Series"
-        title = "All series"
-        url = "/series/"
-        weight = 2
+[Params.sidebar]
+  home = "right"   # Configure layout for home page
+  list = "right"   # Configure layout for list pages
+  single = "right" # Configure layout for single pages
+  # Enable widgets in given order
+  widgets = ["search", "recent", "categories", "taglist"]
 
 
-    # Define the entries for post metadata
-    # Identifiers should match with the taxonomy entries
-    [[menu.meta]]
-        identifier = "categories"
-        name = "Categories"
-        weight = 1
-    [[menu.meta]]
-        identifier = "series"
-        name = "Series"
-        weight = 2
-    [[menu.meta]]
-        identifier = "tags"
-        name = "Tags"
-        weight = 3
+[Params.widgets]
+  recent_num = 5 # Set the number of articles in the "Recent articles" widget
+  tags_counter = false # Enable counter for each tag in "Tags" widget (disabled by default)
+
+[Params.adsense]
+  id = "ca-pub-1494649960951277"
 
 
-    # Add some footer links to your likings
-    [[menu.footer]]
-        name = "GitHub"
-        title = "Github"
-        url = "https://github.com/euikook"
-        weight = 1
+[Params.utterances]
+    repo = "euikook/wiki.notes"
+    term = "pathname"
+    theme = "github-light"
+    crossorigin = "anonymous"
 
-    #[[menu.footer]]
-    #    name = "Slick"
-    #    title = "Theme page on gohugo.io"
-    #    url = "https://themes.gohugo.io/slick"
-    #    weight = 2
-
-    #[[menu.footer]]
-    #    name = "Toor"
-    #    title = "Some website, using this theme"
-    #    url = "https://www.toor.su"
-    #    weight = 3
 
 
 # Enable generation of robots.txt
@@ -184,15 +149,4 @@ enableRobotsTXT = true
   filename = "sitemap.xml"
   # Values range from 0.0 to 1.0. Set to -1 to omit inclusion
   priority =  -1
-
-
-[params.adsense]
-  id = "ca-pub-1494649960951277"
-
-
-[params.utterances]
-    repo = "euikook/wiki.notes"
-    term = "pathname"
-    theme = "github-light"
-    crossorigin = "anonymous"
 
