@@ -97,7 +97,7 @@ paginatePath = "page"
     katex = true
 
 [Params.logo]
-  subtitle = "Just another site" # Logo subtitle
+  subtitle = "Miscellaneous Notes" # Logo subtitle
 
 
 # Define all supported taxonomies (add series to the default)
