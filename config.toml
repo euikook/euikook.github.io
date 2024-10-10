@@ -150,3 +150,71 @@ enableRobotsTXT = true
   # Values range from 0.0 to 1.0. Set to -1 to omit inclusion
   priority =  -1
 
+
+[menu]
+
+    # Configure main menu entries (header)
+    # Currently set to list all taxonomies and posts
+    # [[menu.main]]
+    #     identifier = "post"
+    #     name = "Posts"
+    #     title = "All posts"
+    #     url = "/posts/"
+    #     weight = 1
+
+#    [[menu.main]]
+#        identifier = "categories"
+#        name = "Categories"
+#        title = "All categories"
+#        url = "/categories/"
+#        weight = 2
+
+    [[menu.main]]
+        identifier = "tags"
+        name = "Tags"
+        title = "All tags"
+        url = "/tags/"
+        weight = 2
+
+    [[menu.main]]
+        identifier = "series"
+        name = "Series"
+        title = "All series"
+        url = "/series/"
+        weight = 2
+
+
+    # Define the entries for post metadata
+    # Identifiers should match with the taxonomy entries
+    [[menu.meta]]
+        identifier = "categories"
+        name = "Categories"
+        weight = 1
+    [[menu.meta]]
+        identifier = "series"
+        name = "Series"
+        weight = 2
+    [[menu.meta]]
+        identifier = "tags"
+        name = "Tags"
+        weight = 3
+
+
+    # Add some footer links to your likings
+    [[menu.footer]]
+        name = "GitHub"
+        title = "Github"
+        url = "https://github.com/euikook"
+        weight = 1
+
+    #[[menu.footer]]
+    #    name = "Slick"
+    #    title = "Theme page on gohugo.io"
+    #    url = "https://themes.gohugo.io/slick"
+    #    weight = 2
+
+    #[[menu.footer]]
+    #    name = "Toor"
+    #    title = "Some website, using this theme"
+    #    url = "https://www.toor.su"
+    #    weight = 3
