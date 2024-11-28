@@ -17,7 +17,7 @@ googleAnalytics = "G-XR6RLEW3M1"
 copyright = "All rights reserved."
 
 
-[Author]
+[Params.Author]
   name = "euikook"
   bio = "경력 20년 이상의 소프트웨어 개발자 입니다. 임베디드 시스템, 풀스택, 리눅스 시스템 프로그래밍, 윈도우즈 프로그래밍, 클라우드, 서버리스.."
   avatar = "images/avatar.png"
